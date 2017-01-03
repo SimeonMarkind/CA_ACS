@@ -1,23 +1,8 @@
 library(data.table)
 library(bit64)
 
-raw.data <- fread("C:/Users/Owner/Documents/R/PUMS/ss14pca.csv", 
-                  verbose = T)
-
-raw.data[, year := substr(SERIALNO, 1,4)] #inserting a character vector
-# corresponding to the year of the observation
-#raw.data[, .N, by = .(year)] #count of observations per year
-
-# year      N
-# 1: 2010 360836
-# 2: 2011 368809
-# 3: 2012 368047
-# 4: 2013 371403
-# 5: 2014 372553
-# Roughly symmetrc
-
 cols.to.keep <- c(
-    "year", #self calculated variable for the year of the observation
+    "SERIALNO", #Observation Serial Number
     "PUMA00", #2000 public use microdata area
     "PUMA10", #2010 public use microdata area
     "ADJINC", #Adjustment factor for income and earnings dollar amount
@@ -82,12 +67,27 @@ cols.to.keep <- c(
     "RAC1P", #recoded detailed race code
     "SCIENGP", #field of degree science and engineering flag
     "SOCP10", #SOC occupation code for 2010 and 2011
-    "SOCP12" #SOC occupation code for 2012 or later 
+    "SOCP12", #SOC occupation code for 2012 or later 
+    "HISP" #Recoded detailed Hispanic origin
 )
-    
-filter.data <- raw.data[, cols.to.keep, with = FALSE]
 
-rm(raw.data)
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/ss14pca.csv", 
+                  verbose = F, select = cols.to.keep,
+                  na.strings = c("NA", "", "N.A.", NA))
+
+filter.data[, year := substr(SERIALNO, 1,4)] #inserting a character vector
+# corresponding to the year of the observation
+#raw.data[, .N, by = .(year)] #count of observations per year
+
+# year      N
+# 1: 2010 360836
+# 2: 2011 368809
+# 3: 2012 368047
+# 4: 2013 371403
+# 5: 2014 372553
+# Roughly symmetrc
+
+
 ## Have to adjust ADJINC and turn from integer to numeric
 filter.data[, ADJINC := ADJINC/1000000.0]
 ## Turning integer columns to numeric so that we do not get
@@ -208,3 +208,190 @@ filter.data[RAC1P == 2, race := "African American"]
 filter.data[RAC1P %in% c(3,4,5,7,8,9), race := "Other"]
 filter.data[RAC1P == 6, race := "Asian"]
 
+# It seems that 2/3 of Hispanic people are calling themselves white
+# filter.data[HISP != 1, .N, .(race)]
+# race      N
+# 1:            White 255909
+# 2:            Other 158946
+# 3:            Asian   2339
+# 4: African American   3079
+
+## Will also add a separate Hispanic flag variable
+filter.data[, Hispanic := ifelse(HISP == 1, "Not Hispanic", "Hispanic")]
+
+## Look at the OCC codes
+## https://usa.ipums.org/usa/volii/acs_occtooccsoc.shtml
+## We will make broad category columns but will retain
+## the individual code if desired later
+
+filter.data[!is.na(OCCP10), 
+            Occupation10 := as.numeric(substr(OCCP10, 1, 2))]
+
+## 0-5 are managers
+filter.data[Occupation10 >= 0 & Occupation10 < 5,
+            occ := "Manager"]
+## 5-8 are business operations
+filter.data[Occupation10 >= 5 & Occupation10 < 8,
+            Occ := "Business Operations"]
+## 8-10 Financial Specialists
+filter.data[Occupation10 >= 8 & Occupation10 < 10,
+            Occ10 := "Financial Specialists"]
+## 10-13 Computer/Math
+filter.data[Occupation10 >= 10 & Occupation10 < 13,
+            Occ := "Computer/Math"]
+## 13-16 Architecture and Engineering
+filter.data[Occupation10 >= 13 & Occupation10 < 16,
+            Occ := "Architecture/Engineering"]
+## 16-20 Life, Physical and Social Sciences
+filter.data[Occupation10 >= 16 & Occupation10 < 20,
+            Occ := "Physical/Social Science"]
+## 20-21 Community and Social Services
+filter.data[Occupation10 >= 20 & Occupation10 < 21,
+            Occ := "Social Services"]
+## 21-22 Legal
+filter.data[Occupation10 >= 21 & Occupation10 < 22,
+            Occ := "Legal"]
+## 22-26 Education, Training, and Library Occupations
+filter.data[Occupation10 >= 22 & Occupation10 < 26,
+            Occ := "Education"]
+## 26-30 Arts, Design, Entertainment, Sports, and Media Occupations
+filter.data[Occupation10 >= 26 & Occupation10 < 30,
+            Occ := "Arts/Entertainment/Sports"]
+## 30 -36 Healthcare
+filter.data[Occupation10 >= 30 & Occupation10 < 36,
+            Occ := "Healthcare"]
+## 36-37 Healthcare Support
+filter.data[Occupation10 >= 36 & Occupation10 < 37,
+            Occ := "Heatlchare Support"]
+## 37-40 Protective Services
+filter.data[Occupation10 >= 37 & Occupation10 < 40,
+            Occ := "Protectice Services"]
+## 40-42 Food Preparation and Serving Occupations
+filter.data[Occupation10 >= 40 & Occupation10 < 42,
+            Occ := "Food Service"]
+## 42-43 Building and Grounds Cleaning and Maintenance Operations
+filter.data[Occupation10 >= 42 & Occupation10 < 43,
+            Occ := "Maintenance"]
+## 43-47 Personal Care and Service Occupations
+filter.data[Occupation10 >= 43 & Occupation10 < 47,
+            Occ := "Personal Care"]
+## 47-50 Sales Occupations
+filter.data[Occupation10 >= 47 & Occupation10 < 50,
+            Occ := "Sales"]
+## 50-60 Office and Administrative Support
+filter.data[Occupation10 >= 50 & Occupation10 < 60,
+            Occ := "Admin Support"]
+## 60-62 Farming Fishing and Forestry
+filter.data[Occupation10 >= 60 & Occupation10 < 62,
+            Occ := "Farm/Fish/Forestry"]
+## 62-68 Construction Trades
+filter.data[Occupation10 >= 62 & Occupation10 < 68,
+            Occ := "Construction"]
+## 68-70 Extraction Workers
+filter.data[Occupation10 >= 68 & Occupation10 < 70,
+            Occ := "Extraction"]
+## 70-77 Installation, Maintenance and Repair Workers
+filter.data[Occupation10 >= 70 & Occupation10 < 77,
+            Occ := "Repair"]
+## 77-90 Production Occupations
+filter.data[Occupation10 >= 77 & Occupation10 < 90,
+            Occ := "Production"]
+## 90-98 Transportation and Material Moving Occupations
+filter.data[Occupation10 >= 90 & Occupation10 < 98,
+            Occ := "Transportation"]
+## 98-99 Military Specific
+filter.data[Occupation10 >= 98 & Occupation10 < 99,
+            Occ := "Military"]
+## 99 Unemployed
+filter.data[Occupation10 >= 99, 
+            Occ := "Unemployed"]
+## drop Occupation10 column
+filter.data[,Occupation10 := NULL]
+
+## Repeat above process for OCCP12
+filter.data[!is.na(OCCP12), 
+            Occupation12 := as.numeric(substr(OCCP12, 1, 2))]
+
+## 0-5 are managers
+filter.data[Occupation12 >= 0 & Occupation12 < 5,
+            occ := "Manager"]
+## 5-8 are business operations
+filter.data[Occupation12 >= 5 & Occupation12 < 8,
+            Occ := "Business Operations"]
+## 8-10 Financial Specialists
+filter.data[Occupation12 >= 8 & Occupation12 < 10,
+            Occ10 := "Financial Specialists"]
+## 10-13 Computer/Math
+filter.data[Occupation12 >= 10 & Occupation12 < 13,
+            Occ := "Computer/Math"]
+## 13-16 Architecture and Engineering
+filter.data[Occupation12 >= 13 & Occupation12 < 16,
+            Occ := "Architecture/Engineering"]
+## 16-20 Life, Physical and Social Sciences
+filter.data[Occupation12 >= 16 & Occupation12 < 20,
+            Occ := "Physical/Social Science"]
+## 20-21 Community and Social Services
+filter.data[Occupation12 >= 20 & Occupation12 < 21,
+            Occ := "Social Services"]
+## 21-22 Legal
+filter.data[Occupation12 >= 21 & Occupation12 < 22,
+            Occ := "Legal"]
+## 22-26 Education, Training, and Library Occupations
+filter.data[Occupation12 >= 22 & Occupation12 < 26,
+            Occ := "Education"]
+## 26-30 Arts, Design, Entertainment, Sports, and Media Occupations
+filter.data[Occupation12 >= 26 & Occupation12 < 30,
+            Occ := "Arts/Entertainment/Sports"]
+## 30 -36 Healthcare
+filter.data[Occupation12 >= 30 & Occupation12 < 36,
+            Occ := "Healthcare"]
+## 36-37 Healthcare Support
+filter.data[Occupation12 >= 36 & Occupation12 < 37,
+            Occ := "Heatlchare Support"]
+## 37-40 Protective Services
+filter.data[Occupation12 >= 37 & Occupation12 < 40,
+            Occ := "Protectice Services"]
+## 40-42 Food Preparation and Serving Occupations
+filter.data[Occupation12 >= 40 & Occupation12 < 42,
+            Occ := "Food Service"]
+## 42-43 Building and Grounds Cleaning and Maintenance Operations
+filter.data[Occupation12 >= 42 & Occupation12 < 43,
+            Occ := "Maintenance"]
+## 43-47 Personal Care and Service Occupations
+filter.data[Occupation12 >= 43 & Occupation12 < 47,
+            Occ := "Personal Care"]
+## 47-50 Sales Occupations
+filter.data[Occupation12 >= 47 & Occupation12 < 50,
+            Occ := "Sales"]
+## 50-60 Office and Administrative Support
+filter.data[Occupation12 >= 50 & Occupation12 < 60,
+            Occ := "Admin Support"]
+## 60-62 Farming Fishing and Forestry
+filter.data[Occupation12 >= 60 & Occupation12 < 62,
+            Occ := "Farm/Fish/Forestry"]
+## 62-68 Construction Trades
+filter.data[Occupation12 >= 62 & Occupation12 < 68,
+            Occ := "Construction"]
+## 68-70 Extraction Workers
+filter.data[Occupation12 >= 68 & Occupation12 < 70,
+            Occ := "Extraction"]
+## 70-77 Installation, Maintenance and Repair Workers
+filter.data[Occupation12 >= 70 & Occupation12 < 77,
+            Occ := "Repair"]
+## 77-90 Production Occupations
+filter.data[Occupation12 >= 77 & Occupation12 < 90,
+            Occ := "Production"]
+## 90-98 Transportation and Material Moving Occupations
+filter.data[Occupation12 >= 90 & Occupation12 < 98,
+            Occ := "Transportation"]
+## 98-99 Military Specific
+filter.data[Occupation12 >= 98 & Occupation12 < 99,
+            Occ := "Military"]
+## 99 Unemployed
+filter.data[Occupation12 >= 99, 
+            Occ := "Unemployed"]
+## drop Occupation12 column
+filter.data[,Occupation12 := NULL]
+
+## We will not play around with the SOC codes as
+## those are almost identical to the OCC codes
