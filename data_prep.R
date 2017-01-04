@@ -395,3 +395,5 @@ filter.data[,Occupation12 := NULL]
 
 ## We will not play around with the SOC codes as
 ## those are almost identical to the OCC codes
+
+write.csv(filter.data,"C:/Users/Owner/Documents/R/PUMS/filterData.csv")

@@ -1,0 +1,129 @@
+---
+title: "California Overview"
+author: "Simeon Markind"
+date: '`r format(Sys.time(), "%b %d, %Y")`'
+output: html_document
+---
+Documentation can be found at [here]("http://www2.census.gov/programs-surveys/acs/tech_docs/pums/ACS2010_2014_PUMS_README.pdf") as well as [here]("http://www2.census.gov/programs-surveys/acs/tech_docs/pums/data_dict/PUMS_Data_Dictionary_2010-2014.pdf"). 
+
+Information on the accuracy of the data can be found [here]("http://www2.census.gov/programs-surveys/acs/tech_docs/pums/accuracy/2010_2014AccuracyPUMS.pdf")
+
+Data downloaded from: [ACS PUMS page]("https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_pums_csv_2010_2014&prodType=document")
+
+```{r setup}
+knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE)
+library(data.table)
+library(ggplot2)
+library(knitr)
+library(scales)
+library(plotly)
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+
+```
+
+```{r theme setup}
+theme.simeon <- theme_gray() +
+    theme(axis.title = element_text(family = "serif",
+                                    size = 14,
+                                    color = "blue4"),
+          plot.background = element_rect(fill = "cornsilk",
+                                         color = "black"),
+          plot.title = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 16,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.subtitle = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.caption = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4"),
+          legend.background = element_rect(fill = "cornsilk",
+                                           color = "blue4"),
+          legend.title.align = 0.5,
+          legend.title = element_text(family = "serif",
+                                      size = 12,
+                                      color = "blue4",
+                                      face = "italic"),
+          panel.background = element_rect(fill = "grey90",
+                                          color = "blue4"))
+
+theme_set(theme.simeon)
+                                    
+```
+
+# Introduction
+
+Every year the census burea releases 5 year aggregates public use microdata series, (PUMS), of American Community Survey, (ACS), data. Using the California state level file we'll examine trends in income inequality over the five year period 2010-2014. 
+
+```{r Gender Mean data}
+## Will want to use character values to make gender more easily explicit
+filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
+
+plot.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP, 
+                                                  na.rm = T), 
+                             mWage = weighted.mean(WAGP, PWGTP,
+                                                   na.rm = T)),                 .(year, sex)]
+
+```
+
+```{r gender mean plot}
+genderMean.plot <- ggplot(plot.data, 
+                          aes(x = year,
+                              color = sex,
+                              group = sex)) +
+    geom_line(aes(y = mInc, linetype = "mInc")) +
+    geom_line(aes(y = mWage, linetype = "mWage")) +
+    scale_linetype_discrete(name = "Measure", 
+                            labels = c("Income", "Wages")) +
+    scale_color_discrete(name = "Gender") +
+    ggtitle(label = "2010-2014 Income and Wages in CA") +
+    labs(caption = "Simeon Markind") +
+    scale_y_continuous(name = "2014 USD",
+                       breaks = 
+                           pretty(c(0.9*min(plot.data[,.(mInc, mWage)]),
+                                    1.1*max(plot.data[,.(mInc, mWage)])),
+                                    5),
+                       labels = dollar) +
+    scale_x_discrete(name = "Year")
+                                    
+
+genderMean.plot
+```
+
+```{r Race Mean data}
+raceMean.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP, 
+                                                  na.rm = T), 
+                             mWage = weighted.mean(WAGP, PWGTP,
+                                                   na.rm = T)),                 .(year, race)]
+
+```
+
+```{r Race Mean plot}
+raceMean.plot <- ggplot(raceMean.data, 
+                          aes(x = year,
+                              color = race,
+                              group = race)) +
+    geom_line(aes(y = mInc, linetype = "mInc")) +
+    geom_line(aes(y = mWage, linetype = "mWage")) +
+    scale_linetype_discrete(name = "Measure", 
+                            labels = c("Income", "Wages")) +
+    scale_color_discrete(name = "Race") +
+    ggtitle(label = "2010-2014 Income and Wages in CA") +
+    labs(caption = "Simeon Markind") +
+    scale_y_continuous(name = "2014 USD",
+                       breaks = 
+                           pretty(c(0.9*min(plot.data[,.(mInc, mWage)]),
+                                    1.1*max(plot.data[,.(mInc, mWage)])),
+                                    5),
+                       labels = dollar) +
+    scale_x_discrete(name = "Year")
+                                    
+
+raceMean.plot
+```
+
