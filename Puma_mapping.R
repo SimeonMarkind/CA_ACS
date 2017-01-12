@@ -34,6 +34,10 @@ LAPumas <- ggplot(pumas.points,
 
 LAPumas
 
+us.cities <- data.table(us.cities)
+ca.cities <- us.cities[country.etc == "CA",][pop >= 100000]
+
+
 # pumas.points[, num := ifelse(id == "27", "zero", "no")]
 # 
 # groupPumas <- ggplot(pumas.points,
