@@ -1,2 +1,4 @@
 # CA_ACS
 Analysis of America Community Survey Data 2010-2014 for the state of California.
+
+I use raw ACS data from the Census to look at the income gap in California and analyze how it is impacted by factors such as gender, race, and education status.
