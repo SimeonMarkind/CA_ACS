@@ -1,0 +1,521 @@
+---
+title: "ca_gender"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
+                      fig.align = "center", message = FALSE)
+
+SF.xlim <- c(-123.1, -121.5)
+SF.ylim <- c(37, 38.2)
+LA.xlim <- c(-119, -116.7)
+LA.ylim <- c(33, 34.5)
+
+library(tidyverse)
+library(plyr)
+library(data.table)
+library(knitr)
+library(bit64)
+library(scales)
+library(maptools)
+library(mapproj)
+library(stringr)
+
+new_kable <- function(...){
+    kable(..., format.args = list(big.mark = ","))
+}
+```
+
+```{r theme setup}
+theme.simeon <- theme_gray() +
+    theme(axis.title = element_text(family = "serif",
+                                    size = 14,
+                                    color = "blue4"),
+          plot.background = element_rect(fill = "cornsilk",
+                                         color = "black"),
+          plot.title = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 16,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.subtitle = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.caption = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4"),
+          legend.background = element_rect(fill = "cornsilk",
+                                           color = "blue4"),
+          legend.title.align = 0.5,
+          legend.title = element_text(family = "serif",
+                                      size = 12,
+                                      color = "blue4",
+                                      face = "italic"),
+          panel.background = element_rect(fill = "grey92",
+                                          color = "blue4"))
+
+theme_set(theme.simeon)
+                                    
+```
+<!-- Do men and women lump themselves into different industries 
+start with overview looking at how men and women are sorting themselves
+across the state, first on the whole and then by age, (maybe include a map), to set the groundwork -->
+
+```{r Gender data setup, results="hide"}
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+
+#only include people with a non-zero income
+gender.data <- filter.data[PINCP > 0, .(year, PUMA10, age, citizen, PINCP, PWGTP,
+                            empStat, AGEP, ENG, eduStat, sex, Occ, Soc, WKHP)]
+
+segments <- c(0, 10, 20, 30, 40, 50, 60, 100)
+labels <- c("Under 10", "10-20", "20-30", "30-40", "40-50", "50-60", "60 +")
+
+gender.data[, hours := cut(WKHP, breaks = segments, labels = labels)]
+gender.data[, nage := round_any(AGEP, 7)]
+gender.data[, year := as.Date(year, format = "%Y-%m-%d")]
+
+
+```
+
+<!-- So for our gender sample we have 1310536 people,
+-->
+
+For our data we have a sample of `r format(nrow(gender.data), big.mark=",")` observations with roughly 130,000 raw observation for each gender for each year, (roughly 2.7 million weighted observations per gender per year). Below is a table of mean salary by gender and age.
+
+
+```{r "mean salary", fig.align="center"}
+salary.mean <- gender.data[, .(salary = weighted.mean(PINCP, PWGTP)),
+                .(sex, age)][order(age, sex)]
+
+salary.mean <- dcast(salary.mean, age ~ ..., value.var = "salary")
+
+new_kable(salary.mean, digits = 2, col.names = c("Age", "Female", "Male"), caption = "Mean Salary by Gender and Age Range")
+```
+
+So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. Let's take a look at some of these causes. First we will look at hours worked per week using the WKHP variable.
+
+Restricting our sample to those without an NA value for hours worked per week our sample decreases our sample size to `r format(nrow(gender.data[!is.na(WKHP)]), big.mark = ",")`.
+
+```{r "Hours worked per week"}
+# As women age do they work fewer hours per week than their male counterparts?
+
+hours.data <- gender.data[!is.na(WKHP), .(hours, ENG, sex, age, PINCP, PWGTP, empStat)]
+
+## First we want to know if the counts are different
+hours.bars <- ggplot(hours.data[, .(count = sum(PWGTP)/1000000), .(hours, sex)], aes(x = hours, y = count, fill = sex)) +
+    geom_bar(stat = "identity") + 
+    labs(x = "Hours worked per week",
+         y = "Count (Millions)",
+         title = "California Labor participation",
+         fill = "Gender")
+
+## To find the share of all participants within each hour segment we first find the sum of the weighted observations for each hour and gender grouping, then divide that number by the sum of weighted observations for both sexes within each hour grouping, then plot as a stacked bar chart with each bar being 100% total
+
+share.bars <- hours.data[, .(share = sum(PWGTP)), .(hours, sex)][, .(tot_share = share/sum(share), sex), .(hours)] %>% 
+    ggplot(aes(x = hours, y = tot_share, group = sex, fill = sex)) +
+    geom_bar(stat = "identity") +
+    labs(title = "Makeup of CA Labor Force",
+         x = "Hours worked Per Week",
+         y = "Share of Total",
+         fill = "Gender",
+         subtitle = "Simeon Markind")
+
+share.bars
+
+#[empStat %in% c("Employed", "Self-employed"), .(salary = #weighted.mean(PINCP, PWGTP)), by = .(hours, sex, age, empStat)]
+
+```
+
+So we now see that, yes, as the number of hours per week increases men, make up a larger percentage of the total number of employees. Below we see that as the number of hours worked per week increases the average salary also increases, so the number of hours worked per week does help to explain a bit of the gender pay gap we saw above.
+
+```{r "hours per week table"}
+new_kable(hours.data[, .(salary = weighted.mean(PINCP, PWGTP)),
+                       by = .(hours)][order(hours)], col.names = c("Hours", "Salary"))
+```
+
+Number of hours by itself will not fully explain income differentials, in addition to the number of hours worked, the field in which the person is employed will play a role in total income. One contributing factor to the income gap could be the fields in which each gender tends to work. For example, if women tend to work in lower paying industries and occupations than men, one would expect to see a gap on account of that. Let's now take a look at the fields that each gender tends to work in.
+
+```{r "Occupation Share Barchart", fig.width= 8, fig.height=5}
+
+fields.data <- gender.data[!is.na(Occ), 
+                           .(count = sum(PWGTP), 
+                             income = round(weighted.mean(PINCP, PWGTP),2)), 
+                           .(sex, Occ)][order(Occ, sex)]
+
+share.data <- fields.data[, .(Occ, share = round(count/sum(count),4)), by = .(sex)]
+
+occ.share.bars <- ggplot(share.data, aes(x = sex, y = share, fill = Occ)) +
+    geom_bar(stat = "identity", position = "stack", color = "black") + 
+    coord_flip() +
+    theme(legend.position = "bottom") +
+    labs(title = "Share of Population by Occupation Type",
+         subtitle = "California 2010-2014",
+         y = NULL,
+         x = "Gender",
+         fill = NULL) +
+    guides(fill = guide_legend(nrow = 6, reverse = T))
+
+occ.share.bars
+```
+
+```{r "Table of Income and Count", include = FALSE}
+new_kable(dcast(fields.data, Occ ~ sex, value.var = c("income", "count")))
+```
+
+
+So firstly we notice that women are underrepresented in high paying fields such has Computer/Math and architecture and make less money in fields with equal representation, such as Legal. Even in fields with greater representation, such as Healthcare where women outnumber men about 2:1, women make about 70% as much as men do on average in the field. Now this is likely due to other factors such as type of profession (nurse vs. doctor), tenure in the position, and hours worked per week, but we still see a clear distinction in terms of salary as well as the types of occupations in which women and men sort themselves.
+
+Let's limit our sample some more by looking at income within age brackets and only looking at data for people who work at least 35 hours per week, which we will consider to be full time.
+
+```{r "Gap with more controls"}
+control.data <- gender.data[!is.na(Occ) &!is.na(nage) & WKHP > 35 & nage <= 65,
+                            .(count = sum(PWGTP), 
+                              income = round(weighted.mean(PINCP,
+                                                            PWGTP, 
+                                                           na.rm = T),
+                                             2)/1000),
+                            .(sex, Occ, nage)][order(Occ)] %>% drop_na()
+
+## Now let's make some plots of the data for select Occ types
+casted.data <- dcast(control.data, Occ + nage ~ sex, 
+                     value.var = "income")
+invisible(casted.data[, gap := Male - Female]) #don't display in KNITR
+
+casted.data[Occ %in% c("Admin Support", "Legal", "Education", 
+                        "Sales", "Healthcare", "Production"),] %>% 
+    ggplot(aes(x = nage, y = gap, color = Occ)) +
+    geom_line(size = 1) +
+    scale_y_continuous("USD Thousands", labels = dollar) +
+    scale_x_continuous("Age", breaks = seq(20, 80, 10)) +
+    ggtitle(label = "Income Gap for Selected Occupation types",
+            subtitle = "California 2010-2014 average; Male minus Female") +
+    labs(caption = "Simeon Markind")
+            
+
+```
+
+Note that while we do see the largest income gaps in the legal and healthcare fields, these are also the fields with the highest incomes. A graph of the percentage difference in pay would not show as large a gap of those two occupations vs. the other four. So we see here a clear trend of pay gaps being quite small at younger ages and then moderately increasing, (for Admin, Education, Production, and Sales), and sharply increasing for Healthcare and Legal. 
+
+It is less surprising that people now in their 50s see a large pay gap, (income differentials of 30 years ago have been compounded over the length of one's entire career), but is the groudwork for that trend still in place? One way to look at this is to examine the rate of growth in incomes. If the growth rate of Female income is higher than that of males, over time the income gap would vanish. If the growth rates are equal at young ages, then a continuation of that trend would result in essentially no income gap. Unfortunately we only have 5 years of data so any trend cannot be assumed to hold over any long term.
+
+```{r "Growth Rates of Incomes"}
+## Limit this to full time
+growth.data <- gender.data[!is.na(Occ) & WKHP >= 35 & nage <= 65,
+                           .(income = round(weighted.mean(PINCP, PWGTP),2)/1000,
+                             count = sum(PWGTP)),
+                           .(year, nage, Occ, sex)][order(year)]
+
+growth.plot <- ggplot(growth.data[,
+                .(change = ((income/lag(income))-1)*100,
+                  year),
+                by = .(nage, Occ, sex)][Occ %in% c("Admin Support", "Legal", "Education", "Sales", "Healthcare", "Production") & year != as.Date("2010-01-01"),], aes(x = nage, y = change,
+                                       color = Occ)) +
+                          geom_line(aes(linetype = sex)) +
+                          facet_wrap(~ year, nrow = 2) +
+    labs(title = "No strong pattern of inequality in income growth rates is apparent",
+         subtitle = "California 2010-2014",
+         caption = "Simeon Markind",
+         y = "Percent Change",
+         x = "Age",
+         color = "Occupation",
+         linetype = "Gender")
+
+#growth.plot
+
+## Let's just look at the changes from 2010 to 2014 by age for the 
+## selected industry types
+
+growth.data[year %in% c(as.Date("2010-01-01"),
+                        as.Date("2014-01-01")),][order(year)][,
+            .(change = ((income/lag(income))-1)*100, year),
+            by = .(nage, Occ, sex)][year == as.Date("2014-01-01") & 
+            Occ %in% c("Admin Support", "Legal", "Education", "Sales",
+                       "Healthcare", "Production")] %>% 
+    ggplot(aes(x = nage, y = change, color = Occ)) +
+    geom_line(aes(linetype = sex), size = 1) +
+    labs(title = "Changes in California Mean Income, 2010 - 2014",
+         y = "Income Growth (%)",
+         x = "Age",
+         linetype = "Gender",
+         color = "Occupation",
+         caption = "Simeon Markind")
+```
+
+When we look at disparities in income gains over the period we do not see a clear pattern of gender differentiation for the six industries displayed. 
+
+Below is a table showing the change in incomes for all industries looking at the 2014 average vs. the 2010 average.
+
+```{r "Pay Increase 2010-2014 all Industries"}
+increase.data <- gender.data[WKHP >= 35 & nage <= 65,
+                           .(count = sum(PWGTP),
+                             income = round(weighted.mean(PINCP,
+                                                        PWGTP),2)/1000),
+                           .(year, Occ, sex)][order(year)][year %in% c(as.Date("2010-01-01"), as.Date("2014-01-01")), .(pchange = ((income/lag(income))-1)*100, dchange = income - lag(income), year, count), .(Occ, sex)][year == as.Date("2014-01-01")][, dcast(.SD, Occ ~ sex, value.var = c("pchange", "dchange", "count"))][order(-pchange_Female)]
+
+new_kable(increase.data, digits = 2, col.names = c("Occupation", "Growth % (F)",
+                                      "Growth % (M)", "Growth $k (F)", "Growth $k (M)", "2014 Count (F)", "2014 Count (M)"), caption = "Income Growth Comparison")
+
+```
+
+When looking at average income gains by occupation type and gender over the period, the top five income gains, (in terms of greatest percentage growth), were all seen by women. As we saw before, women tend to earn less than men even in the same occupation type, so a larger percentage growth in income does not necessarily mean a larger growth in income in terms of raw dollars. In fact, we see that in both Farm/Fish/Forestry and Computer/Math women actually earned larger percentage income increases than men over the period but saw smaller increases in terms of raw dollars. However, if this trend continues, in the long term income will equilibrate. 
+
+Of note is the fact that no industry saw declining income for both women and men, all industries with negative growth for women saw positive  growth for men, and vice versa. 
+
+```{r "Gender Disparities in migration", results="hide"}
+## Start by seeing who is actually moving in/around the state
+mobility.data <- filter.data[PINCP > 0, .(county, MIGSP05, MIGSP12, Occ, PUMA00, PUMA10,
+                                 age, sex, year, PINCP, PWGTP)]
+# for MIGS, NA means didn't move, 6 means moved within CA, -9 is NA
+# a number greater than 6 is outside of CA. 
+# a three digit number is outside of the USA
+
+mobility.data[year <= as.Date("2011-01-01"),
+              mobility := ifelse(is.na(MIGSP05) | MIGSP05 == -9, "Non-movers",
+                                 ifelse(MIGSP05 == 6, "In State",
+                                        ifelse(MIGSP05 >= 100, "Foreign", "In US")))]
+
+mobility.data[year > as.Date("2011-01-01"),
+              mobility := ifelse(is.na(MIGSP12) | MIGSP12 == -9, "Non-movers",
+                                 ifelse(MIGSP12 == 6, "In State",
+                                        ifelse(MIGSP12 >= 100, "Foreign", "In US")))]
+
+mobility.data[, c("MIGSP05", "MIGSP12") := NULL]
+```
+
+Turning from looking at industry differentiation for income, let's now look at mobility status and the demographic makeup of the state. Improved economic opportunities are one of the largest drivers for migration, so using the data we can look at what types of industries and incomes people who recently moved, (within the last year), have compared with people who did not move. 
+
+``` {r "CA Mobility Status By Gender"}
+mobility.data[, .(count = sum(PWGTP)), .(year, sex, mobility)][, .(mobility, count, percent = round((count/sum(count))*100,2)), .(year, sex)][order(year, mobility, sex)][year == as.Date("2014-01-01"),
+        .(sex, mobility, count, percent)] %>% 
+    new_kable(caption = "California Mobility Status 2014 by Gender",
+          col.names = c("Gender", "Status vs. One Year Prior", "Count", "Percent"))
+
+```
+
+In terms of total migration within California, roughly 84% of people surveyed remained in the same house they lived in during the previous year, 15% lived somewhere else within California, 1.5% lived somewhere else within the United States, and <1% lived in a foreign country. The percentages are consistent across all 5 years and are roughly equal for both genders although men tend to be slightly more mobile, with the percentage of non-movers about 1% lower for men and the other categories higher to make up for that difference. 
+
+<!-- Did women/men who moved have higher incomes than average? What occupation types dominated the movers, if any? -->
+Let's now take a look at movers vs. non-movers. We'll define a mover as anyone who is not in the same residence as they were one year ago.
+
+```{r "Movers vs non-movers"}
+base::invisible(mobility.data[,mover := ifelse(mobility == "Non-movers", 
+                              "Non-mover", "mover")])
+
+mover.data <- mobility.data[age != "18-20", 
+                    .(Income = round(weighted.mean(PINCP, PWGTP, 
+                                                   na.rm = T)/1000,2)),
+                .(sex, mover)][order(sex, mover)]
+
+new_kable(mover.data, col.names = c("Gender", "Status", "Income $K"),
+      caption = "Non-Movers tend to earn more than movers")
+```
+
+So in fact what we see if the opposite, in general non-movers tend to make more than movers, likely because people are more mobile earlier in their careers and less later on, when they are likely to have higher incomes than their younger colleagues. Let's take a look at the same table but this time restrict the sample to only those between the ages of 20 and 35.
+
+```{r "Young movers vs. non-movers"}
+mobility.data[age %in% c("21-25", "26-30", "31-35"),
+              .(mean_inc = round(weighted.mean(PINCP, PWGTP,
+                                         na.rm = T)/1000,2),
+                count = sum(PWGTP)),
+              .(sex, mover)][order(sex, mover)] %>% 
+    new_kable(col.names = c("Gender", "Status", "Mean Income ($K)", "Count"), caption = "Age Restricted to 20-35")
+              
+```
+
+When we restrict our sample to just youner people, the gap disappers, we now see a slightly higher income for movers, especially for men. Younger women see almost no income differentiation based on mobility status.
+
+Part of one's mobility status can be tied to employment, for example someone who works in a large company could move offices or someone who works in a highly volatile industry, such as natural resource extraction, may have to move frequently to where the resources are located. Below we show the top six industries in terms of female mobility - the six industries with the largest percentage of women indicating they no longer live in the same location as one year prior.
+
+```{r "Most popular Industries for moving"}
+test <- mobility.data[!is.na(Occ), .(count = sum(PWGTP),
+                income = round(weighted.mean(PINCP, PWGTP),2)/1000),
+                .(Occ, sex, mover)][, .(mover,
+                percent = round(count/sum(count)*100,2)), .(Occ, sex)][order(sex, -percent)][mover == "mover"]
+
+dcast(test, Occ ~ sex) %>% 
+    dplyr::arrange(-Female) %>% 
+    head() %>% 
+    new_kable(col.names = c("Occupation", "Female", "Male"),
+          caption = "Yearly Average Percentage of Movers")
+```
+
+(Don't really think this table adds anything to be honest)
+
+<!-- Analysis of SF and LA areas in particular -->
+
+While previously we looked at California on the whole, we can also look at income differentiation at a geographic level. For now we will look at county level differentiation in order to maintain a larger sample size. Luckily, California's economy is highly diverse geographically with counties in the bay area focused on technology, those inland focused on agriculture, those in the Los Angeles area focused in media and entertainment sector, etc. When looking at a county level disambiguation of income we can also see if the income gap is more or less pronounced in areas where overall income is higher or lower. Perhaps wealthy areas do not see the same disparities as poorer counties.  
+
+```{r "County Level Income"}
+
+# Now we have county level data, let's generate some statistics
+# and make some maps
+
+# County level income breakdown
+county_income <- mobility.data[, .(income = weighted.mean(PINCP, PWGTP)), .(sex, county)] %>% 
+    dcast(county ~ sex) %>% 
+    dplyr::mutate(ratio = round(Male/Female, 2)) %>% 
+    arrange(-Female) 
+
+county_income %>% head(5, addrownums = F) %>% 
+    new_kable(caption = "Top 5 Counties by Female Mean Income",
+          col.names = c("County", "Female", "Male", "Income Ratio M/F"))
+
+county_income %>% tail(5, addrownums = F) %>% 
+    new_kable(caption = "Bottom 5 Counties by Female Mean Income",
+          col.names = c("County", "Female", "Male", "Income Ratio M/F"))
+
+```
+
+Unsurprisingly we see that the counties in which women make the most money are also the ones where men make the most money. The ratio of the average male income to female income is slightly higher in the five counties where women have the highest average incomes meaning that the relative income gap is more pronounced in the wealthiest counties than in poorest ones.
+
+Moving beyond geography, perhaps market concentration plays a factor in income inequality, perhaps areas where a higher concentration of the workforce is women have more women in management and decision making position with regards to salary. These could then be more likely to see a more equitable income ratio than those that are more male dominated. Below we see that this does not appear to be the case.
+
+```{r "Relative Population share"}
+# Do women make more money in counties where they are 
+# a higher share of the population?
+
+county_shares <- mobility.data[, .(count = sum(PWGTP),
+                  income = round(weighted.mean(PINCP, PWGTP)/1000,2)),
+              by = .(sex, county)][, .(share = round(count/sum(count)*100,2), sex, income), .(county)] %>% 
+    dcast(county ~ sex, value.var = c("income", "share")) %>% 
+    arrange(-share_Female) %>% 
+    mutate(ratio = round(income_Male/income_Female,2))
+
+county_shares %>% head() %>% select(-share_Male) %>% 
+    new_kable(caption = "Counties with highest Female share of population",
+          col.names = c("County", "Female Income", "Male Income", "Female Share", "Income Ratio: M/F"))
+                            
+county_shares %>% tail() %>% select(-share_Male) %>% 
+    new_kable(caption = "Counties with lowest Female share of population",
+          col.names = c("County", "Female Income", "Male Income", "Female Share", "Income Ratio: M/F"))
+
+```
+
+Ratio of Male to Female income earners does not seem to be particularly correlated with the ratio of income. Sacramento county, where women make up over 50% of income earners has an income only slightly lower than Kings county, where women make up only 43% of income earners.
+
+<!-- Start by taking a look at the ratio of men to women in general
+(not controlling for income > 0) -->
+
+```{r "Map Data Prep"}
+path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
+
+pumas <- readShapePoly(paste0(path,"cb_2015_06_puma10_500k.shp"), 
+                       IDvar = "PUMACE10")
+
+pumas.points <- data.table(fortify(pumas))
+```
+
+
+```{r "CA Gender Map"}
+map_data <- gender.data[year == as.Date("2014-01-01"),
+                        .(PUMA10, sex, PWGTP)][, .(count = sum(PWGTP)),
+                                               .(sex, PUMA10)][,
+            .(sex, percent = round((count/sum(count))*100,0)), .(PUMA10)][sex == "Male"][pumas.points, on = c("PUMA10" = "id")]
+
+map_data %>% 
+    ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map() +
+    ggtitle("Men as Percent of Population over 18",
+            subtitle = "2014 PUMAS") +
+    scale_fill_gradient(NULL, low = "Green", high = "Red") + 
+    labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
+```
+
+```{r "Bay Area Percentage Male"}
+
+map_data %>% 
+ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    ggtitle("Men as Percent of Population Above Age 18",
+            subtitle = "2014 PUMAS") +
+    scale_fill_gradient(NULL, low = "Green", high = "Red") + 
+    labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
+```
+
+```{r "Men age 18-35 as Percentage Population"}
+bachelor_data <- gender.data[nage %in% c(18:35) &
+                                 year == as.Date("2014-01-01"),
+                        .(PUMA10, sex, PWGTP)][, .(count = sum(PWGTP)),
+                                               .(sex, PUMA10)][,
+            .(sex, percent = round((count/sum(count))*100,0)), .(PUMA10)][sex == "Male"][pumas.points, on = c("PUMA10" = "id")]
+
+bachelor_data %>% 
+ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    ggtitle("Men as Percent of Population Ages 18-35",
+            subtitle = "2014 PUMAS") +
+    scale_fill_gradient(NULL, low = "Purple", high = "Yellow") + 
+    labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
+```
+
+
+```{r "LA Percentage Male over 18"}
+map_data %>% 
+ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    ggtitle("Men as Percent of Population over 18",
+            subtitle = "2014 PUMAS") +
+    scale_fill_gradient(NULL, low = "Green", high = "Red") + 
+    labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
+```
+
+<!-- Maps: Heat map of male to female income ratio for all of CA,
+then analysis of SF and LA areas -->
+
+```{r "CA Map of Income Ratio"}
+# Map files are for 2010 PUMAS, so only use data with PUMA10
+ca.ratio <- mobility.data[!is.na(PUMA10),
+                          .(income = weighted.mean(PINCP, PWGTP)),
+                          .(sex, PUMA10)][, .(sex,
+            ratio = round(income/(sum(income)-income),2)),
+            .(PUMA10)][sex == "Male", .(PUMA10, ratio)]
+
+CA_income_ratio_gender_map <- pumas.points %>% 
+    left_join(ca.ratio, by = c("id" = "PUMA10")) %>% 
+    ggplot(aes(x = long, y = lat, group = group, fill = ratio)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map() +
+    ggtitle("Ratio of Male Income \nto Female Income 2012-2014") +
+    scale_fill_gradient("", low = "Green", high = "Red") + 
+    labs(x = NULL, y = NULL, caption = "Simeon Markind: Regions refer to California PUMAS")
+
+CA_income_ratio_gender_map
+```
+
+```{r "Bay Area Income Ratio Map"}
+Bay_income_ratio_gender_map <- pumas.points %>% 
+    left_join(ca.ratio, by = c("id" = "PUMA10")) %>% 
+    ggplot(aes(x = long, y = lat, group = group, fill = ratio)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    scale_fill_gradient(name = NULL, low = "Green", high = "Red") +
+    labs(x = NULL, y = NULL, title = "Bay Area Income Ratio",
+         subtitle = "Male / Female 2012-2014 Average",
+         caption = "Simeon Markind: Regions refer to California PUMAS")
+
+Bay_income_ratio_gender_map
+```
+
+```{r "LA Area Income Ratio Map"}
+LA_income_ratio_gender_map <- pumas.points %>% 
+    left_join(ca.ratio, by = c("id" = "PUMA10")) %>% 
+    ggplot(aes(x = long, y = lat, group = group, fill = ratio)) +
+    geom_polygon(color = "black", alpha = 0.9) +
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    scale_fill_gradient(name = NULL, low = "Green", high = "Red") +
+    labs(x = NULL, y = NULL, title = "LA Area Income Ratio",
+         subtitle = "Male / Female 2012-2014 Average",
+         caption = "Simeon Markind: Regions refer to Califronia PUMAS")
+
+LA_income_ratio_gender_map
+```
+

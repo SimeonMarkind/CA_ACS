@@ -17,13 +17,15 @@ cols.to.keep <- c(
     "DPHY", #Ambulatory difficulty
     "DRATX", #veteran service connected disability
     "DREM", #cognitive difficulty
-    "ENG", #Ability to speak english
+    "ENG", #Ability to speak english (1 = well, 4 = not able)
     "FER", #Gave birth to child in the last 12 months
     "INTP", #interest devidends and net rental income past 12 months
     "JWMNP", #travel time to work
     "LANX", #language other than English spoken at home
     "MAR", #Marital Status
     "MIG", #Mobility status
+    "MIGSP05", #Migration recode for data prior to 2012
+    "MIGSP12", #Migration recode for data after 2012
     "MIL", #military service
     "NWAB", #temporary absence from work
     "NWAV", #available or work
@@ -73,7 +75,10 @@ cols.to.keep <- c(
 
 filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/ss14pca.csv", 
                   verbose = F, select = cols.to.keep,
-                  na.strings = c("NA", "", "N.A.", NA))
+                  na.strings = c("NA", "", "N.A.", "N.A.//", 
+                                 "-0009", NA),
+                  colClasses = c("PUMA00" = "character",
+                                 "PUMA10" = "character"))
 
 filter.data[, year := substr(SERIALNO, 1,4)] #inserting a character vector
 # corresponding to the year of the observation
@@ -120,6 +125,7 @@ ageBreaks <- c(18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75)
 filter.data[, age := cut(AGEP, breaks = ageBreaks, 
                          labels = ageLabels,
                          include.lowest = TRUE)]
+
 
 ## Filter down citizenship categories
 ## values of 1,2,3 = born a US citizen
@@ -229,13 +235,13 @@ filter.data[!is.na(OCCP10),
 
 ## 0-5 are managers
 filter.data[Occupation10 >= 0 & Occupation10 < 5,
-            occ := "Manager"]
+            Occ := "Manager"]
 ## 5-8 are business operations
 filter.data[Occupation10 >= 5 & Occupation10 < 8,
             Occ := "Business Operations"]
 ## 8-10 Financial Specialists
 filter.data[Occupation10 >= 8 & Occupation10 < 10,
-            Occ10 := "Financial Specialists"]
+            Occ := "Financial Specialists"]
 ## 10-13 Computer/Math
 filter.data[Occupation10 >= 10 & Occupation10 < 13,
             Occ := "Computer/Math"]
@@ -262,7 +268,7 @@ filter.data[Occupation10 >= 30 & Occupation10 < 36,
             Occ := "Healthcare"]
 ## 36-37 Healthcare Support
 filter.data[Occupation10 >= 36 & Occupation10 < 37,
-            Occ := "Heatlchare Support"]
+            Occ := "Healthcare Support"]
 ## 37-40 Protective Services
 filter.data[Occupation10 >= 37 & Occupation10 < 40,
             Occ := "Protectice Services"]
@@ -320,7 +326,7 @@ filter.data[Occupation12 >= 5 & Occupation12 < 8,
             Occ := "Business Operations"]
 ## 8-10 Financial Specialists
 filter.data[Occupation12 >= 8 & Occupation12 < 10,
-            Occ10 := "Financial Specialists"]
+            Occ := "Financial Specialists"]
 ## 10-13 Computer/Math
 filter.data[Occupation12 >= 10 & Occupation12 < 13,
             Occ := "Computer/Math"]
@@ -347,7 +353,7 @@ filter.data[Occupation12 >= 30 & Occupation12 < 36,
             Occ := "Healthcare"]
 ## 36-37 Healthcare Support
 filter.data[Occupation12 >= 36 & Occupation12 < 37,
-            Occ := "Heatlchare Support"]
+            Occ := "Healthcare Support"]
 ## 37-40 Protective Services
 filter.data[Occupation12 >= 37 & Occupation12 < 40,
             Occ := "Protectice Services"]
@@ -395,5 +401,20 @@ filter.data[,Occupation12 := NULL]
 
 ## We will not play around with the SOC codes as
 ## those are almost identical to the OCC codes
+filter.data[, Soc := ifelse(!is.na(SOCP10), SOCP10, SOCP12)]
+
+filter.data[, year := as.Date(paste0(year, "-01-01"), 
+                              format = "%Y-%m-%d")]
+
+filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
+
+## Use the mapping created in puma_mapping.R
+filter.data[!is.na(PUMA00), county := MCDC00[match(PUMA00, 
+                                                   MCDC00$puma2k), 
+                                             county_name]]
+
+filter.data[!is.na(PUMA10), county := MCDC10[match(PUMA10,
+                                                   MCDC10$puma12),
+                                               county_name]]
 
 write.csv(filter.data,"C:/Users/Owner/Documents/R/PUMS/filterData.csv")
