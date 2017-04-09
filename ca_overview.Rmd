@@ -11,13 +11,14 @@ Information on the accuracy of the data can be found [here]("http://www2.census.
 Data downloaded from: [ACS PUMS page]("https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_pums_csv_2010_2014&prodType=document")
 
 ```{r setup}
-knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE)
+knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
+                      fig.align = "center")
 library(data.table)
 library(ggplot2)
 library(knitr)
 library(scales)
 library(plotly)
-filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+#filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
 
 ```
 
@@ -72,22 +73,21 @@ plot.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP,
 ```
 
 ```{r gender mean plot}
+ymax <- max(plot.data[,.(mInc, mWage)])
+
 genderMean.plot <- ggplot(plot.data, 
                           aes(x = year,
                               color = sex,
                               group = sex)) +
-    geom_line(aes(y = mInc, linetype = "mInc")) +
-    geom_line(aes(y = mWage, linetype = "mWage")) +
+    geom_line(aes(y = mInc, linetype = "mInc"), size = 1.3) +
+    geom_line(aes(y = mWage, linetype = "mWage"), size = 1.3) +
     scale_linetype_discrete(name = "Measure", 
                             labels = c("Income", "Wages")) +
     scale_color_discrete(name = "Gender") +
     ggtitle(label = "2010-2014 Income and Wages in CA") +
     labs(caption = "Simeon Markind") +
-    scale_y_continuous(name = "2014 USD",
-                       breaks = 
-                           pretty(c(0.9*min(plot.data[,.(mInc, mWage)]),
-                                    1.1*max(plot.data[,.(mInc, mWage)])),
-                                    5),
+    scale_y_continuous(name = "2014 USD", limits = c(0, 1.1*ymax),
+                       breaks = pretty(c(0,1.1*ymax),5),
                        labels = dollar) +
     scale_x_discrete(name = "Year")
                                     
@@ -104,26 +104,81 @@ raceMean.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP,
 ```
 
 ```{r Race Mean plot}
+ymax <- max(raceMean.data[, .(mInc, mWage)])
+
 raceMean.plot <- ggplot(raceMean.data, 
                           aes(x = year,
                               color = race,
                               group = race)) +
-    geom_line(aes(y = mInc, linetype = "mInc")) +
-    geom_line(aes(y = mWage, linetype = "mWage")) +
+    geom_line(aes(y = mInc, linetype = "mInc"), size = 1.3) +
+    geom_line(aes(y = mWage, linetype = "mWage"), size = 1.3) +
     scale_linetype_discrete(name = "Measure", 
                             labels = c("Income", "Wages")) +
     scale_color_discrete(name = "Race") +
     ggtitle(label = "2010-2014 Income and Wages in CA") +
     labs(caption = "Simeon Markind") +
     scale_y_continuous(name = "2014 USD",
-                       breaks = 
-                           pretty(c(0.9*min(plot.data[,.(mInc, mWage)]),
-                                    1.1*max(plot.data[,.(mInc, mWage)])),
-                                    5),
+                       breaks = pretty(c(0, 1.1*ymax), 5),
+                       limits = c(0, 1.1*ymax),
                        labels = dollar) +
     scale_x_discrete(name = "Year")
                                     
 
 raceMean.plot
+```
+
+```{r Educ Mean Data}
+educMean.data <- filter.data[!is.na(eduStat), 
+                             .(mInc = weighted.mean(PINCP, PWGTP, 
+                                                  na.rm = T), 
+                             mWage = weighted.mean(WAGP, PWGTP,
+                                                   na.rm = T)),                 .(year, eduStat)]
+
+educMean.data <- melt(educMean.data, id.vars = c("year", "eduStat"))
+
+educMean.data[, year := as.Date(paste0(year,"-01-01"), 
+                                format = "%Y-%m-%d")]
+```
+
+```{r Educ Mean Plot}
+
+ymax <- max(educMean.data$value)
+
+educMean.plot <- ggplot(data = educMean.data, 
+                        aes(x = year, y = value, color = eduStat,
+                            linetype = variable)) +
+    geom_line(size = 1.3) +
+    ggtitle(label = "2010-2014 Income and Wages in California",
+            subtitle = "Education Average") +
+    scale_y_continuous(name = "2014 USD", limits = c(0, 1.1*ymax),
+                       labels = dollar) +
+    scale_x_date(name = "Year") +
+    labs(caption = "Simeon Markind") +
+    scale_linetype_discrete(name = "Measure",
+                            labels = c("Income", "Wages")) +
+    scale_color_discrete(name = "Education\n Attainment")
+
+educMean.plot
+```
+
+```{r Count for each Occ bin}
+## See which are the most popular job fields by the recoded Occ bins
+OccBin.data <- filter.data[empStat != "Unemployed",
+                           .(Occ, year, PWGTP)]
+
+OccBin.data <- OccBin.data[, .(count = sum(PWGTP)),
+                           by = .(Occ, year)][order(year, -count)]
+
+## top six jobs per year
+top6 <- dcast(OccBin.data[, head(.SD, 6), by = .(year)],
+              year ~ ..., value.var = "count")
+
+bottom6 <- dcast(OccBin.data[, tail(.SD, 6), by = .(year)],
+                 year ~ Occ, value.var = "count")
+
+top6
+bottom6
+
+
 ```
 

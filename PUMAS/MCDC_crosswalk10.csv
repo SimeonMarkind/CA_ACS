@@ -1,0 +1,2964 @@
+puma12,county,county_name,County_Subdivision_Name,Place_Name,Total_pop_2010_census
+101,6001,Alameda CA,Berkeley CCD,"Albany city, CA",18539
+101,6001,Alameda CA,Berkeley CCD,"Berkeley city, CA",112580
+102,6001,Alameda CA,Oakland CCD,"Emeryville city, CA",10080
+102,6001,Alameda CA,Oakland CCD,"Oakland city, CA",148011
+103,6001,Alameda CA,Oakland CCD,"Oakland city, CA",114562
+103,6001,Alameda CA,Oakland CCD,"Piedmont city, CA",10667
+103,6001,Alameda CA,Oakland CCD, ,0
+104,6001,Alameda CA,Oakland CCD,"Oakland city, CA",124599
+104,6001,Alameda CA,Oakland CCD,"San Leandro city, CA",9
+105,6001,Alameda CA,Alameda CCD,"Alameda city, CA",73812
+105,6001,Alameda CA,Berkeley CCD,"Albany city, CA",0
+105,6001,Alameda CA,Berkeley CCD,"Berkeley city, CA",0
+105,6001,Alameda CA,Fremont CCD,"Fremont city, CA",0
+105,6001,Alameda CA,Hayward CCD,"Castro Valley CDP, CA",1338
+105,6001,Alameda CA,Hayward CCD,"Hayward city, CA",0
+105,6001,Alameda CA,Hayward CCD,"San Leandro city, CA",84832
+105,6001,Alameda CA,Oakland CCD,"Emeryville city, CA",0
+105,6001,Alameda CA,Oakland CCD,"Oakland city, CA",3552
+106,6001,Alameda CA,Hayward CCD,"Ashland CDP, CA",21925
+106,6001,Alameda CA,Hayward CCD,"Castro Valley CDP, CA",56565
+106,6001,Alameda CA,Hayward CCD,"Cherryland CDP, CA",13354
+106,6001,Alameda CA,Hayward CCD,"Fairview CDP, CA",6616
+106,6001,Alameda CA,Hayward CCD,"Hayward city, CA",8526
+106,6001,Alameda CA,Hayward CCD,"San Leandro city, CA",109
+106,6001,Alameda CA,Hayward CCD,"San Lorenzo CDP, CA",23452
+106,6001,Alameda CA,Hayward CCD, ,4205
+107,6001,Alameda CA,Hayward CCD,"Castro Valley CDP, CA",3485
+107,6001,Alameda CA,Hayward CCD,"Cherryland CDP, CA",1374
+107,6001,Alameda CA,Hayward CCD,"Fairview CDP, CA",3387
+107,6001,Alameda CA,Hayward CCD,"Hayward city, CA",135656
+107,6001,Alameda CA,Hayward CCD,"Sunol CDP, CA",10
+107,6001,Alameda CA,Hayward CCD,"Union City city, CA",1061
+107,6001,Alameda CA,Hayward CCD, ,682
+108,6001,Alameda CA,Fremont CCD,"Fremont city, CA",24325
+108,6001,Alameda CA,Fremont CCD,"Hayward city, CA",0
+108,6001,Alameda CA,Fremont CCD,"Newark city, CA",42573
+108,6001,Alameda CA,Fremont CCD,"Union City city, CA",68455
+108,6001,Alameda CA,Fremont CCD, ,49
+109,6001,Alameda CA,Fremont CCD,"Fremont city, CA",189764
+110,6001,Alameda CA,Livermore-Pleasanton CCD,"Dublin city, CA",46036
+110,6001,Alameda CA,Livermore-Pleasanton CCD,"Hayward city, CA",4
+110,6001,Alameda CA,Livermore-Pleasanton CCD,"Livermore city, CA",80968
+110,6001,Alameda CA,Livermore-Pleasanton CCD,"Pleasanton city, CA",70285
+110,6001,Alameda CA,Livermore-Pleasanton CCD,"Sunol CDP, CA",903
+110,6001,Alameda CA,Livermore-Pleasanton CCD, ,3921
+300,6003,Alpine CA,Markleeville CCD,"Alpine Village CDP, CA",114
+300,6003,Alpine CA,Markleeville CCD,"Bear Valley CDP, CA",121
+300,6003,Alpine CA,Markleeville CCD,"Kirkwood CDP, CA",97
+300,6003,Alpine CA,Markleeville CCD,"Markleeville CDP, CA",210
+300,6003,Alpine CA,Markleeville CCD,"Mesa Vista CDP, CA",200
+300,6003,Alpine CA,Markleeville CCD, ,433
+300,6005,Amador CA,Ione CCD,"Camanche North Shore CDP, CA",979
+300,6005,Amador CA,Ione CCD,"Camanche Village CDP, CA",847
+300,6005,Amador CA,Ione CCD,"Ione city, CA",7918
+300,6005,Amador CA,Ione CCD,"Martell CDP, CA",53
+300,6005,Amador CA,Ione CCD,"Sutter Creek city, CA",974
+300,6005,Amador CA,Ione CCD, ,1609
+300,6005,Amador CA,Jackson CCD,"Buena Vista CDP, CA",429
+300,6005,Amador CA,Jackson CCD,"Jackson city, CA",4651
+300,6005,Amador CA,Jackson CCD,"Martell CDP, CA",229
+300,6005,Amador CA,Jackson CCD,"Pine Grove CDP, CA",47
+300,6005,Amador CA,Jackson CCD,"Sutter Creek city, CA",0
+300,6005,Amador CA,Jackson CCD, ,2369
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Buckhorn CDP, CA",2429
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Kirkwood CDP, CA",61
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Pine Grove CDP, CA",1806
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Pioneer CDP, CA",1094
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Red Corral CDP, CA",1413
+300,6005,Amador CA,Pine Grove-Silver Lake CCD,"Volcano CDP, CA",59
+300,6005,Amador CA,Pine Grove-Silver Lake CCD, ,2742
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Amador City city, CA",185
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Drytown CDP, CA",167
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Fiddletown CDP, CA",235
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Pine Grove CDP, CA",366
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Plymouth city, CA",1005
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"River Pines CDP, CA",379
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Sutter Creek city, CA",1527
+300,6005,Amador CA,Sutter Creek-Plymouth CCD,"Volcano CDP, CA",56
+300,6005,Amador CA,Sutter Creek-Plymouth CCD, ,4462
+300,6009,Calaveras CA,Angels City CCD,"Angels city, CA",3836
+300,6009,Calaveras CA,Angels City CCD,"Copperopolis CDP, CA",3671
+300,6009,Calaveras CA,Angels City CCD,"Murphys CDP, CA",2213
+300,6009,Calaveras CA,Angels City CCD,"Vallecito CDP, CA",442
+300,6009,Calaveras CA,Angels City CCD, ,2781
+300,6009,Calaveras CA,Arnold-West Point CCD,"Arnold CDP, CA",3843
+300,6009,Calaveras CA,Arnold-West Point CCD,"Avery CDP, CA",646
+300,6009,Calaveras CA,Arnold-West Point CCD,"Dorrington CDP, CA",609
+300,6009,Calaveras CA,Arnold-West Point CCD,"Forest Meadows CDP, CA",1249
+300,6009,Calaveras CA,Arnold-West Point CCD,"Mountain Ranch CDP, CA",381
+300,6009,Calaveras CA,Arnold-West Point CCD,"Rail Road Flat CDP, CA",475
+300,6009,Calaveras CA,Arnold-West Point CCD,"West Point CDP, CA",674
+300,6009,Calaveras CA,Arnold-West Point CCD, ,2759
+300,6009,Calaveras CA,San Andreas CCD,"Mokelumne Hill CDP, CA",646
+300,6009,Calaveras CA,San Andreas CCD,"Mountain Ranch CDP, CA",1247
+300,6009,Calaveras CA,San Andreas CCD,"Rancho Calaveras CDP, CA",5325
+300,6009,Calaveras CA,San Andreas CCD,"San Andreas CDP, CA",2783
+300,6009,Calaveras CA,San Andreas CCD,"Valley Springs CDP, CA",3553
+300,6009,Calaveras CA,San Andreas CCD,"Wallace CDP, CA",403
+300,6009,Calaveras CA,San Andreas CCD, ,8042
+300,6027,Inyo CA,Bishop CCD,"Bishop city, CA",3879
+300,6027,Inyo CA,Bishop CCD,"Dixon Lane-Meadow Creek CDP, CA",2645
+300,6027,Inyo CA,Bishop CCD,"Mesa CDP, CA",251
+300,6027,Inyo CA,Bishop CCD,"Round Valley CDP, CA",435
+300,6027,Inyo CA,Bishop CCD,"West Bishop CDP, CA",2607
+300,6027,Inyo CA,Bishop CCD,"Wilkerson CDP, CA",563
+300,6027,Inyo CA,Bishop CCD, ,2220
+300,6027,Inyo CA,Death Valley CCD,"Furnace Creek CDP, CA",24
+300,6027,Inyo CA,Death Valley CCD,"Shoshone CDP, CA",31
+300,6027,Inyo CA,Death Valley CCD,"Tecopa CDP, CA",150
+300,6027,Inyo CA,Death Valley CCD, ,560
+300,6027,Inyo CA,Independence CCD,"Big Pine CDP, CA",1756
+300,6027,Inyo CA,Independence CCD,"Independence CDP, CA",669
+300,6027,Inyo CA,Independence CCD, ,143
+300,6027,Inyo CA,Lone Pine CCD,"Cartago CDP, CA",92
+300,6027,Inyo CA,Lone Pine CCD,"Darwin CDP, CA",43
+300,6027,Inyo CA,Lone Pine CCD,"Homewood Canyon CDP, CA",44
+300,6027,Inyo CA,Lone Pine CCD,"Keeler CDP, CA",66
+300,6027,Inyo CA,Lone Pine CCD,"Lone Pine CDP, CA",2035
+300,6027,Inyo CA,Lone Pine CCD,"Olancha CDP, CA",192
+300,6027,Inyo CA,Lone Pine CCD,"Pearsonville CDP, CA",17
+300,6027,Inyo CA,Lone Pine CCD,"Trona CDP, CA",18
+300,6027,Inyo CA,Lone Pine CCD,"Valley Wells CDP, CA",0
+300,6027,Inyo CA,Lone Pine CCD, ,106
+300,6043,Mariposa CA,Coulterville CCD,"Buck Meadows CDP, CA",31
+300,6043,Mariposa CA,Coulterville CCD,"Coultervillle CDP, CA",201
+300,6043,Mariposa CA,Coulterville CCD,"Greeley Hill CDP, CA",915
+300,6043,Mariposa CA,Coulterville CCD,"Lake Don Pedro CDP, CA",1077
+300,6043,Mariposa CA,Coulterville CCD, ,1128
+300,6043,Mariposa CA,Mariposa CCD,"Bear Valley CDP, CA",125
+300,6043,Mariposa CA,Mariposa CCD,"Bootjack CDP, CA",960
+300,6043,Mariposa CA,Mariposa CCD,"Catheys Valley CDP, CA",825
+300,6043,Mariposa CA,Mariposa CCD,"El Portal CDP, CA",0
+300,6043,Mariposa CA,Mariposa CCD,"Hornitos CDP, CA",75
+300,6043,Mariposa CA,Mariposa CCD,"Mariposa CDP, CA",2173
+300,6043,Mariposa CA,Mariposa CCD,"Midpines CDP, CA",1204
+300,6043,Mariposa CA,Mariposa CCD, ,7735
+300,6043,Mariposa CA,Yosemite Valley CCD,"El Portal CDP, CA",474
+300,6043,Mariposa CA,Yosemite Valley CCD,"Fish Camp CDP, CA",59
+300,6043,Mariposa CA,Yosemite Valley CCD,"Wawona CDP, CA",169
+300,6043,Mariposa CA,Yosemite Valley CCD,"Yosemite Valley CDP, CA",1035
+300,6043,Mariposa CA,Yosemite Valley CCD, ,65
+300,6051,Mono CA,Mammoth Lakes CCD,"Aspen Springs CDP, CA",65
+300,6051,Mono CA,Mammoth Lakes CCD,"Benton CDP, CA",280
+300,6051,Mono CA,Mammoth Lakes CCD,"Chalfant CDP, CA",651
+300,6051,Mono CA,Mammoth Lakes CCD,"Crowley Lake CDP, CA",875
+300,6051,Mono CA,Mammoth Lakes CCD,"June Lake CDP, CA",629
+300,6051,Mono CA,Mammoth Lakes CCD,"Lee Vining CDP, CA",222
+300,6051,Mono CA,Mammoth Lakes CCD,"McGee Creek CDP, CA",41
+300,6051,Mono CA,Mammoth Lakes CCD,"Mammoth Lakes town, CA",8234
+300,6051,Mono CA,Mammoth Lakes CCD,"Mono City CDP, CA",164
+300,6051,Mono CA,Mammoth Lakes CCD,"Paradise CDP, CA",153
+300,6051,Mono CA,Mammoth Lakes CCD,"Sunny Slopes CDP, CA",182
+300,6051,Mono CA,Mammoth Lakes CCD,"Swall Meadows CDP, CA",220
+300,6051,Mono CA,Mammoth Lakes CCD, ,401
+300,6051,Mono CA,North Mono CCD,"Bridgeport CDP, CA",575
+300,6051,Mono CA,North Mono CCD,"Coleville CDP, CA",495
+300,6051,Mono CA,North Mono CCD,"Mono City CDP, CA",8
+300,6051,Mono CA,North Mono CCD,"Topaz CDP, CA",50
+300,6051,Mono CA,North Mono CCD,"Walker CDP, CA",721
+300,6051,Mono CA,North Mono CCD, ,236
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"Cedar Ridge CDP, CA",447
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"East Sonora CDP, CA",2266
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"Mono Vista CDP, CA",3083
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"Phoenix Lake CDP, CA",4269
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"Sonora city, CA",1
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD,"Soulsbyville CDP, CA",684
+300,6109,Tuolumne CA,East Sonora-Phoenix Lake CCD, ,2740
+300,6109,Tuolumne CA,Groveland CCD,"Groveland CDP, CA",601
+300,6109,Tuolumne CA,Groveland CCD,"Pine Mountain Lake CDP, CA",2796
+300,6109,Tuolumne CA,Groveland CCD, ,1527
+300,6109,Tuolumne CA,Sonora CCD,"Chinese Camp CDP, CA",126
+300,6109,Tuolumne CA,Sonora CCD,"Jamestown CDP, CA",3433
+300,6109,Tuolumne CA,Sonora CCD,"Sonora city, CA",4902
+300,6109,Tuolumne CA,Sonora CCD,"Tuttletown CDP, CA",381
+300,6109,Tuolumne CA,Sonora CCD, ,11284
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Cedar Ridge CDP, CA",685
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Cold Springs CDP, CA",181
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Columbia CDP, CA",2297
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Long Barn CDP, CA",155
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Mi-Wuk Village CDP, CA",941
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Mono Vista CDP, CA",44
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Sierra Village CDP, CA",456
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Soulsbyville CDP, CA",1531
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Strawberry CDP, CA",86
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Tuolumne City CDP, CA",1779
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Tuttletown CDP, CA",287
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD,"Twain Harte CDP, CA",2226
+300,6109,Tuolumne CA,Twain Harte-Tuolumne City CCD, ,6157
+701,6007,Butte CA,Chico CCD,"Butte Creek Canyon CDP, CA",284
+701,6007,Butte CA,Chico CCD,"Chico city, CA",84770
+701,6007,Butte CA,Chico CCD,"Durham CDP, CA",306
+701,6007,Butte CA,Chico CCD,"Nord CDP, CA",320
+701,6007,Butte CA,Chico CCD, ,15146
+701,6007,Butte CA,Durham CCD,"Durham CDP, CA",5212
+701,6007,Butte CA,Durham CCD, ,85
+701,6007,Butte CA,Paradise CCD,"Butte Creek Canyon CDP, CA",794
+701,6007,Butte CA,Paradise CCD,"Butte Meadows CDP, CA",40
+701,6007,Butte CA,Paradise CCD,"Chico city, CA",1417
+701,6007,Butte CA,Paradise CCD,"Cohasset CDP, CA",847
+701,6007,Butte CA,Paradise CCD,"Forest Ranch CDP, CA",1184
+701,6007,Butte CA,Paradise CCD, ,984
+702,6007,Butte CA,Biggs CCD,"Biggs city, CA",1707
+702,6007,Butte CA,Biggs CCD,"Richvale CDP, CA",244
+702,6007,Butte CA,Biggs CCD, ,1453
+702,6007,Butte CA,Feather Falls CCD,"Berry Creek CDP, CA",1424
+702,6007,Butte CA,Feather Falls CCD,"Clipper Mills CDP, CA",142
+702,6007,Butte CA,Feather Falls CCD,"Concow CDP, CA",710
+702,6007,Butte CA,Feather Falls CCD,"Forbestown CDP, CA",320
+702,6007,Butte CA,Feather Falls CCD,"Paradise town, CA",0
+702,6007,Butte CA,Feather Falls CCD,"Rackerby CDP, CA",26
+702,6007,Butte CA,Feather Falls CCD,"Robinson Mill CDP, CA",80
+702,6007,Butte CA,Feather Falls CCD,"Yankee Hill CDP, CA",333
+702,6007,Butte CA,Feather Falls CCD, ,2122
+702,6007,Butte CA,Gridley CCD,"Gridley city, CA",6584
+702,6007,Butte CA,Gridley CCD, ,4352
+702,6007,Butte CA,Oroville CCD,"Cherokee CDP, CA",69
+702,6007,Butte CA,Oroville CCD,"Kelly Ridge CDP, CA",2544
+702,6007,Butte CA,Oroville CCD,"Oroville city, CA",15546
+702,6007,Butte CA,Oroville CCD,"Oroville East CDP, CA",7825
+702,6007,Butte CA,Oroville CCD,"Palermo CDP, CA",15
+702,6007,Butte CA,Oroville CCD,"South Oroville CDP, CA",5687
+702,6007,Butte CA,Oroville CCD,"Thermalito CDP, CA",6646
+702,6007,Butte CA,Oroville CCD, ,762
+702,6007,Butte CA,Palermo CCD,"Bangor CDP, CA",646
+702,6007,Butte CA,Palermo CCD,"Honcut CDP, CA",370
+702,6007,Butte CA,Palermo CCD,"Oroville city, CA",0
+702,6007,Butte CA,Palermo CCD,"Oroville East CDP, CA",455
+702,6007,Butte CA,Palermo CCD,"Palermo CDP, CA",5367
+702,6007,Butte CA,Palermo CCD,"Rackerby CDP, CA",178
+702,6007,Butte CA,Palermo CCD,"South Oroville CDP, CA",55
+702,6007,Butte CA,Palermo CCD, ,2015
+702,6007,Butte CA,Paradise CCD,"Butte Creek Canyon CDP, CA",8
+702,6007,Butte CA,Paradise CCD,"Butte Valley CDP, CA",899
+702,6007,Butte CA,Paradise CCD,"Magalia CDP, CA",11310
+702,6007,Butte CA,Paradise CCD,"Paradise town, CA",26218
+702,6007,Butte CA,Paradise CCD,"Stirling City CDP, CA",295
+702,6007,Butte CA,Paradise CCD, ,2204
+1100,6011,Colusa CA,Central Colusa CCD,"Arbuckle CDP, CA",3028
+1100,6011,Colusa CA,Central Colusa CCD,"College City CDP, CA",290
+1100,6011,Colusa CA,Central Colusa CCD,"Maxwell CDP, CA",1103
+1100,6011,Colusa CA,Central Colusa CCD,"Williams city, CA",5123
+1100,6011,Colusa CA,Central Colusa CCD, ,2294
+1100,6011,Colusa CA,East Colusa CCD,"Colusa city, CA",5971
+1100,6011,Colusa CA,East Colusa CCD,"Grimes CDP, CA",391
+1100,6011,Colusa CA,East Colusa CCD,"Princeton CDP, CA",303
+1100,6011,Colusa CA,East Colusa CCD, ,2133
+1100,6011,Colusa CA,West Colusa CCD,"Lodoga CDP, CA",197
+1100,6011,Colusa CA,West Colusa CCD,"Stonyford CDP, CA",149
+1100,6011,Colusa CA,West Colusa CCD, ,437
+1100,6021,Glenn CA,Orland CCD,"Artois CDP, CA",103
+1100,6021,Glenn CA,Orland CCD,"Hamilton City CDP, CA",1759
+1100,6021,Glenn CA,Orland CCD,"Orland city, CA",7291
+1100,6021,Glenn CA,Orland CCD, ,8445
+1100,6021,Glenn CA,Willows CCD,"Artois CDP, CA",192
+1100,6021,Glenn CA,Willows CCD,"Elk Creek CDP, CA",163
+1100,6021,Glenn CA,Willows CCD,"Willows city, CA",6166
+1100,6021,Glenn CA,Willows CCD, ,4003
+1100,6103,Tehama CA,Corning CCD,"Corning city, CA",7663
+1100,6103,Tehama CA,Corning CCD,"Richfield CDP, CA",306
+1100,6103,Tehama CA,Corning CCD, ,6729
+1100,6103,Tehama CA,East Tehama CCD,"Los Molinos CDP, CA",2037
+1100,6103,Tehama CA,East Tehama CCD,"Manton CDP, CA",347
+1100,6103,Tehama CA,East Tehama CCD,"Mineral CDP, CA",123
+1100,6103,Tehama CA,East Tehama CCD,"Paynes Creek CDP, CA",57
+1100,6103,Tehama CA,East Tehama CCD,"Vina CDP, CA",237
+1100,6103,Tehama CA,East Tehama CCD, ,1088
+1100,6103,Tehama CA,Red Bluff CCD,"Bend CDP, CA",619
+1100,6103,Tehama CA,Red Bluff CCD,"Gerber CDP, CA",1060
+1100,6103,Tehama CA,Red Bluff CCD,"Lake California CDP, CA",3054
+1100,6103,Tehama CA,Red Bluff CCD,"Las Flores CDP, CA",187
+1100,6103,Tehama CA,Red Bluff CCD,"Proberta CDP, CA",267
+1100,6103,Tehama CA,Red Bluff CCD,"Red Bluff city, CA",14076
+1100,6103,Tehama CA,Red Bluff CCD,"Tehama city, CA",418
+1100,6103,Tehama CA,Red Bluff CCD, ,20680
+1100,6103,Tehama CA,West Tehama CCD,"Flournoy CDP, CA",101
+1100,6103,Tehama CA,West Tehama CCD,"Paskenta CDP, CA",112
+1100,6103,Tehama CA,West Tehama CCD,"Rancho Tehama Reserve CDP, CA",1485
+1100,6103,Tehama CA,West Tehama CCD, ,2817
+1100,6105,Trinity CA,Hayfork CCD,"Hayfork CDP, CA",2368
+1100,6105,Trinity CA,Hayfork CCD,"Hyampom CDP, CA",241
+1100,6105,Trinity CA,Hayfork CCD, ,496
+1100,6105,Trinity CA,Mad River CCD,"Mad River CDP, CA",420
+1100,6105,Trinity CA,Mad River CCD,"Ruth CDP, CA",195
+1100,6105,Trinity CA,Mad River CCD, ,360
+1100,6105,Trinity CA,Northwest Trinity CCD,"Burnt Ranch CDP, CA",281
+1100,6105,Trinity CA,Northwest Trinity CCD,"Junction City CDP, CA",662
+1100,6105,Trinity CA,Northwest Trinity CCD,"Trinity Village CDP, CA",297
+1100,6105,Trinity CA,Northwest Trinity CCD, ,1041
+1100,6105,Trinity CA,Weaverville CCD,"Coffee Creek CDP, CA",217
+1100,6105,Trinity CA,Weaverville CCD,"Douglas City CDP, CA",713
+1100,6105,Trinity CA,Weaverville CCD,"Junction City CDP, CA",18
+1100,6105,Trinity CA,Weaverville CCD,"Lewiston CDP, CA",1193
+1100,6105,Trinity CA,Weaverville CCD,"Trinity Center CDP, CA",267
+1100,6105,Trinity CA,Weaverville CCD,"Weaverville CDP, CA",3600
+1100,6105,Trinity CA,Weaverville CCD, ,1417
+1301,6013,Contra Costa CA,West Contra Costa CCD,"East Richmond Heights CDP, CA",149
+1301,6013,Contra Costa CA,West Contra Costa CCD,"El Cerrito city, CA",1787
+1301,6013,Contra Costa CA,West Contra Costa CCD,"El Sobrante CDP, CA",130
+1301,6013,Contra Costa CA,West Contra Costa CCD,"North Richmond CDP, CA",3699
+1301,6013,Contra Costa CA,West Contra Costa CCD,"Richmond city, CA",75917
+1301,6013,Contra Costa CA,West Contra Costa CCD,"Rollingwood CDP, CA",2963
+1301,6013,Contra Costa CA,West Contra Costa CCD,"San Pablo city, CA",29139
+1301,6013,Contra Costa CA,West Contra Costa CCD, ,993
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Bayview CDP, CA",1754
+1302,6013,Contra Costa CA,West Contra Costa CCD,"East Richmond Heights CDP, CA",3131
+1302,6013,Contra Costa CA,West Contra Costa CCD,"El Cerrito city, CA",21762
+1302,6013,Contra Costa CA,West Contra Costa CCD,"El Sobrante CDP, CA",12539
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Hercules city, CA",20945
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Kensington CDP, CA",5077
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Montalvin Manor CDP, CA",2876
+1302,6013,Contra Costa CA,West Contra Costa CCD,"North Richmond CDP, CA",18
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Pinole city, CA",18390
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Richmond city, CA",26909
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Rodeo CDP, CA",59
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Rollingwood CDP, CA",6
+1302,6013,Contra Costa CA,West Contra Costa CCD,"Tara Hills CDP, CA",5126
+1302,6013,Contra Costa CA,West Contra Costa CCD, ,79
+1303,6013,Contra Costa CA,Briones CCD,"Alhambra Valley CDP, CA",592
+1303,6013,Contra Costa CA,Briones CCD,"Hercules city, CA",2952
+1303,6013,Contra Costa CA,Briones CCD,"Martinez city, CA",139
+1303,6013,Contra Costa CA,Briones CCD,"Orinda city, CA",0
+1303,6013,Contra Costa CA,Briones CCD,"Richmond city, CA",875
+1303,6013,Contra Costa CA,Briones CCD, ,817
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Alhambra Valley CDP, CA",296
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Concord city, CA",36035
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Lafayette city, CA",0
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Martinez city, CA",35337
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Mountain View CDP, CA",2372
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Pacheco CDP, CA",3685
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Pleasant Hill city, CA",29564
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Reliez Valley CDP, CA",913
+1303,6013,Contra Costa CA,Central Contra Costa CCD,"Vine Hill CDP, CA",3761
+1303,6013,Contra Costa CA,Central Contra Costa CCD, ,212
+1303,6013,Contra Costa CA,West Contra Costa CCD,"Crockett CDP, CA",3094
+1303,6013,Contra Costa CA,West Contra Costa CCD,"Hercules city, CA",163
+1303,6013,Contra Costa CA,West Contra Costa CCD,"Port Costa CDP, CA",190
+1303,6013,Contra Costa CA,West Contra Costa CCD,"Rodeo CDP, CA",8620
+1303,6013,Contra Costa CA,West Contra Costa CCD, ,8
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Acalanes Ridge CDP, CA",1137
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Alamo CDP, CA",13637
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Alhambra Valley CDP, CA",36
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Castle Hill CDP, CA",1299
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Danville town, CA",3830
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Diablo CDP, CA",964
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Lafayette city, CA",23893
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Martinez city, CA",348
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Moraga town, CA",16016
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Orinda city, CA",17643
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Pleasant Hill city, CA",1598
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Reliez Valley CDP, CA",2188
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Saranap CDP, CA",5202
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Contra Costa Centre CDP, CA",0
+1304,6013,Contra Costa CA,Central Contra Costa CCD,"Walnut Creek city, CA",29490
+1304,6013,Contra Costa CA,Central Contra Costa CCD, ,503
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"Alamo CDP, CA",0
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"Blackhawk CDP, CA",389
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"Danville town, CA",33560
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"Diablo CDP, CA",0
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"Norris Canyon CDP, CA",957
+1305,6013,Contra Costa CA,Central Contra Costa CCD,"San Ramon city, CA",49525
+1305,6013,Contra Costa CA,Central Contra Costa CCD, ,85
+1305,6013,Contra Costa CA,Tassajara CCD,"Blackhawk CDP, CA",8965
+1305,6013,Contra Costa CA,Tassajara CCD,"Camino Tassajara CDP, CA",2197
+1305,6013,Contra Costa CA,Tassajara CCD,"Danville town, CA",4649
+1305,6013,Contra Costa CA,Tassajara CCD,"Diablo CDP, CA",194
+1305,6013,Contra Costa CA,Tassajara CCD,"San Ramon city, CA",22623
+1305,6013,Contra Costa CA,Tassajara CCD, ,1441
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Alamo CDP, CA",933
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Clayton city, CA",10897
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Concord city, CA",52203
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"North Gate CDP, CA",679
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Pleasant Hill city, CA",1990
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"San Miguel CDP, CA",3392
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Shell Ridge CDP, CA",959
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Contra Costa Centre CDP, CA",5364
+1306,6013,Contra Costa CA,Central Contra Costa CCD,"Walnut Creek city, CA",34683
+1306,6013,Contra Costa CA,Central Contra Costa CCD, ,1111
+1307,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Antioch city, CA",498
+1307,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Bay Point CDP, CA",18900
+1307,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Concord city, CA",393
+1307,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Pittsburg city, CA",56174
+1307,6013,Contra Costa CA,Antioch-Pittsburg CCD, ,12
+1307,6013,Contra Costa CA,Central Contra Costa CCD,"Bay Point CDP, CA",2449
+1307,6013,Contra Costa CA,Central Contra Costa CCD,"Clyde CDP, CA",678
+1307,6013,Contra Costa CA,Central Contra Costa CCD,"Concord city, CA",33436
+1307,6013,Contra Costa CA,Central Contra Costa CCD,"Pittsburg city, CA",7090
+1307,6013,Contra Costa CA,Central Contra Costa CCD, ,844
+1308,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Antioch city, CA",72930
+1308,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Oakley city, CA",378
+1308,6013,Contra Costa CA,Antioch-Pittsburg CCD,"Pittsburg city, CA",0
+1308,6013,Contra Costa CA,Antioch-Pittsburg CCD, ,380
+1308,6013,Contra Costa CA,East Contra Costa CCD,"Antioch city, CA",11591
+1308,6013,Contra Costa CA,East Contra Costa CCD,"Brentwood city, CA",4039
+1308,6013,Contra Costa CA,East Contra Costa CCD, ,0
+1308,6013,Contra Costa CA,Tassajara CCD,"Antioch city, CA",17353
+1308,6013,Contra Costa CA,Tassajara CCD, ,542
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Antioch city, CA",0
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Bethel Island CDP, CA",2137
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Brentwood city, CA",47442
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Byron CDP, CA",1277
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Discovery Bay CDP, CA",13352
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Knightsen CDP, CA",1568
+1309,6013,Contra Costa CA,East Contra Costa CCD,"Oakley city, CA",35054
+1309,6013,Contra Costa CA,East Contra Costa CCD, ,2855
+1500,6015,Del Norte CA,Crescent City CCD,"Bertsch-Oceanview CDP, CA",2436
+1500,6015,Del Norte CA,Crescent City CCD,"Crescent City city, CA",7643
+1500,6015,Del Norte CA,Crescent City CCD, ,13503
+1500,6015,Del Norte CA,Klamath CCD,"Klamath CDP, CA",779
+1500,6015,Del Norte CA,Klamath CCD, ,594
+1500,6015,Del Norte CA,Smith River-Gasquet CCD,"Gasquet CDP, CA",661
+1500,6015,Del Norte CA,Smith River-Gasquet CCD,"Hiouchi CDP, CA",301
+1500,6015,Del Norte CA,Smith River-Gasquet CCD,"Smith River CDP, CA",866
+1500,6015,Del Norte CA,Smith River-Gasquet CCD, ,1827
+1500,6035,Lassen CA,Big Valley CCD,"Bieber CDP, CA",312
+1500,6035,Lassen CA,Big Valley CCD,"Nubieber CDP, CA",50
+1500,6035,Lassen CA,Big Valley CCD, ,1121
+1500,6035,Lassen CA,Honey Lake CCD,"Doyle CDP, CA",678
+1500,6035,Lassen CA,Honey Lake CCD,"Herlong CDP, CA",298
+1500,6035,Lassen CA,Honey Lake CCD,"Milford CDP, CA",167
+1500,6035,Lassen CA,Honey Lake CCD,"Patton Village CDP, CA",702
+1500,6035,Lassen CA,Honey Lake CCD, ,1936
+1500,6035,Lassen CA,Madeline Plains CCD, ,339
+1500,6035,Lassen CA,Susanville CCD,"Janesville CDP, CA",1408
+1500,6035,Lassen CA,Susanville CCD,"Johnstonville CDP, CA",1024
+1500,6035,Lassen CA,Susanville CCD,"Litchfield CDP, CA",195
+1500,6035,Lassen CA,Susanville CCD,"Susanville city, CA",17947
+1500,6035,Lassen CA,Susanville CCD, ,6184
+1500,6035,Lassen CA,Westwood CCD,"Clear Creek CDP, CA",169
+1500,6035,Lassen CA,Westwood CCD,"Spaulding CDP, CA",178
+1500,6035,Lassen CA,Westwood CCD,"Westwood CDP, CA",1647
+1500,6035,Lassen CA,Westwood CCD, ,540
+1500,6049,Modoc CA,Adin-Lookout CCD,"Adin CDP, CA",272
+1500,6049,Modoc CA,Adin-Lookout CCD,"Lookout CDP, CA",84
+1500,6049,Modoc CA,Adin-Lookout CCD, ,478
+1500,6049,Modoc CA,Alturas CCD,"Alturas city, CA",2827
+1500,6049,Modoc CA,Alturas CCD,"California Pines CDP, CA",520
+1500,6049,Modoc CA,Alturas CCD,"Canby CDP, CA",315
+1500,6049,Modoc CA,Alturas CCD,"Daphnedale Park CDP, CA",184
+1500,6049,Modoc CA,Alturas CCD,"Likely CDP, CA",63
+1500,6049,Modoc CA,Alturas CCD,"New Pine Creek CDP, CA",98
+1500,6049,Modoc CA,Alturas CCD, ,2504
+1500,6049,Modoc CA,Newell CCD,"Newell CDP, CA",449
+1500,6049,Modoc CA,Newell CCD, ,627
+1500,6049,Modoc CA,Surprise Valley CCD,"Cedarville CDP, CA",514
+1500,6049,Modoc CA,Surprise Valley CCD,"Eagleville CDP, CA",59
+1500,6049,Modoc CA,Surprise Valley CCD,"Fort Bidwell CDP, CA",173
+1500,6049,Modoc CA,Surprise Valley CCD,"Lake City CDP, CA",61
+1500,6049,Modoc CA,Surprise Valley CCD, ,458
+1500,6063,Plumas CA,Chester CCD,"Almanor CDP, CA",0
+1500,6063,Plumas CA,Chester CCD,"Canyondam CDP, CA",31
+1500,6063,Plumas CA,Chester CCD,"Chester CDP, CA",2144
+1500,6063,Plumas CA,Chester CCD,"East Shore CDP, CA",156
+1500,6063,Plumas CA,Chester CCD,"Hamilton Branch CDP, CA",537
+1500,6063,Plumas CA,Chester CCD,"Lake Almanor Country Club CDP, CA",419
+1500,6063,Plumas CA,Chester CCD,"Lake Almanor Peninsula CDP, CA",356
+1500,6063,Plumas CA,Chester CCD,"Lake Almanor West CDP, CA",270
+1500,6063,Plumas CA,Chester CCD,"Prattville CDP, CA",33
+1500,6063,Plumas CA,Chester CCD,"Warner Valley CDP, CA",2
+1500,6063,Plumas CA,Chester CCD, ,9
+1500,6063,Plumas CA,Feather River Canyon CCD,"Belden CDP, CA",22
+1500,6063,Plumas CA,Feather River Canyon CCD,"Caribou CDP, CA",0
+1500,6063,Plumas CA,Feather River Canyon CCD,"Paxton CDP, CA",14
+1500,6063,Plumas CA,Feather River Canyon CCD,"Storrie CDP, CA",4
+1500,6063,Plumas CA,Feather River Canyon CCD,"Tobin CDP, CA",12
+1500,6063,Plumas CA,Feather River Canyon CCD,"Twain CDP, CA",82
+1500,6063,Plumas CA,Feather River Canyon CCD, ,50
+1500,6063,Plumas CA,Graeagle CCD,"Blairsden CDP, CA",39
+1500,6063,Plumas CA,Graeagle CCD,"Clio CDP, CA",66
+1500,6063,Plumas CA,Graeagle CCD,"C-Road CDP, CA",150
+1500,6063,Plumas CA,Graeagle CCD,"Gold Mountain CDP, CA",41
+1500,6063,Plumas CA,Graeagle CCD,"Graeagle CDP, CA",737
+1500,6063,Plumas CA,Graeagle CCD,"Johnsville CDP, CA",20
+1500,6063,Plumas CA,Graeagle CCD,"Mohawk Vista CDP, CA",159
+1500,6063,Plumas CA,Graeagle CCD,"Plumas Eureka CDP, CA",339
+1500,6063,Plumas CA,Graeagle CCD,"Valley Ranch CDP, CA",109
+1500,6063,Plumas CA,Graeagle CCD,"Whitehawk CDP, CA",113
+1500,6063,Plumas CA,Graeagle CCD, ,71
+1500,6063,Plumas CA,Greenville CCD,"Crescent Mills CDP, CA",196
+1500,6063,Plumas CA,Greenville CCD,"Greenville CDP, CA",1129
+1500,6063,Plumas CA,Greenville CCD,"Indian Falls CDP, CA",54
+1500,6063,Plumas CA,Greenville CCD,"Taylorsville CDP, CA",140
+1500,6063,Plumas CA,Greenville CCD, ,1082
+1500,6063,Plumas CA,Portola CCD,"Beckwourth CDP, CA",432
+1500,6063,Plumas CA,Portola CCD,"Chilcoot-Vinton CDP, CA",454
+1500,6063,Plumas CA,Portola CCD,"Delleker CDP, CA",705
+1500,6063,Plumas CA,Portola CCD,"Gold Mountain CDP, CA",39
+1500,6063,Plumas CA,Portola CCD,"Iron Horse CDP, CA",297
+1500,6063,Plumas CA,Portola CCD,"Lake Davis CDP, CA",45
+1500,6063,Plumas CA,Portola CCD,"Mabie CDP, CA",161
+1500,6063,Plumas CA,Portola CCD,"Portola city, CA",2104
+1500,6063,Plumas CA,Portola CCD, ,523
+1500,6063,Plumas CA,Quincy CCD,"Bucks Lake CDP, CA",10
+1500,6063,Plumas CA,Quincy CCD,"Cromberg CDP, CA",261
+1500,6063,Plumas CA,Quincy CCD,"East Quincy CDP, CA",2489
+1500,6063,Plumas CA,Quincy CCD,"Greenhorn CDP, CA",236
+1500,6063,Plumas CA,Quincy CCD,"Keddie CDP, CA",66
+1500,6063,Plumas CA,Quincy CCD,"La Porte CDP, CA",26
+1500,6063,Plumas CA,Quincy CCD,"Little Grass Valley CDP, CA",2
+1500,6063,Plumas CA,Quincy CCD,"Meadow Valley CDP, CA",464
+1500,6063,Plumas CA,Quincy CCD,"Quincy CDP, CA",1728
+1500,6063,Plumas CA,Quincy CCD,"Spring Garden CDP, CA",16
+1500,6063,Plumas CA,Quincy CCD, ,1363
+1500,6093,Siskiyou CA,Butte Valley CCD,"Dorris city, CA",939
+1500,6093,Siskiyou CA,Butte Valley CCD,"Macdoel CDP, CA",133
+1500,6093,Siskiyou CA,Butte Valley CCD,"Mount Hebron CDP, CA",95
+1500,6093,Siskiyou CA,Butte Valley CCD, ,788
+1500,6093,Siskiyou CA,Dunsmuir CCD,"Dunsmuir city, CA",1650
+1500,6093,Siskiyou CA,Dunsmuir CCD, ,525
+1500,6093,Siskiyou CA,Etna CCD,"Etna city, CA",737
+1500,6093,Siskiyou CA,Etna CCD,"Greenview CDP, CA",174
+1500,6093,Siskiyou CA,Etna CCD, ,2501
+1500,6093,Siskiyou CA,Fort Jones CCD,"Fort Jones city, CA",839
+1500,6093,Siskiyou CA,Fort Jones CCD,"Greenview CDP, CA",27
+1500,6093,Siskiyou CA,Fort Jones CCD, ,981
+1500,6093,Siskiyou CA,Happy Camp CCD,"Happy Camp CDP, CA",1190
+1500,6093,Siskiyou CA,Happy Camp CCD, ,952
+1500,6093,Siskiyou CA,Hornbrook-Hilt CCD,"Hornbrook CDP, CA",248
+1500,6093,Siskiyou CA,Hornbrook-Hilt CCD, ,404
+1500,6093,Siskiyou CA,McCloud-Medicine Lake CCD,"McCloud CDP, CA",1101
+1500,6093,Siskiyou CA,McCloud-Medicine Lake CCD,"Tennant CDP, CA",41
+1500,6093,Siskiyou CA,McCloud-Medicine Lake CCD, ,267
+1500,6093,Siskiyou CA,Montague CCD,"Montague city, CA",1443
+1500,6093,Siskiyou CA,Montague CCD, ,2662
+1500,6093,Siskiyou CA,Mount Shasta CCD,"Mount Shasta city, CA",3394
+1500,6093,Siskiyou CA,Mount Shasta CCD, ,3597
+1500,6093,Siskiyou CA,Tulelake CCD,"Tulelake city, CA",1010
+1500,6093,Siskiyou CA,Tulelake CCD, ,448
+1500,6093,Siskiyou CA,Weed CCD,"Carrick CDP, CA",131
+1500,6093,Siskiyou CA,Weed CCD,"Edgewood CDP, CA",43
+1500,6093,Siskiyou CA,Weed CCD,"Weed city, CA",2967
+1500,6093,Siskiyou CA,Weed CCD, ,4090
+1500,6093,Siskiyou CA,Yreka CCD,"Gazelle CDP, CA",70
+1500,6093,Siskiyou CA,Yreka CCD,"Grenada CDP, CA",367
+1500,6093,Siskiyou CA,Yreka CCD,"Yreka city, CA",7765
+1500,6093,Siskiyou CA,Yreka CCD, ,3321
+1700,6017,El Dorado CA,North El Dorado CCD,"Auburn Lake Trails CDP, CA",3426
+1700,6017,El Dorado CA,North El Dorado CCD,"Camino CDP, CA",1750
+1700,6017,El Dorado CA,North El Dorado CCD,"Cold Springs CDP, CA",320
+1700,6017,El Dorado CA,North El Dorado CCD,"Coloma CDP, CA",529
+1700,6017,El Dorado CA,North El Dorado CCD,"Diamond Springs CDP, CA",1113
+1700,6017,El Dorado CA,North El Dorado CCD,"Georgetown CDP, CA",2367
+1700,6017,El Dorado CA,North El Dorado CCD,"Pollock Pines CDP, CA",4356
+1700,6017,El Dorado CA,North El Dorado CCD, ,17346
+1700,6017,El Dorado CA,Placerville CCD,"Cold Springs CDP, CA",126
+1700,6017,El Dorado CA,Placerville CCD,"Placerville city, CA",10389
+1700,6017,El Dorado CA,Placerville CCD, ,6201
+1700,6017,El Dorado CA,South El Dorado CCD,"Cameron Park CDP, CA",18228
+1700,6017,El Dorado CA,South El Dorado CCD,"Diamond Springs CDP, CA",9924
+1700,6017,El Dorado CA,South El Dorado CCD,"El Dorado Hills CDP, CA",42108
+1700,6017,El Dorado CA,South El Dorado CCD,"Grizzly Flats CDP, CA",1066
+1700,6017,El Dorado CA,South El Dorado CCD,"Pollock Pines CDP, CA",2515
+1700,6017,El Dorado CA,South El Dorado CCD,"Shingle Springs CDP, CA",4432
+1700,6017,El Dorado CA,South El Dorado CCD, ,24134
+1700,6017,El Dorado CA,South Lake Tahoe CCD,"South Lake Tahoe city, CA",21403
+1700,6017,El Dorado CA,South Lake Tahoe CCD,"Tahoma CDP, CA",780
+1700,6017,El Dorado CA,South Lake Tahoe CCD, ,8545
+1901,6019,Fresno CA,Caruthers-Raisin City CCD,"Caruthers CDP, CA",2497
+1901,6019,Fresno CA,Caruthers-Raisin City CCD,"Fresno city, CA",4
+1901,6019,Fresno CA,Caruthers-Raisin City CCD,"Raisin City CDP, CA",380
+1901,6019,Fresno CA,Caruthers-Raisin City CCD, ,7212
+1901,6019,Fresno CA,Coalinga CCD,"Coalinga city, CA",13380
+1901,6019,Fresno CA,Coalinga CCD, ,5982
+1901,6019,Fresno CA,Firebaugh CCD,"Firebaugh city, CA",7549
+1901,6019,Fresno CA,Firebaugh CCD, ,1594
+1901,6019,Fresno CA,Fowler CCD,"Bowles CDP, CA",166
+1901,6019,Fresno CA,Fowler CCD,"Fowler city, CA",5570
+1901,6019,Fresno CA,Fowler CCD, ,5064
+1901,6019,Fresno CA,Fresno CCD,"Easton CDP, CA",2083
+1901,6019,Fresno CA,Fresno CCD,"Fresno city, CA",42
+1901,6019,Fresno CA,Fresno CCD, ,2490
+1901,6019,Fresno CA,Huron CCD,"Huron city, CA",6754
+1901,6019,Fresno CA,Huron CCD, ,1237
+1901,6019,Fresno CA,Kerman CCD,"Biola CDP, CA",1623
+1901,6019,Fresno CA,Kerman CCD,"Kerman city, CA",13544
+1901,6019,Fresno CA,Kerman CCD, ,8320
+1901,6019,Fresno CA,Laton CCD,"Laton CDP, CA",1824
+1901,6019,Fresno CA,Laton CCD, ,1724
+1901,6019,Fresno CA,Mendota CCD,"Mendota city, CA",11014
+1901,6019,Fresno CA,Mendota CCD,"Three Rocks CDP, CA",246
+1901,6019,Fresno CA,Mendota CCD, ,1291
+1901,6019,Fresno CA,Riverdale CCD,"Lanare CDP, CA",589
+1901,6019,Fresno CA,Riverdale CCD,"Riverdale CDP, CA",3153
+1901,6019,Fresno CA,Riverdale CCD, ,1857
+1901,6019,Fresno CA,San Joaquin-Tranquillity CCD,"Cantua Creek CDP, CA",466
+1901,6019,Fresno CA,San Joaquin-Tranquillity CCD,"San Joaquin city, CA",4001
+1901,6019,Fresno CA,San Joaquin-Tranquillity CCD,"Tranquillity CDP, CA",799
+1901,6019,Fresno CA,San Joaquin-Tranquillity CCD, ,1712
+1901,6019,Fresno CA,Selma CCD,"Fowler city, CA",0
+1901,6019,Fresno CA,Selma CCD,"Kingsburg city, CA",11
+1901,6019,Fresno CA,Selma CCD,"Monmouth CDP, CA",152
+1901,6019,Fresno CA,Selma CCD,"Selma city, CA",23219
+1901,6019,Fresno CA,Selma CCD, ,7175
+1902,6019,Fresno CA,Fresno CCD,"Fort Washington CDP, CA",233
+1902,6019,Fresno CA,Fresno CCD,"Fresno city, CA",160604
+1902,6019,Fresno CA,Fresno CCD,"Old Fig Garden CDP, CA",0
+1902,6019,Fresno CA,Fresno CCD, ,12812
+1903,6019,Fresno CA,Fresno CCD,"Clovis city, CA",2427
+1903,6019,Fresno CA,Fresno CCD,"Fresno city, CA",85821
+1903,6019,Fresno CA,Fresno CCD,"Mayfair CDP, CA",4589
+1903,6019,Fresno CA,Fresno CCD,"Tarpey Village CDP, CA",2656
+1903,6019,Fresno CA,Fresno CCD, ,6387
+1904,6019,Fresno CA,Fresno CCD,"Fresno city, CA",152865
+1904,6019,Fresno CA,Fresno CCD,"Old Fig Garden CDP, CA",5365
+1904,6019,Fresno CA,Fresno CCD,"West Park CDP, CA",1157
+1904,6019,Fresno CA,Fresno CCD, ,10753
+1905,6019,Fresno CA,Fresno CCD,"Calwa CDP, CA",2052
+1905,6019,Fresno CA,Fresno CCD,"Fresno city, CA",93970
+1905,6019,Fresno CA,Fresno CCD,"Malaga CDP, CA",947
+1905,6019,Fresno CA,Fresno CCD,"Sunnyside CDP, CA",4235
+1905,6019,Fresno CA,Fresno CCD, ,6973
+1906,6019,Fresno CA,Fresno CCD,"Clovis city, CA",93202
+1906,6019,Fresno CA,Fresno CCD,"Fresno city, CA",1359
+1906,6019,Fresno CA,Fresno CCD,"Tarpey Village CDP, CA",1232
+1906,6019,Fresno CA,Fresno CCD, ,6849
+1907,6019,Fresno CA,Fresno CCD,"Clovis city, CA",2
+1907,6019,Fresno CA,Fresno CCD,"Friant CDP, CA",509
+1907,6019,Fresno CA,Fresno CCD, ,2386
+1907,6019,Fresno CA,Kingsburg CCD,"Kingsburg city, CA",11371
+1907,6019,Fresno CA,Kingsburg CCD, ,1409
+1907,6019,Fresno CA,Orange Cove CCD,"Orange Cove city, CA",9078
+1907,6019,Fresno CA,Orange Cove CCD, ,1743
+1907,6019,Fresno CA,Parlier-Del Rey CCD,"Del Rey CDP, CA",1639
+1907,6019,Fresno CA,Parlier-Del Rey CCD,"Parlier city, CA",14494
+1907,6019,Fresno CA,Parlier-Del Rey CCD,"Reedley city, CA",0
+1907,6019,Fresno CA,Parlier-Del Rey CCD, ,3570
+1907,6019,Fresno CA,Reedley CCD,"Minkler CDP, CA",1003
+1907,6019,Fresno CA,Reedley CCD,"Reedley city, CA",24194
+1907,6019,Fresno CA,Reedley CCD, ,3964
+1907,6019,Fresno CA,Sanger CCD,"Centerville CDP, CA",392
+1907,6019,Fresno CA,Sanger CCD,"Sanger city, CA",24270
+1907,6019,Fresno CA,Sanger CCD, ,10233
+1907,6019,Fresno CA,Sierra CCD,"Auberry CDP, CA",2369
+1907,6019,Fresno CA,Sierra CCD,"Big Creek CDP, CA",175
+1907,6019,Fresno CA,Sierra CCD,"Shaver Lake CDP, CA",634
+1907,6019,Fresno CA,Sierra CCD,"Squaw Valley CDP, CA",3162
+1907,6019,Fresno CA,Sierra CCD, ,12641
+2300,6023,Humboldt CA,Arcata CCD,"Arcata city, CA",17231
+2300,6023,Humboldt CA,Arcata CCD,"Blue Lake city, CA",0
+2300,6023,Humboldt CA,Arcata CCD,"Eureka city, CA",0
+2300,6023,Humboldt CA,Arcata CCD,"Indianola CDP, CA",569
+2300,6023,Humboldt CA,Arcata CCD,"Manila CDP, CA",784
+2300,6023,Humboldt CA,Arcata CCD,"Samoa CDP, CA",258
+2300,6023,Humboldt CA,Arcata CCD, ,4653
+2300,6023,Humboldt CA,Eureka CCD,"Bayview CDP, CA",2510
+2300,6023,Humboldt CA,Eureka CCD,"Cutten CDP, CA",3108
+2300,6023,Humboldt CA,Eureka CCD,"Eureka city, CA",27191
+2300,6023,Humboldt CA,Eureka CCD,"Fields Landing CDP, CA",276
+2300,6023,Humboldt CA,Eureka CCD,"Humboldt Hill CDP, CA",3414
+2300,6023,Humboldt CA,Eureka CCD,"Indianola CDP, CA",254
+2300,6023,Humboldt CA,Eureka CCD,"Myrtletown CDP, CA",4675
+2300,6023,Humboldt CA,Eureka CCD,"Pine Hills CDP, CA",3131
+2300,6023,Humboldt CA,Eureka CCD, ,3865
+2300,6023,Humboldt CA,Ferndale CCD,"Ferndale city, CA",1371
+2300,6023,Humboldt CA,Ferndale CCD, ,1849
+2300,6023,Humboldt CA,Fortuna CCD,"Fortuna city, CA",11926
+2300,6023,Humboldt CA,Fortuna CCD,"Hydesville CDP, CA",1237
+2300,6023,Humboldt CA,Fortuna CCD,"Loleta CDP, CA",783
+2300,6023,Humboldt CA,Fortuna CCD, ,3901
+2300,6023,Humboldt CA,Garberville CCD,"Alderpoint CDP, CA",186
+2300,6023,Humboldt CA,Garberville CCD,"Benbow CDP, CA",321
+2300,6023,Humboldt CA,Garberville CCD,"Garberville CDP, CA",913
+2300,6023,Humboldt CA,Garberville CCD,"Miranda CDP, CA",520
+2300,6023,Humboldt CA,Garberville CCD,"Myers Flat CDP, CA",146
+2300,6023,Humboldt CA,Garberville CCD,"Phillipsville CDP, CA",140
+2300,6023,Humboldt CA,Garberville CCD,"Redcrest CDP, CA",89
+2300,6023,Humboldt CA,Garberville CCD,"Redway CDP, CA",1225
+2300,6023,Humboldt CA,Garberville CCD,"Rio Dell city, CA",3368
+2300,6023,Humboldt CA,Garberville CCD,"Scotia CDP, CA",850
+2300,6023,Humboldt CA,Garberville CCD,"Shelter Cove CDP, CA",693
+2300,6023,Humboldt CA,Garberville CCD,"Weott CDP, CA",288
+2300,6023,Humboldt CA,Garberville CCD, ,4779
+2300,6023,Humboldt CA,North Coastal CCD,"Arcata city, CA",0
+2300,6023,Humboldt CA,North Coastal CCD,"Big Lagoon CDP, CA",93
+2300,6023,Humboldt CA,North Coastal CCD,"Blue Lake city, CA",1253
+2300,6023,Humboldt CA,North Coastal CCD,"Fieldbrook CDP, CA",859
+2300,6023,Humboldt CA,North Coastal CCD,"McKinleyville CDP, CA",15177
+2300,6023,Humboldt CA,North Coastal CCD,"Orick CDP, CA",357
+2300,6023,Humboldt CA,North Coastal CCD,"Trinidad city, CA",367
+2300,6023,Humboldt CA,North Coastal CCD,"Westhaven-Moonstone CDP, CA",1205
+2300,6023,Humboldt CA,North Coastal CCD, ,2883
+2300,6023,Humboldt CA,Willow Creek-Hoopa Valley CCD,"Willow Creek CDP, CA",1710
+2300,6023,Humboldt CA,Willow Creek-Hoopa Valley CCD, ,4215
+2500,6025,Imperial CA,Brawley CCD,"Brawley city, CA",24953
+2500,6025,Imperial CA,Brawley CCD, ,1055
+2500,6025,Imperial CA,Calexico CCD,"Calexico city, CA",38572
+2500,6025,Imperial CA,Calexico CCD, ,644
+2500,6025,Imperial CA,Calipatria-Westmorland CCD,"Calipatria city, CA",7705
+2500,6025,Imperial CA,Calipatria-Westmorland CCD,"Niland CDP, CA",1006
+2500,6025,Imperial CA,Calipatria-Westmorland CCD,"Westmorland city, CA",2225
+2500,6025,Imperial CA,Calipatria-Westmorland CCD, ,1312
+2500,6025,Imperial CA,East Imperial CCD,"Bombay Beach CDP, CA",295
+2500,6025,Imperial CA,East Imperial CCD,"Palo Verde CDP, CA",171
+2500,6025,Imperial CA,East Imperial CCD, ,800
+2500,6025,Imperial CA,El Centro CCD,"El Centro city, CA",42598
+2500,6025,Imperial CA,El Centro CCD,"Heber CDP, CA",4275
+2500,6025,Imperial CA,El Centro CCD,"Imperial city, CA",4755
+2500,6025,Imperial CA,El Centro CCD,"Seeley CDP, CA",1739
+2500,6025,Imperial CA,El Centro CCD, ,8812
+2500,6025,Imperial CA,Holtville CCD,"Holtville city, CA",5939
+2500,6025,Imperial CA,Holtville CCD, ,2184
+2500,6025,Imperial CA,Imperial CCD,"Imperial city, CA",10003
+2500,6025,Imperial CA,Imperial CCD, ,2044
+2500,6025,Imperial CA,West Imperial CCD,"Desert Shores CDP, CA",1104
+2500,6025,Imperial CA,West Imperial CCD,"Ocotillo CDP, CA",266
+2500,6025,Imperial CA,West Imperial CCD,"Salton City CDP, CA",3763
+2500,6025,Imperial CA,West Imperial CCD,"Salton Sea Beach CDP, CA",422
+2500,6025,Imperial CA,West Imperial CCD, ,4834
+2500,6025,Imperial CA,Winterhaven-Bard CCD,"Winterhaven CDP, CA",394
+2500,6025,Imperial CA,Winterhaven-Bard CCD, ,2658
+2901,6029,Kern CA,Bakersfield CCD,"Bakersfield city, CA",2858
+2901,6029,Kern CA,Bakersfield CCD, ,7575
+2901,6029,Kern CA,Buttonwillow CCD,"Bakersfield city, CA",0
+2901,6029,Kern CA,Buttonwillow CCD,"Buttonwillow CDP, CA",1508
+2901,6029,Kern CA,Buttonwillow CCD, ,2445
+2901,6029,Kern CA,Delano-McFarland CCD,"Delano city, CA",53041
+2901,6029,Kern CA,Delano-McFarland CCD,"McFarland city, CA",12707
+2901,6029,Kern CA,Delano-McFarland CCD, ,3010
+2901,6029,Kern CA,Greenfield-Panama CCD,"Bakersfield city, CA",7641
+2901,6029,Kern CA,Greenfield-Panama CCD,"Rosedale CDP, CA",0
+2901,6029,Kern CA,Greenfield-Panama CCD, ,1745
+2901,6029,Kern CA,Rosedale CCD,"Bakersfield city, CA",4599
+2901,6029,Kern CA,Rosedale CCD,"Rosedale CDP, CA",11154
+2901,6029,Kern CA,Rosedale CCD, ,0
+2901,6029,Kern CA,Shafter CCD,"Cherokee Strip CDP, CA",227
+2901,6029,Kern CA,Shafter CCD,"Mexican Colony CDP, CA",281
+2901,6029,Kern CA,Shafter CCD,"Shafter city, CA",16988
+2901,6029,Kern CA,Shafter CCD,"Smith Corner CDP, CA",524
+2901,6029,Kern CA,Shafter CCD,"Wasco city, CA",0
+2901,6029,Kern CA,Shafter CCD, ,3622
+2901,6029,Kern CA,Wasco CCD,"Lost Hills CDP, CA",2412
+2901,6029,Kern CA,Wasco CCD,"Wasco city, CA",25545
+2901,6029,Kern CA,Wasco CCD, ,1851
+2901,6029,Kern CA,West Kern CCD,"Derby Acres CDP, CA",322
+2901,6029,Kern CA,West Kern CCD,"Dustin Acres CDP, CA",652
+2901,6029,Kern CA,West Kern CCD,"Fellows CDP, CA",106
+2901,6029,Kern CA,West Kern CCD,"Ford City CDP, CA",4278
+2901,6029,Kern CA,West Kern CCD,"Frazier Park CDP, CA",2691
+2901,6029,Kern CA,West Kern CCD,"Lake of the Woods CDP, CA",917
+2901,6029,Kern CA,West Kern CCD,"Lebec CDP, CA",1463
+2901,6029,Kern CA,West Kern CCD,"McKittrick CDP, CA",115
+2901,6029,Kern CA,West Kern CCD,"Maricopa city, CA",1154
+2901,6029,Kern CA,West Kern CCD,"Mettler CDP, CA",136
+2901,6029,Kern CA,West Kern CCD,"Pine Mountain Club CDP, CA",2315
+2901,6029,Kern CA,West Kern CCD,"South Taft CDP, CA",2169
+2901,6029,Kern CA,West Kern CCD,"Taft city, CA",9327
+2901,6029,Kern CA,West Kern CCD,"Taft Heights CDP, CA",1949
+2901,6029,Kern CA,West Kern CCD,"Tupman CDP, CA",161
+2901,6029,Kern CA,West Kern CCD,"Valley Acres CDP, CA",527
+2901,6029,Kern CA,West Kern CCD, ,1947
+2902,6029,Kern CA,Bakersfield CCD,"Bakersfield city, CA",115021
+2902,6029,Kern CA,Bakersfield CCD, ,7455
+2902,6029,Kern CA,Greenfield-Panama CCD,"Bakersfield city, CA",22577
+2902,6029,Kern CA,Greenfield-Panama CCD, ,916
+2902,6029,Kern CA,Rosedale CCD,"Bakersfield city, CA",45398
+2902,6029,Kern CA,Rosedale CCD,"Greenacres CDP, CA",5566
+2902,6029,Kern CA,Rosedale CCD,"Rosedale CDP, CA",2904
+2902,6029,Kern CA,Rosedale CCD, ,533
+2903,6029,Kern CA,Bakersfield CCD,"Bakersfield city, CA",87983
+2903,6029,Kern CA,Bakersfield CCD, ,67161
+2904,6029,Kern CA,Arvin-Lamont CCD,"Bakersfield city, CA",41
+2904,6029,Kern CA,Arvin-Lamont CCD,"Fuller Acres CDP, CA",941
+2904,6029,Kern CA,Arvin-Lamont CCD,"Lamont CDP, CA",15120
+2904,6029,Kern CA,Arvin-Lamont CCD,"Weedpatch CDP, CA",2658
+2904,6029,Kern CA,Arvin-Lamont CCD, ,1825
+2904,6029,Kern CA,Bakersfield CCD,"Bakersfield city, CA",49829
+2904,6029,Kern CA,Bakersfield CCD,"Fuller Acres CDP, CA",50
+2904,6029,Kern CA,Bakersfield CCD, ,21807
+2904,6029,Kern CA,Greenfield-Panama CCD,"Bakersfield city, CA",11350
+2904,6029,Kern CA,Greenfield-Panama CCD,"Greenfield CDP, CA",3991
+2904,6029,Kern CA,Greenfield-Panama CCD, ,238
+2905,6029,Kern CA,Arvin-Lamont CCD,"Arvin city, CA",19304
+2905,6029,Kern CA,Arvin-Lamont CCD,"Bakersfield city, CA",0
+2905,6029,Kern CA,Arvin-Lamont CCD,"Edmundson Acres CDP, CA",279
+2905,6029,Kern CA,Arvin-Lamont CCD, ,1501
+2905,6029,Kern CA,Bakersfield CCD,"Bakersfield city, CA",186
+2905,6029,Kern CA,Bakersfield CCD,"Oildale CDP, CA",32684
+2905,6029,Kern CA,Bakersfield CCD, ,1169
+2905,6029,Kern CA,East Kern CCD,"Boron CDP, CA",2253
+2905,6029,Kern CA,East Kern CCD,"California City city, CA",14120
+2905,6029,Kern CA,East Kern CCD,"China Lake Acres CDP, CA",1876
+2905,6029,Kern CA,East Kern CCD,"Edwards AFB CDP, CA",2063
+2905,6029,Kern CA,East Kern CCD,"Inyokern CDP, CA",1099
+2905,6029,Kern CA,East Kern CCD,"Johannesburg CDP, CA",172
+2905,6029,Kern CA,East Kern CCD,"Mojave CDP, CA",4185
+2905,6029,Kern CA,East Kern CCD,"North Edwards CDP, CA",1058
+2905,6029,Kern CA,East Kern CCD,"Randsburg CDP, CA",69
+2905,6029,Kern CA,East Kern CCD,"Ridgecrest city, CA",27616
+2905,6029,Kern CA,East Kern CCD,"Rosamond CDP, CA",18150
+2905,6029,Kern CA,East Kern CCD, ,5987
+2905,6029,Kern CA,Lake Isabella CCD,"Bodfish CDP, CA",1956
+2905,6029,Kern CA,Lake Isabella CCD,"Kernville CDP, CA",1395
+2905,6029,Kern CA,Lake Isabella CCD,"Lake Isabella CDP, CA",3466
+2905,6029,Kern CA,Lake Isabella CCD,"Mountain Mesa CDP, CA",777
+2905,6029,Kern CA,Lake Isabella CCD,"Onyx CDP, CA",475
+2905,6029,Kern CA,Lake Isabella CCD,"Squirrel Mountain Valley CDP, CA",547
+2905,6029,Kern CA,Lake Isabella CCD,"Weldon CDP, CA",2642
+2905,6029,Kern CA,Lake Isabella CCD,"Wofford Heights CDP, CA",2200
+2905,6029,Kern CA,Lake Isabella CCD, ,2776
+2905,6029,Kern CA,Tehachapi CCD,"Arvin city, CA",0
+2905,6029,Kern CA,Tehachapi CCD,"Bear Valley Springs CDP, CA",5172
+2905,6029,Kern CA,Tehachapi CCD,"Golden Hills CDP, CA",8656
+2905,6029,Kern CA,Tehachapi CCD,"Keene CDP, CA",431
+2905,6029,Kern CA,Tehachapi CCD,"Lebec CDP, CA",5
+2905,6029,Kern CA,Tehachapi CCD,"Mojave CDP, CA",53
+2905,6029,Kern CA,Tehachapi CCD,"Stallion Springs CDP, CA",2488
+2905,6029,Kern CA,Tehachapi CCD,"Tehachapi city, CA",14414
+2905,6029,Kern CA,Tehachapi CCD, ,5081
+3100,6031,Kings CA,Avenal CCD,"Avenal city, CA",15498
+3100,6031,Kings CA,Avenal CCD, ,67
+3100,6031,Kings CA,Corcoran CCD,"Corcoran city, CA",12695
+3100,6031,Kings CA,Corcoran CCD, ,1071
+3100,6031,Kings CA,Hanford CCD,"Armona CDP, CA",4156
+3100,6031,Kings CA,Hanford CCD,"Grangeville CDP, CA",469
+3100,6031,Kings CA,Hanford CCD,"Hanford city, CA",53967
+3100,6031,Kings CA,Hanford CCD,"Home Garden CDP, CA",1761
+3100,6031,Kings CA,Hanford CCD, ,6857
+3100,6031,Kings CA,Hanford Northeast CCD,"Hardwick CDP, CA",138
+3100,6031,Kings CA,Hanford Northeast CCD, ,3319
+3100,6031,Kings CA,Lemoore CCD,"Lemoore city, CA",24531
+3100,6031,Kings CA,Lemoore CCD,"Lemoore Station CDP, CA",7438
+3100,6031,Kings CA,Lemoore CCD, ,4381
+3100,6031,Kings CA,Stratford CCD,"Avenal city, CA",7
+3100,6031,Kings CA,Stratford CCD,"Corcoran city, CA",12118
+3100,6031,Kings CA,Stratford CCD,"Kettleman City CDP, CA",1439
+3100,6031,Kings CA,Stratford CCD,"Stratford CDP, CA",1277
+3100,6031,Kings CA,Stratford CCD, ,1793
+3300,6033,Lake CA,Clearlake CCD,"Clearlake city, CA",15250
+3300,6033,Lake CA,Clearlake CCD,"Clearlake Oaks CDP, CA",171
+3300,6033,Lake CA,Clearlake CCD, ,428
+3300,6033,Lake CA,Clearlake Riviera CCD,"Clearlake Riviera CDP, CA",3090
+3300,6033,Lake CA,Clearlake Riviera CCD,"Kelseyville CDP, CA",255
+3300,6033,Lake CA,Clearlake Riviera CCD,"Soda Bay CDP, CA",1016
+3300,6033,Lake CA,Clearlake Riviera CCD, ,1698
+3300,6033,Lake CA,Cobb CCD,"Cobb CDP, CA",1778
+3300,6033,Lake CA,Cobb CCD, ,2087
+3300,6033,Lake CA,Kelseyville CCD,"Kelseyville CDP, CA",3098
+3300,6033,Lake CA,Kelseyville CCD, ,2947
+3300,6033,Lake CA,Lakeport CCD,"Lakeport city, CA",4753
+3300,6033,Lake CA,Lakeport CCD,"North Lakeport CDP, CA",3314
+3300,6033,Lake CA,Lakeport CCD, ,1353
+3300,6033,Lake CA,Lower Lake CCD,"Hidden Valley Lake CDP, CA",582
+3300,6033,Lake CA,Lower Lake CCD,"Lower Lake CDP, CA",1294
+3300,6033,Lake CA,Lower Lake CCD, ,1322
+3300,6033,Lake CA,Lucerne-Clearlake Oaks CCD,"Clearlake Oaks CDP, CA",2188
+3300,6033,Lake CA,Lucerne-Clearlake Oaks CCD,"Lucerne CDP, CA",3067
+3300,6033,Lake CA,Lucerne-Clearlake Oaks CCD,"Spring Valley CDP, CA",845
+3300,6033,Lake CA,Lucerne-Clearlake Oaks CCD, ,730
+3300,6033,Lake CA,Middletown CCD,"Hidden Valley Lake CDP, CA",4997
+3300,6033,Lake CA,Middletown CCD,"Middletown CDP, CA",1323
+3300,6033,Lake CA,Middletown CCD, ,1255
+3300,6033,Lake CA,Upper Lake-Nice CCD,"Nice CDP, CA",2731
+3300,6033,Lake CA,Upper Lake-Nice CCD,"Upper Lake CDP, CA",1052
+3300,6033,Lake CA,Upper Lake-Nice CCD, ,2041
+3300,6045,Mendocino CA,Covelo CCD,"Covelo CDP, CA",1255
+3300,6045,Mendocino CA,Covelo CCD, ,1332
+3300,6045,Mendocino CA,Fort Bragg CCD,"Cleone CDP, CA",618
+3300,6045,Mendocino CA,Fort Bragg CCD,"Fort Bragg city, CA",7273
+3300,6045,Mendocino CA,Fort Bragg CCD, ,4287
+3300,6045,Mendocino CA,Hopland CCD,"Hopland CDP, CA",756
+3300,6045,Mendocino CA,Hopland CCD, ,1326
+3300,6045,Mendocino CA,Laytonville-Leggett CCD,"Laytonville CDP, CA",1227
+3300,6045,Mendocino CA,Laytonville-Leggett CCD,"Leggett CDP, CA",122
+3300,6045,Mendocino CA,Laytonville-Leggett CCD, ,2806
+3300,6045,Mendocino CA,Mendocino CCD,"Albion CDP, CA",168
+3300,6045,Mendocino CA,Mendocino CCD,"Boonville CDP, CA",1035
+3300,6045,Mendocino CA,Mendocino CCD,"Caspar CDP, CA",509
+3300,6045,Mendocino CA,Mendocino CCD,"Comptche CDP, CA",159
+3300,6045,Mendocino CA,Mendocino CCD,"Little River CDP, CA",117
+3300,6045,Mendocino CA,Mendocino CCD,"Mendocino CDP, CA",894
+3300,6045,Mendocino CA,Mendocino CCD,"Philo CDP, CA",349
+3300,6045,Mendocino CA,Mendocino CCD, ,7378
+3300,6045,Mendocino CA,Point Arena CCD,"Anchor Bay CDP, CA",340
+3300,6045,Mendocino CA,Point Arena CCD,"Manchester CDP, CA",195
+3300,6045,Mendocino CA,Point Arena CCD,"Point Arena city, CA",449
+3300,6045,Mendocino CA,Point Arena CCD, ,2931
+3300,6045,Mendocino CA,Redwood Valley-Potter Valley CCD,"Calpella CDP, CA",679
+3300,6045,Mendocino CA,Redwood Valley-Potter Valley CCD,"Potter Valley CDP, CA",646
+3300,6045,Mendocino CA,Redwood Valley-Potter Valley CCD,"Redwood Valley CDP, CA",1729
+3300,6045,Mendocino CA,Redwood Valley-Potter Valley CCD, ,8978
+3300,6045,Mendocino CA,Ukiah CCD,"Talmage CDP, CA",1130
+3300,6045,Mendocino CA,Ukiah CCD,"Ukiah city, CA",16075
+3300,6045,Mendocino CA,Ukiah CCD, ,9958
+3300,6045,Mendocino CA,Willits CCD,"Brooktrails CDP, CA",3235
+3300,6045,Mendocino CA,Willits CCD,"Willits city, CA",4888
+3300,6045,Mendocino CA,Willits CCD, ,4997
+3701,6037,Los Angeles CA,Newhall CCD,"Castaic CDP, CA",19015
+3701,6037,Los Angeles CA,Newhall CCD,"Green Valley CDP, CA",1027
+3701,6037,Los Angeles CA,Newhall CCD,"Hasley Canyon CDP, CA",1137
+3701,6037,Los Angeles CA,Newhall CCD,"Leona Valley CDP, CA",25
+3701,6037,Los Angeles CA,Newhall CCD,"Santa Clarita city, CA",8890
+3701,6037,Los Angeles CA,Newhall CCD,"Stevenson Ranch CDP, CA",17557
+3701,6037,Los Angeles CA,Newhall CCD,"Val Verde CDP, CA",2468
+3701,6037,Los Angeles CA,Newhall CCD, ,23833
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Elizabeth Lake CDP, CA",1756
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Lake Hughes CDP, CA",649
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Lake Los Angeles CDP, CA",12328
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Lancaster city, CA",3874
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Leona Valley CDP, CA",1447
+3701,6037,Los Angeles CA,North Antelope Valley CCD,"Palmdale city, CA",2149
+3701,6037,Los Angeles CA,North Antelope Valley CCD, ,4855
+3701,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",0
+3701,6037,Los Angeles CA,San Fernando Valley CCD,"Santa Clarita city, CA",6
+3701,6037,Los Angeles CA,San Fernando Valley CCD, ,1986
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Acton CDP, CA",7582
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Agua Dulce CDP, CA",3342
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Azusa city, CA",113
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Littlerock CDP, CA",1377
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Palmdale city, CA",39
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Santa Clarita city, CA",5809
+3701,6037,Los Angeles CA,South Antelope Valley CCD,"Sun Village CDP, CA",11383
+3701,6037,Los Angeles CA,South Antelope Valley CCD, ,7154
+3702,6037,Los Angeles CA,Newhall CCD,"Santa Clarita city, CA",154652
+3702,6037,Los Angeles CA,Newhall CCD, ,25726
+3702,6037,Los Angeles CA,South Antelope Valley CCD,"Santa Clarita city, CA",6963
+3702,6037,Los Angeles CA,South Antelope Valley CCD, ,761
+3703,6037,Los Angeles CA,North Antelope Valley CCD,"Lancaster city, CA",150999
+3703,6037,Los Angeles CA,North Antelope Valley CCD,"Quartz Hill CDP, CA",8014
+3703,6037,Los Angeles CA,North Antelope Valley CCD, ,4619
+3704,6037,Los Angeles CA,North Antelope Valley CCD,"Palmdale city, CA",0
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Acton CDP, CA",14
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Desert View Highlands CDP, CA",2360
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Lancaster city, CA",1760
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Leona Valley CDP, CA",135
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Palmdale city, CA",150562
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Quartz Hill CDP, CA",2898
+3704,6037,Los Angeles CA,South Antelope Valley CCD,"Sun Village CDP, CA",182
+3704,6037,Los Angeles CA,South Antelope Valley CCD, ,6357
+3705,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",165328
+3705,6037,Los Angeles CA,San Fernando Valley CCD, ,1604
+3706,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",136414
+3706,6037,Los Angeles CA,San Fernando Valley CCD, ,0
+3707,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",126310
+3707,6037,Los Angeles CA,San Fernando Valley CCD,"San Fernando city, CA",23645
+3707,6037,Los Angeles CA,San Fernando Valley CCD, ,1012
+3708,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",136829
+3708,6037,Los Angeles CA,San Fernando Valley CCD, ,4
+3709,6037,Los Angeles CA,Pasadena CCD,"Altadena CDP, CA",42039
+3709,6037,Los Angeles CA,Pasadena CCD,"La Cañada Flintridge city, CA",20246
+3709,6037,Los Angeles CA,Pasadena CCD,"La Crescenta-Montrose CDP, CA",19653
+3709,6037,Los Angeles CA,Pasadena CCD,"Pasadena city, CA",4755
+3709,6037,Los Angeles CA,Pasadena CCD, ,1291
+3709,6037,Los Angeles CA,San Fernando Valley CCD,"Glendale city, CA",923
+3709,6037,Los Angeles CA,South Antelope Valley CCD,"Glendale city, CA",6
+3709,6037,Los Angeles CA,South Antelope Valley CCD,"Monrovia city, CA",4
+3709,6037,Los Angeles CA,South Antelope Valley CCD, ,113
+3709,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Monrovia city, CA",10255
+3709,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Sierra Madre city, CA",10917
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Azusa city, CA",46248
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Baldwin Park city, CA",64382
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Citrus CDP, CA",10526
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Glendora city, CA",841
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Irwindale city, CA",1422
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD,"Vincent CDP, CA",3098
+3710,6037,Los Angeles CA,East San Gabriel Valley CCD, ,2045
+3710,6037,Los Angeles CA,South Antelope Valley CCD,"Duarte city, CA",0
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Arcadia city, CA",386
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Bradbury city, CA",1048
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Duarte city, CA",21321
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Mayflower Village CDP, CA",5515
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Monrovia city, CA",10184
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"South Monrovia Island CDP, CA",6777
+3710,6037,Los Angeles CA,Upper San Gabriel Valley CCD, ,244
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Charter Oak CDP, CA",8253
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Citrus CDP, CA",340
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Claremont city, CA",34926
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Covina city, CA",3216
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Glendora city, CA",49227
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"La Verne city, CA",31057
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"Pomona city, CA",1295
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD,"San Dimas city, CA",31884
+3711,6037,Los Angeles CA,East San Gabriel Valley CCD, ,3732
+3711,6037,Los Angeles CA,South Antelope Valley CCD,"Glendora city, CA",5
+3711,6037,Los Angeles CA,South Antelope Valley CCD,"La Verne city, CA",6
+3711,6037,Los Angeles CA,South Antelope Valley CCD,"San Dimas city, CA",0
+3711,6037,Los Angeles CA,South Antelope Valley CCD, ,0
+3712,6037,Los Angeles CA,East San Gabriel Valley CCD,"Diamond Bar city, CA",0
+3712,6037,Los Angeles CA,East San Gabriel Valley CCD,"Pomona city, CA",146689
+3712,6037,Los Angeles CA,East San Gabriel Valley CCD, ,206
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Charter Oak CDP, CA",1057
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Citrus CDP, CA",0
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Covina city, CA",42786
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Pomona city, CA",536
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"San Dimas city, CA",1487
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"South San Jose Hills CDP, CA",1212
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Vincent CDP, CA",12002
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"Walnut city, CA",29172
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD,"West Covina city, CA",13611
+3713,6037,Los Angeles CA,East San Gabriel Valley CCD, ,7803
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"Diamond Bar city, CA",55544
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"Hacienda Heights CDP, CA",8
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"Industry city, CA",28
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"La Habra Heights city, CA",275
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"Pomona city, CA",538
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"Rowland Heights CDP, CA",48993
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD,"South San Jose Hills CDP, CA",161
+3714,6037,Los Angeles CA,East San Gabriel Valley CCD, ,41
+3714,6037,Los Angeles CA,Whittier CCD,"Hacienda Heights CDP, CA",0
+3714,6037,Los Angeles CA,Whittier CCD,"La Habra Heights city, CA",2873
+3714,6037,Los Angeles CA,Whittier CCD,"Rowland Heights CDP, CA",0
+3714,6037,Los Angeles CA,Whittier CCD, ,667
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Baldwin Park city, CA",5205
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Covina city, CA",1794
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Industry city, CA",0
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Irwindale city, CA",0
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"South San Jose Hills CDP, CA",19178
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Valinda CDP, CA",4156
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"Vincent CDP, CA",822
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD,"West Covina city, CA",88956
+3715,6037,Los Angeles CA,East San Gabriel Valley CCD, ,0
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"Avocado Heights CDP, CA",15411
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"Baldwin Park city, CA",5803
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"Hacienda Heights CDP, CA",26
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"Industry city, CA",190
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"La Puente city, CA",39816
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"Valinda CDP, CA",18666
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"West Covina city, CA",3531
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD,"West Puente Valley CDP, CA",22636
+3716,6037,Los Angeles CA,East San Gabriel Valley CCD, ,1476
+3716,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"South El Monte city, CA",1509
+3716,6037,Los Angeles CA,Upper San Gabriel Valley CCD, ,1287
+3717,6037,Los Angeles CA,Pasadena CCD,"East Pasadena CDP, CA",6144
+3717,6037,Los Angeles CA,Pasadena CCD,"East San Gabriel CDP, CA",0
+3717,6037,Los Angeles CA,Pasadena CCD,"Pasadena city, CA",18
+3717,6037,Los Angeles CA,Pasadena CCD,"San Marino city, CA",13147
+3717,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"East San Gabriel CDP, CA",5943
+3717,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"San Gabriel city, CA",34556
+3717,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Temple City city, CA",540
+3717,6037,Los Angeles CA,Southwest San Gabriel Valley CCD, ,5782
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Arcadia city, CA",55962
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"East San Gabriel CDP, CA",8931
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"El Monte city, CA",1163
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Monrovia city, CA",16147
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"North El Monte CDP, CA",3723
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Temple City city, CA",35018
+3717,6037,Los Angeles CA,Upper San Gabriel Valley CCD, ,2024
+3718,6037,Los Angeles CA,Pasadena CCD,"Altadena CDP, CA",738
+3718,6037,Los Angeles CA,Pasadena CCD,"Pasadena city, CA",132349
+3718,6037,Los Angeles CA,Pasadena CCD,"San Pasqual CDP, CA",2041
+3718,6037,Los Angeles CA,Pasadena CCD, ,0
+3719,6037,Los Angeles CA,San Fernando Valley CCD,"Glendale city, CA",190790
+3719,6037,Los Angeles CA,South Antelope Valley CCD,"Glendale city, CA",0
+3720,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",14298
+3720,6037,Los Angeles CA,San Fernando Valley CCD,"Burbank city, CA",103340
+3720,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",505
+3721,6037,Los Angeles CA,San Fernando Valley CCD,"Burbank city, CA",0
+3721,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",133453
+3722,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",159310
+3723,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",141253
+3724,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",167320
+3725,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",0
+3725,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",167687
+3725,6037,Los Angeles CA,San Fernando Valley CCD, ,782
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD,"Agoura Hills city, CA",20330
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD,"Calabasas city, CA",5686
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD,"Malibu city, CA",12645
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD,"Topanga CDP, CA",7927
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD,"Westlake Village city, CA",8270
+3726,6037,Los Angeles CA,Agoura Hills-Malibu CCD, ,8966
+3726,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",13492
+3726,6037,Los Angeles CA,San Fernando Valley CCD,"Calabasas city, CA",17372
+3726,6037,Los Angeles CA,San Fernando Valley CCD,"Hidden Hills city, CA",1856
+3726,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",2226
+3726,6037,Los Angeles CA,San Fernando Valley CCD,"Topanga CDP, CA",362
+3726,6037,Los Angeles CA,San Fernando Valley CCD, ,2371
+3727,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",62400
+3727,6037,Los Angeles CA,Los Angeles CCD, ,11
+3727,6037,Los Angeles CA,San Fernando Valley CCD,"Los Angeles city, CA",88857
+3727,6037,Los Angeles CA,San Fernando Valley CCD, ,0
+3728,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",12775
+3728,6037,Los Angeles CA,Santa Monica CCD,"Santa Monica city, CA",89736
+3728,6037,Los Angeles CA,Santa Monica CCD, ,0
+3729,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",195061
+3729,6037,Los Angeles CA,Los Angeles CCD, ,702
+3730,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",164373
+3730,6037,Los Angeles CA,Los Angeles CCD, ,3
+3731,6037,Los Angeles CA,Los Angeles CCD,"Beverly Hills city, CA",34109
+3731,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",39891
+3731,6037,Los Angeles CA,Los Angeles CCD,"West Hollywood city, CA",34399
+3732,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",176714
+3733,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",112679
+3734,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",195576
+3735,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",193761
+3735,6037,Los Angeles CA,Pasadena CCD,"South Pasadena city, CA",3
+3736,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",6032
+3736,6037,Los Angeles CA,Pasadena CCD,"Pasadena city, CA",0
+3736,6037,Los Angeles CA,Pasadena CCD,"South Pasadena city, CA",25616
+3736,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Alhambra city, CA",83089
+3736,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"San Gabriel city, CA",0
+3737,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"East Los Angeles CDP, CA",2008
+3737,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Monterey Park city, CA",1675
+3737,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Monterey Park city, CA",58594
+3737,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Rosemead city, CA",53299
+3737,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"San Gabriel city, CA",5162
+3737,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"South San Gabriel CDP, CA",7122
+3737,6037,Los Angeles CA,Southwest San Gabriel Valley CCD, ,501
+3737,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"El Monte city, CA",87
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Arcadia city, CA",16
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"El Monte city, CA",112225
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Industry city, CA",0
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Pico Rivera city, CA",0
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"South El Monte city, CA",18607
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD,"Whittier city, CA",0
+3738,6037,Los Angeles CA,Upper San Gabriel Valley CCD, ,553
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD,"Avocado Heights CDP, CA",0
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD,"Hacienda Heights CDP, CA",53568
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD,"Industry city, CA",0
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD,"La Habra Heights city, CA",0
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD,"Whittier city, CA",0
+3739,6037,Los Angeles CA,East San Gabriel Valley CCD, ,0
+3739,6037,Los Angeles CA,Whittier CCD,"Hacienda Heights CDP, CA",436
+3739,6037,Los Angeles CA,Whittier CCD,"Industry city, CA",1
+3739,6037,Los Angeles CA,Whittier CCD,"La Habra Heights city, CA",2177
+3739,6037,Los Angeles CA,Whittier CCD,"Pico Rivera city, CA",10
+3739,6037,Los Angeles CA,Whittier CCD,"Rose Hills CDP, CA",2803
+3739,6037,Los Angeles CA,Whittier CCD,"Santa Fe Springs city, CA",41
+3739,6037,Los Angeles CA,Whittier CCD,"West Whittier-Los Nietos CDP, CA",23624
+3739,6037,Los Angeles CA,Whittier CCD,"Whittier city, CA",82647
+3739,6037,Los Angeles CA,Whittier CCD, ,1176
+3740,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"East Los Angeles CDP, CA",536
+3740,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Montebello city, CA",62445
+3740,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"Rosemead city, CA",465
+3740,6037,Los Angeles CA,Southwest San Gabriel Valley CCD,"South San Gabriel CDP, CA",948
+3740,6037,Los Angeles CA,Southwest San Gabriel Valley CCD, ,0
+3740,6037,Los Angeles CA,Whittier CCD,"Pico Rivera city, CA",62932
+3740,6037,Los Angeles CA,Whittier CCD, ,1302
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Bell city, CA",35477
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Bell Gardens city, CA",42072
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Commerce city, CA",12823
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Cudahy city, CA",23805
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Huntington Park city, CA",1920
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Maywood city, CA",27395
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Vernon city, CA",0
+3741,6037,Los Angeles CA,South Gate-East Los Angeles CCD, ,0
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Commerce city, CA",0
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Florence-Graham CDP, CA",63387
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Huntington Park city, CA",56194
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Vernon city, CA",112
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Walnut Park CDP, CA",12088
+3742,6037,Los Angeles CA,South Gate-East Los Angeles CCD, ,0
+3743,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Commerce city, CA",0
+3743,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"East Los Angeles CDP, CA",123952
+3743,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Montebello city, CA",55
+3744,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",170583
+3745,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",122254
+3746,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",109831
+3747,6037,Los Angeles CA,Los Angeles CCD,"Ladera Heights CDP, CA",0
+3747,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",158277
+3748,6037,Los Angeles CA,Los Angeles CCD,"Culver City city, CA",38883
+3748,6037,Los Angeles CA,Los Angeles CCD,"Inglewood city, CA",286
+3748,6037,Los Angeles CA,Los Angeles CCD,"Ladera Heights CDP, CA",6498
+3748,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",111902
+3748,6037,Los Angeles CA,Los Angeles CCD,"Marina del Rey CDP, CA",8866
+3748,6037,Los Angeles CA,Los Angeles CCD,"View Park-Windsor Hills CDP, CA",11075
+3748,6037,Los Angeles CA,Los Angeles CCD, ,255
+3749,6037,Los Angeles CA,Inglewood CCD,"Hawthorne city, CA",26
+3749,6037,Los Angeles CA,Inglewood CCD,"Inglewood city, CA",108707
+3749,6037,Los Angeles CA,Inglewood CCD,"Lennox CDP, CA",4962
+3749,6037,Los Angeles CA,Los Angeles CCD, ,0
+3750,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",172913
+3751,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",148133
+3752,6037,Los Angeles CA,Compton CCD,"Compton city, CA",640
+3752,6037,Los Angeles CA,Compton CCD,"East Rancho Dominguez CDP, CA",287
+3752,6037,Los Angeles CA,Compton CCD,"Lynwood city, CA",69772
+3752,6037,Los Angeles CA,Compton CCD, ,2384
+3752,6037,Los Angeles CA,Downey-Norwalk CCD,"Paramount city, CA",0
+3752,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"South Gate city, CA",94396
+3752,6037,Los Angeles CA,South Gate-East Los Angeles CCD,"Walnut Park CDP, CA",3878
+3753,6037,Los Angeles CA,Downey-Norwalk CCD,"Downey city, CA",110238
+3754,6037,Los Angeles CA,Downey-Norwalk CCD,"Downey city, CA",0
+3754,6037,Los Angeles CA,Downey-Norwalk CCD,"Norwalk city, CA",0
+3754,6037,Los Angeles CA,Whittier CCD,"East La Mirada CDP, CA",9757
+3754,6037,Los Angeles CA,Whittier CCD,"La Mirada city, CA",48527
+3754,6037,Los Angeles CA,Whittier CCD,"Santa Fe Springs city, CA",15960
+3754,6037,Los Angeles CA,Whittier CCD,"South Whittier CDP, CA",57156
+3754,6037,Los Angeles CA,Whittier CCD,"West Whittier-Los Nietos CDP, CA",1916
+3754,6037,Los Angeles CA,Whittier CCD,"Whittier city, CA",2684
+3755,6037,Los Angeles CA,Downey-Norwalk CCD,"Bellflower city, CA",13353
+3755,6037,Los Angeles CA,Downey-Norwalk CCD,"Downey city, CA",1534
+3755,6037,Los Angeles CA,Downey-Norwalk CCD,"Norwalk city, CA",105549
+3755,6037,Los Angeles CA,Downey-Norwalk CCD, ,546
+3755,6037,Los Angeles CA,Whittier CCD,"Santa Fe Springs city, CA",222
+3756,6037,Los Angeles CA,Downey-Norwalk CCD,"Bellflower city, CA",63263
+3756,6037,Los Angeles CA,Downey-Norwalk CCD,"Paramount city, CA",54098
+3757,6037,Los Angeles CA,Compton CCD,"Carson city, CA",549
+3757,6037,Los Angeles CA,Compton CCD,"Compton city, CA",95815
+3757,6037,Los Angeles CA,Compton CCD,"East Rancho Dominguez CDP, CA",14848
+3757,6037,Los Angeles CA,Compton CCD,"West Rancho Dominguez CDP, CA",5669
+3757,6037,Los Angeles CA,Compton CCD,"Willowbrook CDP, CA",35983
+3757,6037,Los Angeles CA,Compton CCD, ,3765
+3757,6037,Los Angeles CA,Downey-Norwalk CCD,"Paramount city, CA",0
+3758,6037,Los Angeles CA,Inglewood CCD,"Alondra Park CDP, CA",8592
+3758,6037,Los Angeles CA,Inglewood CCD,"Gardena city, CA",58829
+3758,6037,Los Angeles CA,Inglewood CCD,"Hawthorne city, CA",2843
+3758,6037,Los Angeles CA,Inglewood CCD,"Lawndale city, CA",32769
+3758,6037,Los Angeles CA,Inglewood CCD,"West Athens CDP, CA",8123
+3758,6037,Los Angeles CA,Inglewood CCD,"Westmont CDP, CA",31853
+3758,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",10921
+3758,6037,Los Angeles CA,Torrance CCD,"Torrance city, CA",0
+3759,6037,Los Angeles CA,Inglewood CCD,"Del Aire CDP, CA",10001
+3759,6037,Los Angeles CA,Inglewood CCD,"Hawthorne city, CA",81424
+3759,6037,Los Angeles CA,Inglewood CCD,"Inglewood city, CA",680
+3759,6037,Los Angeles CA,Inglewood CCD,"Lennox CDP, CA",17791
+3759,6037,Los Angeles CA,Inglewood CCD,"West Athens CDP, CA",606
+3759,6037,Los Angeles CA,Inglewood CCD,"Westmont CDP, CA",0
+3759,6037,Los Angeles CA,Inglewood CCD, ,2488
+3760,6037,Los Angeles CA,Agoura Hills-Malibu CCD, ,0
+3760,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",0
+3760,6037,Los Angeles CA,Los Angeles CCD, ,0
+3760,6037,Los Angeles CA,Palos Verdes CCD, ,0
+3760,6037,Los Angeles CA,Santa Monica CCD, ,0
+3760,6037,Los Angeles CA,South Bay Cities CCD,"El Segundo city, CA",16654
+3760,6037,Los Angeles CA,South Bay Cities CCD,"Hermosa Beach city, CA",19506
+3760,6037,Los Angeles CA,South Bay Cities CCD,"Manhattan Beach city, CA",35135
+3760,6037,Los Angeles CA,South Bay Cities CCD,"Redondo Beach city, CA",66748
+3760,6037,Los Angeles CA,South Bay Cities CCD, ,0
+3760,6037,Los Angeles CA,Torrance CCD, ,0
+3761,6037,Los Angeles CA,Torrance CCD,"Torrance city, CA",125349
+3762,6037,Los Angeles CA,Compton CCD,"Carson city, CA",91123
+3762,6037,Los Angeles CA,Compton CCD,"Compton city, CA",0
+3762,6037,Los Angeles CA,Compton CCD,"West Carson CDP, CA",21699
+3762,6037,Los Angeles CA,Compton CCD, ,0
+3762,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Long Beach city, CA",0
+3762,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",0
+3763,6037,Los Angeles CA,Compton CCD,"Carson city, CA",42
+3763,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Lakewood city, CA",864
+3763,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Long Beach city, CA",141714
+3764,6037,Los Angeles CA,Downey-Norwalk CCD,"Artesia city, CA",16522
+3764,6037,Los Angeles CA,Downey-Norwalk CCD,"Cerritos city, CA",49041
+3764,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Hawaiian Gardens city, CA",14254
+3764,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Lakewood city, CA",79184
+3764,6037,Los Angeles CA,Long Beach-Lakewood CCD, ,115
+3765,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Long Beach city, CA",128683
+3765,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Signal Hill city, CA",0
+3765,6037,Los Angeles CA,Long Beach-Lakewood CCD, ,1410
+3766,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Long Beach city, CA",102211
+3766,6037,Los Angeles CA,Long Beach-Lakewood CCD, ,0
+3766,6037,Los Angeles CA,Los Angeles CCD, ,0
+3767,6037,Los Angeles CA,Compton CCD,"Carson city, CA",0
+3767,6037,Los Angeles CA,Los Angeles CCD,"Lomita city, CA",0
+3767,6037,Los Angeles CA,Los Angeles CCD,"Los Angeles city, CA",175263
+3767,6037,Los Angeles CA,Los Angeles CCD, ,2035
+3768,6037,Los Angeles CA,Long Beach-Lakewood CCD, ,0
+3768,6037,Los Angeles CA,Los Angeles CCD, ,0
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Avalon city, CA",3728
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Lomita city, CA",20256
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Palos Verdes Estates city, CA",13438
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Rancho Palos Verdes city, CA",41643
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Rolling Hills city, CA",1860
+3768,6037,Los Angeles CA,Palos Verdes CCD,"Rolling Hills Estates city, CA",8067
+3768,6037,Los Angeles CA,Palos Verdes CCD, ,2373
+3768,6037,Los Angeles CA,Torrance CCD,"Torrance city, CA",20089
+3768,6037,Los Angeles CA,Torrance CCD, ,0
+3769,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Long Beach city, CA",89649
+3769,6037,Los Angeles CA,Long Beach-Lakewood CCD,"Signal Hill city, CA",11016
+3769,6037,Los Angeles CA,Long Beach-Lakewood CCD, ,0
+3900,6039,Madera CA,Chowchilla CCD,"Chowchilla city, CA",18720
+3900,6039,Madera CA,Chowchilla CCD,"Fairmead CDP, CA",1447
+3900,6039,Madera CA,Chowchilla CCD, ,3204
+3900,6039,Madera CA,Madera CCD,"Bonadelle Ranchos-Madera Ranchos CDP, CA",7745
+3900,6039,Madera CA,Madera CCD,"Madera city, CA",61416
+3900,6039,Madera CA,Madera CCD,"Madera Acres CDP, CA",9163
+3900,6039,Madera CA,Madera CCD,"Parksdale CDP, CA",2621
+3900,6039,Madera CA,Madera CCD,"Parkwood CDP, CA",2268
+3900,6039,Madera CA,Madera CCD, ,9224
+3900,6039,Madera CA,Madera Southeast CCD,"Bonadelle Ranchos-Madera Ranchos CDP, CA",824
+3900,6039,Madera CA,Madera Southeast CCD,"La Vina CDP, CA",279
+3900,6039,Madera CA,Madera Southeast CCD,"Rolling Hills CDP, CA",742
+3900,6039,Madera CA,Madera Southeast CCD, ,3474
+3900,6039,Madera CA,Madera West CCD, ,1288
+3900,6039,Madera CA,Oakhurst-North Fork CCD,"Ahwahnee CDP, CA",1889
+3900,6039,Madera CA,Oakhurst-North Fork CCD,"Bass Lake CDP, CA",527
+3900,6039,Madera CA,Oakhurst-North Fork CCD,"Nipinnawasee CDP, CA",388
+3900,6039,Madera CA,Oakhurst-North Fork CCD,"Oakhurst CDP, CA",2829
+3900,6039,Madera CA,Oakhurst-North Fork CCD, ,8336
+3900,6039,Madera CA,Yosemite Lakes CCD,"Ahwahnee CDP, CA",357
+3900,6039,Madera CA,Yosemite Lakes CCD,"Coarsegold CDP, CA",1840
+3900,6039,Madera CA,Yosemite Lakes CCD,"Nipinnawasee CDP, CA",87
+3900,6039,Madera CA,Yosemite Lakes CCD,"Yosemite Lakes CDP, CA",4952
+3900,6039,Madera CA,Yosemite Lakes CCD, ,7245
+4101,6041,Marin CA,Bolinas CCD,"Bolinas CDP, CA",1620
+4101,6041,Marin CA,Bolinas CCD,"Muir Beach CDP, CA",310
+4101,6041,Marin CA,Bolinas CCD,"Sausalito city, CA",0
+4101,6041,Marin CA,Bolinas CCD,"Stinson Beach CDP, CA",632
+4101,6041,Marin CA,Bolinas CCD,"Tamalpais-Homestead Valley CDP, CA",89
+4101,6041,Marin CA,Bolinas CCD, ,348
+4101,6041,Marin CA,Northwest Marin CCD,"Dillon Beach CDP, CA",283
+4101,6041,Marin CA,Northwest Marin CCD,"Inverness CDP, CA",1304
+4101,6041,Marin CA,Northwest Marin CCD,"Lagunitas-Forest Knolls CDP, CA",1819
+4101,6041,Marin CA,Northwest Marin CCD,"Nicasio CDP, CA",96
+4101,6041,Marin CA,Northwest Marin CCD,"Novato city, CA",2
+4101,6041,Marin CA,Northwest Marin CCD,"Point Reyes Station CDP, CA",848
+4101,6041,Marin CA,Northwest Marin CCD,"San Geronimo CDP, CA",446
+4101,6041,Marin CA,Northwest Marin CCD,"Tomales CDP, CA",204
+4101,6041,Marin CA,Northwest Marin CCD,"Woodacre CDP, CA",1348
+4101,6041,Marin CA,Northwest Marin CCD, ,2306
+4101,6041,Marin CA,Novato CCD,"Black Point-Green Point CDP, CA",1306
+4101,6041,Marin CA,Novato CCD,"Novato city, CA",51902
+4101,6041,Marin CA,Novato CCD, ,5444
+4101,6041,Marin CA,Ross Valley CCD,"Corte Madera town, CA",0
+4101,6041,Marin CA,Ross Valley CCD,"Fairfax town, CA",5104
+4101,6041,Marin CA,Ross Valley CCD,"Ross town, CA",0
+4101,6041,Marin CA,Ross Valley CCD, ,379
+4101,6041,Marin CA,San Rafael CCD,"Lucas Valley-Marinwood CDP, CA",6094
+4101,6041,Marin CA,San Rafael CCD,"San Rafael city, CA",18105
+4101,6041,Marin CA,San Rafael CCD,"Santa Venetia CDP, CA",4292
+4101,6041,Marin CA,San Rafael CCD,"Sleepy Hollow CDP, CA",2
+4101,6041,Marin CA,San Rafael CCD, ,564
+4101,6041,Marin CA,Southeast Marin CCD,"Belvedere city, CA",0
+4101,6041,Marin CA,Southeast Marin CCD,"Tiburon town, CA",0
+4101,6041,Marin CA,Southeast Marin CCD, ,0
+4102,6041,Marin CA,Ross Valley CCD,"Corte Madera town, CA",9253
+4102,6041,Marin CA,Ross Valley CCD,"Fairfax town, CA",2337
+4102,6041,Marin CA,Ross Valley CCD,"Kentfield CDP, CA",6485
+4102,6041,Marin CA,Ross Valley CCD,"Larkspur city, CA",11926
+4102,6041,Marin CA,Ross Valley CCD,"Mill Valley city, CA",0
+4102,6041,Marin CA,Ross Valley CCD,"Ross town, CA",2415
+4102,6041,Marin CA,Ross Valley CCD,"San Anselmo town, CA",12336
+4102,6041,Marin CA,Ross Valley CCD,"San Rafael city, CA",7
+4102,6041,Marin CA,Ross Valley CCD,"Sleepy Hollow CDP, CA",2382
+4102,6041,Marin CA,Ross Valley CCD, ,6114
+4102,6041,Marin CA,San Rafael CCD,"San Rafael city, CA",39601
+4102,6041,Marin CA,San Rafael CCD, ,1577
+4102,6041,Marin CA,Southeast Marin CCD,"Alto CDP, CA",711
+4102,6041,Marin CA,Southeast Marin CCD,"Belvedere city, CA",2068
+4102,6041,Marin CA,Southeast Marin CCD,"Larkspur city, CA",0
+4102,6041,Marin CA,Southeast Marin CCD,"Marin City CDP, CA",2666
+4102,6041,Marin CA,Southeast Marin CCD,"Mill Valley city, CA",13903
+4102,6041,Marin CA,Southeast Marin CCD,"Sausalito city, CA",7061
+4102,6041,Marin CA,Southeast Marin CCD,"Strawberry CDP, CA",5393
+4102,6041,Marin CA,Southeast Marin CCD,"Tamalpais-Homestead Valley CDP, CA",10646
+4102,6041,Marin CA,Southeast Marin CCD,"Tiburon town, CA",8962
+4102,6041,Marin CA,Southeast Marin CCD, ,1719
+4701,6047,Merced CA,Dos Palos CCD,"Dos Palos city, CA",4950
+4701,6047,Merced CA,Dos Palos CCD,"Dos Palos Y CDP, CA",323
+4701,6047,Merced CA,Dos Palos CCD,"South Dos Palos CDP, CA",1620
+4701,6047,Merced CA,Dos Palos CCD, ,2368
+4701,6047,Merced CA,Gustine CCD,"Gustine city, CA",5520
+4701,6047,Merced CA,Gustine CCD,"Volta CDP, CA",17
+4701,6047,Merced CA,Gustine CCD, ,2298
+4701,6047,Merced CA,Hilmar-Irwin CCD,"Hilmar-Irwin CDP, CA",5197
+4701,6047,Merced CA,Hilmar-Irwin CCD,"Stevinson CDP, CA",313
+4701,6047,Merced CA,Hilmar-Irwin CCD, ,4395
+4701,6047,Merced CA,Livingston-Delhi CCD,"Ballico CDP, CA",406
+4701,6047,Merced CA,Livingston-Delhi CCD,"Cressey CDP, CA",24
+4701,6047,Merced CA,Livingston-Delhi CCD,"Delhi CDP, CA",10755
+4701,6047,Merced CA,Livingston-Delhi CCD,"Livingston city, CA",13058
+4701,6047,Merced CA,Livingston-Delhi CCD, ,6560
+4701,6047,Merced CA,Los Banos CCD,"Los Banos city, CA",35972
+4701,6047,Merced CA,Los Banos CCD,"Santa Nella CDP, CA",1380
+4701,6047,Merced CA,Los Banos CCD,"Volta CDP, CA",229
+4701,6047,Merced CA,Los Banos CCD, ,2690
+4701,6047,Merced CA,Merced CCD,"El Nido CDP, CA",330
+4701,6047,Merced CA,Merced CCD,"McSwain CDP, CA",108
+4701,6047,Merced CA,Merced CCD,"Merced city, CA",17
+4701,6047,Merced CA,Merced CCD, ,3515
+4701,6047,Merced CA,Planada-Le Grand CCD,"Le Grand CDP, CA",1659
+4701,6047,Merced CA,Planada-Le Grand CCD, ,913
+4702,6047,Merced CA,Atwater CCD,"Atwater city, CA",27013
+4702,6047,Merced CA,Atwater CCD,"Cressey CDP, CA",370
+4702,6047,Merced CA,Atwater CCD,"McSwain CDP, CA",3704
+4702,6047,Merced CA,Atwater CCD,"Merced city, CA",7
+4702,6047,Merced CA,Atwater CCD,"Winton CDP, CA",10613
+4702,6047,Merced CA,Atwater CCD, ,7132
+4702,6047,Merced CA,Merced CCD,"Atwater city, CA",1155
+4702,6047,Merced CA,Merced CCD,"Bear Creek CDP, CA",290
+4702,6047,Merced CA,Merced CCD,"Franklin CDP, CA",6149
+4702,6047,Merced CA,Merced CCD,"McSwain CDP, CA",359
+4702,6047,Merced CA,Merced CCD,"Merced city, CA",78934
+4702,6047,Merced CA,Merced CCD,"Tuttle CDP, CA",84
+4702,6047,Merced CA,Merced CCD,"University of California Merced CDP, CA",0
+4702,6047,Merced CA,Merced CCD, ,8596
+4702,6047,Merced CA,Planada-Le Grand CCD,"Planada CDP, CA",4584
+4702,6047,Merced CA,Planada-Le Grand CCD,"Tuttle CDP, CA",19
+4702,6047,Merced CA,Planada-Le Grand CCD,"University of California Merced CDP, CA",0
+4702,6047,Merced CA,Planada-Le Grand CCD, ,1136
+4702,6047,Merced CA,Snelling CCD,"Snelling CDP, CA",231
+4702,6047,Merced CA,Snelling CCD, ,800
+5301,6053,Monterey CA,Carmel-by-the-Sea CCD,"Carmel-by-the-Sea city, CA",3722
+5301,6053,Monterey CA,Carmel-by-the-Sea CCD, ,10982
+5301,6053,Monterey CA,Carmel Valley CCD,"Carmel Valley Village CDP, CA",4407
+5301,6053,Monterey CA,Carmel Valley CCD, ,1526
+5301,6053,Monterey CA,Castroville CCD,"Castroville CDP, CA",6481
+5301,6053,Monterey CA,Castroville CCD,"Elkhorn CDP, CA",1565
+5301,6053,Monterey CA,Castroville CCD,"Prunedale CDP, CA",9951
+5301,6053,Monterey CA,Castroville CCD, ,725
+5301,6053,Monterey CA,Pajaro CCD,"Aromas CDP, CA",1358
+5301,6053,Monterey CA,Pajaro CCD,"Castroville CDP, CA",0
+5301,6053,Monterey CA,Pajaro CCD,"Las Lomas CDP, CA",3024
+5301,6053,Monterey CA,Pajaro CCD,"Moss Landing CDP, CA",204
+5301,6053,Monterey CA,Pajaro CCD,"Pajaro CDP, CA",3070
+5301,6053,Monterey CA,Pajaro CCD,"Prunedale CDP, CA",2833
+5301,6053,Monterey CA,Pajaro CCD, ,6926
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Del Monte Forest CDP, CA",4514
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Del Rey Oaks city, CA",1624
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Marina city, CA",19718
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Monterey city, CA",27810
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Pacific Grove city, CA",15041
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Sand City city, CA",334
+5301,6053,Monterey CA,Seaside-Monterey CCD,"Seaside city, CA",33025
+5301,6053,Monterey CA,Seaside-Monterey CCD, ,5447
+5301,6053,Monterey CA,Toro Park CCD, ,10680
+5302,6053,Monterey CA,Salinas CCD,"Boronda CDP, CA",1710
+5302,6053,Monterey CA,Salinas CCD,"Prunedale CDP, CA",4776
+5302,6053,Monterey CA,Salinas CCD,"Salinas city, CA",150441
+5302,6053,Monterey CA,Salinas CCD,"Spreckels CDP, CA",673
+5302,6053,Monterey CA,Salinas CCD, ,5603
+5303,6053,Monterey CA,Big Sur CCD, ,1710
+5303,6053,Monterey CA,Carmel-by-the-Sea CCD, ,0
+5303,6053,Monterey CA,Castroville CCD, ,0
+5303,6053,Monterey CA,Gonzales CCD,"Chualar CDP, CA",1190
+5303,6053,Monterey CA,Gonzales CCD,"Gonzales city, CA",8187
+5303,6053,Monterey CA,Gonzales CCD,"Soledad city, CA",10109
+5303,6053,Monterey CA,Gonzales CCD, ,1764
+5303,6053,Monterey CA,Greenfield CCD,"Greenfield city, CA",16330
+5303,6053,Monterey CA,Greenfield CCD, ,901
+5303,6053,Monterey CA,King City CCD,"King City city, CA",12874
+5303,6053,Monterey CA,King City CCD,"Pine Canyon CDP, CA",1822
+5303,6053,Monterey CA,King City CCD,"San Lucas CDP, CA",269
+5303,6053,Monterey CA,King City CCD, ,1311
+5303,6053,Monterey CA,Pajaro CCD, ,0
+5303,6053,Monterey CA,San Ardo CCD,"Bradley CDP, CA",93
+5303,6053,Monterey CA,San Ardo CCD,"Lockwood CDP, CA",379
+5303,6053,Monterey CA,San Ardo CCD,"San Ardo CDP, CA",517
+5303,6053,Monterey CA,San Ardo CCD, ,2789
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Del Monte Forest CDP, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Marina city, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Monterey city, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Pacific Grove city, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Sand City city, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD,"Seaside city, CA",0
+5303,6053,Monterey CA,Seaside-Monterey CCD, ,0
+5303,6053,Monterey CA,Soledad CCD,"Soledad city, CA",15629
+5303,6053,Monterey CA,Soledad CCD, ,1013
+5303,6069,San Benito CA,Hollister CCD,"Hollister city, CA",34884
+5303,6069,San Benito CA,Hollister CCD,"Ridgemark CDP, CA",3016
+5303,6069,San Benito CA,Hollister CCD,"Tres Pinos CDP, CA",476
+5303,6069,San Benito CA,Hollister CCD, ,10122
+5303,6069,San Benito CA,San Benito-Bitterwater CCD, ,720
+5303,6069,San Benito CA,San Juan Bautista CCD,"Aromas CDP, CA",1292
+5303,6069,San Benito CA,San Juan Bautista CCD,"Hollister city, CA",44
+5303,6069,San Benito CA,San Juan Bautista CCD,"San Juan Bautista city, CA",1862
+5303,6069,San Benito CA,San Juan Bautista CCD, ,2853
+5500,6055,Napa CA,Angwin CCD,"Angwin CDP, CA",3051
+5500,6055,Napa CA,Angwin CCD,"Deer Park CDP, CA",1267
+5500,6055,Napa CA,Angwin CCD, ,1055
+5500,6055,Napa CA,Calistoga CCD,"Calistoga city, CA",5155
+5500,6055,Napa CA,Calistoga CCD, ,1293
+5500,6055,Napa CA,Lake Berryessa CCD,"Moskowite Corner CDP, CA",154
+5500,6055,Napa CA,Lake Berryessa CCD, ,1652
+5500,6055,Napa CA,Napa CCD,"American Canyon city, CA",19454
+5500,6055,Napa CA,Napa CCD,"Moskowite Corner CDP, CA",57
+5500,6055,Napa CA,Napa CCD,"Napa city, CA",76915
+5500,6055,Napa CA,Napa CCD,"Oakville CDP, CA",18
+5500,6055,Napa CA,Napa CCD,"Silverado Resort CDP, CA",1095
+5500,6055,Napa CA,Napa CCD,"Yountville city, CA",2933
+5500,6055,Napa CA,Napa CCD, ,14703
+5500,6055,Napa CA,St. Helena CCD,"Oakville CDP, CA",53
+5500,6055,Napa CA,St. Helena CCD,"Rutherford CDP, CA",164
+5500,6055,Napa CA,St. Helena CCD,"St. Helena city, CA",5814
+5500,6055,Napa CA,St. Helena CCD, ,1651
+5700,6057,Nevada CA,Donner CCD,"Floriston CDP, CA",73
+5700,6057,Nevada CA,Donner CCD,"Kingvale CDP, CA",141
+5700,6057,Nevada CA,Donner CCD,"Soda Springs CDP, CA",81
+5700,6057,Nevada CA,Donner CCD,"Truckee town, CA",16180
+5700,6057,Nevada CA,Donner CCD, ,437
+5700,6057,Nevada CA,Grass Valley CCD,"Alta Sierra CDP, CA",6911
+5700,6057,Nevada CA,Grass Valley CCD,"Grass Valley city, CA",12067
+5700,6057,Nevada CA,Grass Valley CCD,"Lake of the Pines CDP, CA",3917
+5700,6057,Nevada CA,Grass Valley CCD,"Lake Wildwood CDP, CA",4991
+5700,6057,Nevada CA,Grass Valley CCD,"Nevada City city, CA",13
+5700,6057,Nevada CA,Grass Valley CCD,"Penn Valley CDP, CA",1621
+5700,6057,Nevada CA,Grass Valley CCD,"Rough and Ready CDP, CA",963
+5700,6057,Nevada CA,Grass Valley CCD, ,36131
+5700,6057,Nevada CA,Nevada City CCD,"Graniteville CDP, CA",11
+5700,6057,Nevada CA,Nevada City CCD,"Grass Valley city, CA",793
+5700,6057,Nevada CA,Nevada City CCD,"Nevada City city, CA",3055
+5700,6057,Nevada CA,Nevada City CCD,"North San Juan CDP, CA",269
+5700,6057,Nevada CA,Nevada City CCD,"Washington CDP, CA",185
+5700,6057,Nevada CA,Nevada City CCD, ,10925
+5700,6091,Sierra CA,East Sierra CCD,"Calpine CDP, CA",205
+5700,6091,Sierra CA,East Sierra CCD,"Loyalton city, CA",769
+5700,6091,Sierra CA,East Sierra CCD,"Sattley CDP, CA",49
+5700,6091,Sierra CA,East Sierra CCD,"Sierra Brooks CDP, CA",478
+5700,6091,Sierra CA,East Sierra CCD,"Sierraville CDP, CA",200
+5700,6091,Sierra CA,East Sierra CCD,"Verdi CDP, CA",162
+5700,6091,Sierra CA,East Sierra CCD, ,473
+5700,6091,Sierra CA,West Sierra CCD,"Alleghany CDP, CA",58
+5700,6091,Sierra CA,West Sierra CCD,"Downieville CDP, CA",282
+5700,6091,Sierra CA,West Sierra CCD,"Goodyears Bar CDP, CA",68
+5700,6091,Sierra CA,West Sierra CCD,"Pike CDP, CA",134
+5700,6091,Sierra CA,West Sierra CCD,"Sierra City CDP, CA",221
+5700,6091,Sierra CA,West Sierra CCD, ,141
+5901,6059,Orange CA,South Coast CCD,"Dana Point city, CA",33351
+5901,6059,Orange CA,South Coast CCD,"Laguna Beach city, CA",3059
+5901,6059,Orange CA,South Coast CCD,"Laguna Hills city, CA",25
+5901,6059,Orange CA,South Coast CCD,"Laguna Niguel city, CA",62960
+5901,6059,Orange CA,South Coast CCD,"Mission Viejo city, CA",0
+5901,6059,Orange CA,South Coast CCD,"San Clemente city, CA",52296
+5901,6059,Orange CA,South Coast CCD,"San Juan Capistrano city, CA",26001
+5901,6059,Orange CA,South Coast CCD, ,0
+5902,6059,Orange CA,Mission Viejo CCD,"Lake Forest city, CA",1063
+5902,6059,Orange CA,Mission Viejo CCD,"Las Flores CDP, CA",1974
+5902,6059,Orange CA,Mission Viejo CCD,"Mission Viejo city, CA",89630
+5902,6059,Orange CA,Mission Viejo CCD,"Rancho Santa Margarita city, CA",10249
+5902,6059,Orange CA,Mission Viejo CCD,"San Juan Capistrano city, CA",2993
+5902,6059,Orange CA,Mission Viejo CCD, ,0
+5903,6059,Orange CA,Central Coast CCD,"Costa Mesa city, CA",322
+5903,6059,Orange CA,Central Coast CCD,"Newport Beach city, CA",71599
+5903,6059,Orange CA,Central Coast CCD, ,0
+5903,6059,Orange CA,South Coast CCD,"Aliso Viejo city, CA",47823
+5903,6059,Orange CA,South Coast CCD,"Irvine city, CA",11715
+5903,6059,Orange CA,South Coast CCD,"Laguna Beach city, CA",19664
+5903,6059,Orange CA,South Coast CCD,"Laguna Hills city, CA",30319
+5903,6059,Orange CA,South Coast CCD,"Laguna Niguel city, CA",19
+5903,6059,Orange CA,South Coast CCD,"Laguna Woods city, CA",16192
+5903,6059,Orange CA,South Coast CCD,"Mission Viejo city, CA",0
+5903,6059,Orange CA,South Coast CCD, ,1124
+5904,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Costa Mesa city, CA",0
+5904,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Irvine city, CA",3114
+5904,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",0
+5904,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Tustin city, CA",12181
+5904,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,0
+5904,6059,Orange CA,Central Coast CCD,"Costa Mesa city, CA",2
+5904,6059,Orange CA,Central Coast CCD,"Irvine city, CA",50043
+5904,6059,Orange CA,Central Coast CCD,"Newport Beach city, CA",30
+5904,6059,Orange CA,Central Coast CCD, ,0
+5904,6059,Orange CA,Irvine-Lake Forest CCD,"Irvine city, CA",123318
+5904,6059,Orange CA,Irvine-Lake Forest CCD,"Lake Forest city, CA",11512
+5904,6059,Orange CA,Irvine-Lake Forest CCD, ,0
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",10556
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"North Tustin CDP, CA",18017
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Orange city, CA",5047
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",6793
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Tustin city, CA",51645
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Yorba Linda city, CA",46
+5905,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,1247
+5905,6059,Orange CA,Irvine-Lake Forest CCD,"Irvine city, CA",24185
+5905,6059,Orange CA,Irvine-Lake Forest CCD,"Lake Forest city, CA",49808
+5905,6059,Orange CA,Irvine-Lake Forest CCD,"Mission Viejo city, CA",0
+5905,6059,Orange CA,Irvine-Lake Forest CCD,"Orange city, CA",0
+5905,6059,Orange CA,Irvine-Lake Forest CCD,"Tustin city, CA",11408
+5905,6059,Orange CA,Irvine-Lake Forest CCD, ,120
+5905,6059,Orange CA,Mission Viejo CCD,"Lake Forest city, CA",14881
+5905,6059,Orange CA,Mission Viejo CCD,"Mission Viejo city, CA",2098
+5905,6059,Orange CA,Silverado CCD, ,1606
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",5476
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Brea city, CA",36781
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fullerton city, CA",842
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"La Habra city, CA",51502
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Placentia city, CA",13940
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Yorba Linda city, CA",64188
+5906,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,4278
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",5652
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Brea city, CA",2501
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Buena Park city, CA",1441
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fullerton city, CA",134178
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"La Habra city, CA",8737
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Placentia city, CA",36584
+5907,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,526
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",2651
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Buena Park city, CA",69715
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Cypress city, CA",43808
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fullerton city, CA",0
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"La Palma city, CA",15568
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Los Alamitos city, CA",11409
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Rossmoor CDP, CA",10244
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Seal Beach city, CA",1797
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Stanton city, CA",314
+5908,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,482
+5908,6059,Orange CA,North Coast CCD,"Huntington Beach city, CA",0
+5908,6059,Orange CA,North Coast CCD,"Los Alamitos city, CA",40
+5908,6059,Orange CA,North Coast CCD,"Seal Beach city, CA",21915
+5908,6059,Orange CA,North Coast CCD,"Westminster city, CA",0
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",123561
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Buena Park city, CA",9374
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Cypress city, CA",313
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fullerton city, CA",0
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Garden Grove city, CA",942
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Stanton city, CA",2511
+5909,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,9476
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",174886
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fullerton city, CA",141
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Orange city, CA",15529
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Placentia city, CA",9
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Yorba Linda city, CA",0
+5910,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,0
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",1908
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"North Tustin CDP, CA",6900
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Orange city, CA",114562
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",1540
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Tustin city, CA",26
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Villa Park city, CA",5812
+5911,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,7176
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",6118
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Cypress city, CA",3681
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Garden Grove city, CA",18545
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Los Alamitos city, CA",0
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Stanton city, CA",35288
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Westminster city, CA",0
+5912,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,2648
+5912,6059,Orange CA,North Coast CCD,"Fountain Valley city, CA",1195
+5912,6059,Orange CA,North Coast CCD,"Garden Grove city, CA",630
+5912,6059,Orange CA,North Coast CCD,"Huntington Beach city, CA",4445
+5912,6059,Orange CA,North Coast CCD,"Midway City CDP, CA",8485
+5912,6059,Orange CA,North Coast CCD,"Westminster city, CA",85870
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Anaheim city, CA",5457
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Garden Grove city, CA",145668
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Orange city, CA",1278
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",7012
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Stanton city, CA",73
+5913,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Westminster city, CA",399
+5914,6059,Orange CA,Central Coast CCD,"Newport Beach city, CA",0
+5914,6059,Orange CA,Central Coast CCD, ,0
+5914,6059,Orange CA,North Coast CCD,"Costa Mesa city, CA",0
+5914,6059,Orange CA,North Coast CCD,"Huntington Beach city, CA",185547
+5914,6059,Orange CA,North Coast CCD,"Seal Beach city, CA",456
+5914,6059,Orange CA,North Coast CCD,"Sunset Beach CDP, CA",971
+5914,6059,Orange CA,North Coast CCD,"Westminster city, CA",3266
+5914,6059,Orange CA,North Coast CCD, ,3
+5914,6059,Orange CA,South Coast CCD,"Dana Point city, CA",0
+5914,6059,Orange CA,South Coast CCD, ,0
+5915,6059,Orange CA,Mission Viejo CCD,"Coto de Caza CDP, CA",14866
+5915,6059,Orange CA,Mission Viejo CCD,"Ladera Ranch CDP, CA",22980
+5915,6059,Orange CA,Mission Viejo CCD,"Las Flores CDP, CA",3997
+5915,6059,Orange CA,Mission Viejo CCD,"Mission Viejo city, CA",1577
+5915,6059,Orange CA,Mission Viejo CCD,"Rancho Santa Margarita city, CA",37604
+5915,6059,Orange CA,Mission Viejo CCD,"San Clemente city, CA",11226
+5915,6059,Orange CA,Mission Viejo CCD,"San Juan Capistrano city, CA",5599
+5915,6059,Orange CA,Mission Viejo CCD, ,1173
+5915,6059,Orange CA,Silverado CCD,"Rancho Santa Margarita city, CA",0
+5915,6059,Orange CA,Silverado CCD, ,1022
+5916,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Fountain Valley city, CA",1699
+5916,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Garden Grove city, CA",5098
+5916,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",144657
+5916,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Westminster city, CA",166
+5916,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD, ,0
+5917,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Santa Ana city, CA",164526
+5917,6059,Orange CA,Anaheim-Santa Ana-Garden Grove CCD,"Tustin city, CA",280
+5918,6059,Orange CA,Central Coast CCD,"Costa Mesa city, CA",109636
+5918,6059,Orange CA,Central Coast CCD,"Newport Beach city, CA",13557
+5918,6059,Orange CA,Central Coast CCD, ,936
+5918,6059,Orange CA,North Coast CCD,"Fountain Valley city, CA",52419
+5918,6059,Orange CA,North Coast CCD,"Westminster city, CA",0
+5918,6059,Orange CA,North Coast CCD, ,909
+6101,6061,Placer CA,Lincoln CCD,"Roseville city, CA",7002
+6101,6061,Placer CA,Lincoln CCD,"Sheridan CDP, CA",39
+6101,6061,Placer CA,Lincoln CCD, ,1721
+6101,6061,Placer CA,Roseville CCD,"Roseville city, CA",109322
+6101,6061,Placer CA,Roseville CCD, ,6052
+6102,6061,Placer CA,Lincoln CCD,"Lincoln city, CA",42457
+6102,6061,Placer CA,Lincoln CCD,"Rocklin city, CA",9552
+6102,6061,Placer CA,Lincoln CCD, ,344
+6102,6061,Placer CA,Rocklin CCD,"Granite Bay CDP, CA",1270
+6102,6061,Placer CA,Rocklin CCD,"Lincoln city, CA",0
+6102,6061,Placer CA,Rocklin CCD,"Loomis town, CA",6430
+6102,6061,Placer CA,Rocklin CCD,"Penryn CDP, CA",107
+6102,6061,Placer CA,Rocklin CCD,"Rocklin city, CA",47422
+6102,6061,Placer CA,Rocklin CCD,"Roseville city, CA",4
+6102,6061,Placer CA,Rocklin CCD, ,4879
+6103,6061,Placer CA,Auburn CCD,"Auburn city, CA",13330
+6103,6061,Placer CA,Auburn CCD,"Newcastle CDP, CA",1166
+6103,6061,Placer CA,Auburn CCD,"North Auburn CDP, CA",13022
+6103,6061,Placer CA,Auburn CCD, ,16950
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD,"Alta CDP, CA",610
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD,"Colfax city, CA",1963
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD,"Dutch Flat CDP, CA",160
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD,"Kingvale CDP, CA",2
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD,"Meadow Vista CDP, CA",3217
+6103,6061,Placer CA,Colfax-Monumental Ridge CCD, ,14399
+6103,6061,Placer CA,Foresthill-Back Country CCD,"Foresthill CDP, CA",1483
+6103,6061,Placer CA,Foresthill-Back Country CCD, ,4663
+6103,6061,Placer CA,Lake Tahoe CCD,"Carnelian Bay CDP, CA",524
+6103,6061,Placer CA,Lake Tahoe CCD,"Dollar Point CDP, CA",1215
+6103,6061,Placer CA,Lake Tahoe CCD,"Kings Beach CDP, CA",3796
+6103,6061,Placer CA,Lake Tahoe CCD,"Sunnyside-Tahoe City CDP, CA",1557
+6103,6061,Placer CA,Lake Tahoe CCD,"Tahoe Vista CDP, CA",1433
+6103,6061,Placer CA,Lake Tahoe CCD,"Tahoma CDP, CA",411
+6103,6061,Placer CA,Lake Tahoe CCD, ,1512
+6103,6061,Placer CA,Lincoln CCD,"Lincoln city, CA",362
+6103,6061,Placer CA,Lincoln CCD,"Sheridan CDP, CA",1199
+6103,6061,Placer CA,Lincoln CCD, ,3746
+6103,6061,Placer CA,Rocklin CCD,"Granite Bay CDP, CA",19132
+6103,6061,Placer CA,Rocklin CCD,"Loomis town, CA",0
+6103,6061,Placer CA,Rocklin CCD,"Newcastle CDP, CA",58
+6103,6061,Placer CA,Rocklin CCD,"Penryn CDP, CA",724
+6103,6061,Placer CA,Rocklin CCD,"Rocklin city, CA",0
+6103,6061,Placer CA,Rocklin CCD,"Roseville city, CA",2460
+6103,6061,Placer CA,Rocklin CCD, ,2737
+6501,6065,Riverside CA,Blythe CCD,"Blythe city, CA",12821
+6501,6065,Riverside CA,Blythe CCD,"Ripley CDP, CA",692
+6501,6065,Riverside CA,Blythe CCD, ,1532
+6501,6065,Riverside CA,Chuckwalla Valley CCD,"Blythe city, CA",7996
+6501,6065,Riverside CA,Chuckwalla Valley CCD,"Coachella city, CA",12
+6501,6065,Riverside CA,Chuckwalla Valley CCD,"Desert Center CDP, CA",204
+6501,6065,Riverside CA,Chuckwalla Valley CCD,"Indio Hills CDP, CA",244
+6501,6065,Riverside CA,Chuckwalla Valley CCD,"Mesa Verde CDP, CA",1023
+6501,6065,Riverside CA,Chuckwalla Valley CCD, ,364
+6501,6065,Riverside CA,Coachella Valley CCD,"Coachella city, CA",40692
+6501,6065,Riverside CA,Coachella Valley CCD,"Desert Palms CDP, CA",5
+6501,6065,Riverside CA,Coachella Valley CCD,"Indio city, CA",75477
+6501,6065,Riverside CA,Coachella Valley CCD,"Indio Hills CDP, CA",728
+6501,6065,Riverside CA,Coachella Valley CCD,"La Quinta city, CA",5926
+6501,6065,Riverside CA,Coachella Valley CCD,"Mecca CDP, CA",8577
+6501,6065,Riverside CA,Coachella Valley CCD,"North Shore CDP, CA",3477
+6501,6065,Riverside CA,Coachella Valley CCD,"Oasis CDP, CA",6854
+6501,6065,Riverside CA,Coachella Valley CCD,"Thermal CDP, CA",2865
+6501,6065,Riverside CA,Coachella Valley CCD,"Vista Santa Rosa CDP, CA",2926
+6501,6065,Riverside CA,Coachella Valley CCD, ,7803
+6502,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Cathedral City city, CA",50934
+6502,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Palm Desert city, CA",5128
+6502,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Palm Springs city, CA",1841
+6502,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Rancho Mirage city, CA",17218
+6502,6065,Riverside CA,Cathedral City-Palm Desert CCD, ,280
+6502,6065,Riverside CA,Desert Hot Springs CCD,"Desert Hot Springs city, CA",4
+6502,6065,Riverside CA,Desert Hot Springs CCD,"Palm Springs city, CA",0
+6502,6065,Riverside CA,Desert Hot Springs CCD,"Whitewater CDP, CA",859
+6502,6065,Riverside CA,Desert Hot Springs CCD, ,333
+6502,6065,Riverside CA,Idyllwild CCD,"Aguanga CDP, CA",427
+6502,6065,Riverside CA,Idyllwild CCD,"Anza CDP, CA",2035
+6502,6065,Riverside CA,Idyllwild CCD,"Idyllwild-Pine Cove CDP, CA",3874
+6502,6065,Riverside CA,Idyllwild CCD,"Lake Riverside CDP, CA",1076
+6502,6065,Riverside CA,Idyllwild CCD,"Mountain Center CDP, CA",63
+6502,6065,Riverside CA,Idyllwild CCD, ,2969
+6502,6065,Riverside CA,Palm Springs CCD,"Cathedral City city, CA",259
+6502,6065,Riverside CA,Palm Springs CCD,"Palm Springs city, CA",42647
+6502,6065,Riverside CA,Palm Springs CCD, ,1070
+6503,6065,Riverside CA,Murrieta CCD,"Aguanga CDP, CA",352
+6503,6065,Riverside CA,Murrieta CCD,"Murrieta city, CA",10610
+6503,6065,Riverside CA,Murrieta CCD,"Temecula city, CA",99064
+6503,6065,Riverside CA,Murrieta CCD,"Wildomar city, CA",1273
+6503,6065,Riverside CA,Murrieta CCD, ,16201
+6504,6065,Riverside CA,Elsinore Valley CCD,"Wildomar city, CA",3974
+6504,6065,Riverside CA,Murrieta CCD,"French Valley CDP, CA",3869
+6504,6065,Riverside CA,Murrieta CCD,"Lake Elsinore city, CA",1349
+6504,6065,Riverside CA,Murrieta CCD,"Menifee city, CA",2062
+6504,6065,Riverside CA,Murrieta CCD,"Murrieta city, CA",92856
+6504,6065,Riverside CA,Murrieta CCD,"Temecula city, CA",668
+6504,6065,Riverside CA,Murrieta CCD,"Wildomar city, CA",19862
+6504,6065,Riverside CA,Murrieta CCD, ,2193
+6505,6065,Riverside CA,Elsinore Valley CCD,"Canyon Lake city, CA",1482
+6505,6065,Riverside CA,Elsinore Valley CCD,"Lake Elsinore city, CA",48015
+6505,6065,Riverside CA,Elsinore Valley CCD,"Lakeland Village CDP, CA",11541
+6505,6065,Riverside CA,Elsinore Valley CCD,"Meadowbrook CDP, CA",118
+6505,6065,Riverside CA,Elsinore Valley CCD,"Temescal Valley CDP, CA",6755
+6505,6065,Riverside CA,Elsinore Valley CCD,"Warm Springs CDP, CA",2673
+6505,6065,Riverside CA,Elsinore Valley CCD,"Wildomar city, CA",6815
+6505,6065,Riverside CA,Elsinore Valley CCD, ,1177
+6505,6065,Riverside CA,Perris Valley CCD,"Canyon Lake city, CA",9027
+6505,6065,Riverside CA,Perris Valley CCD,"Good Hope CDP, CA",2542
+6505,6065,Riverside CA,Perris Valley CCD,"Lake Elsinore city, CA",2457
+6505,6065,Riverside CA,Perris Valley CCD,"Meadowbrook CDP, CA",2161
+6505,6065,Riverside CA,Perris Valley CCD,"Menifee city, CA",74115
+6505,6065,Riverside CA,Perris Valley CCD,"Perris city, CA",3220
+6505,6065,Riverside CA,Perris Valley CCD,"Romoland CDP, CA",1475
+6505,6065,Riverside CA,Perris Valley CCD,"Warm Springs CDP, CA",3
+6505,6065,Riverside CA,Perris Valley CCD,"Wildomar city, CA",252
+6505,6065,Riverside CA,Perris Valley CCD,"Winchester CDP, CA",1876
+6505,6065,Riverside CA,Perris Valley CCD, ,209
+6506,6065,Riverside CA,Hemet-San Jacinto CCD,"East Hemet CDP, CA",17418
+6506,6065,Riverside CA,Hemet-San Jacinto CCD,"Hemet city, CA",72652
+6506,6065,Riverside CA,Hemet-San Jacinto CCD,"San Jacinto city, CA",3999
+6506,6065,Riverside CA,Hemet-San Jacinto CCD,"Valle Vista CDP, CA",10776
+6506,6065,Riverside CA,Hemet-San Jacinto CCD, ,2318
+6506,6065,Riverside CA,Murrieta CCD,"French Valley CDP, CA",19198
+6506,6065,Riverside CA,Murrieta CCD,"Hemet city, CA",20
+6506,6065,Riverside CA,Murrieta CCD,"Temecula city, CA",365
+6506,6065,Riverside CA,Murrieta CCD, ,12997
+6506,6065,Riverside CA,Perris Valley CCD,"Green Acres CDP, CA",1257
+6506,6065,Riverside CA,Perris Valley CCD,"Hemet city, CA",12
+6506,6065,Riverside CA,Perris Valley CCD,"Homeland CDP, CA",3155
+6506,6065,Riverside CA,Perris Valley CCD,"Menifee city, CA",1342
+6506,6065,Riverside CA,Perris Valley CCD,"Winchester CDP, CA",658
+6506,6065,Riverside CA,Perris Valley CCD, ,1483
+6507,6065,Riverside CA,Hemet-San Jacinto CCD,"Beaumont city, CA",0
+6507,6065,Riverside CA,Hemet-San Jacinto CCD,"Hemet city, CA",3332
+6507,6065,Riverside CA,Hemet-San Jacinto CCD,"San Jacinto city, CA",40068
+6507,6065,Riverside CA,Hemet-San Jacinto CCD,"Valle Vista CDP, CA",3802
+6507,6065,Riverside CA,Hemet-San Jacinto CCD, ,1900
+6507,6065,Riverside CA,Perris Valley CCD,"Green Acres CDP, CA",548
+6507,6065,Riverside CA,Perris Valley CCD,"Hemet city, CA",2641
+6507,6065,Riverside CA,Perris Valley CCD,"Lakeview CDP, CA",1990
+6507,6065,Riverside CA,Perris Valley CCD,"Nuevo CDP, CA",1464
+6507,6065,Riverside CA,Perris Valley CCD,"San Jacinto city, CA",132
+6507,6065,Riverside CA,Perris Valley CCD, ,1565
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Banning city, CA",29603
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Beaumont city, CA",36877
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Cabazon CDP, CA",2535
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Calimesa city, CA",7879
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Cherry Valley CDP, CA",6362
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Moreno Valley city, CA",0
+6507,6065,Riverside CA,San Gorgonio Pass CCD,"Whitewater CDP, CA",0
+6507,6065,Riverside CA,San Gorgonio Pass CCD, ,3347
+6508,6065,Riverside CA,Perris Valley CCD,"Moreno Valley city, CA",57921
+6508,6065,Riverside CA,Perris Valley CCD, ,57
+6508,6065,Riverside CA,Riverside CCD,"Highgrove CDP, CA",0
+6508,6065,Riverside CA,Riverside CCD,"Moreno Valley city, CA",123313
+6508,6065,Riverside CA,Riverside CCD,"Riverside city, CA",0
+6508,6065,Riverside CA,Riverside CCD, ,1061
+6509,6065,Riverside CA,Elsinore Valley CCD,"Corona city, CA",979
+6509,6065,Riverside CA,Elsinore Valley CCD,"Temescal Valley CDP, CA",15423
+6509,6065,Riverside CA,Elsinore Valley CCD, ,198
+6509,6065,Riverside CA,Lake Mathews CCD,"Corona city, CA",0
+6509,6065,Riverside CA,Lake Mathews CCD,"Lake Elsinore city, CA",0
+6509,6065,Riverside CA,Lake Mathews CCD,"Lake Mathews CDP, CA",2434
+6509,6065,Riverside CA,Lake Mathews CCD,"Mead Valley CDP, CA",5887
+6509,6065,Riverside CA,Lake Mathews CCD,"Temescal Valley CDP, CA",71
+6509,6065,Riverside CA,Lake Mathews CCD, ,1834
+6509,6065,Riverside CA,Perris Valley CCD,"Canyon Lake city, CA",52
+6509,6065,Riverside CA,Perris Valley CCD,"Good Hope CDP, CA",6650
+6509,6065,Riverside CA,Perris Valley CCD,"Homeland CDP, CA",2814
+6509,6065,Riverside CA,Perris Valley CCD,"Lake Elsinore city, CA",0
+6509,6065,Riverside CA,Perris Valley CCD,"Lake Mathews CDP, CA",599
+6509,6065,Riverside CA,Perris Valley CCD,"Lakeview CDP, CA",114
+6509,6065,Riverside CA,Perris Valley CCD,"Meadowbrook CDP, CA",906
+6509,6065,Riverside CA,Perris Valley CCD,"Mead Valley CDP, CA",7270
+6509,6065,Riverside CA,Perris Valley CCD,"Moreno Valley city, CA",0
+6509,6065,Riverside CA,Perris Valley CCD,"Nuevo CDP, CA",4983
+6509,6065,Riverside CA,Perris Valley CCD,"Perris city, CA",65166
+6509,6065,Riverside CA,Perris Valley CCD,"Romoland CDP, CA",209
+6509,6065,Riverside CA,Perris Valley CCD, ,2273
+6510,6065,Riverside CA,Riverside CCD,"Highgrove CDP, CA",3988
+6510,6065,Riverside CA,Riverside CCD,"March ARB CDP, CA",1159
+6510,6065,Riverside CA,Riverside CCD,"Moreno Valley city, CA",12131
+6510,6065,Riverside CA,Riverside CCD,"Riverside city, CA",128048
+6510,6065,Riverside CA,Riverside CCD, ,1836
+6511,6065,Riverside CA,Jurupa CCD,"Rubidoux CDP, CA",0
+6511,6065,Riverside CA,Riverside CCD,"El Sobrante CDP, CA",598
+6511,6065,Riverside CA,Riverside CCD,"Norco city, CA",131
+6511,6065,Riverside CA,Riverside CCD,"Riverside city, CA",163816
+6511,6065,Riverside CA,Riverside CCD, ,15
+6512,6065,Riverside CA,Corona CCD,"Corona city, CA",29853
+6512,6065,Riverside CA,Corona CCD,"El Sobrante CDP, CA",12013
+6512,6065,Riverside CA,Corona CCD,"Home Gardens CDP, CA",11570
+6512,6065,Riverside CA,Corona CCD,"Riverside city, CA",1368
+6512,6065,Riverside CA,Corona CCD, ,32
+6512,6065,Riverside CA,Elsinore Valley CCD,"Corona city, CA",5917
+6512,6065,Riverside CA,Elsinore Valley CCD,"El Cerrito CDP, CA",5100
+6512,6065,Riverside CA,Elsinore Valley CCD,"Temescal Valley CDP, CA",286
+6512,6065,Riverside CA,Elsinore Valley CCD, ,91
+6512,6065,Riverside CA,Lake Mathews CCD,"El Sobrante CDP, CA",112
+6512,6065,Riverside CA,Lake Mathews CCD,"Lake Mathews CDP, CA",2857
+6512,6065,Riverside CA,Lake Mathews CCD,"Mead Valley CDP, CA",5353
+6512,6065,Riverside CA,Lake Mathews CCD,"Riverside city, CA",1278
+6512,6065,Riverside CA,Lake Mathews CCD,"Woodcrest CDP, CA",4131
+6512,6065,Riverside CA,Lake Mathews CCD, ,470
+6512,6065,Riverside CA,Riverside CCD,"Riverside city, CA",9361
+6512,6065,Riverside CA,Riverside CCD,"Woodcrest CDP, CA",10216
+6512,6065,Riverside CA,Riverside CCD, ,457
+6513,6065,Riverside CA,Corona CCD,"Corona city, CA",115625
+6513,6065,Riverside CA,Corona CCD,"Coronita CDP, CA",2608
+6513,6065,Riverside CA,Corona CCD,"Norco city, CA",998
+6513,6065,Riverside CA,Corona CCD, ,112
+6513,6065,Riverside CA,Norco CCD,"Norco city, CA",25934
+6513,6065,Riverside CA,Norco CCD, ,0
+6514,6065,Riverside CA,Jurupa CCD,"Corona city, CA",0
+6514,6065,Riverside CA,Jurupa CCD,"Crestmore Heights CDP, CA",384
+6514,6065,Riverside CA,Jurupa CCD,"Eastvale CDP, CA",53668
+6514,6065,Riverside CA,Jurupa CCD,"Glen Avon CDP, CA",20199
+6514,6065,Riverside CA,Jurupa CCD,"Mira Loma CDP, CA",21930
+6514,6065,Riverside CA,Jurupa CCD,"Norco city, CA",0
+6514,6065,Riverside CA,Jurupa CCD,"Pedley CDP, CA",12672
+6514,6065,Riverside CA,Jurupa CCD,"Riverside city, CA",0
+6514,6065,Riverside CA,Jurupa CCD,"Rubidoux CDP, CA",34280
+6514,6065,Riverside CA,Jurupa CCD,"Sunnyslope CDP, CA",5153
+6514,6065,Riverside CA,Jurupa CCD, ,386
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Indian Wells city, CA",4958
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Indio city, CA",0
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD,"La Quinta city, CA",20975
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Palm Desert city, CA",43317
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD,"Thousand Palms CDP, CA",5
+6515,6065,Riverside CA,Cathedral City-Palm Desert CCD, ,4
+6515,6065,Riverside CA,Coachella Valley CCD,"Bermuda Dunes CDP, CA",7282
+6515,6065,Riverside CA,Coachella Valley CCD,"Desert Palms CDP, CA",6952
+6515,6065,Riverside CA,Coachella Valley CCD,"Indio city, CA",559
+6515,6065,Riverside CA,Coachella Valley CCD,"La Quinta city, CA",10566
+6515,6065,Riverside CA,Coachella Valley CCD,"Thousand Palms CDP, CA",2
+6515,6065,Riverside CA,Coachella Valley CCD, ,2
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Cathedral City city, CA",7
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Desert Edge CDP, CA",3822
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Desert Hot Springs city, CA",25934
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Garnet CDP, CA",7543
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Palm Springs city, CA",64
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Sky Valley CDP, CA",2406
+6515,6065,Riverside CA,Desert Hot Springs CCD,"Thousand Palms CDP, CA",7708
+6515,6065,Riverside CA,Desert Hot Springs CCD, ,3607
+6515,6065,Riverside CA,Idyllwild CCD,"Aguanga CDP, CA",349
+6515,6065,Riverside CA,Idyllwild CCD,"Anza CDP, CA",979
+6515,6065,Riverside CA,Idyllwild CCD,"Lake Riverside CDP, CA",97
+6515,6065,Riverside CA,Idyllwild CCD,"Oasis CDP, CA",36
+6515,6065,Riverside CA,Idyllwild CCD, ,2941
+6701,6067,Sacramento CA,Sacramento CCD,"Antelope CDP, CA",825
+6701,6067,Sacramento CA,Sacramento CCD,"Carmichael CDP, CA",10298
+6701,6067,Sacramento CA,Sacramento CCD,"Citrus Heights city, CA",83109
+6701,6067,Sacramento CA,Sacramento CCD,"Fair Oaks CDP, CA",3421
+6701,6067,Sacramento CA,Sacramento CCD,"Foothill Farms CDP, CA",0
+6701,6067,Sacramento CA,Sacramento CCD,"Orangevale CDP, CA",7426
+6702,6067,Sacramento CA,Rancho Cordova CCD,"Folsom city, CA",0
+6702,6067,Sacramento CA,Rancho Cordova CCD,"Gold River CDP, CA",7912
+6702,6067,Sacramento CA,Rancho Cordova CCD,"La Riviera CDP, CA",10802
+6702,6067,Sacramento CA,Rancho Cordova CCD,"Mather CDP, CA",4451
+6702,6067,Sacramento CA,Rancho Cordova CCD,"Rancho Cordova city, CA",64776
+6702,6067,Sacramento CA,Rancho Cordova CCD,"Rosemont CDP, CA",22681
+6702,6067,Sacramento CA,Rancho Cordova CCD, ,246
+6703,6067,Sacramento CA,Sacramento CCD,"Arden-Arcade CDP, CA",40790
+6703,6067,Sacramento CA,Sacramento CCD,"Carmichael CDP, CA",51464
+6703,6067,Sacramento CA,Sacramento CCD,"Fair Oaks CDP, CA",17058
+6703,6067,Sacramento CA,Sacramento CCD,"North Highlands CDP, CA",0
+6703,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",58
+6704,6067,Sacramento CA,Sacramento CCD,"Arden-Arcade CDP, CA",42910
+6704,6067,Sacramento CA,Sacramento CCD,"Citrus Heights city, CA",192
+6704,6067,Sacramento CA,Sacramento CCD,"Foothill Farms CDP, CA",33121
+6704,6067,Sacramento CA,Sacramento CCD,"McClellan Park CDP, CA",743
+6704,6067,Sacramento CA,Sacramento CCD,"North Highlands CDP, CA",42694
+6704,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",38
+6705,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",103525
+6705,6067,Sacramento CA,Sacramento CCD, ,718
+6706,6067,Sacramento CA,Sacramento CCD,"Antelope CDP, CA",44945
+6706,6067,Sacramento CA,Sacramento CCD,"Elverta CDP, CA",5492
+6706,6067,Sacramento CA,Sacramento CCD,"Rio Linda CDP, CA",15106
+6706,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",51092
+6707,6067,Sacramento CA,Sacramento CCD,"Arden-Arcade CDP, CA",8486
+6707,6067,Sacramento CA,Sacramento CCD,"Rosemont CDP, CA",0
+6707,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",105212
+6708,6067,Sacramento CA,Sacramento CCD,"Florin CDP, CA",29518
+6708,6067,Sacramento CA,Sacramento CCD,"Fruitridge Pocket CDP, CA",5800
+6708,6067,Sacramento CA,Sacramento CCD,"Lemon Hill CDP, CA",13729
+6708,6067,Sacramento CA,Sacramento CCD,"Parkway CDP, CA",14670
+6708,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",67622
+6708,6067,Sacramento CA,Sacramento CCD,"Vineyard CDP, CA",972
+6708,6067,Sacramento CA,Sacramento CCD, ,747
+6709,6067,Sacramento CA,Sacramento CCD,"Freeport CDP, CA",0
+6709,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",137826
+6709,6067,Sacramento CA,Sacramento CCD, ,0
+6710,6067,Sacramento CA,Elk Grove CCD,"Elk Grove city, CA",60863
+6710,6067,Sacramento CA,Elk Grove CCD,"Florin CDP, CA",602
+6710,6067,Sacramento CA,Sacramento CCD,"Elk Grove city, CA",90011
+6710,6067,Sacramento CA,Sacramento CCD,"Franklin CDP, CA",82
+6710,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",1082
+6710,6067,Sacramento CA,Sacramento CCD, ,2
+6711,6067,Sacramento CA,Elk Grove CCD,"Elk Grove city, CA",658
+6711,6067,Sacramento CA,Elk Grove CCD,"Florin CDP, CA",17393
+6711,6067,Sacramento CA,Elk Grove CCD,"Vineyard CDP, CA",23864
+6711,6067,Sacramento CA,Elk Grove CCD, ,10483
+6711,6067,Sacramento CA,Galt CCD,"Clay CDP, CA",1195
+6711,6067,Sacramento CA,Galt CCD,"Galt city, CA",23647
+6711,6067,Sacramento CA,Galt CCD,"Herald CDP, CA",1184
+6711,6067,Sacramento CA,Galt CCD,"Wilton CDP, CA",5363
+6711,6067,Sacramento CA,Galt CCD, ,5640
+6711,6067,Sacramento CA,Isleton CCD,"Courtland CDP, CA",355
+6711,6067,Sacramento CA,Isleton CCD,"Isleton city, CA",804
+6711,6067,Sacramento CA,Isleton CCD,"Walnut Grove CDP, CA",1542
+6711,6067,Sacramento CA,Isleton CCD, ,2590
+6711,6067,Sacramento CA,Sacramento CCD,"Elk Grove city, CA",1483
+6711,6067,Sacramento CA,Sacramento CCD,"Franklin CDP, CA",73
+6711,6067,Sacramento CA,Sacramento CCD,"Freeport CDP, CA",38
+6711,6067,Sacramento CA,Sacramento CCD,"Hood CDP, CA",271
+6711,6067,Sacramento CA,Sacramento CCD,"Sacramento city, CA",33
+6711,6067,Sacramento CA,Sacramento CCD, ,3101
+6711,6067,Sacramento CA,Sloughhouse CCD,"Rancho Cordova city, CA",0
+6711,6067,Sacramento CA,Sloughhouse CCD,"Rancho Murieta CDP, CA",5488
+6711,6067,Sacramento CA,Sloughhouse CCD, ,1296
+6712,6067,Sacramento CA,Folsom CCD,"Folsom city, CA",72163
+6712,6067,Sacramento CA,Folsom CCD, ,0
+6712,6067,Sacramento CA,Sacramento CCD,"Fair Oaks CDP, CA",10433
+6712,6067,Sacramento CA,Sacramento CCD,"Folsom city, CA",40
+6712,6067,Sacramento CA,Sacramento CCD,"Orangevale CDP, CA",26534
+7101,6071,San Bernardino CA,Barstow CCD,"Barstow city, CA",22639
+7101,6071,San Bernardino CA,Barstow CCD,"Lenwood CDP, CA",3543
+7101,6071,San Bernardino CA,Barstow CCD,"Silver Lakes CDP, CA",5623
+7101,6071,San Bernardino CA,Barstow CCD, ,9452
+7101,6071,San Bernardino CA,Needles CCD,"Big River CDP, CA",1327
+7101,6071,San Bernardino CA,Needles CCD,"Bluewater CDP, CA",172
+7101,6071,San Bernardino CA,Needles CCD,"Needles city, CA",4844
+7101,6071,San Bernardino CA,Needles CCD, ,663
+7101,6071,San Bernardino CA,Newberry Springs-Baker CCD,"Baker CDP, CA",735
+7101,6071,San Bernardino CA,Newberry Springs-Baker CCD,"Fort Irwin CDP, CA",8845
+7101,6071,San Bernardino CA,Newberry Springs-Baker CCD, ,3116
+7101,6071,San Bernardino CA,Searles Valley CCD,"Searles Valley CDP, CA",1739
+7101,6071,San Bernardino CA,Searles Valley CCD, ,435
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Homestead Valley CDP, CA",3032
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Joshua Tree CDP, CA",7414
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Lucerne Valley CDP, CA",495
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Morongo Valley CDP, CA",3552
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Twentynine Palms city, CA",25048
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD,"Yucca Valley town, CA",20700
+7101,6071,San Bernardino CA,Twentynine Palms-Yucca Valley CCD, ,9619
+7101,6071,San Bernardino CA,Victorville-Hesperia CCD,"Adelanto city, CA",0
+7101,6071,San Bernardino CA,Victorville-Hesperia CCD,"Apple Valley town, CA",32
+7101,6071,San Bernardino CA,Victorville-Hesperia CCD,"Lucerne Valley CDP, CA",1457
+7101,6071,San Bernardino CA,Victorville-Hesperia CCD,"Victorville city, CA",5
+7101,6071,San Bernardino CA,Victorville-Hesperia CCD, ,4960
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Adelanto city, CA",31765
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Hesperia city, CA",316
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Mountain View Acres CDP, CA",3130
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Oak Hills CDP, CA",0
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Spring Valley Lake CDP, CA",8220
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD,"Victorville city, CA",114976
+7102,6071,San Bernardino CA,Victorville-Hesperia CCD, ,3589
+7103,6071,San Bernardino CA,Victorville-Hesperia CCD,"Apple Valley town, CA",68747
+7103,6071,San Bernardino CA,Victorville-Hesperia CCD,"Hesperia city, CA",89846
+7103,6071,San Bernardino CA,Victorville-Hesperia CCD,"Oak Hills CDP, CA",6560
+7103,6071,San Bernardino CA,Victorville-Hesperia CCD,"Victorville city, CA",681
+7103,6071,San Bernardino CA,Victorville-Hesperia CCD, ,1212
+7104,6071,San Bernardino CA,Big Bear CCD,"Big Bear City CDP, CA",12304
+7104,6071,San Bernardino CA,Big Bear CCD,"Big Bear Lake city, CA",5019
+7104,6071,San Bernardino CA,Big Bear CCD,"Highland city, CA",128
+7104,6071,San Bernardino CA,Big Bear CCD,"Oak Glen CDP, CA",200
+7104,6071,San Bernardino CA,Big Bear CCD,"Running Springs CDP, CA",4862
+7104,6071,San Bernardino CA,Big Bear CCD,"San Bernardino city, CA",0
+7104,6071,San Bernardino CA,Big Bear CCD, ,3122
+7104,6071,San Bernardino CA,Lake Arrowhead CCD,"Crestline CDP, CA",10770
+7104,6071,San Bernardino CA,Lake Arrowhead CCD,"Hesperia city, CA",11
+7104,6071,San Bernardino CA,Lake Arrowhead CCD,"Lake Arrowhead CDP, CA",12424
+7104,6071,San Bernardino CA,Lake Arrowhead CCD,"San Bernardino city, CA",1061
+7104,6071,San Bernardino CA,Lake Arrowhead CCD, ,491
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD,"Fontana city, CA",142
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD,"Lytle Creek CDP, CA",701
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD,"Rancho Cucamonga city, CA",115
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD,"San Antonio Heights CDP, CA",116
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD,"Wrightwood CDP, CA",4525
+7104,6071,San Bernardino CA,Mount Baldy-Wrightwood CCD, ,1253
+7104,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",0
+7104,6071,San Bernardino CA,San Bernardino CCD,"Muscoy CDP, CA",55
+7104,6071,San Bernardino CA,San Bernardino CCD,"Rialto city, CA",2330
+7104,6071,San Bernardino CA,San Bernardino CCD,"San Bernardino city, CA",10332
+7104,6071,San Bernardino CA,San Bernardino CCD, ,5409
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Apple Valley town, CA",356
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Lucerne Valley CDP, CA",3859
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Oak Hills CDP, CA",2319
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Phelan CDP, CA",14304
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Piñon Hills CDP, CA",7272
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD,"Victorville city, CA",241
+7104,6071,San Bernardino CA,Victorville-Hesperia CCD, ,6594
+7105,6071,San Bernardino CA,San Bernardino CCD,"Highland city, CA",6705
+7105,6071,San Bernardino CA,San Bernardino CCD,"Loma Linda city, CA",1114
+7105,6071,San Bernardino CA,San Bernardino CCD,"Mentone CDP, CA",8675
+7105,6071,San Bernardino CA,San Bernardino CCD,"Redlands city, CA",68508
+7105,6071,San Bernardino CA,San Bernardino CCD,"Yucaipa city, CA",404
+7105,6071,San Bernardino CA,San Bernardino CCD, ,208
+7105,6071,San Bernardino CA,Yucaipa CCD,"Mentone CDP, CA",45
+7105,6071,San Bernardino CA,Yucaipa CCD,"Oak Glen CDP, CA",438
+7105,6071,San Bernardino CA,Yucaipa CCD,"Redlands city, CA",79
+7105,6071,San Bernardino CA,Yucaipa CCD,"Yucaipa city, CA",50963
+7105,6071,San Bernardino CA,Yucaipa CCD, ,262
+7106,6071,San Bernardino CA,San Bernardino CCD,"Bloomington CDP, CA",12909
+7106,6071,San Bernardino CA,San Bernardino CCD,"Colton city, CA",47360
+7106,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",0
+7106,6071,San Bernardino CA,San Bernardino CCD,"Grand Terrace city, CA",12040
+7106,6071,San Bernardino CA,San Bernardino CCD,"Loma Linda city, CA",21650
+7106,6071,San Bernardino CA,San Bernardino CCD,"Redlands city, CA",100
+7106,6071,San Bernardino CA,San Bernardino CCD,"Rialto city, CA",1905
+7106,6071,San Bernardino CA,San Bernardino CCD,"San Bernardino city, CA",3563
+7106,6071,San Bernardino CA,San Bernardino CCD, ,3134
+7107,6071,San Bernardino CA,San Bernardino CCD,"Highland city, CA",46271
+7107,6071,San Bernardino CA,San Bernardino CCD,"Loma Linda city, CA",497
+7107,6071,San Bernardino CA,San Bernardino CCD,"Redlands city, CA",60
+7107,6071,San Bernardino CA,San Bernardino CCD,"San Bernardino city, CA",40984
+7107,6071,San Bernardino CA,San Bernardino CCD, ,18477
+7108,6071,San Bernardino CA,San Bernardino CCD,"Colton city, CA",699
+7108,6071,San Bernardino CA,San Bernardino CCD,"Muscoy CDP, CA",10589
+7108,6071,San Bernardino CA,San Bernardino CCD,"Rialto city, CA",390
+7108,6071,San Bernardino CA,San Bernardino CCD,"San Bernardino city, CA",153613
+7108,6071,San Bernardino CA,San Bernardino CCD, ,4094
+7109,6071,San Bernardino CA,San Bernardino CCD,"Bloomington CDP, CA",5758
+7109,6071,San Bernardino CA,San Bernardino CCD,"Colton city, CA",4095
+7109,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",9327
+7109,6071,San Bernardino CA,San Bernardino CCD,"Rialto city, CA",87153
+7109,6071,San Bernardino CA,San Bernardino CCD,"San Bernardino city, CA",371
+7109,6071,San Bernardino CA,San Bernardino CCD, ,1751
+7110,6071,San Bernardino CA,San Bernardino CCD,"Bloomington CDP, CA",5184
+7110,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",93173
+7110,6071,San Bernardino CA,San Bernardino CCD,"Rialto city, CA",7393
+7110,6071,San Bernardino CA,San Bernardino CCD, ,382
+7111,6071,San Bernardino CA,Ontario CCD,"Rancho Cucamonga city, CA",160693
+7111,6071,San Bernardino CA,Ontario CCD, ,22
+7111,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",0
+7111,6071,San Bernardino CA,San Bernardino CCD,"Rancho Cucamonga city, CA",4461
+7111,6071,San Bernardino CA,San Bernardino CCD, ,0
+7112,6071,San Bernardino CA,Ontario CCD,"Montclair city, CA",36664
+7112,6071,San Bernardino CA,Ontario CCD,"Ontario city, CA",17
+7112,6071,San Bernardino CA,Ontario CCD,"San Antonio Heights CDP, CA",3255
+7112,6071,San Bernardino CA,Ontario CCD,"Upland city, CA",73732
+7112,6071,San Bernardino CA,Ontario CCD, ,7318
+7113,6071,San Bernardino CA,Ontario CCD,"Chino city, CA",5241
+7113,6071,San Bernardino CA,Ontario CCD,"Ontario city, CA",151326
+7113,6071,San Bernardino CA,San Bernardino CCD,"Ontario city, CA",10708
+7114,6071,San Bernardino CA,Ontario CCD,"Chino city, CA",72742
+7114,6071,San Bernardino CA,Ontario CCD,"Chino Hills city, CA",74799
+7114,6071,San Bernardino CA,Ontario CCD,"Ontario city, CA",1873
+7114,6071,San Bernardino CA,Ontario CCD, ,5798
+7115,6071,San Bernardino CA,Ontario CCD,"Fontana city, CA",22118
+7115,6071,San Bernardino CA,Ontario CCD, ,0
+7115,6071,San Bernardino CA,San Bernardino CCD,"Fontana city, CA",71309
+7115,6071,San Bernardino CA,San Bernardino CCD,"Rancho Cucamonga city, CA",0
+7115,6071,San Bernardino CA,San Bernardino CCD, ,24007
+7301,6073,San Diego CA,Camp Pendleton CCD,"Camp Pendleton North CDP, CA",5200
+7301,6073,San Diego CA,Camp Pendleton CCD,"Camp Pendleton South CDP, CA",10616
+7301,6073,San Diego CA,Camp Pendleton CCD, ,21636
+7301,6073,San Diego CA,Fallbrook CCD,"Bonsall CDP, CA",0
+7301,6073,San Diego CA,Oceanside-Escondido CCD,"Bonsall CDP, CA",3
+7301,6073,San Diego CA,Oceanside-Escondido CCD,"Oceanside city, CA",149084
+7301,6073,San Diego CA,Oceanside-Escondido CCD,"Vista city, CA",2361
+7301,6073,San Diego CA,Oceanside-Escondido CCD, ,1734
+7302,6073,San Diego CA,Alpine CCD,"Alpine CDP, CA",14236
+7302,6073,San Diego CA,Alpine CCD, ,799
+7302,6073,San Diego CA,Borrego Springs CCD,"Borrego Springs CDP, CA",3429
+7302,6073,San Diego CA,Borrego Springs CCD, ,1011
+7302,6073,San Diego CA,Fallbrook CCD,"Bonsall CDP, CA",3979
+7302,6073,San Diego CA,Fallbrook CCD,"Fallbrook CDP, CA",30534
+7302,6073,San Diego CA,Fallbrook CCD,"Rainbow CDP, CA",1648
+7302,6073,San Diego CA,Fallbrook CCD, ,11143
+7302,6073,San Diego CA,Laguna-Pine Valley CCD,"Descanso CDP, CA",1423
+7302,6073,San Diego CA,Laguna-Pine Valley CCD,"Mount Laguna CDP, CA",57
+7302,6073,San Diego CA,Laguna-Pine Valley CCD,"Pine Valley CDP, CA",1510
+7302,6073,San Diego CA,Laguna-Pine Valley CCD, ,2288
+7302,6073,San Diego CA,Mountain Empire CCD,"Boulevard CDP, CA",315
+7302,6073,San Diego CA,Mountain Empire CCD,"Campo CDP, CA",2684
+7302,6073,San Diego CA,Mountain Empire CCD,"Jacumba CDP, CA",561
+7302,6073,San Diego CA,Mountain Empire CCD,"Potrero CDP, CA",656
+7302,6073,San Diego CA,Mountain Empire CCD, ,3373
+7302,6073,San Diego CA,Palomar-Julian CCD,"Julian CDP, CA",1502
+7302,6073,San Diego CA,Palomar-Julian CCD, ,4765
+7302,6073,San Diego CA,Pauma Valley CCD,"Rainbow CDP, CA",184
+7302,6073,San Diego CA,Pauma Valley CCD, ,7274
+7302,6073,San Diego CA,Valley Center CCD,"Escondido city, CA",10
+7302,6073,San Diego CA,Valley Center CCD,"Hidden Meadows CDP, CA",3485
+7302,6073,San Diego CA,Valley Center CCD,"Valley Center CDP, CA",9097
+7302,6073,San Diego CA,Valley Center CCD, ,10738
+7303,6073,San Diego CA,Oceanside-Escondido CCD,"Oceanside city, CA",6434
+7303,6073,San Diego CA,Oceanside-Escondido CCD,"San Marcos city, CA",73
+7303,6073,San Diego CA,Oceanside-Escondido CCD,"Vista city, CA",84178
+7303,6073,San Diego CA,Oceanside-Escondido CCD, ,16286
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"Carlsbad city, CA",96629
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"Encinitas city, CA",0
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"Lake San Marcos CDP, CA",258
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"Oceanside city, CA",11568
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"San Marcos city, CA",332
+7304,6073,San Diego CA,Oceanside-Escondido CCD,"Vista city, CA",5709
+7304,6073,San Diego CA,Oceanside-Escondido CCD, ,216
+7305,6073,San Diego CA,Oceanside-Escondido CCD,"Carlsbad city, CA",0
+7305,6073,San Diego CA,Oceanside-Escondido CCD,"Escondido city, CA",23290
+7305,6073,San Diego CA,Oceanside-Escondido CCD,"Lake San Marcos CDP, CA",4179
+7305,6073,San Diego CA,Oceanside-Escondido CCD,"San Marcos city, CA",79306
+7305,6073,San Diego CA,Oceanside-Escondido CCD,"Vista city, CA",1586
+7305,6073,San Diego CA,Oceanside-Escondido CCD, ,7156
+7306,6073,San Diego CA,Oceanside-Escondido CCD,"Escondido city, CA",120611
+7306,6073,San Diego CA,Oceanside-Escondido CCD,"San Diego city, CA",180
+7306,6073,San Diego CA,Oceanside-Escondido CCD,"Valley Center CDP, CA",180
+7306,6073,San Diego CA,Oceanside-Escondido CCD, ,16498
+7306,6073,San Diego CA,Valley Center CCD, ,0
+7307,6073,San Diego CA,Ramona CCD,"Poway city, CA",86
+7307,6073,San Diego CA,Ramona CCD,"Ramona CDP, CA",20292
+7307,6073,San Diego CA,Ramona CCD,"San Diego city, CA",15
+7307,6073,San Diego CA,Ramona CCD,"San Diego Country Estates CDP, CA",10109
+7307,6073,San Diego CA,Ramona CCD, ,4368
+7307,6073,San Diego CA,San Diego CCD,"Bostonia CDP, CA",1809
+7307,6073,San Diego CA,San Diego CCD,"Crest CDP, CA",2593
+7307,6073,San Diego CA,San Diego CCD,"El Cajon city, CA",1212
+7307,6073,San Diego CA,San Diego CCD,"Eucalyptus Hills CDP, CA",5313
+7307,6073,San Diego CA,San Diego CCD,"Granite Hills CDP, CA",0
+7307,6073,San Diego CA,San Diego CCD,"Harbison Canyon CDP, CA",3841
+7307,6073,San Diego CA,San Diego CCD,"Lakeside CDP, CA",20648
+7307,6073,San Diego CA,San Diego CCD,"Santee city, CA",4604
+7307,6073,San Diego CA,San Diego CCD,"Winter Gardens CDP, CA",20631
+7307,6073,San Diego CA,San Diego CCD, ,10014
+7308,6073,San Diego CA,San Diego CCD,"Poway city, CA",47725
+7308,6073,San Diego CA,San Diego CCD,"San Diego city, CA",75833
+7308,6073,San Diego CA,San Diego CCD, ,1177
+7309,6073,San Diego CA,San Diego CCD,"Carlsbad city, CA",8699
+7309,6073,San Diego CA,San Diego CCD,"Encinitas city, CA",59518
+7309,6073,San Diego CA,San Diego CCD,"Fairbanks Ranch CDP, CA",3148
+7309,6073,San Diego CA,San Diego CCD,"Rancho Santa Fe CDP, CA",3117
+7309,6073,San Diego CA,San Diego CCD,"San Diego city, CA",47260
+7309,6073,San Diego CA,San Diego CCD,"San Marcos city, CA",4070
+7309,6073,San Diego CA,San Diego CCD,"Solana Beach city, CA",12867
+7309,6073,San Diego CA,San Diego CCD, ,22967
+7310,6073,San Diego CA,Camp Pendleton CCD, ,0
+7310,6073,San Diego CA,Oceanside-Escondido CCD, ,0
+7310,6073,San Diego CA,San Diego CCD,"Coronado city, CA",18912
+7310,6073,San Diego CA,San Diego CCD,"Del Mar city, CA",4146
+7310,6073,San Diego CA,San Diego CCD,"Imperial Beach city, CA",0
+7310,6073,San Diego CA,San Diego CCD,"San Diego city, CA",144096
+7310,6073,San Diego CA,San Diego CCD, ,0
+7311,6073,San Diego CA,San Diego CCD,"Del Mar city, CA",15
+7311,6073,San Diego CA,San Diego CCD,"San Diego city, CA",111146
+7312,6073,San Diego CA,San Diego CCD,"Del Mar city, CA",0
+7312,6073,San Diego CA,San Diego CCD,"San Diego city, CA",110017
+7312,6073,San Diego CA,San Diego CCD, ,0
+7313,6073,San Diego CA,San Diego CCD,"Bostonia CDP, CA",13570
+7313,6073,San Diego CA,San Diego CCD,"Casa de Oro-Mount Helix CDP, CA",4178
+7313,6073,San Diego CA,San Diego CCD,"El Cajon city, CA",98266
+7313,6073,San Diego CA,San Diego CCD,"Granite Hills CDP, CA",3035
+7313,6073,San Diego CA,San Diego CCD,"La Mesa city, CA",14
+7313,6073,San Diego CA,San Diego CCD,"Rancho San Diego CDP, CA",6019
+7313,6073,San Diego CA,San Diego CCD,"San Diego city, CA",0
+7313,6073,San Diego CA,San Diego CCD,"Santee city, CA",48809
+7313,6073,San Diego CA,San Diego CCD, ,1786
+7314,6073,San Diego CA,San Diego CCD,"Casa de Oro-Mount Helix CDP, CA",2472
+7314,6073,San Diego CA,San Diego CCD,"La Mesa city, CA",56609
+7314,6073,San Diego CA,San Diego CCD,"Lemon Grove city, CA",0
+7314,6073,San Diego CA,San Diego CCD,"San Diego city, CA",89111
+7314,6073,San Diego CA,San Diego CCD,"Spring Valley CDP, CA",0
+7314,6073,San Diego CA,San Diego CCD, ,8
+7315,6073,San Diego CA,San Diego CCD,"San Diego city, CA",151208
+7316,6073,San Diego CA,San Diego CCD,"Coronado city, CA",0
+7316,6073,San Diego CA,San Diego CCD,"San Diego city, CA",165573
+7316,6073,San Diego CA,San Diego CCD, ,0
+7317,6073,San Diego CA,San Diego CCD,"Lemon Grove city, CA",0
+7317,6073,San Diego CA,San Diego CCD,"San Diego city, CA",163042
+7318,6073,San Diego CA,San Diego CCD,"Bonita CDP, CA",4947
+7318,6073,San Diego CA,San Diego CCD,"Chula Vista city, CA",495
+7318,6073,San Diego CA,San Diego CCD,"La Presa CDP, CA",7201
+7318,6073,San Diego CA,San Diego CCD,"Lemon Grove city, CA",387
+7318,6073,San Diego CA,San Diego CCD,"National City city, CA",448
+7318,6073,San Diego CA,San Diego CCD,"San Diego city, CA",142323
+7318,6073,San Diego CA,San Diego CCD, ,4
+7319,6073,San Diego CA,Jamul CCD,"Chula Vista city, CA",3627
+7319,6073,San Diego CA,Jamul CCD,"Jamul CDP, CA",6163
+7319,6073,San Diego CA,Jamul CCD,"Rancho San Diego CDP, CA",114
+7319,6073,San Diego CA,Jamul CCD,"San Diego city, CA",0
+7319,6073,San Diego CA,Jamul CCD, ,9054
+7319,6073,San Diego CA,San Diego CCD,"Casa de Oro-Mount Helix CDP, CA",12112
+7319,6073,San Diego CA,San Diego CCD,"La Mesa city, CA",442
+7319,6073,San Diego CA,San Diego CCD,"La Presa CDP, CA",26347
+7319,6073,San Diego CA,San Diego CCD,"Lemon Grove city, CA",24933
+7319,6073,San Diego CA,San Diego CCD,"Rancho San Diego CDP, CA",15075
+7319,6073,San Diego CA,San Diego CCD,"San Diego city, CA",3698
+7319,6073,San Diego CA,San Diego CCD,"Spring Valley CDP, CA",28205
+7320,6073,San Diego CA,San Diego CCD,"Bonita CDP, CA",7254
+7320,6073,San Diego CA,San Diego CCD,"Chula Vista city, CA",124858
+7320,6073,San Diego CA,San Diego CCD,"La Presa CDP, CA",621
+7320,6073,San Diego CA,San Diego CCD,"National City city, CA",2097
+7320,6073,San Diego CA,San Diego CCD,"San Diego city, CA",0
+7320,6073,San Diego CA,San Diego CCD, ,490
+7321,6073,San Diego CA,San Diego CCD,"Bonita CDP, CA",337
+7321,6073,San Diego CA,San Diego CCD,"Chula Vista city, CA",114858
+7321,6073,San Diego CA,San Diego CCD,"National City city, CA",56037
+7321,6073,San Diego CA,San Diego CCD,"San Diego city, CA",57
+7321,6073,San Diego CA,San Diego CCD, ,2263
+7322,6073,San Diego CA,San Diego CCD,"Chula Vista city, CA",78
+7322,6073,San Diego CA,San Diego CCD,"Imperial Beach city, CA",26324
+7322,6073,San Diego CA,San Diego CCD,"San Diego city, CA",103843
+7322,6073,San Diego CA,San Diego CCD, ,4669
+7501,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",136936
+7502,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",107027
+7503,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",129066
+7504,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",106640
+7505,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",105336
+7506,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",110830
+7507,6075,San Francisco CA,San Francisco CCD,"San Francisco city, CA",109400
+7701,6077,San Joaquin CA,Stockton CCD,"Lincoln Village CDP, CA",4381
+7701,6077,San Joaquin CA,Stockton CCD,"Morada CDP, CA",3828
+7701,6077,San Joaquin CA,Stockton CCD,"Stockton city, CA",149899
+7701,6077,San Joaquin CA,Stockton CCD, ,5112
+7701,6077,San Joaquin CA,Thornton CCD,"Stockton city, CA",10682
+7701,6077,San Joaquin CA,Thornton CCD, ,35
+7702,6077,San Joaquin CA,Stockton CCD,"August CDP, CA",8390
+7702,6077,San Joaquin CA,Stockton CCD,"Country Club CDP, CA",9379
+7702,6077,San Joaquin CA,Stockton CCD,"Kennedy CDP, CA",3254
+7702,6077,San Joaquin CA,Stockton CCD,"Stockton city, CA",125444
+7702,6077,San Joaquin CA,Stockton CCD,"Taft Mosswood CDP, CA",1228
+7702,6077,San Joaquin CA,Stockton CCD, ,4315
+7703,6077,San Joaquin CA,Manteca CCD,"Lathrop city, CA",17998
+7703,6077,San Joaquin CA,Manteca CCD,"Manteca city, CA",66922
+7703,6077,San Joaquin CA,Manteca CCD, ,4363
+7703,6077,San Joaquin CA,Tracy CCD,"Lathrop city, CA",25
+7703,6077,San Joaquin CA,Tracy CCD,"Mountain House CDP, CA",9675
+7703,6077,San Joaquin CA,Tracy CCD,"Tracy city, CA",82922
+7703,6077,San Joaquin CA,Tracy CCD, ,13631
+7704,6077,San Joaquin CA,Escalon CCD,"Escalon city, CA",7132
+7704,6077,San Joaquin CA,Escalon CCD, ,6188
+7704,6077,San Joaquin CA,Linden-Farmington CCD,"Farmington CDP, CA",207
+7704,6077,San Joaquin CA,Linden-Farmington CCD,"Linden CDP, CA",1784
+7704,6077,San Joaquin CA,Linden-Farmington CCD,"Peters CDP, CA",672
+7704,6077,San Joaquin CA,Linden-Farmington CCD, ,2760
+7704,6077,San Joaquin CA,Lockeford CCD,"Dogtown CDP, CA",2506
+7704,6077,San Joaquin CA,Lockeford CCD,"Lockeford CDP, CA",3233
+7704,6077,San Joaquin CA,Lockeford CCD,"Victor CDP, CA",250
+7704,6077,San Joaquin CA,Lockeford CCD, ,5371
+7704,6077,San Joaquin CA,Lodi CCD,"Acampo CDP, CA",341
+7704,6077,San Joaquin CA,Lodi CCD,"Collierville CDP, CA",1934
+7704,6077,San Joaquin CA,Lodi CCD,"Lodi city, CA",62133
+7704,6077,San Joaquin CA,Lodi CCD,"Stockton city, CA",4787
+7704,6077,San Joaquin CA,Lodi CCD,"Victor CDP, CA",43
+7704,6077,San Joaquin CA,Lodi CCD,"Woodbridge CDP, CA",3984
+7704,6077,San Joaquin CA,Lodi CCD, ,9156
+7704,6077,San Joaquin CA,Manteca CCD,"Manteca city, CA",174
+7704,6077,San Joaquin CA,Manteca CCD,"Stockton city, CA",1
+7704,6077,San Joaquin CA,Manteca CCD, ,3998
+7704,6077,San Joaquin CA,Ripon CCD,"Ripon city, CA",14297
+7704,6077,San Joaquin CA,Ripon CCD, ,2391
+7704,6077,San Joaquin CA,Stockton CCD,"French Camp CDP, CA",3376
+7704,6077,San Joaquin CA,Stockton CCD,"Garden Acres CDP, CA",10648
+7704,6077,San Joaquin CA,Stockton CCD,"Kennedy CDP, CA",0
+7704,6077,San Joaquin CA,Stockton CCD,"Stockton city, CA",894
+7704,6077,San Joaquin CA,Stockton CCD,"Taft Mosswood CDP, CA",302
+7704,6077,San Joaquin CA,Stockton CCD,"Waterloo CDP, CA",572
+7704,6077,San Joaquin CA,Stockton CCD, ,12181
+7704,6077,San Joaquin CA,Thornton CCD,"Lodi city, CA",1
+7704,6077,San Joaquin CA,Thornton CCD,"Terminous CDP, CA",381
+7704,6077,San Joaquin CA,Thornton CCD,"Thornton CDP, CA",1131
+7704,6077,San Joaquin CA,Thornton CCD, ,995
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Arroyo Grande city, CA",17252
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Avilla Beach CDP, CA",0
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Blacklake CDP, CA",930
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Callender CDP, CA",1262
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Grover Beach city, CA",13156
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Los Berros CDP, CA",641
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Nipomo CDP, CA",16661
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Oceano CDP, CA",7286
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Pismo Beach city, CA",7635
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD,"Woodlands CDP, CA",576
+7901,6079,San Luis Obispo CA,Arroyo Grande CCD, ,5493
+7901,6079,San Luis Obispo CA,North Coast CCD,"Atascadero city, CA",0
+7901,6079,San Luis Obispo CA,North Coast CCD,"Cambria CDP, CA",6032
+7901,6079,San Luis Obispo CA,North Coast CCD,"Cayucos CDP, CA",2592
+7901,6079,San Luis Obispo CA,North Coast CCD,"Los Osos CDP, CA",14276
+7901,6079,San Luis Obispo CA,North Coast CCD,"Morro Bay city, CA",10234
+7901,6079,San Luis Obispo CA,North Coast CCD,"San Simeon CDP, CA",462
+7901,6079,San Luis Obispo CA,North Coast CCD, ,1922
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD,"Avilla Beach CDP, CA",1627
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD,"Edna CDP, CA",50
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD,"Los Ranchos CDP, CA",1477
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD,"Pismo Beach city, CA",20
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD,"San Luis Obispo city, CA",45119
+7901,6079,San Luis Obispo CA,San Luis Obispo CCD, ,8346
+7902,6079,San Luis Obispo CA,Arroyo Grande CCD,"Arroyo Grande city, CA",0
+7902,6079,San Luis Obispo CA,Arroyo Grande CCD,"Edna CDP, CA",143
+7902,6079,San Luis Obispo CA,Arroyo Grande CCD,"Nipomo CDP, CA",53
+7902,6079,San Luis Obispo CA,Arroyo Grande CCD, ,4941
+7902,6079,San Luis Obispo CA,Atascadero CCD,"Atascadero city, CA",28310
+7902,6079,San Luis Obispo CA,Atascadero CCD,"Creston CDP, CA",94
+7902,6079,San Luis Obispo CA,Atascadero CCD,"El Paso de Robles (Paso Robles) city, CA",16
+7902,6079,San Luis Obispo CA,Atascadero CCD,"Garden Farms CDP, CA",386
+7902,6079,San Luis Obispo CA,Atascadero CCD,"Santa Margarita CDP, CA",1259
+7902,6079,San Luis Obispo CA,Atascadero CCD,"Templeton CDP, CA",7395
+7902,6079,San Luis Obispo CA,Atascadero CCD, ,7052
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"El Paso de Robles (Paso Robles) city, CA",29777
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"Lake Nacimiento CDP, CA",2411
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"Oak Shores CDP, CA",337
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"San Miguel CDP, CA",2336
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"Shandon CDP, CA",1295
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"Templeton CDP, CA",279
+7902,6079,San Luis Obispo CA,Paso Robles CCD,"Whitley Gardens CDP, CA",285
+7902,6079,San Luis Obispo CA,Paso Robles CCD, ,12411
+7902,6079,San Luis Obispo CA,San Luis Obispo CCD, ,7808
+8101,6081,San Mateo CA,South San Francisco CCD,"Broadmoor CDP, CA",4176
+8101,6081,San Mateo CA,South San Francisco CCD,"Colma town, CA",1792
+8101,6081,San Mateo CA,South San Francisco CCD,"Daly City city, CA",92947
+8101,6081,San Mateo CA,South San Francisco CCD,"Pacifica city, CA",37234
+8101,6081,San Mateo CA,South San Francisco CCD, ,1148
+8102,6081,San Mateo CA,South San Francisco CCD,"Brisbane city, CA",4282
+8102,6081,San Mateo CA,South San Francisco CCD,"Daly City city, CA",8176
+8102,6081,San Mateo CA,South San Francisco CCD,"San Bruno city, CA",41114
+8102,6081,San Mateo CA,South San Francisco CCD,"South San Francisco city, CA",63632
+8102,6081,San Mateo CA,South San Francisco CCD, ,176
+8103,6081,San Mateo CA,San Mateo CCD,"Burlingame city, CA",0
+8103,6081,San Mateo CA,San Mateo CCD,"Highlands-Baywood Park CDP, CA",0
+8103,6081,San Mateo CA,San Mateo CCD,"Hillsborough town, CA",10825
+8103,6081,San Mateo CA,San Mateo CCD,"San Mateo city, CA",41991
+8103,6081,San Mateo CA,San Mateo CCD, ,4
+8103,6081,San Mateo CA,South San Francisco CCD,"Burlingame city, CA",28806
+8103,6081,San Mateo CA,South San Francisco CCD,"Hillsborough town, CA",0
+8103,6081,San Mateo CA,South San Francisco CCD,"Millbrae city, CA",21532
+8103,6081,San Mateo CA,South San Francisco CCD,"San Bruno city, CA",0
+8103,6081,San Mateo CA,South San Francisco CCD, ,1100
+8104,6081,San Mateo CA,Half Moon Bay CCD,"El Granada CDP, CA",5467
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Half Moon Bay city, CA",11324
+8104,6081,San Mateo CA,Half Moon Bay CCD,"La Honda CDP, CA",928
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Loma Mar CDP, CA",113
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Millbrae city, CA",0
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Montara CDP, CA",2909
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Moss Beach CDP, CA",3103
+8104,6081,San Mateo CA,Half Moon Bay CCD,"Pescadero CDP, CA",643
+8104,6081,San Mateo CA,Half Moon Bay CCD,"San Bruno city, CA",0
+8104,6081,San Mateo CA,Half Moon Bay CCD, ,4407
+8104,6081,San Mateo CA,San Mateo CCD,"Foster City city, CA",30567
+8104,6081,San Mateo CA,San Mateo CCD,"Highlands-Baywood Park CDP, CA",4027
+8104,6081,San Mateo CA,San Mateo CCD,"Hillsborough town, CA",0
+8104,6081,San Mateo CA,San Mateo CCD,"Menlo Park city, CA",0
+8104,6081,San Mateo CA,San Mateo CCD,"Redwood City city, CA",0
+8104,6081,San Mateo CA,San Mateo CCD,"San Mateo city, CA",55216
+8104,6081,San Mateo CA,San Mateo CCD, ,0
+8104,6081,San Mateo CA,South San Francisco CCD,"Brisbane city, CA",0
+8104,6081,San Mateo CA,South San Francisco CCD,"Burlingame city, CA",0
+8104,6081,San Mateo CA,South San Francisco CCD,"South San Francisco city, CA",0
+8104,6081,San Mateo CA,South San Francisco CCD, ,0
+8105,6081,San Mateo CA,San Mateo CCD,"Belmont city, CA",25835
+8105,6081,San Mateo CA,San Mateo CCD,"Emerald Lake Hills CDP, CA",580
+8105,6081,San Mateo CA,San Mateo CCD,"North Fair Oaks CDP, CA",108
+8105,6081,San Mateo CA,San Mateo CCD,"Redwood City city, CA",69362
+8105,6081,San Mateo CA,San Mateo CCD,"San Carlos city, CA",28406
+8105,6081,San Mateo CA,San Mateo CCD, ,2954
+8106,6081,San Mateo CA,San Mateo CCD,"Atherton town, CA",6914
+8106,6081,San Mateo CA,San Mateo CCD,"East Palo Alto city, CA",28155
+8106,6081,San Mateo CA,San Mateo CCD,"Emerald Lake Hills CDP, CA",3698
+8106,6081,San Mateo CA,San Mateo CCD,"Ladera CDP, CA",1426
+8106,6081,San Mateo CA,San Mateo CCD,"Menlo Park city, CA",32026
+8106,6081,San Mateo CA,San Mateo CCD,"North Fair Oaks CDP, CA",14579
+8106,6081,San Mateo CA,San Mateo CCD,"Portola Valley town, CA",4353
+8106,6081,San Mateo CA,San Mateo CCD,"Redwood City city, CA",7453
+8106,6081,San Mateo CA,San Mateo CCD,"West Menlo Park CDP, CA",3659
+8106,6081,San Mateo CA,San Mateo CCD,"Woodside town, CA",5287
+8106,6081,San Mateo CA,San Mateo CCD, ,6017
+8301,6083,Santa Barbara CA,Santa Maria CCD,"Orcutt CDP, CA",28318
+8301,6083,Santa Barbara CA,Santa Maria CCD,"Santa Maria city, CA",90818
+8301,6083,Santa Barbara CA,Santa Maria CCD, ,2540
+8302,6083,Santa Barbara CA,Cuyama CCD,"Cuyama CDP, CA",57
+8302,6083,Santa Barbara CA,Cuyama CCD,"New Cuyama CDP, CA",517
+8302,6083,Santa Barbara CA,Cuyama CCD, ,671
+8302,6083,Santa Barbara CA,Guadalupe CCD,"Casmalia CDP, CA",133
+8302,6083,Santa Barbara CA,Guadalupe CCD,"Guadalupe city, CA",7080
+8302,6083,Santa Barbara CA,Guadalupe CCD,"Santa Maria city, CA",0
+8302,6083,Santa Barbara CA,Guadalupe CCD, ,132
+8302,6083,Santa Barbara CA,Lompoc CCD,"Buellton city, CA",0
+8302,6083,Santa Barbara CA,Lompoc CCD,"Lompoc city, CA",42434
+8302,6083,Santa Barbara CA,Lompoc CCD,"Los Alamos CDP, CA",50
+8302,6083,Santa Barbara CA,Lompoc CCD,"Mission Hills CDP, CA",3576
+8302,6083,Santa Barbara CA,Lompoc CCD,"Vandenberg AFB CDP, CA",3338
+8302,6083,Santa Barbara CA,Lompoc CCD,"Vandenberg Village CDP, CA",6497
+8302,6083,Santa Barbara CA,Lompoc CCD, ,1847
+8302,6083,Santa Barbara CA,Santa Barbara CCD,"Goleta city, CA",1293
+8302,6083,Santa Barbara CA,Santa Barbara CCD, ,1206
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Casmalia CDP, CA",5
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Garey CDP, CA",68
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Los Alamos CDP, CA",0
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Orcutt CDP, CA",587
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Santa Maria city, CA",8735
+8302,6083,Santa Barbara CA,Santa Maria CCD,"Sisquoc CDP, CA",183
+8302,6083,Santa Barbara CA,Santa Maria CCD, ,1472
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Ballard CDP, CA",467
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Buellton city, CA",4828
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Los Alamos CDP, CA",1840
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Los Olivos CDP, CA",1132
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Santa Ynez CDP, CA",4418
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD,"Solvang city, CA",5245
+8302,6083,Santa Barbara CA,Solvang-Santa Ynez CCD, ,4740
+8303,6083,Santa Barbara CA,Carpinteria CCD,"Carpinteria city, CA",13040
+8303,6083,Santa Barbara CA,Carpinteria CCD,"Summerland CDP, CA",1448
+8303,6083,Santa Barbara CA,Carpinteria CCD,"Toro Canyon CDP, CA",1508
+8303,6083,Santa Barbara CA,Carpinteria CCD, ,1722
+8303,6083,Santa Barbara CA,Guadalupe CCD, ,0
+8303,6083,Santa Barbara CA,Lompoc CCD, ,0
+8303,6083,Santa Barbara CA,Santa Barbara CCD,"Goleta city, CA",28595
+8303,6083,Santa Barbara CA,Santa Barbara CCD,"Isla Vista CDP, CA",23096
+8303,6083,Santa Barbara CA,Santa Barbara CCD,"Mission Canyon CDP, CA",2381
+8303,6083,Santa Barbara CA,Santa Barbara CCD,"Montecito CDP, CA",8965
+8303,6083,Santa Barbara CA,Santa Barbara CCD,"Santa Barbara city, CA",88410
+8303,6083,Santa Barbara CA,Santa Barbara CCD, ,30503
+8501,6085,Santa Clara CA,San Jose CCD,"Los Altos city, CA",28470
+8501,6085,Santa Clara CA,San Jose CCD,"Los Altos Hills town, CA",3519
+8501,6085,Santa Clara CA,San Jose CCD,"Loyola CDP, CA",2747
+8501,6085,Santa Clara CA,San Jose CCD,"Mountain View city, CA",74066
+8501,6085,Santa Clara CA,San Jose CCD,"Palo Alto city, CA",64034
+8501,6085,Santa Clara CA,San Jose CCD,"Stanford CDP, CA",13809
+8501,6085,Santa Clara CA,San Jose CCD,"Sunnyvale city, CA",0
+8501,6085,Santa Clara CA,San Jose CCD, ,1146
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Cupertino city, CA",1071
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Los Altos city, CA",58
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Los Altos Hills town, CA",4403
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Loyola CDP, CA",514
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Palo Alto city, CA",369
+8501,6085,Santa Clara CA,West Santa Clara CCD,"Saratoga city, CA",0
+8501,6085,Santa Clara CA,West Santa Clara CCD, ,1114
+8502,6085,Santa Clara CA,San Jose CCD,"Cupertino city, CA",688
+8502,6085,Santa Clara CA,San Jose CCD,"Milpitas city, CA",27
+8502,6085,Santa Clara CA,San Jose CCD,"Mountain View city, CA",0
+8502,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",2094
+8502,6085,Santa Clara CA,San Jose CCD,"Santa Clara city, CA",5411
+8502,6085,Santa Clara CA,San Jose CCD,"Sunnyvale city, CA",138395
+8502,6085,Santa Clara CA,San Jose CCD, ,4
+8503,6085,Santa Clara CA,San Jose CCD,"Milpitas city, CA",41
+8503,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",21546
+8503,6085,Santa Clara CA,San Jose CCD,"Santa Clara city, CA",108688
+8503,6085,Santa Clara CA,San Jose CCD,"Sunnyvale city, CA",0
+8503,6085,Santa Clara CA,San Jose CCD, ,0
+8504,6085,Santa Clara CA,Diablo Range CCD,"Milpitas city, CA",185
+8504,6085,Santa Clara CA,Diablo Range CCD,"San Jose city, CA",79
+8504,6085,Santa Clara CA,Diablo Range CCD, ,100
+8504,6085,Santa Clara CA,San Jose CCD,"Milpitas city, CA",66537
+8504,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",62044
+8504,6085,Santa Clara CA,San Jose CCD, ,44
+8505,6085,Santa Clara CA,San Jose CCD,"Alum Rock CDP, CA",15536
+8505,6085,Santa Clara CA,San Jose CCD,"East Foothills CDP, CA",8269
+8505,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",80717
+8505,6085,Santa Clara CA,San Jose CCD, ,1518
+8506,6085,Santa Clara CA,Diablo Range CCD,"Morgan Hill city, CA",70
+8506,6085,Santa Clara CA,Diablo Range CCD,"San Jose city, CA",5
+8506,6085,Santa Clara CA,Diablo Range CCD, ,1069
+8506,6085,Santa Clara CA,Llagas-Uvas CCD,"Gilroy city, CA",1088
+8506,6085,Santa Clara CA,Llagas-Uvas CCD,"San Jose city, CA",24
+8506,6085,Santa Clara CA,Llagas-Uvas CCD, ,2902
+8506,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",230
+8506,6085,Santa Clara CA,San Jose CCD, ,1436
+8506,6085,Santa Clara CA,South Santa Clara Valley CCD,"Gilroy city, CA",47733
+8506,6085,Santa Clara CA,South Santa Clara Valley CCD,"Morgan Hill city, CA",37812
+8506,6085,Santa Clara CA,South Santa Clara Valley CCD,"San Jose city, CA",33
+8506,6085,Santa Clara CA,South Santa Clara Valley CCD,"San Martin CDP, CA",7027
+8506,6085,Santa Clara CA,South Santa Clara Valley CCD, ,10872
+8507,6085,Santa Clara CA,Lexington Hills CCD,"Lexington Hills CDP, CA",2421
+8507,6085,Santa Clara CA,Lexington Hills CCD,"Los Gatos town, CA",2
+8507,6085,Santa Clara CA,Lexington Hills CCD, ,1586
+8507,6085,Santa Clara CA,San Jose CCD,"Campbell city, CA",518
+8507,6085,Santa Clara CA,San Jose CCD,"Cupertino city, CA",56543
+8507,6085,Santa Clara CA,San Jose CCD,"Los Altos city, CA",448
+8507,6085,Santa Clara CA,San Jose CCD,"Los Gatos town, CA",27252
+8507,6085,Santa Clara CA,San Jose CCD,"Monte Sereno city, CA",3341
+8507,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",5881
+8507,6085,Santa Clara CA,San Jose CCD,"Santa Clara city, CA",2369
+8507,6085,Santa Clara CA,San Jose CCD,"Saratoga city, CA",29541
+8507,6085,Santa Clara CA,San Jose CCD,"Sunnyvale city, CA",1686
+8507,6085,Santa Clara CA,San Jose CCD, ,4967
+8508,6085,Santa Clara CA,San Jose CCD,"Campbell city, CA",35079
+8508,6085,Santa Clara CA,San Jose CCD,"Los Gatos town, CA",1833
+8508,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",96125
+8508,6085,Santa Clara CA,San Jose CCD,"Saratoga city, CA",385
+8509,6085,Santa Clara CA,San Jose CCD,"Burbank CDP, CA",4926
+8509,6085,Santa Clara CA,San Jose CCD,"Campbell city, CA",567
+8509,6085,Santa Clara CA,San Jose CCD,"Fruitdale CDP, CA",935
+8509,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",115376
+8509,6085,Santa Clara CA,San Jose CCD,"Santa Clara city, CA",0
+8510,6085,Santa Clara CA,San Jose CCD,"Campbell city, CA",694
+8510,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",148742
+8510,6085,Santa Clara CA,San Jose CCD, ,1028
+8511,6085,Santa Clara CA,San Jose CCD,"Cambrian Park CDP, CA",3282
+8511,6085,Santa Clara CA,San Jose CCD,"Campbell city, CA",2491
+8511,6085,Santa Clara CA,San Jose CCD,"Los Gatos town, CA",326
+8511,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",98120
+8511,6085,Santa Clara CA,San Jose CCD, ,3
+8512,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",103428
+8512,6085,Santa Clara CA,San Jose CCD, ,1971
+8513,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",108149
+8513,6085,Santa Clara CA,San Jose CCD, ,734
+8514,6085,Santa Clara CA,San Jose CCD,"San Jose city, CA",103349
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Ben Lomond CDP, CA",6234
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Bonny Doon CDP, CA",247
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Boulder Creek CDP, CA",4923
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Brookdale CDP, CA",1991
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Felton CDP, CA",1799
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Lompico CDP, CA",1137
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD,"Zayante CDP, CA",705
+8701,6087,Santa Cruz CA,San Lorenzo Valley CCD, ,6159
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Aptos CDP, CA",1633
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Day Valley CDP, CA",1716
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Felton CDP, CA",2258
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Live Oak CDP, CA",0
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Mount Hermon CDP, CA",1037
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Paradise Park CDP, CA",296
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Pasatiempo CDP, CA",1041
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Santa Cruz city, CA",3410
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Scotts Valley city, CA",11580
+8701,6087,Santa Cruz CA,Santa Cruz CCD,"Soquel CDP, CA",5889
+8701,6087,Santa Cruz CA,Santa Cruz CCD, ,8981
+8701,6087,Santa Cruz CA,Summit Road CCD, ,3423
+8701,6087,Santa Cruz CA,Watsonville CCD,"Amesti CDP, CA",3478
+8701,6087,Santa Cruz CA,Watsonville CCD,"Aptos Hills-Larkin Valley CDP, CA",2381
+8701,6087,Santa Cruz CA,Watsonville CCD,"Corralitos CDP, CA",2326
+8701,6087,Santa Cruz CA,Watsonville CCD,"Day Valley CDP, CA",578
+8701,6087,Santa Cruz CA,Watsonville CCD,"Freedom CDP, CA",3070
+8701,6087,Santa Cruz CA,Watsonville CCD,"Interlaken CDP, CA",7321
+8701,6087,Santa Cruz CA,Watsonville CCD,"Watsonville city, CA",51196
+8701,6087,Santa Cruz CA,Watsonville CCD, ,2857
+8701,6087,Santa Cruz CA,West Santa Cruz CCD,"Bonny Doon CDP, CA",2431
+8701,6087,Santa Cruz CA,West Santa Cruz CCD,"Davenport CDP, CA",408
+8701,6087,Santa Cruz CA,West Santa Cruz CCD,"Santa Cruz city, CA",0
+8701,6087,Santa Cruz CA,West Santa Cruz CCD, ,1444
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Aptos CDP, CA",4587
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Capitola city, CA",9918
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Day Valley CDP, CA",1115
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Live Oak CDP, CA",17158
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Pleasure Point CDP, CA",5846
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Paradise Park CDP, CA",93
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Rio del Mar CDP, CA",9216
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Santa Cruz city, CA",56536
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Seacliff CDP, CA",3267
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Soquel CDP, CA",3755
+8702,6087,Santa Cruz CA,Santa Cruz CCD,"Twin Lakes CDP, CA",4917
+8702,6087,Santa Cruz CA,Santa Cruz CCD, ,82
+8702,6087,Santa Cruz CA,Watsonville CCD,"La Selva Beach CDP, CA",2843
+8702,6087,Santa Cruz CA,Watsonville CCD,"Pajaro Dunes CDP, CA",144
+8702,6087,Santa Cruz CA,Watsonville CCD,"Watsonville city, CA",3
+8702,6087,Santa Cruz CA,Watsonville CCD, ,953
+8702,6087,Santa Cruz CA,West Santa Cruz CCD, ,0
+8900,6089,Shasta CA,Central Shasta CCD,"Bella Vista CDP, CA",311
+8900,6089,Shasta CA,Central Shasta CCD,"Big Bend CDP, CA",102
+8900,6089,Shasta CA,Central Shasta CCD,"Millville CDP, CA",727
+8900,6089,Shasta CA,Central Shasta CCD,"Montgomery Creek CDP, CA",163
+8900,6089,Shasta CA,Central Shasta CCD,"Round Mountain CDP, CA",155
+8900,6089,Shasta CA,Central Shasta CCD,"Shingletown CDP, CA",2283
+8900,6089,Shasta CA,Central Shasta CCD, ,7786
+8900,6089,Shasta CA,East Shasta CCD,"Burney CDP, CA",3154
+8900,6089,Shasta CA,East Shasta CCD,"Cassel CDP, CA",207
+8900,6089,Shasta CA,East Shasta CCD,"Fall River Mills CDP, CA",573
+8900,6089,Shasta CA,East Shasta CCD,"Hat Creek CDP, CA",309
+8900,6089,Shasta CA,East Shasta CCD,"McArthur CDP, CA",338
+8900,6089,Shasta CA,East Shasta CCD,"Old Station CDP, CA",51
+8900,6089,Shasta CA,East Shasta CCD, ,2843
+8900,6089,Shasta CA,Redding CCD,"Anderson city, CA",9932
+8900,6089,Shasta CA,Redding CCD,"Bella Vista CDP, CA",2470
+8900,6089,Shasta CA,Redding CCD,"Cottonwood CDP, CA",3316
+8900,6089,Shasta CA,Redding CCD,"Keswick CDP, CA",335
+8900,6089,Shasta CA,Redding CCD,"Mountain Gate CDP, CA",943
+8900,6089,Shasta CA,Redding CCD,"Palo Cedro CDP, CA",1269
+8900,6089,Shasta CA,Redding CCD,"Redding city, CA",89861
+8900,6089,Shasta CA,Redding CCD,"Shasta CDP, CA",730
+8900,6089,Shasta CA,Redding CCD,"Shasta Lake city, CA",10164
+8900,6089,Shasta CA,Redding CCD, ,33624
+8900,6089,Shasta CA,Sacramento Canyon CCD,"Lakehead CDP, CA",461
+8900,6089,Shasta CA,Sacramento Canyon CCD, ,1016
+8900,6089,Shasta CA,Southwest Shasta CCD,"French Gulch CDP, CA",346
+8900,6089,Shasta CA,Southwest Shasta CCD,"Keswick CDP, CA",116
+8900,6089,Shasta CA,Southwest Shasta CCD,"Shasta CDP, CA",1041
+8900,6089,Shasta CA,Southwest Shasta CCD, ,2597
+9501,6095,Solano CA,Vallejo CCD,"Benicia city, CA",26997
+9501,6095,Solano CA,Vallejo CCD,"Vallejo city, CA",114620
+9501,6095,Solano CA,Vallejo CCD, ,3221
+9502,6095,Solano CA,Fairfield-Suisun City CCD,"Fairfield city, CA",105321
+9502,6095,Solano CA,Fairfield-Suisun City CCD,"Green Valley CDP, CA",1625
+9502,6095,Solano CA,Fairfield-Suisun City CCD,"Suisun City city, CA",28111
+9502,6095,Solano CA,Fairfield-Suisun City CCD,"Vacaville city, CA",11
+9502,6095,Solano CA,Fairfield-Suisun City CCD,"Vallejo city, CA",1322
+9502,6095,Solano CA,Fairfield-Suisun City CCD, ,2425
+9503,6095,Solano CA,Dixon CCD,"Dixon city, CA",18351
+9503,6095,Solano CA,Dixon CCD,"Hartley CDP, CA",342
+9503,6095,Solano CA,Dixon CCD,"Vacaville city, CA",0
+9503,6095,Solano CA,Dixon CCD, ,2560
+9503,6095,Solano CA,Rio Vista CCD,"Rio Vista city, CA",7360
+9503,6095,Solano CA,Rio Vista CCD, ,1063
+9503,6095,Solano CA,Vacaville CCD,"Allendale CDP, CA",1506
+9503,6095,Solano CA,Vacaville CCD,"Elmira CDP, CA",188
+9503,6095,Solano CA,Vacaville CCD,"Hartley CDP, CA",2168
+9503,6095,Solano CA,Vacaville CCD,"Vacaville city, CA",92417
+9503,6095,Solano CA,Vacaville CCD, ,3736
+9701,6097,Sonoma CA,Cloverdale-Geyserville CCD,"Cloverdale city, CA",8618
+9701,6097,Sonoma CA,Cloverdale-Geyserville CCD,"Geyserville CDP, CA",862
+9701,6097,Sonoma CA,Cloverdale-Geyserville CCD, ,4168
+9701,6097,Sonoma CA,Healdsburg CCD,"Healdsburg city, CA",11254
+9701,6097,Sonoma CA,Healdsburg CCD,"Larkfield-Wikiup CDP, CA",22
+9701,6097,Sonoma CA,Healdsburg CCD,"Windsor town, CA",26793
+9701,6097,Sonoma CA,Healdsburg CCD, ,6479
+9701,6097,Sonoma CA,Petaluma CCD, ,5151
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Bodega CDP, CA",220
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Bodega Bay CDP, CA",1077
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Carmet CDP, CA",47
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Cazadero CDP, CA",354
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Forestville CDP, CA",3293
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Graton CDP, CA",315
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Guerneville CDP, CA",4534
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Jenner CDP, CA",136
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Monte Rio CDP, CA",1152
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Occidental CDP, CA",1115
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Salmon Creek CDP, CA",86
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Sea Ranch CDP, CA",1305
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Sereno del Mar CDP, CA",126
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD,"Timber Cove CDP, CA",164
+9701,6097,Sonoma CA,Russian River-Sonoma Coast CCD, ,8789
+9701,6097,Sonoma CA,Santa Rosa CCD,"Fulton CDP, CA",28
+9701,6097,Sonoma CA,Santa Rosa CCD,"Kenwood CDP, CA",17
+9701,6097,Sonoma CA,Santa Rosa CCD,"Larkfield-Wikiup CDP, CA",8859
+9701,6097,Sonoma CA,Santa Rosa CCD,"Santa Rosa city, CA",10609
+9701,6097,Sonoma CA,Santa Rosa CCD,"Windsor town, CA",8
+9701,6097,Sonoma CA,Santa Rosa CCD, ,5582
+9701,6097,Sonoma CA,Sebastopol CCD,"Bloomfield CDP, CA",345
+9701,6097,Sonoma CA,Sebastopol CCD,"Graton CDP, CA",1392
+9701,6097,Sonoma CA,Sebastopol CCD,"Santa Rosa city, CA",0
+9701,6097,Sonoma CA,Sebastopol CCD,"Sebastopol city, CA",7379
+9701,6097,Sonoma CA,Sebastopol CCD,"Valley Ford CDP, CA",147
+9701,6097,Sonoma CA,Sebastopol CCD, ,18049
+9701,6097,Sonoma CA,Sonoma CCD,"Boyes Hot Springs CDP, CA",6656
+9701,6097,Sonoma CA,Sonoma CCD,"Eldridge CDP, CA",1233
+9701,6097,Sonoma CA,Sonoma CCD,"El Verano CDP, CA",4123
+9701,6097,Sonoma CA,Sonoma CCD,"Fetters Hot Springs-Agua Caliente CDP, CA",4144
+9701,6097,Sonoma CA,Sonoma CCD,"Glen Ellen CDP, CA",784
+9701,6097,Sonoma CA,Sonoma CCD,"Kenwood CDP, CA",1011
+9701,6097,Sonoma CA,Sonoma CCD,"Sonoma city, CA",10648
+9701,6097,Sonoma CA,Sonoma CCD,"Temelec CDP, CA",1441
+9701,6097,Sonoma CA,Sonoma CCD, ,10568
+9702,6097,Sonoma CA,Petaluma CCD,"Cotati city, CA",7265
+9702,6097,Sonoma CA,Petaluma CCD,"Penngrove CDP, CA",2522
+9702,6097,Sonoma CA,Petaluma CCD,"Petaluma city, CA",57941
+9702,6097,Sonoma CA,Petaluma CCD,"Rohnert Park city, CA",40969
+9702,6097,Sonoma CA,Petaluma CCD, ,11456
+9703,6097,Sonoma CA,Santa Rosa CCD,"Fulton CDP, CA",513
+9703,6097,Sonoma CA,Santa Rosa CCD,"Larkfield-Wikiup CDP, CA",3
+9703,6097,Sonoma CA,Santa Rosa CCD,"Rohnert Park city, CA",2
+9703,6097,Sonoma CA,Santa Rosa CCD,"Roseland CDP, CA",6325
+9703,6097,Sonoma CA,Santa Rosa CCD,"Santa Rosa city, CA",157206
+9703,6097,Sonoma CA,Santa Rosa CCD,"Sebastopol city, CA",0
+9703,6097,Sonoma CA,Santa Rosa CCD, ,20593
+9901,6099,Stanislaus CA,Modesto CCD,"Ceres city, CA",45417
+9901,6099,Stanislaus CA,Modesto CCD,"Cowan CDP, CA",318
+9901,6099,Stanislaus CA,Modesto CCD,"Keyes CDP, CA",5294
+9901,6099,Stanislaus CA,Modesto CCD,"Modesto city, CA",62
+9901,6099,Stanislaus CA,Modesto CCD,"Parklawn CDP, CA",1337
+9901,6099,Stanislaus CA,Modesto CCD,"Shackelford CDP, CA",317
+9901,6099,Stanislaus CA,Modesto CCD, ,6050
+9901,6099,Stanislaus CA,Newman CCD,"Crows Landing CDP, CA",355
+9901,6099,Stanislaus CA,Newman CCD,"Diablo Grande CDP, CA",32
+9901,6099,Stanislaus CA,Newman CCD,"Newman city, CA",10224
+9901,6099,Stanislaus CA,Newman CCD, ,1710
+9901,6099,Stanislaus CA,Patterson CCD,"Diablo Grande CDP, CA",794
+9901,6099,Stanislaus CA,Patterson CCD,"Grayson CDP, CA",952
+9901,6099,Stanislaus CA,Patterson CCD,"Patterson city, CA",20413
+9901,6099,Stanislaus CA,Patterson CCD,"Westley CDP, CA",603
+9901,6099,Stanislaus CA,Patterson CCD, ,3377
+9901,6099,Stanislaus CA,Salida CCD,"Salida CDP, CA",9027
+9901,6099,Stanislaus CA,Salida CCD,"West Modesto CDP, CA",51
+9901,6099,Stanislaus CA,Salida CCD, ,3224
+9901,6099,Stanislaus CA,Westport CCD,"Modesto city, CA",0
+9901,6099,Stanislaus CA,Westport CCD,"Monterey Park Tract CDP, CA",133
+9901,6099,Stanislaus CA,Westport CCD,"Riverdale Park CDP, CA",1128
+9901,6099,Stanislaus CA,Westport CCD, ,2739
+9902,6099,Stanislaus CA,Modesto CCD,"Airport CDP, CA",0
+9902,6099,Stanislaus CA,Modesto CCD,"Bret Harte CDP, CA",5152
+9902,6099,Stanislaus CA,Modesto CCD,"Bystrom CDP, CA",4008
+9902,6099,Stanislaus CA,Modesto CCD,"Modesto city, CA",95540
+9902,6099,Stanislaus CA,Modesto CCD,"Rouse CDP, CA",2005
+9902,6099,Stanislaus CA,Modesto CCD,"Shackelford CDP, CA",3054
+9902,6099,Stanislaus CA,Modesto CCD,"West Modesto CDP, CA",5631
+9902,6099,Stanislaus CA,Modesto CCD, ,3058
+9903,6099,Stanislaus CA,Hughson CCD,"Hickman CDP, CA",641
+9903,6099,Stanislaus CA,Hughson CCD,"Hughson city, CA",6640
+9903,6099,Stanislaus CA,Hughson CCD,"Keyes CDP, CA",307
+9903,6099,Stanislaus CA,Hughson CCD, ,4785
+9903,6099,Stanislaus CA,Modesto CCD,"Empire CDP, CA",4189
+9903,6099,Stanislaus CA,Modesto CCD,"Modesto city, CA",238
+9903,6099,Stanislaus CA,Modesto CCD,"Riverbank city, CA",22678
+9903,6099,Stanislaus CA,Modesto CCD, ,3031
+9903,6099,Stanislaus CA,Oakdale CCD,"East Oakdale CDP, CA",2762
+9903,6099,Stanislaus CA,Oakdale CCD,"Oakdale city, CA",20675
+9903,6099,Stanislaus CA,Oakdale CCD,"Valley Home CDP, CA",228
+9903,6099,Stanislaus CA,Oakdale CCD, ,6389
+9903,6099,Stanislaus CA,Salida CCD,"Del Rio CDP, CA",1270
+9903,6099,Stanislaus CA,Salida CCD,"Modesto city, CA",247
+9903,6099,Stanislaus CA,Salida CCD,"Salida CDP, CA",4695
+9903,6099,Stanislaus CA,Salida CCD, ,953
+9903,6099,Stanislaus CA,Turlock CCD,"Denair CDP, CA",4404
+9903,6099,Stanislaus CA,Turlock CCD,"Turlock city, CA",68549
+9903,6099,Stanislaus CA,Turlock CCD, ,9504
+9903,6099,Stanislaus CA,Waterford CCD,"Modesto city, CA",0
+9903,6099,Stanislaus CA,Waterford CCD,"Waterford city, CA",8456
+9903,6099,Stanislaus CA,Waterford CCD, ,3478
+9904,6099,Stanislaus CA,Modesto CCD,"Airport CDP, CA",1964
+9904,6099,Stanislaus CA,Modesto CCD,"Modesto city, CA",102216
+9904,6099,Stanislaus CA,Modesto CCD, ,1283
+9904,6099,Stanislaus CA,Waterford CCD,"Modesto city, CA",2862
+9904,6099,Stanislaus CA,Waterford CCD, ,4
+10100,6101,Sutter CA,Live Oak CCD,"Live Oak city, CA",8392
+10100,6101,Sutter CA,Live Oak CCD, ,2171
+10100,6101,Sutter CA,Meridian-Robbins CCD,"Meridian CDP, CA",358
+10100,6101,Sutter CA,Meridian-Robbins CCD,"Robbins CDP, CA",323
+10100,6101,Sutter CA,Meridian-Robbins CCD, ,880
+10100,6101,Sutter CA,South Sutter CCD,"East Nicolaus CDP, CA",225
+10100,6101,Sutter CA,South Sutter CCD,"Nicolaus CDP, CA",211
+10100,6101,Sutter CA,South Sutter CCD,"Rio Oso CDP, CA",356
+10100,6101,Sutter CA,South Sutter CCD,"Trowbridge CDP, CA",226
+10100,6101,Sutter CA,South Sutter CCD, ,1533
+10100,6101,Sutter CA,Sutter CCD,"Sutter CDP, CA",2904
+10100,6101,Sutter CA,Sutter CCD, ,556
+10100,6101,Sutter CA,Yuba City CCD,"Yuba City city, CA",64925
+10100,6101,Sutter CA,Yuba City CCD, ,9216
+10100,6101,Sutter CA,Yuba City Southwest CCD, ,2461
+10100,6115,Yuba CA,East Yuba-Beale AFB CCD,"Beale AFB CDP, CA",1319
+10100,6115,Yuba CA,East Yuba-Beale AFB CCD,"Linda CDP, CA",787
+10100,6115,Yuba CA,East Yuba-Beale AFB CCD,"Marysville city, CA",0
+10100,6115,Yuba CA,East Yuba-Beale AFB CCD,"Smartsville CDP, CA",177
+10100,6115,Yuba CA,East Yuba-Beale AFB CCD, ,2237
+10100,6115,Yuba CA,Linda CCD,"Linda CDP, CA",16986
+10100,6115,Yuba CA,Linda CCD,"Marysville city, CA",1
+10100,6115,Yuba CA,Linda CCD,"Olivehurst CDP, CA",583
+10100,6115,Yuba CA,Linda CCD, ,32
+10100,6115,Yuba CA,Marysville CCD,"Marysville city, CA",12071
+10100,6115,Yuba CA,Marysville CCD, ,311
+10100,6115,Yuba CA,Marysville Northeast CCD,"Loma Rica CDP, CA",2368
+10100,6115,Yuba CA,Marysville Northeast CCD,"Marysville city, CA",0
+10100,6115,Yuba CA,Marysville Northeast CCD, ,4989
+10100,6115,Yuba CA,Olivehurst CCD,"Olivehurst CDP, CA",13073
+10100,6115,Yuba CA,Olivehurst CCD,"Plumas Lake CDP, CA",5853
+10100,6115,Yuba CA,Olivehurst CCD, ,2194
+10100,6115,Yuba CA,Wheatland CCD,"Wheatland city, CA",3456
+10100,6115,Yuba CA,Wheatland CCD, ,777
+10100,6115,Yuba CA,Yuba Foothills CCD,"Camptonville CDP, CA",158
+10100,6115,Yuba CA,Yuba Foothills CCD,"Challenge-Brownsville CDP, CA",1148
+10100,6115,Yuba CA,Yuba Foothills CCD,"Dobbins CDP, CA",624
+10100,6115,Yuba CA,Yuba Foothills CCD, ,3011
+10701,6107,Tulare CA,Visalia CCD,"Goshen CDP, CA",3006
+10701,6107,Tulare CA,Visalia CCD,"Patterson Tract CDP, CA",1752
+10701,6107,Tulare CA,Visalia CCD,"Visalia city, CA",124441
+10701,6107,Tulare CA,Visalia CCD,"West Goshen CDP, CA",511
+10701,6107,Tulare CA,Visalia CCD, ,6268
+10702,6107,Tulare CA,Porterville CCD,"East Porterville CDP, CA",6767
+10702,6107,Tulare CA,Porterville CCD,"Poplar-Cotton Center CDP, CA",2470
+10702,6107,Tulare CA,Porterville CCD,"Porterville city, CA",54143
+10702,6107,Tulare CA,Porterville CCD, ,9917
+10702,6107,Tulare CA,Strathmore CCD,"Plainview CDP, CA",945
+10702,6107,Tulare CA,Strathmore CCD,"Porterville city, CA",22
+10702,6107,Tulare CA,Strathmore CCD,"Strathmore CDP, CA",2819
+10702,6107,Tulare CA,Strathmore CCD, ,4051
+10702,6107,Tulare CA,Tulare CCD,"East Tulare Villa CDP, CA",778
+10702,6107,Tulare CA,Tulare CCD,"Matheny CDP, CA",1212
+10702,6107,Tulare CA,Tulare CCD,"Tulare city, CA",59278
+10702,6107,Tulare CA,Tulare CCD,"Waukena CDP, CA",108
+10702,6107,Tulare CA,Tulare CCD, ,6971
+10703,6107,Tulare CA,Dinuba CCD,"Delft Colony CDP, CA",454
+10703,6107,Tulare CA,Dinuba CCD,"Dinuba city, CA",21453
+10703,6107,Tulare CA,Dinuba CCD,"London CDP, CA",1869
+10703,6107,Tulare CA,Dinuba CCD,"Monson CDP, CA",188
+10703,6107,Tulare CA,Dinuba CCD,"Sultana CDP, CA",775
+10703,6107,Tulare CA,Dinuba CCD,"Traver CDP, CA",713
+10703,6107,Tulare CA,Dinuba CCD, ,7004
+10703,6107,Tulare CA,Earlimart CCD,"Allensworth CDP, CA",471
+10703,6107,Tulare CA,Earlimart CCD,"Alpaugh CDP, CA",1026
+10703,6107,Tulare CA,Earlimart CCD,"Earlimart CDP, CA",8537
+10703,6107,Tulare CA,Earlimart CCD,"Richgrove CDP, CA",2882
+10703,6107,Tulare CA,Earlimart CCD,"Rodriguez Camp CDP, CA",156
+10703,6107,Tulare CA,Earlimart CCD,"Teviston CDP, CA",170
+10703,6107,Tulare CA,Earlimart CCD, ,1910
+10703,6107,Tulare CA,Exeter CCD,"Exeter city, CA",10334
+10703,6107,Tulare CA,Exeter CCD,"Farmersville city, CA",10588
+10703,6107,Tulare CA,Exeter CCD,"Lemon Cove CDP, CA",273
+10703,6107,Tulare CA,Exeter CCD,"Lindcove CDP, CA",406
+10703,6107,Tulare CA,Exeter CCD,"Linnell Camp CDP, CA",849
+10703,6107,Tulare CA,Exeter CCD,"Tooleville CDP, CA",339
+10703,6107,Tulare CA,Exeter CCD,"Visalia city, CA",1
+10703,6107,Tulare CA,Exeter CCD, ,5299
+10703,6107,Tulare CA,Ivanhoe CCD,"Ivanhoe CDP, CA",4495
+10703,6107,Tulare CA,Ivanhoe CCD,"Seville CDP, CA",420
+10703,6107,Tulare CA,Ivanhoe CCD, ,2501
+10703,6107,Tulare CA,Lindsay CCD,"El Rancho CDP, CA",124
+10703,6107,Tulare CA,Lindsay CCD,"Lindsay city, CA",11768
+10703,6107,Tulare CA,Lindsay CCD,"Tonyville CDP, CA",316
+10703,6107,Tulare CA,Lindsay CCD, ,4744
+10703,6107,Tulare CA,Orosi-Cutler CCD,"Cutler CDP, CA",5000
+10703,6107,Tulare CA,Orosi-Cutler CCD,"East Orosi CDP, CA",495
+10703,6107,Tulare CA,Orosi-Cutler CCD,"Orosi CDP, CA",8770
+10703,6107,Tulare CA,Orosi-Cutler CCD,"Seville CDP, CA",60
+10703,6107,Tulare CA,Orosi-Cutler CCD,"Yettem CDP, CA",211
+10703,6107,Tulare CA,Orosi-Cutler CCD, ,3733
+10703,6107,Tulare CA,Pixley CCD,"Pixley CDP, CA",3310
+10703,6107,Tulare CA,Pixley CCD,"Teviston CDP, CA",1044
+10703,6107,Tulare CA,Pixley CCD, ,2175
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"California Hot Springs CDP, CA",37
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Camp Nelson CDP, CA",97
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Cedar Slope CDP, CA",0
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Idlewild CDP, CA",43
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Kennedy Meadows CDP, CA",28
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"McClenney Tract CDP, CA",10
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Panorama Heights CDP, CA",41
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Pierpoint CDP, CA",52
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Pine Flat CDP, CA",166
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Ponderosa CDP, CA",16
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Posey CDP, CA",10
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Poso Park CDP, CA",9
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Sequoia Crest CDP, CA",10
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Springville CDP, CA",934
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Sugarloaf Mountain Park CDP, CA",0
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Sugarloaf Saw Mill CDP, CA",18
+10703,6107,Tulare CA,Springville-Johnsondale CCD,"Sugarloaf Village CDP, CA",10
+10703,6107,Tulare CA,Springville-Johnsondale CCD, ,4134
+10703,6107,Tulare CA,Terra Bella CCD,"Ducor CDP, CA",612
+10703,6107,Tulare CA,Terra Bella CCD,"Terra Bella CDP, CA",3310
+10703,6107,Tulare CA,Terra Bella CCD, ,2706
+10703,6107,Tulare CA,Tipton CCD,"Tipton CDP, CA",2543
+10703,6107,Tulare CA,Tipton CCD,"Woodville CDP, CA",1740
+10703,6107,Tulare CA,Tipton CCD, ,2163
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Hartland CDP, CA",30
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Lemon Cove CDP, CA",35
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Silver City CDP, CA",0
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Three Rivers CDP, CA",2182
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Wilsonia CDP, CA",5
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD,"Woodlake city, CA",7279
+10703,6107,Tulare CA,Woodlake-Three Rivers CCD, ,3637
+11101,6111,Ventura CA,Simi Valley CCD,"Santa Susana CDP, CA",1037
+11101,6111,Ventura CA,Simi Valley CCD,"Simi Valley city, CA",111542
+11101,6111,Ventura CA,Simi Valley CCD,"Thousand Oaks city, CA",0
+11101,6111,Ventura CA,Simi Valley CCD, ,650
+11102,6111,Ventura CA,Camarillo CCD,"Thousand Oaks city, CA",152
+11102,6111,Ventura CA,Simi Valley CCD,"Bell Canyon CDP, CA",1600
+11102,6111,Ventura CA,Simi Valley CCD,"Simi Valley city, CA",4
+11102,6111,Ventura CA,Simi Valley CCD, ,618
+11102,6111,Ventura CA,Thousand Oaks CCD,"Bell Canyon CDP, CA",449
+11102,6111,Ventura CA,Thousand Oaks CCD,"Casa Conejo CDP, CA",3249
+11102,6111,Ventura CA,Thousand Oaks CCD,"Lake Sherwood CDP, CA",531
+11102,6111,Ventura CA,Thousand Oaks CCD,"Oak Park CDP, CA",13811
+11102,6111,Ventura CA,Thousand Oaks CCD,"Simi Valley city, CA",0
+11102,6111,Ventura CA,Thousand Oaks CCD,"Thousand Oaks city, CA",126524
+11102,6111,Ventura CA,Thousand Oaks CCD, ,3137
+11103,6111,Ventura CA,Oxnard CCD,"Channel Islands Beach CDP, CA",3103
+11103,6111,Ventura CA,Oxnard CCD,"Oxnard city, CA",170551
+11103,6111,Ventura CA,Oxnard CCD,"Port Hueneme city, CA",21723
+11103,6111,Ventura CA,Oxnard CCD, ,9
+11104,6111,Ventura CA,Oxnard CCD,"El Rio CDP, CA",6
+11104,6111,Ventura CA,Oxnard CCD,"Oxnard city, CA",10808
+11104,6111,Ventura CA,Oxnard CCD, ,83
+11104,6111,Ventura CA,Ventura CCD,"Oxnard city, CA",0
+11104,6111,Ventura CA,Ventura CCD,"San Buenaventura (Ventura) city, CA",106414
+11104,6111,Ventura CA,Ventura CCD,"Saticoy CDP, CA",1029
+11104,6111,Ventura CA,Ventura CCD, ,1032
+11105,6111,Ventura CA,Fillmore CCD,"Fillmore city, CA",15002
+11105,6111,Ventura CA,Fillmore CCD,"Piru CDP, CA",2063
+11105,6111,Ventura CA,Fillmore CCD, ,2423
+11105,6111,Ventura CA,Las Posas CCD,"El Rio CDP, CA",559
+11105,6111,Ventura CA,Las Posas CCD, ,3209
+11105,6111,Ventura CA,Los Padres CCD, ,819
+11105,6111,Ventura CA,Moorpark CCD,"Moorpark city, CA",7126
+11105,6111,Ventura CA,Moorpark CCD,"Simi Valley city, CA",7
+11105,6111,Ventura CA,Moorpark CCD, ,343
+11105,6111,Ventura CA,Ojai-Mira Monte CCD,"Meiners Oaks CDP, CA",3571
+11105,6111,Ventura CA,Ojai-Mira Monte CCD,"Mira Monte CDP, CA",6854
+11105,6111,Ventura CA,Ojai-Mira Monte CCD,"Oak View CDP, CA",4066
+11105,6111,Ventura CA,Ojai-Mira Monte CCD,"Ojai city, CA",7461
+11105,6111,Ventura CA,Ojai-Mira Monte CCD,"San Buenaventura (Ventura) city, CA",1
+11105,6111,Ventura CA,Ojai-Mira Monte CCD, ,5831
+11105,6111,Ventura CA,Oxnard CCD,"El Rio CDP, CA",6633
+11105,6111,Ventura CA,Oxnard CCD,"Oxnard city, CA",2080
+11105,6111,Ventura CA,Oxnard CCD, ,2656
+11105,6111,Ventura CA,Santa Paula CCD,"Santa Paula city, CA",29321
+11105,6111,Ventura CA,Santa Paula CCD, ,2739
+11105,6111,Ventura CA,Simi Valley CCD,"Simi Valley city, CA",12684
+11105,6111,Ventura CA,Simi Valley CCD, ,846
+11105,6111,Ventura CA,Ventura CCD,"San Buenaventura (Ventura) city, CA",18
+11105,6111,Ventura CA,Ventura CCD, ,3396
+11106,6111,Ventura CA,Camarillo CCD,"Camarillo city, CA",57773
+11106,6111,Ventura CA,Camarillo CCD,"Thousand Oaks city, CA",1
+11106,6111,Ventura CA,Camarillo CCD, ,9027
+11106,6111,Ventura CA,Moorpark CCD,"Moorpark city, CA",27295
+11106,6111,Ventura CA,Moorpark CCD,"Santa Rosa Valley CDP, CA",52
+11106,6111,Ventura CA,Moorpark CCD,"Simi Valley city, CA",0
+11106,6111,Ventura CA,Moorpark CCD, ,1101
+11106,6111,Ventura CA,Oxnard CCD,"Oxnard city, CA",14460
+11106,6111,Ventura CA,Oxnard CCD,"Port Hueneme city, CA",0
+11106,6111,Ventura CA,Oxnard CCD, ,2807
+11106,6111,Ventura CA,Thousand Oaks CCD,"Camarillo city, CA",7428
+11106,6111,Ventura CA,Thousand Oaks CCD,"Santa Rosa Valley CDP, CA",3282
+11106,6111,Ventura CA,Thousand Oaks CCD,"Thousand Oaks city, CA",0
+11106,6111,Ventura CA,Thousand Oaks CCD, ,392
+11106,6111,Ventura CA,Triunfo Pass-Point Mugu CCD,"Lake Sherwood CDP, CA",996
+11106,6111,Ventura CA,Triunfo Pass-Point Mugu CCD,"Thousand Oaks city, CA",6
+11106,6111,Ventura CA,Triunfo Pass-Point Mugu CCD, ,928
+11106,6111,Ventura CA,Ventura CCD,"Oxnard city, CA",0
+11106,6111,Ventura CA,Ventura CCD,"San Buenaventura (Ventura) city, CA",0
+11106,6111,Ventura CA,Ventura CCD, ,0
+11300,6113,Yolo CA,Clarksburg CCD,"Clarksburg CDP, CA",418
+11300,6113,Yolo CA,Clarksburg CCD, ,857
+11300,6113,Yolo CA,Davis CCD,"Davis city, CA",65622
+11300,6113,Yolo CA,Davis CCD,"University of California Davis CDP, CA",5786
+11300,6113,Yolo CA,Davis CCD,"West Sacramento city, CA",0
+11300,6113,Yolo CA,Davis CCD, ,2926
+11300,6113,Yolo CA,East Yolo CCD,"West Sacramento city, CA",48744
+11300,6113,Yolo CA,East Yolo CCD, ,177
+11300,6113,Yolo CA,Esparto CCD,"Esparto CDP, CA",3108
+11300,6113,Yolo CA,Esparto CCD,"Guinda CDP, CA",254
+11300,6113,Yolo CA,Esparto CCD,"Madison CDP, CA",503
+11300,6113,Yolo CA,Esparto CCD, ,1460
+11300,6113,Yolo CA,Knights Landing CCD,"Dunnigan CDP, CA",1416
+11300,6113,Yolo CA,Knights Landing CCD,"Knights Landing CDP, CA",995
+11300,6113,Yolo CA,Knights Landing CCD,"Yolo CDP, CA",450
+11300,6113,Yolo CA,Knights Landing CCD, ,1332
+11300,6113,Yolo CA,Winters CCD,"Winters city, CA",6624
+11300,6113,Yolo CA,Winters CCD, ,1482
+11300,6113,Yolo CA,Woodland CCD,"Monument Hills CDP, CA",1542
+11300,6113,Yolo CA,Woodland CCD,"Woodland city, CA",55468
+11300,6113,Yolo CA,Woodland CCD, ,1685

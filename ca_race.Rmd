@@ -1,0 +1,155 @@
+---
+title: "ca_race"
+output: html_document
+---
+<!-- Scatter plot of x = experience, y = income/wages, color = gender, shape = OCC group
+Graph wages and non-wage income (PINCP-WAGP) too see if most inequality comes from non-wage income -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
+                      fig.align = "center")
+
+SF.xlim <- c(-123.1, -121.5)
+SF.ylim <- c(37, 38.2)
+LA.xlim <- c(-119, -116.7)
+LA.ylim <- c(33, 34.5)
+```
+
+
+```{r Race data setup}
+Race.data <- filter.data[, .(year, PUMA10, age, citizen, PINCP, PWGTP,
+                             empStat,
+                             race, Hispanic, eduStat, sex, Occ, Soc)]
+
+Race.data[, white := ifelse(race == "White", "White", "Non-white")]
+```
+
+```{r}
+## Looking at white's vs all others for employed persons only
+
+wnw.data <- Race.data[empStat != "Unemployed", 
+                      .(Income = weighted.mean(PINCP, PWGTP, na.rm = T)),
+                      by = .(year, white, citizen)]
+```
+
+```{r wnw plot}
+ymax <- max(wnw.data$Income)
+
+wnw.plot <- ggplot(wnw.data, 
+                   aes(x = year, y = Income, color = citizen,
+                       linetype = white)) +
+    geom_line(size = 1.3) +
+    ggtitle(label = "Income for California 2010-2014",
+            subtitle = "Employed observations only") +
+    scale_x_date(name = "Year") +
+    scale_y_continuous(name = "2014 USD", labels = dollar,
+                       limits = c(0, 1.1*ymax)) +
+    scale_color_discrete(name = "Citizenship") +
+    scale_linetype_discrete("Race") + 
+    labs(caption = "Simeon Markind")
+
+wnw.plot
+
+## Here we already see that by restricted the observations to employed we find that non-white naturalized citizens make almost as much as white citizens born here. (non-white naturalized citizens actually make more than white naturalized citizens). what is interesting is that non-whites born here make substantially less than naturilized non-whites or born/naturalized whites. Non-citizens, unsurprisingly make the least.
+```
+
+```{r Differential binning of occupations}
+## Seeing if the income data differs a lot by race within each occupation bin given by the OCC code. Will have to find a good way to plot this data.
+
+## pick 6 Occs
+
+Occs <- c("Computer/Math", "Farm/Fish/Forestry", "Healthcare", "Sales", "Admin Support", "Education")
+
+raceBin.data <- Race.data[empStat != "Unemployed" & age != "18-20" & Occ %in% Occs, .(age, PINCP, PWGTP,race, Occ)][, .(income = weighted.mean(PINCP, PWGTP)), by = .(age, race, Occ)]
+
+```
+
+```{r Differential binnning of occupations plot}
+raceBin.plot <- ggplot(raceBin.data, 
+                       aes(x = Occ, y = income, shape = race)) +
+    geom_jitter(aes(color = race)) +
+    scale_x_discrete(name = "Occupation",
+                     labels = c("Computer/Math" = "Technology",
+                                "Admin Support" = "Admin",
+                                "Farm/Fish/Forestry" = "Agriculture",
+                                "Healthcare" = "Healthcare",
+                                "Sales" = "Sales",
+                                "Education" = "Education")) +
+    scale_y_continuous(name = "Income", labels = dollar) +
+    ggtitle(label = "Distribution of Income",
+            subtitle = "Wighted Mean: Select Occupation Groups") +
+    labs(caption = "Simeon Markind") +
+    scale_color_discrete(name = "Race") +
+    scale_shape_discrete(name = "Race")
+
+raceBin.plot
+
+## It appears that white people make more within the different occupation types of average but not outwardly more, except in Sales where there is a clear trend of white outearning non-whites. This does not mean that across all occupation types there is not a huge differentiation among races, but it does point to race not being the sole factor, or perhaps even the major factor in the income distribution.
+```
+
+
+```{r Heat map of population percentage white in 2014}
+raceMap.data <- Race.data[year == as.Date("2014-01-01"),
+                          .(PUMA10, white)]
+
+raceMap.data <- raceMap.data[, .(percent = sum(white == "White")/.N),
+                     by = .(PUMA10)]
+
+raceMap.data <- merge(test, pumas.points, 
+               by.x = "PUMA10", by.y = "id", all = T)
+
+raceMap.plot <- ggplot(raceMap.data, 
+                       aes(x = long, y = lat, group = group)) +
+    geom_polygon(color = "black", aes(fill = percent*100), alpha = 1.0) +
+    scale_fill_distiller(name = "Percentage", palette = "BrBG", 
+                         limits = c(0,95), position = "bottom") +
+    coord_fixed(0.9) +
+    ggtitle("PUMA Level percentage white - 2014", 
+            subtitle = "Simeon Markind") +
+    scale_x_continuous(name = "Longitutde") +
+    scale_y_continuous(name = "Latitude")
+
+raceMap.plot
+```
+
+```{r SF PUMAs white}
+sfWhite.plot <- ggplot() 
+sfWhite.plot + geom_polygon(data = raceMap.data, 
+                 mapping = aes(x = long, y = lat, group = group, 
+                               fill = percent*100),
+                 color = "black") +
+ #   geom_point(data = ca.cities, 
+ #                mapping = aes(x = long, y = lat, size = pop),
+ #                 color = "coral1") +
+ #   scale_size_continuous(name = "Population") +
+ #   geom_label(data = ca.cities, nudge_x = 0.01, nudge_y = 0.01, 
+ #              mapping = aes(x = long, y = lat, label = name),
+ #              check_overlap = TRUE) +
+    scale_fill_distiller(name = "Percentage", palette = "BrBG", 
+                         limits = c(0,95), position = "bottom") +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    ggtitle("PUMA Level percentage white - 2014", 
+            subtitle = "SF Bay area") +
+    scale_x_continuous(name = "Longitutde") +
+    scale_y_continuous(name = "Latitude")
+
+
+```
+
+
+
+```{r LA PUMAS White}
+LAWhite.plot <- ggplot(raceMap.data, 
+                       aes(x = long, y = lat, group = group)) +
+    geom_polygon(color = "black", aes(fill = percent*100), alpha = 1.0) +
+    scale_fill_distiller(name = "Percentage", palette = "BrBG", 
+                         limits = c(0,95), position = "bottom") +
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    ggtitle("PUMA Level percentage white - 2014", 
+            subtitle = "LA area") +
+    scale_x_continuous(name = "Longitutde") +
+    scale_y_continuous(name = "Latitude")
+
+LAWhite.plot
+```
+
