@@ -113,19 +113,6 @@ filter.data[, `:=`(INTP = INTP*ADJINC,
                    WAGP = WAGP * ADJINC,
                    PERNP = PERNP * ADJINC)]
 
-## Filter out anyone below 18 and above 75, place into 5 year buckets
-
-filter.data <- filter.data[AGEP >= 18 & AGEP <= 75,]
-                 
-ageLabels <- c("18-20", "21-25", "26-30", "31-35", "36-40", "41-45",
-               "46-50", "51-55", "56-60", "61-65", "66-70", "71-75")
-  
-ageBreaks <- c(18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75)
-
-filter.data[, age := cut(AGEP, breaks = ageBreaks, 
-                         labels = ageLabels,
-                         include.lowest = TRUE)]
-
 
 ## Filter down citizenship categories
 ## values of 1,2,3 = born a US citizen
@@ -133,7 +120,7 @@ filter.data[, age := cut(AGEP, breaks = ageBreaks,
 ## 5 = not a citizen
 
 filter.data[CIT %in% c(1,2,3), citizen := "Born"]
-filter.data[CIT == 4, citizen := "Naturalzied"]
+filter.data[CIT == 4, citizen := "Naturalized"]
 filter.data[CIT == 5, citizen := "Non-citizen"]
 
 ## COW - Class of Worker
@@ -409,6 +396,38 @@ filter.data[, year := as.Date(paste0(year, "-01-01"),
 filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
 
 ## Use the mapping created in puma_mapping.R
+## Read in our PUMA to county crosswalks:
+path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
+
+MCDC00 <- fread(paste0(path, "MCDC_crosswalk00.csv"))
+MCDC00 <- MCDC00[, .(puma2k = ifelse(nchar(puma2k) == 3,
+                                     paste0("00", as.character(puma2k)),
+                                     ifelse(nchar(puma2k) == 4,
+                                            paste0("0", as.character(puma2k)),
+                                            as.character(puma2k))),
+                     county_name = str_sub(county_name, 1, nchar(county_name)-3),
+                     Total_Pop_2010_census)][, .(pop = sum(Total_Pop_2010_census)),
+                                             .(puma2k, county_name)][order(puma2k,
+                                                                           -pop)]
+MCDC00[, count := rowid(puma2k)]
+# Now we have PUMAs that are in multiple counties, we will 
+# assign each puma the county name with the largest population
+# in that PUMA
+MCDC00 <- MCDC00[count == 1][, c("pop", "count") := NULL]
+
+
+MCDC10 <- fread(paste0(path, "MCDC_crosswalk10.csv"))
+MCDC10 <- MCDC10[, .(puma12 = ifelse(nchar(puma12) == 3,
+                                     paste0("00", as.character(puma12)),
+                                     ifelse(nchar(puma12) == 4,
+                                            paste0("0", 
+                                                   as.character(puma12)),
+                                            as.character(puma12))),
+                     county_name = str_sub(county_name, 1, 
+                                           nchar(county_name)-3))] %>% 
+    unique()
+
+# Now we add the county name to our filter data table
 filter.data[!is.na(PUMA00), county := MCDC00[match(PUMA00, 
                                                    MCDC00$puma2k), 
                                              county_name]]
@@ -417,4 +436,29 @@ filter.data[!is.na(PUMA10), county := MCDC10[match(PUMA10,
                                                    MCDC10$puma12),
                                                county_name]]
 
-write.csv(filter.data,"C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+## Take a file we will use for mapping
+map_data <- filter.data[, .(sex, PUMA10, AGEP, race, PWGTP, 
+                            eduStat, year, Occ, PINCP, WKHP)]
+
+map_data[, nage := round_any(AGEP, 7)]
+map_data[, white := ifelse(race == "White", "White", "Non-white")]
+
+write.csv(map_data,"C:/Users/Owner/Documents/R/PUMS/map_data.csv",
+          row.names = F)
+
+## Filter out anyone below 18 and above 75, place into 5 year buckets
+
+filter.data <- filter.data[AGEP >= 18 & AGEP <= 75,]
+
+ageLabels <- c("18-20", "21-25", "26-30", "31-35", "36-40", "41-45",
+               "46-50", "51-55", "56-60", "61-65", "66-70", "71-75")
+
+ageBreaks <- c(18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75)
+
+filter.data[, age := cut(AGEP, breaks = ageBreaks, 
+                         labels = ageLabels,
+                         include.lowest = TRUE)]
+
+
+write.csv(filter.data,"C:/Users/Owner/Documents/R/PUMS/filterData.csv",
+          row.names = F)

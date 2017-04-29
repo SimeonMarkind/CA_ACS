@@ -5,24 +5,129 @@ output: html_document
 <!-- Scatter plot of x = experience, y = income/wages, color = gender, shape = OCC group
 Graph wages and non-wage income (PINCP-WAGP) too see if most inequality comes from non-wage income -->
 
-```{r setup, include=FALSE}
+```{r "setup", include=FALSE}
 knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
-                      fig.align = "center")
+                      fig.align = "center", message = FALSE)
 
 SF.xlim <- c(-123.1, -121.5)
 SF.ylim <- c(37, 38.2)
 LA.xlim <- c(-119, -116.7)
 LA.ylim <- c(33, 34.5)
+
+library(tidyverse)
+library(plyr)
+library(data.table)
+library(knitr)
+library(bit64)
+library(scales)
+library(maptools)
+library(mapproj)
+library(stringr)
+
+new_kable <- function(...){
+    kable(..., format.args = list(big.mark = ","))
+}
+
+# Read the raw data for this section
+
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+map_data <- fread("C:/Users/Owner/Documents/R/PUMS/map_data.csv")
+
+
+# Set up the maps
+path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
+
+pumas <- readShapePoly(paste0(path,"cb_2015_06_puma10_500k.shp"), 
+                       IDvar = "PUMACE10")
+
+pumas.points <- data.table(fortify(pumas))
+
+theme.simeon <- theme_gray() +
+    theme(axis.title = element_text(family = "serif",
+                                    size = 14,
+                                    color = "blue4"),
+          plot.background = element_rect(fill = "cornsilk",
+                                         color = "black"),
+          plot.title = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 16,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.subtitle = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.caption = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4"),
+          legend.background = element_rect(fill = "cornsilk",
+                                           color = "blue4"),
+          legend.title.align = 0.5,
+          legend.title = element_text(family = "serif",
+                                      size = 12,
+                                      color = "blue4",
+                                      face = "italic"),
+          legend.key.size = unit(1.2, "lines"),
+          panel.background = element_rect(fill = "grey92",
+                                          color = "blue4"))
+
+theme_set(theme.simeon)
 ```
 
 
 ```{r Race data setup}
 Race.data <- filter.data[, .(year, PUMA10, age, citizen, PINCP, PWGTP,
-                             empStat,
-                             race, Hispanic, eduStat, sex, Occ, Soc)]
-
+                             empStat, county, AGEP, WKHP,
+                             race, Hispanic, sex, Occ, Soc)]
+Race.data[, year := as.Date(year, "%Y-%m-%d")]
+Race.data[, nage := round_any(AGEP, 7)]
 Race.data[, white := ifelse(race == "White", "White", "Non-white")]
 ```
+
+Before we dive into the data let's take a look at the mean incomes for each race over the period in constant 2014 USD and take a look at the unemployment average unemployment rate for each race over the period. For our average income data we will simply look at respondents who are either self-employed or employed.
+
+```{r "Mean income by Race and Age"}
+table.data <- Race.data[empStat != "Unemployed",
+                        .(mean_inc = round(weighted.mean(PINCP, PWGTP),2)), .(nage, race, sex)]
+
+#dcast.data.table(table.data, sex + age ~ race, value.var = "mean_inc") # %>% new_kable(col.names = c("Gender", "Age Range", "African American",
+#                          "Asian", "Other", "White"))
+# Pretty big table, would be better as a graph of 8 lines
+ymax <- max(table.data$mean_inc)
+
+ggplot(table.data, aes(x = nage, y = mean_inc, color = race,
+                       linetype = sex)) +
+    geom_line(size = 1.2) +
+    ggtitle(label = "Mean Income for California 2010-2014",
+            subtitle = "Employed observations only, age below 70") +
+    scale_x_continuous(name = "Age", limits = c(20, 70),
+                       breaks = seq(20, 76, 7)) +
+    scale_y_continuous(name = "2014 USD", labels = dollar,
+                       limits = c(0, 1.1*ymax)) +
+    scale_color_discrete(name = "Race") +
+    scale_linetype_discrete("Gender") + 
+    labs(caption = "Simeon Markind")
+```
+
+So the first thing you might ask is: "What on Earth is going on with Asian men and women?" (I have no idea - look into this?) The second thing you should note is the large income gap in later years, White men have larger incomes. Interestingly, White women also have the highest mean incomes in later years of all women, but the gap is not nearly as pronounced. Let's see if we can explain this gap a bit more as we dig deeper into the data.
+
+```{r "Employment Types be Race", include = F}
+table.data <- Race.data[, .(count = sum(PWGTP)),
+                        by = .(race, empStat)][, 
+                    .(empStat, 
+                      percentage = round(count/sum(count),2)*100),                          .(race)]
+
+emp_type_bars <- table.data %>% 
+    ggplot(aes(x = race, y = percentage, fill = empStat)) +
+    geom_bar(stat = "identity", position = "stack", color = "black") +
+    theme(legend.key.size = unit(1.5, "lines"))
+
+## Not a very useful chart
+```
+
+
 
 ```{r}
 ## Looking at white's vs all others for employed persons only
@@ -31,6 +136,8 @@ wnw.data <- Race.data[empStat != "Unemployed",
                       .(Income = weighted.mean(PINCP, PWGTP, na.rm = T)),
                       by = .(year, white, citizen)]
 ```
+
+Before we take a deeper look at the racial data, let's take a brief look at another factor which might be influencing income, citizenship status. Non-citizens may find it much more difficult to find employment than citizens, either naturalized or by birth.
 
 ```{r wnw plot}
 ymax <- max(wnw.data$Income)
@@ -50,21 +157,181 @@ wnw.plot <- ggplot(wnw.data,
 
 wnw.plot
 
-## Here we already see that by restricted the observations to employed we find that non-white naturalized citizens make almost as much as white citizens born here. (non-white naturalized citizens actually make more than white naturalized citizens). what is interesting is that non-whites born here make substantially less than naturilized non-whites or born/naturalized whites. Non-citizens, unsurprisingly make the least.
 ```
 
-```{r Differential binning of occupations}
-## Seeing if the income data differs a lot by race within each occupation bin given by the OCC code. Will have to find a good way to plot this data.
+Here we already see that by restricting the observations to employed only we find that non-white naturalized citizens make almost as much as white citizens born here. (non-white naturalized citizens actually make more than white naturalized citizens). What is interesting is that non-whites born here make substantially less than naturilized non-whites or born/naturalized whites. Non-citizens, unsurprisingly make the least.
 
-## pick 6 Occs
+Just as with our gender data, with our race data there will also be differentiation in how people sort themselves into occupations.
 
-Occs <- c("Computer/Math", "Farm/Fish/Forestry", "Healthcare", "Sales", "Admin Support", "Education")
+```{r "Occupation binning", fig.width= 8, fig.height=5}
+fields.data <- Race.data[!is.na(Occ), 
+                           .(count = sum(PWGTP)),
+                           .(race, Occ)][order(Occ, race)]
 
-raceBin.data <- Race.data[empStat != "Unemployed" & age != "18-20" & Occ %in% Occs, .(age, PINCP, PWGTP,race, Occ)][, .(income = weighted.mean(PINCP, PWGTP)), by = .(age, race, Occ)]
+share.data <- fields.data[, .(Occ, share = round(count/sum(count),4)), by = .(race)]
+
+occ.share.bars <- ggplot(share.data, aes(x = race, y = share, fill = Occ)) +
+    geom_bar(stat = "identity", position = "stack", color = "black") + 
+    coord_flip() +
+    theme(legend.position = "bottom") +
+    labs(title = "Share of Population by Occupation Type",
+         subtitle = "Simeon Markind",
+         y = NULL,
+         fill = NULL) +
+    scale_x_discrete("Race", labels = c("White" = "White",
+                                        "Other" = "Other",
+                                        "Asian" = "Asian",
+                                        "African American" = "African \nAmerican")) +
+    guides(fill = guide_legend(nrow = 6, reverse = T))
+
+occ.share.bars
 
 ```
 
-```{r Differential binnning of occupations plot}
+When looking at shares of population within each occupation bucket we see that the bars for Asian and White are similar while the bars for African American and Other are also similar in their distribution. Below we limit our sample further, looking at people who work in a select subgrouping of industries and are considered to be working full-time, in this case at least 35 hours per week.
+
+```{r Differential income of select occupations, fig.width=8}
+control.data <- Race.data[!is.na(Occ) &!is.na(nage) & WKHP >= 35 & nage <= 65,
+                            .(count = sum(PWGTP), 
+                              income = round(weighted.mean(PINCP,
+                                                            PWGTP, 
+                                                           na.rm = T),
+                                             2)/1000),
+                            .(race, Occ, nage)][order(Occ)]
+
+control.data[Occ %in% c("Admin Support", "Legal", "Education", 
+                        "Sales", "Healthcare", "Production")] %>% 
+    ggplot(aes(x = nage, y = income, colour = race)) +
+    geom_line(size = 1) +
+    facet_wrap( ~ Occ, nrow = 2, ncol = 3) + 
+    scale_x_continuous("Age") +
+    scale_color_hue(name = "Race", 
+                    labels = c("White" = "White", "Asian" = "Asian",
+                               "Other" = "Other", "African American" =
+                                   "African \nAmerican")) +
+    scale_y_continuous("USD Thousands", labels = dollar) +
+    ggtitle(label = "Incomes for Selected Occupation types",
+            subtitle = "California 2010-2014 average") +
+    labs(caption = "Simeon Markind")
+
+```
+
+Notice that income for Asians seems to follow the trend we saw earlier of declining after age 40 across all 6 industries seen here, but is most pronounced in the legal profession. A further analysis of Asian income will be included below. The income gap appears less pronounced in occupations with lower overall income, which is unsurprising. However, despite the income gap being less pronounced in terms of absolute dollars, as the next chart shows, in relative terms the income gap is highly prevalent and is higher at older ages across all races and industries. Of the data shown here, only Asians who work in Education do not see a constant increase in terms of relative income gap. 
+
+<!-- Let's take a look at the income gap for all races and occupations
+continuing to only look at people who work full time-->
+
+```{r "Income Ratio by Race", fig.height=6}
+# There must be a way to do this with long data but I don't know it
+control.data %>% 
+    dcast(Occ + nage ~ race, value.var = "income") %>% 
+    mutate(ratio_AA = `African American`/White,
+           ratio_Asian = Asian/White,
+           ratio_Other = Other/White) %>% 
+    select(Occ, nage, ratio_AA, ratio_Asian, ratio_Other) %>%
+    filter(Occ %in% c("Admin Support", "Legal", "Education", 
+                        "Sales", "Healthcare", "Production")) %>% 
+    melt(id.vars = c("Occ", "nage")) %>% 
+    ggplot(aes(x = nage, y = value, color = variable)) +
+    geom_line() +
+    facet_wrap(~ Occ, nrow = 2, ncol = 3) +
+    ggtitle(label = "Income as a percentage of White's Income",
+            subtitle = "California 2010-2014 Average full-time Employees: Simeon Markind") +
+    labs(caption = "Over time all but Asians in Education see \ndecreasing income relative to Whites",
+         x = "Age",
+         y = "Fraction of Income") +
+    scale_color_hue("Race",
+                    labels = c("ratio_AA" = "African \nAmerican",
+                               "ratio_Asian" = "Asian",
+                               "ratio_Other" = "Other"))
+    
+```
+
+But looking at average income does not tell the whole story, we should also look at changes in average income across different Occupations for the same reasons we analyzed this data for each gender.
+
+```{r "Income Growth by Race", fig.height=6}
+ratio.data <- Race.data[WKHP > 35 & !is.na(Occ) & nage <= 63,
+                .(count = sum(PWGTP),
+                  income = round(weighted.mean(PINCP, PWGTP, 
+                                               na.rm = T),
+                                             2)/1000),
+                            .(year, race, Occ, nage)][order(year,nage)][count > 200, #Need at least 500 weighted entries to be included, otherwise the sample is too small
+            .(year, growth_rate = income/lag(income)),
+            .(race, Occ, nage)][, .(avg_growth = mean(growth_rate, na.rm = T)), .(race, Occ, nage)]
+# Now let's plot it
+inds <- c("Admin Support", "Legal", "Education", 
+                        "Sales", "Healthcare", "Production")
+
+ratio.data[!is.na(avg_growth) & avg_growth < 1.2 & Occ %in% inds] %>% 
+# Remove older lawyers with higher growth rates who make the axes 
+    # too wide to see variation for other years/professions
+    ggplot(aes(x = nage, color = race, y = avg_growth)) +
+    geom_line() +
+    facet_wrap(~ Occ, nrow = 2, ncol = 3) +
+    ggtitle(label = "On Average Growth rates of White people were smaller for select Industries",
+            subtitle = "Average Growth Rate for years 2010-2014, age bins 21-63") +
+    labs(caption = "At least 200 weighted observations per point: Simeon Markind",
+         x = "Age",
+         y = "Average Annual Income Growth Rate") +
+    scale_color_hue("Race",
+                    labels = c("African American" = "African \nAmerican", "Asian" = "Asian", "Other" = "Other", "White" = "White"))
+```
+
+I removed the growth rates for lawyers above the age of 60, as the Asian growth rate for that category was 1.56 which pushed the y-axes so high as to lose the ability to see variation in the other professions. When calculating my age, race, profession buckets for each year, 95% had populations greater than 200. I eliminate all observations for less than 200 weighted individuals as a check against potential outliers. Here is the same chart when looking at both race and gender.
+
+```{r "Growth Rates for Race and Gender", fig.height=6}
+ratio.data <- Race.data[WKHP > 35 & !is.na(Occ) & nage <= 63,
+                .(count = sum(PWGTP),
+                  income = round(weighted.mean(PINCP, PWGTP, 
+                                               na.rm = T),
+                                             2)/1000),
+                            .(year, race, Occ, nage, sex)][order(year,nage)][count > 200, #Need at least 500 weighted entries to be included, otherwise the sample is too small
+            .(year, growth_rate = income/lag(income)),
+            .(race, Occ, nage, sex)][, .(avg_growth = mean(growth_rate, na.rm = T)), .(race, Occ, nage, sex)]
+# Now let's plot it
+inds <- c("Admin Support", "Legal", "Education", 
+                        "Sales", "Healthcare", "Production")
+
+ratio.data[!is.na(avg_growth) & Occ  %in% inds &
+               avg_growth < 1.2 & avg_growth > 0.8] %>% 
+# Remove older lawyers with higher growth rates who make the axes 
+    # too wide to see variation for other years/professions
+    ggplot(aes(x = nage, color = race, y = avg_growth, 
+               linetype = sex)) +
+    geom_line() +
+    facet_wrap(~ Occ, nrow = 2, ncol = 3) +
+    ggtitle(label = "Average Growth rates for men and women did not differ dramatically for select industries",
+            subtitle = "Average Growth Rate for years 2010-2014") +
+    labs(caption = "At least 200 weighted observations per point: Simeon Markind",
+         x = "Age",
+         y = "Average Annual Income Growth Rate") +
+    scale_color_hue("Race",
+                    labels = c("African American" = "African \nAmerican", "Asian" = "Asian", "Other" = "Other", "White" = "White")) +
+    scale_linetype_discrete("Gender")
+
+```
+
+Here I limit the data shown on the plot to be in the range of (0.8, 1.2) which causes multiple observations from the legal profession to be removed in the interest of being able to clearly show the rest of the data. In this case removals were mainly too high, above 1.2, to fit on the plot. However, it is also of note that 28 year old males with race "Other" in the Legal occupation also do not appear as their average annual income growth rate was too low at 0.56.
+
+
+```{r "Largest and Smallest Average Growth Rates", include=F, eval=F}
+# find the max average avg_growth for each race and the associated Occ
+# Unfortunately this method ends up with industries with incomplete series (only one race, or missing certain age buckets)
+
+lg_rates <- ratio.data[, .(growth = mean(avg_growth, na.rm = F)), .(Occ, race)][order(-growth)][!is.na(growth), head(.SD,1), .(race)][, Occ]
+
+sm_rates <- ratio.data[, .(growth = mean(avg_growth, na.rm = F)), .(Occ, race)][order(-growth)][!is.na(growth), tail(.SD,1), .(race)][, Occ]
+```
+
+
+```{r "Table of average growth rates per Occ and Race"}
+ratio.data[, .(growth = round(mean(avg_growth, na.rm = T),3)), .(race, Occ)] %>% 
+    dcast(Occ ~ race, value.var = "growth") %>% 
+    new_kable(digits = 3, col.names = c("Occupation", "African American", "Asian", "Other", "White"))
+```
+
+
+```{r Differential binning of occupations plot, include=F, eval=F}
 raceBin.plot <- ggplot(raceBin.data, 
                        aes(x = Occ, y = income, shape = race)) +
     geom_jitter(aes(color = race)) +
@@ -87,15 +354,135 @@ raceBin.plot
 ## It appears that white people make more within the different occupation types of average but not outwardly more, except in Sales where there is a clear trend of white outearning non-whites. This does not mean that across all occupation types there is not a huge differentiation among races, but it does point to race not being the sole factor, or perhaps even the major factor in the income distribution.
 ```
 
+```{r "Racial Migration in CA"}
+## Start by seeing who is actually moving in/around the state
+mobility.data <- filter.data[, .(county, MIGSP05, MIGSP12, Occ, PUMA00, PUMA10,
+                                 sex, age, race, year, PINCP, PWGTP)]
+# for MIGS, NA means didn't move, 6 means moved within CA, -9 is NA
+# a number greater than 6 is outside of CA. 
+# a three digit number is outside of the USA
 
-```{r Heat map of population percentage white in 2014}
-raceMap.data <- Race.data[year == as.Date("2014-01-01"),
-                          .(PUMA10, white)]
+mobility.data[year <= as.Date("2011-01-01"),
+              mobility := ifelse(is.na(MIGSP05) | MIGSP05 == -9, "Non-movers",
+                                 ifelse(MIGSP05 == 6, "In State",
+                                        ifelse(MIGSP05 >= 100, "Foreign", "In US")))]
 
-raceMap.data <- raceMap.data[, .(percent = sum(white == "White")/.N),
-                     by = .(PUMA10)]
+mobility.data[year > as.Date("2011-01-01"),
+              mobility := ifelse(is.na(MIGSP12) | MIGSP12 == -9, "Non-movers",
+                                 ifelse(MIGSP12 == 6, "In State",
+                                        ifelse(MIGSP12 >= 100, "Foreign", "In US")))]
 
-raceMap.data <- merge(test, pumas.points, 
+mobility.data[, c("MIGSP05", "MIGSP12") := NULL]
+
+avg_movers <- mobility.data[, .(count = sum(PWGTP)), .(race, mobility)][, .(mobility, percent = round(count/sum(count),4)*100), .(race)]
+
+avg_movers %>% 
+    dcast(mobility ~ race, value.var = "percent") %>% 
+    new_kable(caption = "Percentages", col.names = c("Mobility Status", "African American" ,"Asian", "Other", "White"))
+
+```
+
+```{r "Bros moving to SF", fig.width=9.5}
+sf_counties <- c("Sonoma", "Napa", "Solano", "Marin", "San Francisco",
+                 "San Mateo", "Santa Cruz", "Santa Clara", "Alameda",
+                 "Contra Costa")
+
+la_counties <- c("Los Angeles", "Orange", "Riverside", "San Bernardino")
+
+county_level_mobility <- mobility.data[, .(count = sum(PWGTP),
+                                           inc = weighted.mean(PINCP, PWGTP)), .(county, race, mobility)][,
+        .(race, mobility, inc = weighted.mean(inc, count),
+          percentage = round(count/sum(count),4)*100),
+        .(county)]
+
+in_state_movers <- county_level_mobility %>% 
+    filter(county %in% sf_counties, mobility == "In State") %>% 
+    select(race, county, percentage) %>% 
+    ggplot(aes(x = county, y = percentage, fill = race)) +
+    geom_bar(stat = "identity", color = "black") +
+    ggtitle("In State movers to Bay area counties",
+            "Average percentage of county residents who lived elsewhere in CA in the previous year") +
+    labs(x = "County", y = "Percentage", 
+         caption = "Simeon Markind") +
+    scale_fill_discrete("Race", 
+                   labels = c("African American" = "African \nAmerican",
+                              "White" = "White",
+                              "Other" = "Other",
+                              "Asian" = "Asian"))
+```
+
+```{r "In US Movers to SF", fig.width=9.5}
+in_us_movers <- county_level_mobility %>% 
+    filter(county %in% sf_counties, mobility == "In US") %>% 
+    select(race, county, percentage) %>% 
+    ggplot(aes(x = county, y = percentage, fill = race)) +
+    geom_bar(stat = "identity", color = "black") +
+    ggtitle("Domestic movers to Bay area counties",
+            "Average percentage of county residents who lived in the US but not in CA the previous year") +
+    labs(x = "County", y = "Percentage", 
+         caption = "Simeon Markind") +
+    scale_fill_discrete("Race", 
+                   labels = c("African American" = "African \nAmerican",
+                              "White" = "White",
+                              "Other" = "Other",
+                              "Asian" = "Asian"))
+in_us_movers
+```
+
+As we can see from the bar charts showing domestic movers to the Bay Area the majority of people moving into the Bay Area are White with the vast majority either White or Asian. The average income for Whites and Asians moving to (or within) the Bay Area from within CA were \$55,400 and \$57,570. The average income for people who moved within the US from outside of CA were \$56,140 and \$59,550.  
+
+Let's start with a map looking at average income for each race in California in 2014.
+```{r "Map of CA Income - Data"}
+plot_data <- Race.data[year == as.Date("2014-01-01"), .(mean_inc = weighted.mean(PINCP, PWGTP)/1000, count = sum(PWGTP)), .(race, PUMA10)][count > 50][pumas.points, on = c("PUMA10" = "id"), allow.cartesian = T] 
+```
+
+```{r "Mapping CA Income by Race", fig.height=6, fig.width=6}
+plot_data %>%     
+ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = round(mean_inc,1)), color = "black") +
+    facet_wrap(~ race) +
+    ggtitle("Mean Income in California in 2014",
+            "At least 50 observations per PUMA per Race") +
+    scale_fill_distiller("Mean \nIncome", palette = "PiYG",
+                         limits = c(0, 80)) +
+    labs(x = "Longitude", y = "Latitude", caption = "Simeon Markind")
+```
+
+```{r "SF Income by Race", fig.height=6}
+plot_data %>%     
+ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = round(mean_inc,1)), color = "black") +
+    facet_wrap(~ race) +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    ggtitle("Mean Income in Bay Area in 2014 - PUMA",
+            "At least 50 observations per PUMA per Race") +
+    scale_fill_distiller("Mean \nIncome", palette = "PiYG",
+                         limits = c(0, 120)) +
+    labs(x = "Longitude", y = "Latitude", caption = "Simeon Markind")
+```
+
+```{r "LA Income by Race", fig.height=6}
+plot_data %>%     
+ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = round(mean_inc,1)), color = "black") +
+    facet_wrap(~ race) +
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    ggtitle("Mean Income in the LA Area in 2014",
+            "At least 50 observations per PUMA per Race") +
+    scale_fill_distiller("Mean \nIncome", palette = "PiYG",
+                         limits = c(0, 120)) +
+    labs(x = "Longitude", y = "Latitude", caption = "Simeon Markind")
+```
+
+
+```{r Heat map of population CA percentage white in 2014}
+raceMap.data <- map_data[year == as.Date("2014-01-01"),
+                          .(count = sum(PWGTP)), .(PUMA10, white)]
+
+raceMap.data <- raceMap.data[, .(white, percent = (sum(white == "White")*count)/sum(count)),
+                     by = .(PUMA10)][white == "White",]
+
+raceMap.data <- merge(raceMap.data, pumas.points, 
                by.x = "PUMA10", by.y = "id", all = T)
 
 raceMap.plot <- ggplot(raceMap.data, 
@@ -103,7 +490,7 @@ raceMap.plot <- ggplot(raceMap.data,
     geom_polygon(color = "black", aes(fill = percent*100), alpha = 1.0) +
     scale_fill_distiller(name = "Percentage", palette = "BrBG", 
                          limits = c(0,95), position = "bottom") +
-    coord_fixed(0.9) +
+    coord_map() +
     ggtitle("PUMA Level percentage white - 2014", 
             subtitle = "Simeon Markind") +
     scale_x_continuous(name = "Longitutde") +
@@ -112,9 +499,10 @@ raceMap.plot <- ggplot(raceMap.data,
 raceMap.plot
 ```
 
+Unsurprisingly California, especially rural California is majority white. Each shaded region on the plot is equal to one Public Use Microdata Area, a region of at least 100,000 people, so we can see that inland California is quite rural. The presence of large uninhabited park lands such as Yosemite, Sequioa, and Death Valley can clearly be felt in the eastern part of the state.
+
 ```{r SF PUMAs white}
-sfWhite.plot <- ggplot() 
-sfWhite.plot + geom_polygon(data = raceMap.data, 
+sfWhite.plot <- ggplot() + geom_polygon(data = raceMap.data, 
                  mapping = aes(x = long, y = lat, group = group, 
                                fill = percent*100),
                  color = "black") +
@@ -133,7 +521,55 @@ sfWhite.plot + geom_polygon(data = raceMap.data,
     scale_x_continuous(name = "Longitutde") +
     scale_y_continuous(name = "Latitude")
 
+sfWhite.plot
+```
 
+```{r "SF White Male 18-35"}
+white_youth_male_frac <- map_data[year == as.Date("2014-01-01"), .(count = sum(PWGTP)), .(sex, AGEP, PUMA10, white)][, .(frac = sum((sex == "Male" & white == "White" & AGEP %in% c(18:35))*count)/sum(count)), .(PUMA10)][pumas.points, on = c("PUMA10" = "id")] #join with the mapping data so we can make the plots
+
+# map_data[year == as.Date("2014-01-01"), .(count = sum(PWGTP)), .(sex, AGEP, white)][, .(frac = sum((sex == "Male" & white == "White" & AGEP %in% c(18:35))*count)/sum(count))]
+
+bay_wymf <- white_youth_male_frac %>% 
+    ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = frac*100), alhpa = 0.9, color = "black") + 
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    scale_fill_distiller("Percentage", palette = "OrRd", direction = 1,
+                         limits = c(0, 15)) +
+    scale_x_continuous("Longitutde") +
+    scale_y_continuous("Latitude") +
+    ggtitle(label = "San Francisco has a lot of Bros",
+            subtitle = "Percent of population made up by white males 18-35 as of 2014") +
+    labs(caption = "CA average is 7.9% \nSimeon Markind")
+
+bay_wymf
+
+# sf_wymf <- white_youth_male_frac %>% 
+#     ggplot(aes(x = long, y = lat, group = group)) +
+#     geom_polygon(aes(fill = frac*100), alhpa = 0.9, color = "black") + 
+#     coord_map(xlim = c(-122.6, -122.2), ylim = c(37.6, 37.9)) +
+#     scale_fill_distiller("Percentage", palette = "OrRd", direction = 1,
+#                          limits = c(0, 20)) +
+#     scale_x_continuous("Longitutde") +
+#     scale_y_continuous("Latitude") +
+#     ggtitle(label = "San Francisco has a lot of Bros",
+#             subtitle = "Percent of population made up by white males 18-35 as of 2014") +
+#     labs(caption = "CA average is 11% \nSimeon Markind")
+# 
+# sf_wymf
+                                                                
+```
+
+```{r "SF Asian frac"}
+map_data[year == as.Date("2014-01-01"), .(count = sum(PWGTP)), .(race, PUMA10)][, .(race, frac = round(count/sum(count),3)), .(PUMA10)][race == "Asian"][pumas.points, on = c("PUMA10" = "id")] %>% 
+    ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = frac*100), alpha = 0.9, color = "black") + 
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    scale_fill_distiller("Percentage", palette = "OrRd", 
+                         direction = 1) +
+    scale_x_continuous("Longitutde") +
+    scale_y_continuous("Latitude") +
+    ggtitle(label = "San Francisco percentage Asian") +
+    labs(caption = "CA average is 14% \nSimeon Markind")
 ```
 
 

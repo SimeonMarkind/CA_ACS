@@ -1,6 +1,6 @@
 ---
 title: "ca_gender"
-output: html_document
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -94,7 +94,7 @@ salary.mean <- gender.data[, .(salary = weighted.mean(PINCP, PWGTP)),
 
 salary.mean <- dcast(salary.mean, age ~ ..., value.var = "salary")
 
-new_kable(salary.mean, digits = 2, col.names = c("Age", "Female", "Male"), caption = "Mean Salary by Gender and Age Range")
+
 ```
 
 So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. Let's take a look at some of these causes. First we will look at hours worked per week using the WKHP variable.
@@ -268,7 +268,7 @@ Of note is the fact that no industry saw declining income for both women and men
 
 ```{r "Gender Disparities in migration", results="hide"}
 ## Start by seeing who is actually moving in/around the state
-mobility.data <- filter.data[PINCP > 0, .(county, MIGSP05, MIGSP12, Occ, PUMA00, PUMA10,
+mobility.data <- filter.data[, .(county, MIGSP05, MIGSP12, Occ, PUMA00, PUMA10,
                                  age, sex, year, PINCP, PWGTP)]
 # for MIGS, NA means didn't move, 6 means moved within CA, -9 is NA
 # a number greater than 6 is outside of CA. 
@@ -412,16 +412,16 @@ pumas.points <- data.table(fortify(pumas))
 
 
 ```{r "CA Gender Map"}
-map_data <- gender.data[year == as.Date("2014-01-01"),
+ca_gender <- map_data[year == as.Date("2014-01-01"),
                         .(PUMA10, sex, PWGTP)][, .(count = sum(PWGTP)),
                                                .(sex, PUMA10)][,
             .(sex, percent = round((count/sum(count))*100,0)), .(PUMA10)][sex == "Male"][pumas.points, on = c("PUMA10" = "id")]
 
-map_data %>% 
+ca_gender %>% 
     ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
     geom_polygon(color = "black", alpha = 0.9) +
     coord_map() +
-    ggtitle("Men as Percent of Population over 18",
+    ggtitle("Men as Percent of Population",
             subtitle = "2014 PUMAS") +
     scale_fill_gradient(NULL, low = "Green", high = "Red") + 
     labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
@@ -429,18 +429,18 @@ map_data %>%
 
 ```{r "Bay Area Percentage Male"}
 
-map_data %>% 
+ca_gender %>% 
 ggplot(aes(x = long, y = lat, group = group, fill = percent)) +
     geom_polygon(color = "black", alpha = 0.9) +
     coord_map(xlim = SF.xlim, ylim = SF.ylim) +
-    ggtitle("Men as Percent of Population Above Age 18",
+    ggtitle("Men as Percent of Population",
             subtitle = "2014 PUMAS") +
     scale_fill_gradient(NULL, low = "Green", high = "Red") + 
     labs(x = NULL, y = NULL, fill = NULL, caption = "Simeon Markind")
 ```
 
 ```{r "Men age 18-35 as Percentage Population"}
-bachelor_data <- gender.data[nage %in% c(18:35) &
+bachelor_data <- map_data[nage %in% c(18:35) &
                                  year == as.Date("2014-01-01"),
                         .(PUMA10, sex, PWGTP)][, .(count = sum(PWGTP)),
                                                .(sex, PUMA10)][,
