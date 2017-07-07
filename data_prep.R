@@ -1,5 +1,31 @@
 library(data.table)
 library(bit64)
+library(lubridate)
+library(plyr)
+library(stringr)
+
+## Creating a function to find standard deviations of weighted variables
+weighted.sd <- function(vals, weight, na.rm = T){
+    
+    stopifnot(length(vals) == length(weight),
+              is.numeric(vals) | is.list(vals),
+              is.numeric(weight) | is.list(weight))
+    
+    if(na.rm){
+        table <- data.frame(vals, weight)
+        table <- na.omit(table)
+        vals <- table$vals
+        weight <- table$weight
+    }
+    
+    sqrt(
+        (1/sum(weight))*
+        sum(
+            weight*((vals - weighted.mean(vals, weight, na.rm))**2))
+        
+    )
+}
+
 
 cols.to.keep <- c(
     "SERIALNO", #Observation Serial Number
@@ -111,7 +137,8 @@ filter.data[, `:=`(INTP = INTP*ADJINC,
                    SSIP = SSIP * ADJINC,
                    SSP = SSP * ADJINC,
                    WAGP = WAGP * ADJINC,
-                   PERNP = PERNP * ADJINC)]
+                   PERNP = PERNP * ADJINC,
+                   PINCP = PINCP * ADJINC)]
 
 
 ## Filter down citizenship categories
@@ -161,14 +188,14 @@ filter.data[MIL %in% c(NA,4), milStat := "No Service"]
 ## 21 -> "Bachelors"
 ## 22, 23, 24 -> "Graduate"
 
-filter.data[SCHL %in% c(NA, 1,2,3), eduStat := "None"]
-filter.data[SCHL %in% c(4,5,6,7,8), eduStat := "Elementary"]
-filter.data[SCHL %in% c(9,10,11), eduStat := "Middle"]
-filter.data[SCHL %in% c(12,13,14,15), eduStat := "HS-no Diploma"]
-filter.data[SCHL %in% c(16,17), eduStat := "HS Diploma"]
+filter.data[is.na(SCHL) | SCHL %in% c(1,2,3), eduStat := "No HS Diploma"]
+filter.data[SCHL %in% c(4,5,6,7,8), eduStat := "No HS Diploma"] #elementary
+filter.data[SCHL %in% c(9,10,11), eduStat := "No HS Diploma"] #middle
+filter.data[SCHL %in% c(12,13,14,15), eduStat := "No HS Diploma"]
+filter.data[SCHL %in% c(16,17, 18, 19), eduStat := "HS Diploma"]
 filter.data[SCHL == 20, eduStat := "Associates"]
 filter.data[SCHL == 21, eduStat := "Bachelors"]
-filter.data[SCHL %in% c(22,23,24), eduStat := "Graduate"]
+filter.data[SCHL %in% c(22,23,24), eduStat := "Post-Graduate"]
 
 ## MIGPUMA00 - Migration PUMA based on census 2000
 ## Note, this will not pick up people who moved within their PUMA
@@ -395,6 +422,7 @@ filter.data[, year := as.Date(paste0(year, "-01-01"),
 
 filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
 
+
 ## Use the mapping created in puma_mapping.R
 ## Read in our PUMA to county crosswalks:
 path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
@@ -437,10 +465,10 @@ filter.data[!is.na(PUMA10), county := MCDC10[match(PUMA10,
                                                county_name]]
 
 ## Take a file we will use for mapping
-map_data <- filter.data[, .(sex, PUMA10, AGEP, race, PWGTP, 
+map_data <- filter.data[AGEP >= 18 & !is.na(PUMA10), .(sex, PUMA10, AGEP, race, PWGTP, 
                             eduStat, year, Occ, PINCP, WKHP)]
 
-map_data[, nage := round_any(AGEP, 7)]
+map_data[, nage := round_any(AGEP, 5)]
 map_data[, white := ifelse(race == "White", "White", "Non-white")]
 
 write.csv(map_data,"C:/Users/Owner/Documents/R/PUMS/map_data.csv",
@@ -448,17 +476,36 @@ write.csv(map_data,"C:/Users/Owner/Documents/R/PUMS/map_data.csv",
 
 ## Filter out anyone below 18 and above 75, place into 5 year buckets
 
-filter.data <- filter.data[AGEP >= 18 & AGEP <= 75,]
+filter.data <- filter.data[AGEP >= 18 & AGEP <= 65,]
 
 ageLabels <- c("18-20", "21-25", "26-30", "31-35", "36-40", "41-45",
-               "46-50", "51-55", "56-60", "61-65", "66-70", "71-75")
+               "46-50", "51-55", "56-60", "61-65")
 
-ageBreaks <- c(18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75)
+ageBreaks <- c(18, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65)
 
 filter.data[, age := cut(AGEP, breaks = ageBreaks, 
                          labels = ageLabels,
                          include.lowest = TRUE)]
 
 
+## Search for outliers in the PINCP category
+## For now, let's check what happens if we keep within 3 devs of the
+## mean for the log of PINCP by sex, race, education level,
+## age, hours worked, and Occ
+
+## NOT DOING THIS NOW, MAY REVISIT
+# filter.data[, `:=`(nage = round_any(AGEP, 5),
+#                    hour_bucket = round_any(WKHP, 5))]
+# 
+# test <- filter.data[!is.na(PINCP) & PINCP > 1000,
+#                     .(nage, hour_bucket, Occ, sex, race, eduStat, PWGTP, 
+#                       mean = log(PINCP, 10))][, 
+#                                               .(sd = weighted.sd(mean, PWGTP, na.rm = T)),
+#                                               .(nage, hour_bucket, Occ, sex, race, eduStat)]
+
+
 write.csv(filter.data,"C:/Users/Owner/Documents/R/PUMS/filterData.csv",
           row.names = F)
+
+# save.image(filter.data, map_data, 
+#            file = "C:/Users/Owner/Documents/R/PUMS/envir.RData")

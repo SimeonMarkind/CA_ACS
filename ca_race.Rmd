@@ -23,7 +23,7 @@ library(scales)
 library(maptools)
 library(mapproj)
 library(stringr)
-library(ggrepel)
+
 
 new_kable <- function(...){
     kable(..., format.args = list(big.mark = ","))
@@ -31,7 +31,7 @@ new_kable <- function(...){
 
 # Read the raw data for this section
 
-filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+# filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
 map_data <- fread("C:/Users/Owner/Documents/R/PUMS/map_data.csv")
 
 
@@ -71,17 +71,32 @@ theme.simeon <- theme_gray() +
                                       color = "blue4",
                                       face = "italic"),
           legend.key.size = unit(1.2, "lines"),
+          legend.key.height = unit(0.8, "cm"),
           panel.background = element_rect(fill = "grey92",
                                           color = "blue4"))
 
 theme_set(theme.simeon)
+
+#Create label vector for races
+race_labels = c("White" = "White",
+                "Other" = "Other",
+                "Asian" = "Asian",
+                "African American" = "African \nAmerican")
+
+edu_labels <- c("Post-Graduate" = "Post\nGraduate", 
+                "Bachelors" = "Bachelors", 
+                "Associates" = "Associates", 
+                "HS Diploma" = "HS\nDiploma", 
+                "HS-no Diploma" = "HS-no\nDiploma", 
+                "No HS" = "No HS", 
+                "None" = "None")
 ```
 
 
 ```{r Race data setup, results="hide"}
 Race.data <- filter.data[, .(year, PUMA10, age, citizen, PINCP, PWGTP,
                              empStat, county, AGEP, WKHP,
-                             race, Hispanic, sex, Occ, Soc)]
+                             race, Hispanic, sex, Occ)]
 Race.data[, year := as.Date(year, "%Y-%m-%d")]
 Race.data[, nage := round_any(AGEP, 7)]
 Race.data[, white := ifelse(race == "White", "White", "Non-white")]
@@ -123,8 +138,7 @@ other_data %>% ggplot(aes(x = age, y = percentage, fill = factor(RAC1P))) +
                                    "5" = "Tribe\nSpecified",
                                 "7" = "Hawaiian or\nPacific Islander",
                                    "8" = "Other",
-                                "9" = "Two or more")) +
-    theme(legend.key.height = unit(0.8, "cm"))
+                                "9" = "Two or more")) 
                                    
 ```
 
@@ -166,7 +180,7 @@ ggplot(table.data, aes(x = nage, y = mean_inc, color = race,
     ggtitle(label = "Mean Income for California 2010-2014",
             subtitle = "Employed observations only, age below 70") +
     scale_x_continuous(name = "Age", limits = c(20, 70),
-                       breaks = seq(20, 76, 7)) +
+                       breaks = seq(20, 75, 5)) +
     scale_y_continuous(name = "2014 USD", labels = dollar,
                        limits = c(0, 1.1*ymax)) +
     scale_color_discrete(name = "Race") +
@@ -175,6 +189,31 @@ ggplot(table.data, aes(x = nage, y = mean_inc, color = race,
 ```
 
 So the first thing you might ask is: "What on Earth is going on with Asian men and women?" (I have no idea - look into this?) The second thing you should note is the large income gap in later years, White men have larger incomes. Interestingly, White women also have the highest mean incomes in later years of all women, but the gap is not nearly as pronounced. Let's see if we can explain this gap a bit more as we dig deeper into the data.
+
+Here we show a density plot of income by Race. What this plot shows is the percentage of each grouping, in our case Race, with an average income equal to our value on the x axis.
+
+```{r "Income density by Race"}
+## Find the weighted mean income for each education bin
+bin_inc <- Race.data[, .(inc = weighted.mean(PINCP, PWGTP)),
+                     .(race)]
+
+Race.data[PINCP > 1000 & WKHP >= 35, .(PINCP, weight = PWGTP/sum(PWGTP)), .(race)] %>% 
+    ggplot(aes(x = PINCP, group = race, fill = race)) +
+    geom_density(aes(weight = weight), alpha = 0.5, 
+                 size = 0.6) +
+    scale_x_log10("Income", breaks = 10^c(3, 3.544068, 4, 4.544068,
+                                          5, 5.544068, 6),
+                  labels = dollar) +
+    geom_vline(data = bin_inc,
+               aes(xintercept = inc, color = race), size = 1) +
+    ggtitle("Distribution of Income for CA by Race",
+            "Vertical Lines show the mean income levels") +
+    labs(caption = "Limited to observations working over 35 hours per week and income above $1,000\nSimeon Markind") +
+    scale_y_continuous("Density") +
+    scale_fill_hue("Race", labels = edu_labels) +
+    scale_color_hue("Race", labels = edu_labels)
+```
+
 
 Let's now take a look at a map looking at average income for each race in California in 2014 so that we can get a sense of differentiation across the state.
 
@@ -319,11 +358,8 @@ Race.data[!is.na(Occ), .(count = sum(PWGTP), inc = weighted.mean(PINCP, PWGTP)),
             "Mean income for each Race shown as text") +
     labs(x = "Occupation", caption = "Simeon Markind") +
     scale_y_continuous("Percent", label = percent) +
-    scale_fill_discrete("Race",
-                        labels = c("White" = "White",
-                                        "Other" = "Other",
-                                        "Asian" = "Asian",
-                            "African American" = "African \nAmerican"))
+    scale_fill_discrete("Race", labels = race_labels)
+                        
                         
                             
 ```
@@ -714,5 +750,18 @@ LAWhite.plot <- ggplot(raceMap.data,
     scale_y_continuous(name = "Latitude")
 
 LAWhite.plot
+```
+
+```{r LA Asian frac}
+map_data[year == as.Date("2014-01-01"), .(count = sum(PWGTP)), .(race, PUMA10)][, .(race, frac = round(count/sum(count),3)), .(PUMA10)][race == "Asian"][pumas.points, on = c("PUMA10" = "id")] %>% 
+    ggplot(aes(x = long, y = lat, group = group)) +
+    geom_polygon(aes(fill = frac*100), alpha = 0.9, color = "black") + 
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    scale_fill_distiller("Percentage", palette = "OrRd", 
+                         direction = 1) +
+    scale_x_continuous("Longitutde") +
+    scale_y_continuous("Latitude") +
+    ggtitle(label = "Los Angeles percentage Asian") +
+    labs(caption = "CA average is 14% \nSimeon Markind")
 ```
 

@@ -97,7 +97,7 @@ MCDC10 <- MCDC10[, .(puma12 = ifelse(nchar(puma12) == 3,
     unique()
 
 sf_counties <- c("Sonoma", "Napa", "Solano", "Marin", "San Francisco",
-                 "San Mateo", "Santa Cruz", "Santa Clara", "Alameda",
+                 "San Mateo", "Santa Clara", "Alameda",
                  "Contra Costa")
 
 la_counties <- c("Los Angeles", "Orange", "Riverside", "San Bernardino")

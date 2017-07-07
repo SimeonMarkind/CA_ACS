@@ -55,6 +55,8 @@ theme.simeon <- theme_gray() +
                                       size = 12,
                                       color = "blue4",
                                       face = "italic"),
+          legend.key.size = unit(1.2, "lines"),
+          legend.key.height = unit(0.8, "cm"),
           panel.background = element_rect(fill = "grey92",
                                           color = "blue4"))
 
@@ -69,14 +71,14 @@ across the state, first on the whole and then by age, (maybe include a map), to 
 filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
 
 #only include people with a non-zero income
-gender.data <- filter.data[PINCP > 0, .(year, PUMA10, age, citizen, PINCP, PWGTP,
+gender.data <- filter.data[, .(year, PUMA10, age, citizen, PINCP, PWGTP,
                             empStat, AGEP, ENG, eduStat, sex, Occ, Soc, WKHP)]
 
 segments <- c(0, 10, 20, 30, 40, 50, 60, 100)
 labels <- c("Under 10", "10-20", "20-30", "30-40", "40-50", "50-60", "60 +")
 
 gender.data[, hours := cut(WKHP, breaks = segments, labels = labels)]
-gender.data[, nage := round_any(AGEP, 7)]
+gender.data[, nage := round_any(AGEP, 5)]
 gender.data[, year := as.Date(year, format = "%Y-%m-%d")]
 
 
@@ -85,19 +87,56 @@ gender.data[, year := as.Date(year, format = "%Y-%m-%d")]
 <!-- So for our gender sample we have 1310536 people,
 -->
 
-For our data we have a sample of `r format(nrow(gender.data), big.mark=",")` observations with roughly 130,000 raw observation for each gender for each year, (roughly 2.7 million weighted observations per gender per year). Below is a table of mean salary by gender and age.
+For our data we have a sample of `r format(nrow(gender.data), big.mark=",")` observations with roughly 130,000 raw observation for each gender for each year, (roughly 2.7 million weighted observations per gender per year). 
 
+```{r "Average Income by Gender"}
+gender.data[empStat != "Unemployed", .(inc = weighted.mean(PINCP, PWGTP)),
+            .(age = round_any(AGEP, 5), sex)] %>% 
+    ggplot(aes(x = age, y = inc, color = sex)) +
+    geom_line(size = 1) + 
+    ggtitle("Average Income 2010-2014 - employed observations",
+            "Measured in 2014USD") +
+    scale_y_continuous("Income", 
+                       breaks = seq(0, 70000, 10000),
+                       labels = dollar) +
+    scale_x_continuous("Age", breaks = seq(20,75,5)) +
+    scale_color_discrete("Gender") +
+    labs(caption = "Employed observations only\nSimeon Markind")
+```
+
+Below is a table of mean salary by gender and age for people who are not unemployed.
 
 ```{r "mean salary", fig.align="center"}
-salary.mean <- gender.data[, .(salary = weighted.mean(PINCP, PWGTP)),
+salary.mean <- gender.data[empStat != "Unemployed", .(salary = weighted.mean(PINCP, PWGTP)),
                 .(sex, age)][order(age, sex)]
 
 salary.mean <- dcast(salary.mean, age ~ ..., value.var = "salary")
 
-
 ```
 
-So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. Let's take a look at some of these causes. First we will look at hours worked per week using the WKHP variable.
+So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. 
+
+```{r "Density of Income by Gender"}
+bin_inc <- gender.data[empStat != "Unemployed", .(inc = weighted.mean(PINCP, PWGTP)), .(sex)]
+
+gender.data[empStat != "Unemployed", .(PINCP, PWGTP, sex)] %>% 
+    ggplot(aes(x = PINCP, fill = sex)) +
+    geom_density(aes(weight = PWGTP/sum(PWGTP)), alpha = 0.5) +
+    scale_x_log10("Income", breaks = 10^c(3, 4, 4.544068,
+                                          5, 5.544068, 6),
+                  labels = dollar, limits = c(10^3, 10^6)) +
+    geom_vline(data = bin_inc, aes(xintercept = inc, color = sex),
+               size = 1.1) +
+    ggtitle("Distribution of Income",
+            "Limited to employed observations") +
+    labs(y = "Density", 
+         caption = paste("Female mean income is ", dollar(bin_inc[sex == "Female", round(inc)]), "Male is ", dollar(bin_inc[sex == "Male", round(inc)]),"\nSimeon Markind"), 
+         color = "Gender",
+         fill = "Gender")
+```
+
+
+Let's take a look at some of these causes. First we will look at hours worked per week using the WKHP variable.
 
 Restricting our sample to those without an NA value for hours worked per week our sample decreases our sample size to `r format(nrow(gender.data[!is.na(WKHP)]), big.mark = ",")`.
 
@@ -191,7 +230,7 @@ casted.data[Occ %in% c("Admin Support", "Legal", "Education",
     ggplot(aes(x = nage, y = gap, color = Occ)) +
     geom_line(size = 1) +
     scale_y_continuous("USD Thousands", labels = dollar) +
-    scale_x_continuous("Age", breaks = seq(20, 80, 10)) +
+    scale_x_continuous("Age", breaks = seq(20, 75, 5)) +
     ggtitle(label = "Income Gap for Selected Occupation types",
             subtitle = "California 2010-2014 average; Male minus Female") +
     labs(caption = "Simeon Markind")
@@ -396,7 +435,7 @@ county_shares %>% tail() %>% select(-share_Male) %>%
 
 ```
 
-Ratio of Male to Female income earners does not seem to be particularly correlated with the ratio of income. Sacramento county, where women make up over 50% of income earners has an income only slightly lower than Kings county, where women make up only 43% of income earners.
+Ratio of Male to Female income earners does not seem to be particularly correlated with the ratio of income. Sacramento county, where women make up over 50% of income earners has an income ratio only slightly higher than Kings county, where women make up only 43% of income earners.
 
 <!-- Start by taking a look at the ratio of men to women in general
 (not controlling for income > 0) -->
