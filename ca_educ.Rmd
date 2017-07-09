@@ -1,0 +1,512 @@
+---
+title: "ca_educ"
+author: "Simeon Markind"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
+                      fig.align = "center", message = FALSE,
+                      cache = T)
+
+SF.xlim <- c(-123.1, -121.5)
+SF.ylim <- c(37, 38.2)
+LA.xlim <- c(-119, -116.7)
+LA.ylim <- c(33, 34.5)
+
+library(tidyverse)
+library(plyr)
+library(data.table)
+library(knitr)
+library(bit64)
+library(scales)
+library(maptools)
+library(mapproj)
+library(stringr)
+library(viridis)
+
+new_kable <- function(...){
+    kable(..., format.args = list(big.mark = ","))
+}
+
+# Read the raw data for this section
+
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+map_data <- fread("C:/Users/Owner/Documents/R/PUMS/map_data.csv")
+
+
+# Set up the maps
+path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
+
+pumas <- readShapePoly(paste0(path,"cb_2015_06_puma10_500k.shp"), 
+                       IDvar = "PUMACE10")
+
+pumas.points <- data.table(fortify(pumas))
+
+theme.simeon <- theme_gray() +
+    theme(axis.title = element_text(family = "serif",
+                                    size = 14,
+                                    color = "blue4"),
+          plot.background = element_rect(fill = "cornsilk",
+                                         color = "black"),
+          plot.title = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 16,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.subtitle = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4",
+                                    hjust = 0.5),
+          plot.caption = element_text(family = "serif",
+                                    face = "bold",
+                                    size = 10,
+                                    color = "blue4"),
+          legend.background = element_rect(fill = "cornsilk",
+                                           color = "blue4"),
+          legend.title.align = 0.5,
+          legend.title = element_text(family = "serif",
+                                      size = 12,
+                                      color = "blue4",
+                                      face = "italic"),
+          legend.key.size = unit(1.2, "lines"),
+          legend.key.height = unit(0.8, "cm"),
+          panel.background = element_rect(fill = "grey92",
+                                          color = "blue4"))
+
+theme_set(theme.simeon)
+
+#Create a labeling vector for education levels
+edu_labels <- c("Post-Graduate" = "Post\nGraduate", 
+                "Bachelors" = "Bachelors", 
+                "Associates" = "Associates", 
+                "HS Diploma" = "HS\nDiploma", 
+                "No HS Diploma" = "No-HS\nDiploma")
+
+edu_breaks <- c("Post-Graduate", 
+                "Bachelors", 
+                "Associates", 
+                "HS Diploma", 
+                "No HS Diploma")
+
+race_labels = c("White" = "White",
+                "Other" = "Other",
+                "Asian" = "Asian",
+                "African American" = "African\nAmerican")
+
+sf_counties <- c("Sonoma", "Napa", "Solano", "Marin", "San Francisco",
+                 "San Mateo", "Santa Clara", "Alameda",
+                 "Contra Costa")
+
+la_counties <- c("Los Angeles", "Orange", "Riverside", "San Bernardino")
+```
+
+
+```{r "Educ Data Setup", results="hide"}
+educ.data <- filter.data[,.(year, SCHL, SCH, PUMA10, age, citizen, PINCP, PWGTP,
+                             empStat, county, AGEP, WKHP, 
+        eduStat = factor(eduStat, #re-ordering for charting
+                         levels = c("Post-Graduate", "Bachelors", "Associates", "HS Diploma", "No HS Diploma")),
+                             race, Hispanic, sex, Occ)]
+educ.data[, year := as.Date(year, "%Y-%m-%d")]
+educ.data[, nage := round_any(AGEP, 7)]
+educ.data[, white := ifelse(race == "White", "White", "Non-white")]
+```
+
+As with our gender and race data, let's begin our analysis of the education demographics of California by taking a look at the educational makeup of Californians.
+
+```{r "Educ makeup of CA"}
+educ.data[, .(count = sum(PWGTP)), .(AGEP = round_any(AGEP,5), eduStat)][, .(percentage = count/sum(count), eduStat), .(AGEP)] %>% 
+    ggplot(aes(x = AGEP, y = percentage, fill = eduStat)) +
+    geom_area(alpha = 0.8, color = "black") +
+    ggtitle("Educational Makeup of Adults in California",
+            "Sample limited to observations between the ages of 18-75") +
+    labs(fill = "Education\nLevel",
+         caption = "Simeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,65,5), 
+                       labels = seq(20,65,5)) +
+    scale_y_continuous("Share of Population", labels = percent) +
+    scale_fill_discrete("Education", labels = edu_labels)
+```
+
+California seems to be a well educated state, with roughly 40% of the population over 25 holding an Associate's degree or higher. Interestingly this percentage seems relatively flat for those under age 65, despite the growing segment of the US population attending college. This could be due to people starting college and not completing their degrees, resulting in the population segment with a degree remaining constant despite enrollment increasing overall. Luckily it is possible for us to test this as the ACS breakdown of education includes the option of having attended college but not completing a degree.
+
+```{r "Population with some college", results="show"}
+educ.data[SCH == 1, .(age = round_any(AGEP, 3), PWGTP, SCHL)][,
+            .(pop = sum(PWGTP)), .(age, SCHL)][, .(SCHL, perc = (pop/sum(pop)*100)), .(age)][SCHL %in% c(18, 19), .(val = sum(perc)),
+            .(age)] %>% 
+    ggplot(aes(x = age, y = val)) +
+    geom_line() +
+    ggtitle("Percent of population with some\ncollege but no degree") +
+    labs(caption = "Simeon Markind") +
+    scale_y_continuous("Percent", limits = c(0, 30),
+                       breaks = seq(0, 30, 5)) +
+    scale_x_continuous("Age", breaks = seq(20, 65, 3))
+```
+
+As we can see from the above chart, about 20% of the adult population in California above the age of 25 attended college without receiving a degree. This analysis controls for people who are no longer attending school so that those actively taking courses but not yet having a degree are not shown. (This mainly impacts the 18-24 age range). Since for this analysis, I am top coding educational attainment based on highest degree received, this entire group is considered at the same level as those to only graduate high school without attending any college courses. It is unclear how the percentage of adults with only some college looks when compared over time, but it is notable that this percentage seems to be trending upwards. As the population of the United States is increasing this corresponds with a larger number of people who attended at least one college course but do not have a degree. Perhaps college completion is a more important statistic than mere college enrollment.
+
+We can also see how each level of education attainment is broken down by age, we superimpose the mean salary data for each segment.
+
+```{r "Proportion of educ level by Race"}
+educ.data[, .(count = sum(PWGTP), inc = weighted.mean(PINCP, PWGTP)),
+          .(eduStat, race)][, .(inc, race, percent = count/sum(count)), .(eduStat)] %>% 
+    ggplot(aes(x = eduStat, y = percent, fill = race)) +
+    geom_bar(stat = "identity") +
+    geom_label(aes(label = dollar(round(inc))), size = 4,
+               position = position_stack(vjust = 0.1)) +
+    scale_y_continuous("", label = percent) +
+    scale_x_discrete("Highest Education Level", labels = edu_labels) +
+    scale_fill_discrete("Race", labels = race_labels) +
+    ggtitle("Makeup of CA Education Levels by Race",
+            "Simeon Markind")
+```
+
+And the inverse of the above chart: the proportion of each race by education level, shows us that education achievement by race differs dramatically. Over 50% of Asian adults age 18-75 and over have at least a Bachelor's degree, (and considering that few under the age of 22 have a bachelor's degree that is even all the more impressive). On the other hand, only about 25% of the African American population in the same age range has at least a bachelor's degree. And, from the above chart we also see large differentiation in terms of average income for those with the same degree level by racial category. For example, White people with a PhD have an average income of almost \$98,000 while African Americans with a PhD have an average income of \$75,000. This income disparity, compounded with the difference in educational achievement for each racial group, points to large income differentiation on the basis of education and race. 
+
+```{r "proportion of each race by educ level"}
+educ.data[, .(count = sum(PWGTP), inc = weighted.mean(PINCP, PWGTP)),
+          .(eduStat, race)][, .(inc, eduStat, percent = count/sum(count)), .(race)] %>% 
+    ggplot(aes(x = race, y = percent, fill = eduStat)) +
+    geom_bar(stat = "identity", color = "black") +
+    scale_y_continuous("", label = percent) +
+    scale_fill_discrete("Highest\nEducation\nLevel", labels = edu_labels) +
+    scale_x_discrete("Race", labels = race_labels) +
+    ggtitle("Makeup of CA Race by Education Levels",
+            "Simeon Markind")
+```
+
+Now let's take a look at the makeup of each industry by education level. Combined with the similar chart made looking at the racial makeup of each industry we can further see the differentiation in the average incomes of different groups of Californians.
+
+```{r "Education makeup of Occ codes", fig.height=8, fig.width=10}
+educ.data[!is.na(Occ), .(count = sum(PWGTP), inc = weighted.mean(PINCP, PWGTP)),
+          .(eduStat, Occ)][order(-eduStat, Occ), .(percentage = count/sum(count), inc, eduStat), .(Occ)] %>% 
+    ggplot(aes(x = Occ, y = percentage, fill = eduStat)) +
+    geom_bar(stat = "identity", color = "black", alpha = 0.8) +
+   # Turning off the labels because too distracting
+    # geom_label(aes(y = rep(seq(0, 1, length.out = 7), 23),
+   #               label = dollar(round(inc))), size = 4) +
+    coord_flip() +
+    ggtitle("Educational Makeup of Occupation Buckets") +
+    labs(x = "Occupation", caption = "Simeon Markind") +
+    scale_y_continuous("Percent", label = percent) +
+    scale_fill_discrete("Education", labels = edu_labels)
+
+```
+
+Now that we have some sense of the distribution of different education levels acros both different races as well as different occupation types, we can turn our attention to looking at the average income by education levels.
+
+First we see the below diagram showing the different income density plots for our education levels.
+
+```{r "Income Density by Educ"}
+## Find the weighted mean income for each education bin
+bin_inc <- educ.data[, .(inc = weighted.mean(PINCP, PWGTP)),
+                     .(eduStat)]
+
+educ.data[PINCP > 1000 & WKHP >= 35, .(PINCP, PWGTP, eduStat)] %>% 
+    ggplot(aes(x = PINCP, group = eduStat, fill = eduStat)) +
+    geom_density(aes(weight = PWGTP/sum(PWGTP)), alpha = 0.5, 
+                 size = 0.6) +
+    scale_x_log10("Income", breaks = 10^c(3, 4, 4.544068,
+                                          5, 5.544068, 6),
+                  labels = dollar) +
+    geom_vline(data = bin_inc,
+               aes(xintercept = inc, color = eduStat), size = 1.4) +
+    ggtitle("Density of Income for CA by Education Levels",
+            "Vertical Lines show the mean income levels") +
+    labs(caption = "Limited to observations working over 35 hours per week and income above $1,000\nSimeon Markind") +
+    scale_y_continuous("Density") +
+    scale_fill_hue("Education\nAttainment", labels = edu_labels) +
+    scale_color_hue("Education\nAttainment", labels = edu_labels)
+```
+
+So from our above chart we see the income differentiation in California at each level of education. Each density shows the distribution of income for people with the corresponding education level. Income is plotted using a logarithmic scale with base 10 so that all income values would fit. In vertical lines I plot the weighted mean average income for each education level with colors corresponding to the density. As we can see, with each increasing level of education attainment the average income increases. Remember, since this is a logarithmic scale, an equal size step between levels does not mean an equal value increase in income. For example, average income for Associates degree holders is \$38,400, while average income for Bachelors degree holders is \$59,350. This is a difference of about \$20,000 and looks to be similar in size to the gap between Bachelors and Post-Graduate degree holders. In fact, the average income for a post-gradate degree holder is \$93,500, a \$31,000 difference which is over 1.5 that of the difference between Associates and Bachelors. 
+
+<!--
+It is also interesting to see that for Bachelors and Post-Graduate degree holders especially, there is a second rise around \$350,000. I explore this topic in an appendix. -->
+
+Now let's take a look at how income is spread over each education level by age.
+
+```{r "Avg Income by Age and Educ"}
+educ.data[, .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP,5) ,eduStat)] %>% 
+    ggplot(aes(x = age, y = inc, color = eduStat)) +
+    geom_line(size = 1.2) +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", breaks = seq(0, 120000, 20000),
+                       labels = dollar) +
+    ggtitle("Mean Income for California",
+            "5 year Age Buckets") +
+    labs(caption = "Simeon Markind") +
+    scale_color_hue("Education", labels = edu_labels)
+```
+
+<!-- Chart for the appendix, race, age education income levels -->
+
+```{r "Average income by edu and age for each race"}
+educ.data[, .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
+    ggplot(aes(x = age, y = inc, color = eduStat)) +
+    geom_line(size = 0.8) +
+    facet_wrap(~race, nrow = 2, ncol = 2) +
+    ggtitle("Average Income for California",
+            "5 year age buckets") +
+    labs(caption = "No limit for hours worked per week\nSimeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", labels = dollar) +
+    scale_color_discrete("Education", labels = edu_labels)
+```
+
+Looking at the above we see that our pattern of increased education leading to increased income holds true across all races, although it is worth noting that the income for each education level is not the same across each race. Higher education attainment clearly corresponds to higher incomes for individuals, but those gains are not distributed evenly across the board. For example, White people with a bachelors degree on average make as much as peole in the Other and African American categories with a PhD. 
+
+```{r "White Bachelors vs Other and African American with Phd"}
+educ.data[eduStat %in% c("Post-Graduate", "Bachelors"), .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
+    ggplot(aes(x = age, y = inc, color = race, linetype = eduStat)) +
+    geom_line(size = 0.8) +
+    ggtitle("Differentiation in average income for highly educated individuals", "No limit on hours worked per week") +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", labels = dollar) +
+    scale_color_discrete("Race", labels = race_labels) +
+    scale_linetype_discrete("Education", labels = c("Post\nGraduate",
+                                                    "Bachelors"))
+```
+
+The above charts point to a substantial differentiation in the income gains felt by different people with the same level of educational attainment, but we cannot ascribe the entirety of the difference to racial factors. Let's take a look at how the two plots above differ if we control for people who work full-time, 35 or more hours per week.
+
+```{r "Full Time Income difference by Race and Educ"}
+educ.data[WKHP >= 35 & PINCP > 0, .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
+    ggplot(aes(x = age, y = inc, color = eduStat)) +
+    geom_line(size = 0.8) +
+    facet_wrap(~race, nrow = 2, ncol = 2) +
+    ggtitle("Average Income for California",
+            "5 year age buckets") +
+    labs(caption = "35+ hours worked per week and income > 0\nSimeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", labels = dollar) +
+    scale_color_discrete("Education", labels = edu_labels)
+```
+
+Here we see a few notable changes from the version above that did not control for hours worked: firstly there seems to be a spike for African Americans without a high school diploma at the age of 65. This appears to be in large part due to a single observation with an income of \$287,200 in the Healthcare field and a weight of 13, likely either a miscode or an outlier. Let's take a look at our second chart showing only those who are highly educated and see how the trends change.
+
+```{r "Full time working highly educ income by race"}
+educ.data[PINCP > 0 & WKHP >= 35 & eduStat %in% c("Post-Graduate", "Bachelors"), .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
+    ggplot(aes(x = age, y = inc, color = race, linetype = eduStat)) +
+    geom_line(size = 0.8) +
+    ggtitle("Differentiation in average income for highly educatied individuals", "35+ hours worked per week and income > 0") +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", labels = dollar, 
+                       breaks = seq(0, 150, 25)*1000) +
+    scale_color_discrete("Race", labels = race_labels) +
+    scale_linetype_discrete("Education", labels = c("Post\nGraduate",
+                                                    "Bachelors"))
+```
+
+Here we see that the gap between Asian and White people with a PhD seems smaller than in the first chart. Our previous observation, of White people with a bachelors earning as much as if not more than people with race of Other or African American with a PhD still holds. Further analysis, which I will not discuss here can go into the different job fields each race's education levels seem to gravitate towards as well as the different subject matters in which the degrees are granted. 
+
+<!--
+Let's now see how the different education levels did over the time period in terms of income gains.
+
+```{r "Income Gains 2010-2014 by educ level and Age"}
+educ.data[year %in% c(as.Date("2010-01-01"), as.Date("2014-01-01")), .( inc = weighted.mean(PINCP, PWGTP)), .(age = round_any(AGEP, 5), year, eduStat)][order(eduStat, age, year)][, .(diff = round(inc/shift(inc, n = 1, type = "lag"), 2), year), .(age, eduStat)][year == as.Date("2014-01-01"),] %>% 
+    ggplot(aes(x = age, y = diff, color = eduStat)) +
+    geom_line() +
+    geom_hline(yintercept = 1.0, color = "black", size = 0.7) +
+    ggtitle("2014 Income level Relative to 2010 Income",
+            "Individuals with at least a college education saw larger income gains over the period than those without") +
+    scale_color_hue("Education", labels = edu_labels) +
+    scale_x_continuous("Age", breaks = seq(20,65,5), limits = c(20, 65)) +
+    scale_y_continuous("2014 Income Multiple") +
+    labs(caption = "All income adjusted to 2014 dollars\nSimeon Markind")
+```
+
+Here we see that the lines for Bachelors and Post-Graduate degree holders are on average at the top of the chart, meaning that across all ages, from 2010-2014 holders in these education levels saw larger increases in their income, as a percentage of their income, than other groups. Remember, this increased return on income comes on larger base incomes, meaning that in real dollar terms, the income gains made by those with at least a college degree are much larger than those without.
+
+```{r "Income gains raw dollars"}
+educ.data[year %in% c(as.Date("2010-01-01"), as.Date("2014-01-01")), .( inc = weighted.mean(PINCP, PWGTP)), .(age = round_any(AGEP, 5), year, eduStat)][order(eduStat, age, year)][, .(diff = round(inc-shift(inc, n = 1, type = "lag"), 2), year), .(age, eduStat)][year == as.Date("2014-01-01"),] %>% 
+    ggplot(aes(x = age, y = diff, color = eduStat)) +
+    geom_line() +
+    geom_hline(yintercept = 0, color = "black", size = 0.7) +
+    ggtitle("2014 Income level Relative to 2010 Income",
+            "Individuals with at least a college education saw larger income gains over the period than those without") +
+    scale_color_hue("Education", labels = edu_labels) +
+    scale_x_continuous("Age", breaks = seq(20,65,5), limits = c(20, 65)) +
+    scale_y_continuous("2014 USD", label = dollar, breaks = seq(-3000, 9000, 3000)) +
+    labs(caption = "Simeon Markind")
+```
+
+These charts show in part, the large income gains seen with increasing levels of education, the only area with significant income gains in terms of raw dollars are middle age and older holders of at least a college degree. Individuals with less than a college degree saw, on average, a net decrease of income.
+-->
+
+<!-- Mobility by education level -->
+
+```{r "Mobility Data setup", results="hide"}
+## Start by seeing who is actually moving in/around the state
+mobility.data <- filter.data[!is.na(race) & !is.na(sex) & !is.na(eduStat), .(county, Occ, PUMA00, PUMA10, race, sex, age, eduStat, year, PINCP, PWGTP, mobility)]
+# for MIGS, NA means didn't move, 6 means moved within CA, -9 is NA
+# a number greater than 6 is outside of CA. 
+# a three digit number is outside of the USA
+
+```
+
+```{r "mobility by education level"}
+mobility.data[!is.na(eduStat),
+              .(pop = sum(PWGTP), inc = weighted.mean(PINCP, PWGTP)),
+              .(eduStat, mobility)][, .(perc = pop/sum(pop)*100, eduStat), .(mobility)] %>% 
+    ggplot(aes(x = mobility, y = perc, fill = factor(eduStat,
+                                                     levels = c("Post-Graduate", "Bachelors", "Associates", "HS Diploma", "No HS Diploma")))) +
+    geom_bar(stat = "identity", position = "stack", color = "black") +
+    ggtitle("Educational Makeup by Mobility Status",
+            "A larger fraction of mover's from outside of the state are at least\nbachelors degree holders than those who either did not move or came from within CA.") +
+    scale_y_continuous("Percentage") +
+    scale_fill_hue("Education", labels = edu_labels) +
+    scale_x_discrete("Mobility Status") +
+    labs(caption = "Simeon Markind")
+```
+
+We can see from this chart that people with more education are more likely to move greater distances. The "In US" and "Foreign" categories represent on average, further moves distance wise than the "In State" or "Non-movers" categories, (especially since Non-movers do not move at all). People who move from further away tend to be more highly educated than average, with over 50% of people moving to California from outside of the state holding at least a Bachelors degree.
+
+```{r "Breakout of Mobility within Education"}
+mobility.data[!is.na(eduStat),
+              .(pop = sum(PWGTP)),
+              .(eduStat, mobility)][, .(perc = round(pop/sum(pop), 4)*100, mobility),
+                                    .(eduStat)] %>% 
+    dcast(mobility ~ factor(eduStat, levels = c("Post-Graduate", "Bachelors", "Associates", "HS Diploma", "HS-no Diploma", "No HS", "None")), value.var = "perc") %>% 
+    new_kable(col.names = c("Mobility", "Post-Graduate",
+                            "Bachelors", "Associates", "HS Diploma",
+                            "No HS Diploma"))
+```
+
+It is not paticularly surprising to see that people with higher levels of education are more mobile as they are in demand in more specialized areas and move to where those opportunities are. However, the percentage of people who do not move is quite similar in each category, unsurprising since this analysis looks at the full age range and people are less likely to be mobile as they get older and establish careers and families. 
+
+If we restrict our sample to only look at younger individuals, we, unsurpisingly, see that overall levels of mobility increase, only 68% of post-graduate obtaining individuals twenty to thirty-five report not moving, compared to an overall average of 84%. 
+
+```{r "Mobility of Young adults",}
+mobility.data[!is.na(eduStat) & age %in% c("21-25", "26-30", "31-35"),
+              .(pop = sum(PWGTP)),
+              .(eduStat, mobility)][, .(perc = round(pop/sum(pop), 4)*100, mobility),
+                                    .(eduStat)] %>% 
+    dcast(mobility ~ factor(eduStat, levels = c("Post-Graduate", "Bachelors", "Associates", "HS Diploma", "HS-no Diploma", "No HS", "None")), value.var = "perc") %>% 
+    new_kable(caption = "Mobility of people age 20-35",
+              col.names = c("Mobility", "Post-Graduate",
+                            "Bachelors", "Associates", "HS Diploma",
+                            "No HS Diploma"))
+
+```
+
+<!-- Breakdown of all movers to the Bay Area -->
+
+
+```{r "Bay Area Movers",}
+bay_data <- mobility.data[!is.na(eduStat) & county %in% sf_counties & mobility != "Non-movers", .(inc = weighted.mean(PINCP, PWGTP),
+                pop = sum(PWGTP)), .(sex, race, eduStat)][,
+                .(perc = round(pop/sum(pop),4)*100,
+                  sex, race, eduStat = factor(eduStat,
+                                           levels = edu_breaks))]
+
+bay_table <- bay_data %>%
+    # ggplot(aes(x = eduStat, y = perc, color = race, 
+    #            alpha = sex)) +
+    # geom_point(size = 3, position = "jitter") +
+    # scale_alpha_discrete("Gender", range = c(0.5, 1))
+    dcast(sex + race ~ eduStat, value.var = "perc") %>%
+    new_kable(caption = "Bay Area Movers",
+              col.names = c("Gender", "Race", edu_breaks))
+```
+
+```{r "Young Bay Area Movers", results="hide"}
+young_bay_data <- mobility.data[!is.na(eduStat) & age %in% c("21-25", "26-30", "31-35") & !is.na(eduStat) & county %in% c("San Francisco") & mobility != "Non-movers", .(inc = weighted.mean(PINCP, PWGTP),
+                pop = sum(PWGTP)), .(sex, race, eduStat)][,
+                .(perc = round(pop/sum(pop),4)*100,
+                  sex, race, eduStat = factor(eduStat,
+                                              levels = edu_breaks))]
+# %>% dcast(sex + race ~ eduStat, value.var = "perc") %>% 
+#     new_kable(caption = "Bay Area Movers",
+#               col.names = c("Gender", "Race", edu_breaks))
+```
+
+In terms of overall mobility to the Bay area - which I am defining as Alameda, Contra Costa, Marin, Napa, San Francisco, San Mateo, Santa Clara, Solano, and Sonoma Counties - the two largest groups were white men and women with a Bachelors degree only. white women with a Bachelors degree accounted for 9.99% of all movers while the corresponding men accounted for slightly less of the overall total at 9.85% of movers. When looking at migration to San Francisco County proper, instead of the the bay area as a whole, and restricting the sample to only those aged 21-35, the percentage of white men and women with a Bachelors degree only rose. White men with either a Bachelors of Post-Graduate degree accounted for 29.9% of all movers, corresponding women accounted for 27.4% of all movers. While the myth of San Francisco as a destination only for educated (white) males is not fully correct, as white women make up almost as a large a segment of total movers to the area, the city sees a massive overrepresentation of the highly educated compared to the overall US population. Over 86% of people who moved to San Francisco county had a Bachelors degree or higher. Contrast that with the Bay Area as a whole, where 56% of people who moved in had the same degree of education. 
+
+
+```{r "Bay Area Table"}
+bay_table
+```
+
+The LA area - Los Angeles, Orange, Riverside, and San Bernardino counties - on the other had, does not see such large disparity in terms of in migration as the Bay Area does with respect to educational attainment. Only 38.2% of movers to the LA area had either a Bachelors or Post-Graduate degree, far less than the Bay Area saw. 
+
+```{r "LA movers"}
+la_data <- mobility.data[!is.na(eduStat) & !is.na(eduStat) & county %in% la_counties & mobility != "Non-movers", .(inc = weighted.mean(PINCP, PWGTP),
+                pop = sum(PWGTP)), .(sex, race, eduStat)][,
+                .(perc = round(pop/sum(pop),4)*100,
+                  sex, race, eduStat = factor(eduStat,
+                                              levels = edu_breaks))]
+
+la_table <- la_data %>%
+    dcast(sex + race ~ eduStat, value.var = "perc") %>%
+    new_kable(caption = "LA Movers",
+              col.names = c("Gender", "Race", edu_breaks))
+
+la_table
+```
+
+<!-- Maps showing breakdown of education level in different areas and income in different areas -->
+
+This map shows the average concentration of education for adults in California ages 18 - 65 for the three year period of 2012-2014.
+
+```{r "Concentration of Education", fig.height= 7, fig.width=6}
+map_data[!is.na(eduStat), .(pop = sum(PWGTP)), .(PUMA10, eduStat)][,
+        .(perc = round(pop/sum(pop),3)*100, eduStat), .(PUMA10)][eduStat %in% c("Bachelors", "Post-Graduate"), .(percent = sum(perc)), .(PUMA10)] %>% 
+    left_join(pumas.points, by = c("PUMA10" = "id")) %>% 
+    ggplot(aes(x = long, y = lat, fill = percent)) +
+    geom_polygon(aes(group = group), color = "black") +
+    coord_map() +
+    ggtitle("Percentage with at least a Bachelors Degree",
+            "2012-2014 average, adults 18-65") +
+    scale_fill_viridis("", limits = c(10, 80)) +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("", breaks = NULL) +
+    scale_y_continuous("", breaks = NULL)
+    
+```
+
+
+```{r "SF percentage with at least college"}
+map_data[!is.na(eduStat), .(pop = sum(PWGTP)), .(PUMA10, eduStat)][,
+        .(perc = round(pop/sum(pop),3)*100, eduStat), .(PUMA10)][eduStat %in% c("Bachelors", "Post-Graduate"), .(percent = sum(perc)), .(PUMA10)] %>% 
+    left_join(pumas.points, by = c("PUMA10" = "id")) %>% 
+    ggplot(aes(x = long, y = lat, fill = percent)) +
+    geom_polygon(aes(group = group), color = "black") +
+    coord_map(xlim = SF.xlim, ylim = SF.ylim) +
+    ggtitle("Adults 18-65 with at least a Bachelors Degree",
+            "2012-2014 average") +
+    scale_fill_viridis("Percentage") +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("", breaks = NULL) +
+    scale_y_continuous("", breaks = NULL)
+```
+
+```{r "LA with at least college"}
+map_data[!is.na(eduStat), .(pop = sum(PWGTP)), .(PUMA10, eduStat)][,
+        .(perc = round(pop/sum(pop),3)*100, eduStat), .(PUMA10)][eduStat %in% c("Bachelors", "Post-Graduate"), .(percent = sum(perc)), .(PUMA10)] %>% 
+    left_join(pumas.points, by = c("PUMA10" = "id")) %>% 
+    ggplot(aes(x = long, y = lat, fill = percent)) +
+    geom_polygon(aes(group = group), color = "black") +
+    coord_map(xlim = LA.xlim, ylim = LA.ylim) +
+    ggtitle("Adults 18-65 with at least a Bachelors Degree",
+            "2012-2014 average") +
+    scale_fill_gradient("Percentage", low = "blue", high = "orange") +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("", breaks = NULL) +
+    scale_y_continuous("", breaks = NULL)
+```
+

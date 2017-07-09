@@ -1,8 +1,10 @@
+rm(list = ls())
 library(data.table)
 library(bit64)
 library(lubridate)
 library(plyr)
 library(stringr)
+
 
 ## Creating a function to find standard deviations of weighted variables
 weighted.sd <- function(vals, weight, na.rm = T){
@@ -123,10 +125,14 @@ filter.data[, year := substr(SERIALNO, 1,4)] #inserting a character vector
 filter.data[, ADJINC := ADJINC/1000000.0]
 ## Turning integer columns to numeric so that we do not get
 ## integer overflow errors
-filter.data[, lapply(.SD, as.numeric, na.omit = T),
-            .SDcols = c("INTP", "OIP", "PAP", "RETP",
-                        "SEMP", "SSIP", "SSP", "WAGP",
-                        "PERNP")]
+cols <- c("INTP", "OIP", "PAP", "RETP",
+           "SEMP", "SSIP", "SSP", "WAGP",
+            "PERNP")
+
+filter.data[, c("INTP", "OIP", "PAP", "RETP",
+           "SEMP", "SSIP", "SSP", "WAGP",
+            "PERNP") := lapply(.SD, as.numeric, na.omit = T),
+            .SDcols = cols]
 ## Adjusting the necessary columns by ADJINC
 
 filter.data[, `:=`(INTP = INTP*ADJINC,
@@ -216,6 +222,33 @@ filter.data[is.na(MIGPUMA10), mig10Stat := "Same Location"]
 filter.data[MIGPUMA10 == 1, mig10Stat := "Not in US"]
 filter.data[MIGPUMA10 > 1, mig10Stat := "Moved within US"]
 filter.data[MIGPUMA10 == -9, mig10Stat := NA]
+
+filter.data[, year := as.Date(paste0(year, "-01-01"), 
+                              format = "%Y-%m-%d")]
+
+# for MIGS, NA means didn't move, 6 means moved within CA, -9 is NA
+# a number greater than 6 is outside of CA. 
+# a three digit number is outside of the USA
+filter.data[, mobility := as.character(NA)]
+filter.data[year <= as.Date("2011-01-01") & 
+                (is.na(MIGSP05) | MIGSP05 == -9), 
+            mobility := "Non-movers"]
+
+filter.data[year <= as.Date("2011-01-01") & (MIGSP05 == 6),
+              mobility := "In State"]
+filter.data[year <= as.Date("2011-01-01") & MIGSP05 != 6 &
+                  MIGSP05 < 100, mobility := "In US"]
+filter.data[year <= as.Date("2011-01-01") & MIGSP05 >= 100,
+              mobility := "Foreign"]
+
+filter.data[year > as.Date("2011-01-01") & (is.na(MIGSP12) | MIGSP12 == -9), mobility := "Non-movers"]
+filter.data[year > as.Date("2011-01-01") & (MIGSP12 == 6),
+              mobility := "In State"]
+filter.data[year > as.Date("2011-01-01") & MIGSP12 != 6 &
+                  MIGSP05 < 100, mobility := "In US"]
+filter.data[year > as.Date("2011-01-01") & MIGSP12 >= 100,
+              mobility := "Foreign"]
+
 
 ## RAC1P - recoded race code
 ## 1 -> "White"
@@ -416,9 +449,6 @@ filter.data[,Occupation12 := NULL]
 ## We will not play around with the SOC codes as
 ## those are almost identical to the OCC codes
 filter.data[, Soc := ifelse(!is.na(SOCP10), SOCP10, SOCP12)]
-
-filter.data[, year := as.Date(paste0(year, "-01-01"), 
-                              format = "%Y-%m-%d")]
 
 filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
 
