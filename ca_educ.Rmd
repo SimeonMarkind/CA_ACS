@@ -24,6 +24,7 @@ library(maptools)
 library(mapproj)
 library(stringr)
 library(viridis)
+library(gridExtra)
 
 new_kable <- function(...){
     kable(..., format.args = list(big.mark = ","))
@@ -80,13 +81,15 @@ theme_set(theme.simeon)
 #Create a labeling vector for education levels
 edu_labels <- c("Post-Graduate" = "Post\nGraduate", 
                 "Bachelors" = "Bachelors", 
-                "Associates" = "Associates", 
+                "Associates" = "Associates",
+                "Some College" = "Some\nCollege",
                 "HS Diploma" = "HS\nDiploma", 
                 "No HS Diploma" = "No-HS\nDiploma")
 
 edu_breaks <- c("Post-Graduate", 
                 "Bachelors", 
-                "Associates", 
+                "Associates",
+                "Some College",
                 "HS Diploma", 
                 "No HS Diploma")
 
@@ -107,7 +110,7 @@ la_counties <- c("Los Angeles", "Orange", "Riverside", "San Bernardino")
 educ.data <- filter.data[,.(year, SCHL, SCH, PUMA10, age, citizen, PINCP, PWGTP,
                              empStat, county, AGEP, WKHP, 
         eduStat = factor(eduStat, #re-ordering for charting
-                         levels = c("Post-Graduate", "Bachelors", "Associates", "HS Diploma", "No HS Diploma")),
+                         levels = c("Post-Graduate", "Bachelors", "Associates", "Some College", "HS Diploma", "No HS Diploma")),
                              race, Hispanic, sex, Occ)]
 educ.data[, year := as.Date(year, "%Y-%m-%d")]
 educ.data[, nage := round_any(AGEP, 7)]
@@ -130,14 +133,14 @@ educ.data[, .(count = sum(PWGTP)), .(AGEP = round_any(AGEP,5), eduStat)][, .(per
     scale_fill_discrete("Education", labels = edu_labels)
 ```
 
-California seems to be a well educated state, with roughly 40% of the population over 25 holding an Associate's degree or higher. Interestingly this percentage seems relatively flat for those under age 65, despite the growing segment of the US population attending college. This could be due to people starting college and not completing their degrees, resulting in the population segment with a degree remaining constant despite enrollment increasing overall. Luckily it is possible for us to test this as the ACS breakdown of education includes the option of having attended college but not completing a degree.
+California seems to be a well educated state, with roughly 40% of the population over 25 holding an Associate's degree or higher and a majority of individuals pursuing at least some education post high school. Interestingly this percentage seems relatively flat for those under age 65, despite the growing segment of the US population attending college. This could be due to people starting college and not completing their degrees, resulting in the population segment with a degree remaining constant despite enrollment increasing overall.
 
-```{r "Population with some college", results="show"}
-educ.data[SCH == 1, .(age = round_any(AGEP, 3), PWGTP, SCHL)][,
+```{r "Population with some college", fig.height=4}
+educ.data[SCH == 1 & AGEP >= 25, .(age = round_any(AGEP,3), PWGTP, SCHL)][,
             .(pop = sum(PWGTP)), .(age, SCHL)][, .(SCHL, perc = (pop/sum(pop)*100)), .(age)][SCHL %in% c(18, 19), .(val = sum(perc)),
             .(age)] %>% 
     ggplot(aes(x = age, y = val)) +
-    geom_line() +
+    geom_line(size = 1) +
     ggtitle("Percent of population with some\ncollege but no degree") +
     labs(caption = "Simeon Markind") +
     scale_y_continuous("Percent", limits = c(0, 30),
@@ -145,7 +148,22 @@ educ.data[SCH == 1, .(age = round_any(AGEP, 3), PWGTP, SCHL)][,
     scale_x_continuous("Age", breaks = seq(20, 65, 3))
 ```
 
-As we can see from the above chart, about 20% of the adult population in California above the age of 25 attended college without receiving a degree. This analysis controls for people who are no longer attending school so that those actively taking courses but not yet having a degree are not shown. (This mainly impacts the 18-24 age range). Since for this analysis, I am top coding educational attainment based on highest degree received, this entire group is considered at the same level as those to only graduate high school without attending any college courses. It is unclear how the percentage of adults with only some college looks when compared over time, but it is notable that this percentage seems to be trending upwards. As the population of the United States is increasing this corresponds with a larger number of people who attended at least one college course but do not have a degree. Perhaps college completion is a more important statistic than mere college enrollment.
+As we can see from the above chart, about 20% of the adult population in California above the age of 25 attended college without receiving a degree. This analysis controls for people who are no longer attending school so that those actively taking courses but not yet having a degree are not shown. (This mainly impacts the 18-24 age range). It is unclear how the percentage of adults with only some college looks when compared across time periods, but it is notable that this percentage seems to be trending upwards. As the population of the United States is increasing this corresponds with a larger number of people who attended at least one college course but do not have a degree. Further analysis of individuals in this category is beyond the scope of this analysis, but it is likely that these individuals suffer from the debt loads associated with college attendance without receiving the wage and income benefits seen for degree holders. It is worth noting that this percentage is rising for younger adults, indicating that a larger segment of the population is now undertaking college education without completing it. There are many factors contributing to the number of individuals to attend college without graduating, but the increased focus on college eduation, and general push for all individuals to go to college is likely pushing marginal students, who may not have attended college a decade or two ago into college. Luckily, as the below graphic shows, there does appear to be return to taking college courses even without reciving a degree as these individuals show higher income than those individuals with only the high school degree.
+
+```{r "Some College vs. HS", fig.height=4}
+educ.data[WKHP >= 35 & SCHL %in% c(16, 17, 18, 19), .(edu = ifelse(SCHL %in% c(18, 19), "Some College", "HS Diploma"), PINCP, age = round_any(AGEP, 3), PWGTP)][, .(income = weighted.mean(PINCP, PWGTP)), .(edu, age)] %>% 
+    ggplot(aes(x = age, y = income, color = edu)) +
+    geom_line() +
+    ggtitle("Attending college even without completing\na degree shows positive returns") +
+    scale_y_continuous("Income", labels = dollar, 
+                       limits = c(0, 70000),
+                       breaks = seq(0, 70000, 10000)) +
+    scale_x_continuous("Age", breaks = seq(20, 65, 3)) +
+    scale_color_discrete("Education", labels = c("HS Diploma" = "High\nSchool", "Some College" = "Some\nCollege")) +
+    labs(caption = "Full-time workers (35+ hrs per week)\nSimeon Markind")
+```
+
+
 
 We can also see how each level of education attainment is broken down by age, we superimpose the mean salary data for each segment.
 
@@ -243,6 +261,8 @@ educ.data[, .(inc = weighted.mean(PINCP, PWGTP)),
     scale_color_hue("Education", labels = edu_labels)
 ```
 
+The most striking things about this chart are two-fold firstly, the size of the gap between the income levels of those completing college compared with those who do not and the small size of the gap between those with Associates degrees and those with some college attendance but no degree. It is surprising how small of an increase in income students with an Associates degree obtain relative to those to attend college but do not receive a degree.
+
 <!-- Chart for the appendix, race, age education income levels -->
 
 ```{r "Average income by edu and age for each race"}
@@ -258,23 +278,6 @@ educ.data[, .(inc = weighted.mean(PINCP, PWGTP)),
                        labels = seq(20,75,5)) +
     scale_y_continuous("Income", labels = dollar) +
     scale_color_discrete("Education", labels = edu_labels)
-```
-
-Looking at the above we see that our pattern of increased education leading to increased income holds true across all races, although it is worth noting that the income for each education level is not the same across each race. Higher education attainment clearly corresponds to higher incomes for individuals, but those gains are not distributed evenly across the board. For example, White people with a bachelors degree on average make as much as peole in the Other and African American categories with a PhD. 
-
-```{r "White Bachelors vs Other and African American with Phd"}
-educ.data[eduStat %in% c("Post-Graduate", "Bachelors"), .(inc = weighted.mean(PINCP, PWGTP)),
-          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
-    ggplot(aes(x = age, y = inc, color = race, linetype = eduStat)) +
-    geom_line(size = 0.8) +
-    ggtitle("Differentiation in average income for highly educated individuals", "No limit on hours worked per week") +
-    labs(caption = "Simeon Markind") +
-    scale_x_continuous("Age", breaks = seq(20,75,5),
-                       labels = seq(20,75,5)) +
-    scale_y_continuous("Income", labels = dollar) +
-    scale_color_discrete("Race", labels = race_labels) +
-    scale_linetype_discrete("Education", labels = c("Post\nGraduate",
-                                                    "Bachelors"))
 ```
 
 The above charts point to a substantial differentiation in the income gains felt by different people with the same level of educational attainment, but we cannot ascribe the entirety of the difference to racial factors. Let's take a look at how the two plots above differ if we control for people who work full-time, 35 or more hours per week.
@@ -294,14 +297,31 @@ educ.data[WKHP >= 35 & PINCP > 0, .(inc = weighted.mean(PINCP, PWGTP)),
     scale_color_discrete("Education", labels = edu_labels)
 ```
 
-Here we see a few notable changes from the version above that did not control for hours worked: firstly there seems to be a spike for African Americans without a high school diploma at the age of 65. This appears to be in large part due to a single observation with an income of \$287,200 in the Healthcare field and a weight of 13, likely either a miscode or an outlier. Let's take a look at our second chart showing only those who are highly educated and see how the trends change.
+Here we see a few notable changes from the version above that did not control for hours worked: firstly there seems to be a spike for African Americans without a high school diploma at the age of 65. This appears to be in large part due to a single observation with an income of \$287,200 in the Healthcare field and a weight of 13, likely either a miscode or an outlier.
 
-```{r "Full time working highly educ income by race"}
+Looking at the above we see that our pattern of increased education leading to increased income holds true across all races, although it is worth noting that the income for each education level is not the same across each race. Higher education attainment clearly corresponds to higher incomes for individuals, but those gains are not distributed evenly across the board. For example, White people with a bachelors degree on average make as much as people in the Other and African American categories with a PhD. The below charts show income differentiation for highly educated individuals both with and without controlling for hours worked.
+
+```{r "White Bachelors vs Other and African American with Phd"}
+educ.data[eduStat %in% c("Post-Graduate", "Bachelors"), .(inc = weighted.mean(PINCP, PWGTP)),
+          .(age = round_any(AGEP, 5), eduStat, race)] %>% 
+    ggplot(aes(x = age, y = inc, color = race, linetype = eduStat)) +
+    geom_line(size = 0.8) +
+    ggtitle("Differentiation in average income for highly educated individuals", "No limit on hours worked per week") +
+    labs(caption = "Simeon Markind") +
+    scale_x_continuous("Age", breaks = seq(20,75,5),
+                       labels = seq(20,75,5)) +
+    scale_y_continuous("Income", labels = dollar) +
+    scale_color_discrete("Race", labels = race_labels) +
+    scale_linetype_discrete("Education", labels = c("Post\nGraduate",
+                                                    "Bachelors"))
+```
+
+```{r "Full time working highly educ income by race", fig.height=4}
 educ.data[PINCP > 0 & WKHP >= 35 & eduStat %in% c("Post-Graduate", "Bachelors"), .(inc = weighted.mean(PINCP, PWGTP)),
           .(age = round_any(AGEP, 5), eduStat, race)] %>% 
     ggplot(aes(x = age, y = inc, color = race, linetype = eduStat)) +
     geom_line(size = 0.8) +
-    ggtitle("Differentiation in average income for highly educatied individuals", "35+ hours worked per week and income > 0") +
+    ggtitle("Differentiation in average income for highly educated individuals", "35+ hours worked per week and income > 0") +
     labs(caption = "Simeon Markind") +
     scale_x_continuous("Age", breaks = seq(20,75,5),
                        labels = seq(20,75,5)) +

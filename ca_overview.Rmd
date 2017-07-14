@@ -10,19 +10,48 @@ Information on the accuracy of the data can be found [here]("http://www2.census.
 
 Data downloaded from: [ACS PUMS page]("https://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?pid=ACS_pums_csv_2010_2014&prodType=document")
 
-```{r setup}
+```{r "theme and setup"}
 knitr::opts_chunk$set(echo=FALSE, include = TRUE, warning = FALSE,
-                      fig.align = "center")
+                      fig.align = "center", message = FALSE,
+                      cache = T)
+
+
+
+library(tidyverse)
+library(plyr)
 library(data.table)
-library(ggplot2)
 library(knitr)
+library(bit64)
 library(scales)
-library(plotly)
-#filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+library(maptools)
+library(mapproj)
+library(stringr)
+library(viridis)
+library(gridExtra)
 
-```
+SF.xlim <- c(-123.1, -121.5)
+SF.ylim <- c(37, 38.2)
+LA.xlim <- c(-119, -116.7)
+LA.ylim <- c(33, 34.5)
 
-```{r theme setup}
+new_kable <- function(...){
+    kable(..., format.args = list(big.mark = ","))
+}
+
+# Read the raw data for this section
+
+filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+map_data <- fread("C:/Users/Owner/Documents/R/PUMS/map_data.csv")
+
+
+# Set up the maps
+path <- "C:/Users/Owner/Documents/R/ACS/PUMAS/"
+
+pumas <- readShapePoly(paste0(path,"cb_2015_06_puma10_500k.shp"), 
+                       IDvar = "PUMACE10")
+
+pumas.points <- data.table(fortify(pumas))
+
 theme.simeon <- theme_gray() +
     theme(axis.title = element_text(family = "serif",
                                     size = 14,
@@ -50,118 +79,140 @@ theme.simeon <- theme_gray() +
                                       size = 12,
                                       color = "blue4",
                                       face = "italic"),
-          panel.background = element_rect(fill = "grey90",
+          legend.key.size = unit(1.2, "lines"),
+          legend.key.height = unit(0.8, "cm"),
+          panel.background = element_rect(fill = "grey92",
                                           color = "blue4"))
 
 theme_set(theme.simeon)
-                                    
+
+theme_cali <- theme.simeon %+replace%
+       theme(axis.title = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank())
+
+#Create a labeling vector for education levels
+edu_labels <- c("Post-Graduate" = "Post\nGraduate", 
+                "Bachelors" = "Bachelors", 
+                "Associates" = "Associates",
+                "Some College" = "Some\nCollege",
+                "HS Diploma" = "HS\nDiploma", 
+                "No HS Diploma" = "No-HS\nDiploma")
+
+edu_breaks <- c("Post-Graduate", 
+                "Bachelors", 
+                "Associates",
+                "Some College",
+                "HS Diploma", 
+                "No HS Diploma")
+
+race_labels = c("White" = "White",
+                "Other" = "Other",
+                "Asian" = "Asian",
+                "African American" = "African\nAmerican")
+
+sf_counties <- c("Sonoma", "Napa", "Solano", "Marin", "San Francisco",
+                 "San Mateo", "Santa Clara", "Alameda",
+                 "Contra Costa")
+
+la_counties <- c("Los Angeles", "Orange", "Riverside", "San Bernardino")                                    
 ```
 
 # Introduction
 
-Every year the census burea releases 5 year aggregates public use microdata series, (PUMS), of American Community Survey, (ACS), data. Using the California state level file we'll examine trends in income inequality over the five year period 2010-2014. 
+The largest state in the United States, California is home to over 39 million people, well over 10% of the United States' total. Using one of the Public Use Microdata Series (PUMS) of the American Community Survey (ACS) released by the census bureau we can explore trends in income inequality over the five year period 2010-2014. Much ink has been spilled over the perceived wage gap beween men and women, this analysis will look at differences between the genders but differs from much of the academic research in several notable ways. Firstly, I mainly look at income instead of wages because income is a more all-encompassing measure. Secondly, in addition to looking at gaps between the genders, I also look at racial income disparity as well as education level income differentiation. I hope that this document serves to show an overall picture of the state of California, (and likely the US as well), in terms of income differentiation.
 
-```{r Gender Mean data}
-## Will want to use character values to make gender more easily explicit
-filter.data[, sex := ifelse(SEX == 1, "Male", "Female")]
+My motivation in writing this stemmed from a desire to answer two questions: 1. How much of the income gap between men and women could be explained by other factors? (This question led to many more questions and is quite difficult to answer). 2. Is everyone moving to the Bay Area a highly educated young person? (This one I believe I answered).
 
-plot.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP, 
-                                                  na.rm = T), 
-                             mWage = weighted.mean(WAGP, PWGTP,
-                                                   na.rm = T)),                 .(year, sex)]
-
-```
+We will start by looking at the first question as this is both more interesting and more difficult to answer. Below is a plot showing the average income and wages for men and women over the sample period in the state. Note that the income and wage values were all inflated by the adjustment values provided by the census bureau so that income could be compared across years.
 
 ```{r gender mean plot}
-ymax <- max(plot.data[,.(mInc, mWage)])
-
-genderMean.plot <- ggplot(plot.data, 
-                          aes(x = year,
+filter.data[, .(income = weighted.mean(PINCP, PWGTP),
+                wages = weighted.mean(WAGP, PWGTP)),
+            .(sex, age = round_any(AGEP, 5))]%>% 
+    melt(id.vars = c("age", "sex")) %>% 
+    ggplot(aes(x = age, y = value,
                               color = sex,
-                              group = sex)) +
-    geom_line(aes(y = mInc, linetype = "mInc"), size = 1.3) +
-    geom_line(aes(y = mWage, linetype = "mWage"), size = 1.3) +
+                              linetype = variable)) +
+    geom_line(size = 1) +
     scale_linetype_discrete(name = "Measure", 
                             labels = c("Income", "Wages")) +
     scale_color_discrete(name = "Gender") +
     ggtitle(label = "2010-2014 Income and Wages in CA") +
     labs(caption = "Simeon Markind") +
-    scale_y_continuous(name = "2014 USD", limits = c(0, 1.1*ymax),
-                       breaks = pretty(c(0,1.1*ymax),5),
-                       labels = dollar) +
-    scale_x_discrete(name = "Year")
-                                    
-
-genderMean.plot
-```
-
-```{r Race Mean data}
-raceMean.data <- filter.data[, .(mInc = weighted.mean(PINCP, PWGTP, 
-                                                  na.rm = T), 
-                             mWage = weighted.mean(WAGP, PWGTP,
-                                                   na.rm = T)),                 .(year, race)]
+    scale_y_continuous(name = "2014 USD", labels = dollar,
+                       breaks = seq(0, 70000, 10000),
+                       limits = c(0, 70000)) +
+    scale_x_continuous(name = "Age", breaks = seq(20, 65, 5))
 
 ```
 
-```{r Race Mean plot}
-ymax <- max(raceMean.data[, .(mInc, mWage)])
+This plot shows the raw weighted means of wage and income for men and women in California. Although wages drop off notably after the mid-fifties, notice that income remains much more level. This gap increases with age and is part of the reason I focus mainly on income throughout as opposed to wages alone. But the pay gap for genders is not the only way to look at income disparity, the income gap for people of different races is just as, if not more, pronounced than the gender income gap.
 
-raceMean.plot <- ggplot(raceMean.data, 
-                          aes(x = year,
-                              color = race,
-                              group = race)) +
-    geom_line(aes(y = mInc, linetype = "mInc"), size = 1.3) +
-    geom_line(aes(y = mWage, linetype = "mWage"), size = 1.3) +
+```{r "Race Mean plot"}
+filter.data[, .(income = weighted.mean(PINCP, PWGTP),
+                wages = weighted.mean(WAGP, PWGTP)),
+            .(race, age = round_any(AGEP, 5))] %>% 
+    melt(id.vars = c("race", "age")) %>% 
+ggplot(aes(x = age, y = value, color = race, linetype = variable)) +
+    geom_line(size = 1) +
     scale_linetype_discrete(name = "Measure", 
                             labels = c("Income", "Wages")) +
-    scale_color_discrete(name = "Race") +
+    scale_color_discrete(name = "Race", labels = race_labels) +
     ggtitle(label = "2010-2014 Income and Wages in CA") +
     labs(caption = "Simeon Markind") +
-    scale_y_continuous(name = "2014 USD",
-                       breaks = pretty(c(0, 1.1*ymax), 5),
-                       limits = c(0, 1.1*ymax),
+    scale_y_continuous(name = "2014 USD", limits = c(0, 70000),
+                       breaks = seq(0, 70000, 10000),
                        labels = dollar) +
-    scale_x_discrete(name = "Year")
+    scale_x_continuous(name = "Age", breaks = seq(20, 65, 5))
                                     
 
-raceMean.plot
 ```
+
+Yet, both of these charts, while they do tell us something important about income disparity in California, are by no means the whole story. In fact, I would argue that they are in many ways quite misleading as these charts do not control for anything. For example, one would expect different incomes for people who work differing numbers of hours per week. As we will see when we look deeper in the gender data, there is a notable discrepancy in the number of hours worked per week for men and women. Similarly, education play a very large part in the income picture. The below chart, instead of analyzing income differentiation by race or gender looks at income differentiation by education level. One can clearly see just how high the returns to education are. Forty-five year olds with a post-graduate degree have income about three times that of their peers with only an Associates degree, and, surprisingly, almost 1.5 times that of peers who did not continue beyond a Bachelors degree.
 
 ```{r Educ Mean Data}
-educMean.data <- filter.data[!is.na(eduStat), 
-                             .(mInc = weighted.mean(PINCP, PWGTP, 
-                                                  na.rm = T), 
-                             mWage = weighted.mean(WAGP, PWGTP,
-                                                   na.rm = T)),                 .(year, eduStat)]
-
-educMean.data <- melt(educMean.data, id.vars = c("year", "eduStat"))
-
-educMean.data[, year := as.Date(paste0(year,"-01-01"), 
-                                format = "%Y-%m-%d")]
-```
-
-```{r Educ Mean Plot}
-
-ymax <- max(educMean.data$value)
-
-educMean.plot <- ggplot(data = educMean.data, 
-                        aes(x = year, y = value, color = eduStat,
-                            linetype = variable)) +
-    geom_line(size = 1.3) +
-    ggtitle(label = "2010-2014 Income and Wages in California",
-            subtitle = "Education Average") +
-    scale_y_continuous(name = "2014 USD", limits = c(0, 1.1*ymax),
-                       labels = dollar) +
-    scale_x_date(name = "Year") +
-    labs(caption = "Simeon Markind") +
-    scale_linetype_discrete(name = "Measure",
+filter.data[, .(income = weighted.mean(PINCP, PWGTP),
+                wages = weighted.mean(WAGP, PWGTP)),
+            .(eduStat, age = round_any(AGEP, 5))] %>% 
+    melt(id.vars = c("eduStat", "age")) %>% 
+ggplot(aes(x = age, y = value, color = eduStat, 
+           linetype = variable)) +
+    geom_line(size = 0.8) +
+    scale_linetype_discrete(name = "Measure", 
                             labels = c("Income", "Wages")) +
-    scale_color_discrete(name = "Education\n Attainment")
-
-educMean.plot
+    scale_color_discrete(name = "Education", labels = edu_labels,
+                         breaks = edu_breaks) +
+    ggtitle(label = "2010-2014 Income and Wages in CA") +
+    labs(caption = "Simeon Markind") +
+    scale_y_continuous(name = "2014 USD", limits = c(0, 120000),
+                       breaks = seq(0, 120000, 20000),
+                       labels = dollar) +
+    scale_x_continuous(name = "Age", breaks = seq(20, 65, 5))
 ```
 
-```{r Count for each Occ bin}
+Now, we do not view education based income differentiation in the same ways in which we view race or gender based income differentiation as one can actively change one's level of education. Note: as will be seen later, access to college, while it is still a problem for many in the country, is not the dam wall holding back the flood of wealth that many claim it to be. There is a much larger difference between holders of a Bachelors degree and individuals with "Some College" than there is between individuals to attend college without earning a degree and those who finished with their High School diploma. The bulk of the returns to college attendance come with completion of the degree, not from merely attending college. 
+
+For the state of California, the size of the population to attend college without earning a degree is roughly the same as the population with a Bachelors degree. This means that for each individual in the state to complete their degree, and reap the economic rewards therin, there is an individual who attended college but did not turn their tassle. 
+
+Additionally, wealth, and the higher incomes that go with it, are highly concentrated in California. Because of the way in which the ACS codes geographic locations, or PUMAs (Public Use Microdata Areas), mapping is done for only observations taken in the last three years of the sample. As would be expected, areas of high wealth are concentrated mainly in the two large urban centers of the state, Los Angeles and San Francisco with a secondary pocket of wealth in the Lake Tahoe region. Note that data used in the mapping is a restriced sample of observations ages 18-65. As will be seen, the concentration of income in a geographic sense has high correlation with other variables, such as education and even race. California is not segregated in the historical sense of the word, but throughout the state's geography, the word "average" has very different meanings.
+
+```{r "Average Income by PUMA"}
+map_data[, .(income = weighted.mean(PINCP, PWGTP)),
+         PUMA10][pumas.points, on = c("PUMA10" = "id")] %>% 
+    ggplot(aes(x = long, y = lat, fill = income, group = group)) +
+    geom_polygon(color = "black") +
+    scale_fill_viridis("Income", labels = dollar) +
+    coord_map() +
+    ggtitle("Mean income for California",
+            "PUMAs correspond to areas of at least 100,000 people") +
+    labs(caption = "Data for individuals age 18-65") +
+    theme_cali
+
+```
+
+
+```{r "Count for each Occ bin - Appendix"}
 ## See which are the most popular job fields by the recoded Occ bins
 OccBin.data <- filter.data[empStat != "Unemployed",
                            .(Occ, year, PWGTP)]
@@ -180,5 +231,32 @@ top6
 bottom6
 
 
+```
+
+So how much do women actually make compared to men?
+
+Is SF really being over-run by Bros?
+
+Regressions
+
+
+```{r "Pay Gap Calculations", include = F, eval=F}
+segments <- c(0, 10, 20, 30, 40, 50, 60, 100)
+labels <- c("Under 10", "10-20", "20-30", "30-40", "40-50", "50-60", "60 +")
+
+filter.data[WKHP > 0 & !is.na(WKHP), 
+            hours := cut(WKHP, breaks = segments, labels = labels)]
+
+data <- filter.data[!is.na(PINCP), .(count = sum(PWGTP), 
+                        inc = weighted.mean(PINCP, PWGTP), na.rm = T),
+          .(eduStat, race, age, Occ, sex, hours)][, .(count, inc, 
+                                               inc_sum = sum(inc), sex), .(eduStat, age, Occ, race, hours)][, .(count, eduStat, age, race, Occ, sex, hours, inc, inc_ratio = round(inc/(inc_sum-inc),5))][inc_ratio != Inf & inc_ratio != -Inf & inc_ratio > 0 & inc_ratio < 20,]
+
+[sex == "Female" & !is.na(inc_ratio) & !is.na(count) & inc_ratio < 1000 & inc_ratio > 0, .(avg_mean = weighted.mean(inc_ratio, count))]
+
+data[Occ == "Healthcare" & eduStat == "Post-Graduate" & race == "White",]
+
+write.csv(data, "inc_ratio.csv", row.names = F)
+                                                                                                                
 ```
 

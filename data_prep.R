@@ -198,7 +198,8 @@ filter.data[is.na(SCHL) | SCHL %in% c(1,2,3), eduStat := "No HS Diploma"]
 filter.data[SCHL %in% c(4,5,6,7,8), eduStat := "No HS Diploma"] #elementary
 filter.data[SCHL %in% c(9,10,11), eduStat := "No HS Diploma"] #middle
 filter.data[SCHL %in% c(12,13,14,15), eduStat := "No HS Diploma"]
-filter.data[SCHL %in% c(16,17, 18, 19), eduStat := "HS Diploma"]
+filter.data[SCHL %in% c(16,17), eduStat := "HS Diploma"]
+filter.data[SCHL %in% c(18, 19), eduStat := "Some College"]
 filter.data[SCHL == 20, eduStat := "Associates"]
 filter.data[SCHL == 21, eduStat := "Bachelors"]
 filter.data[SCHL %in% c(22,23,24), eduStat := "Post-Graduate"]
@@ -495,7 +496,7 @@ filter.data[!is.na(PUMA10), county := MCDC10[match(PUMA10,
                                                county_name]]
 
 ## Take a file we will use for mapping
-map_data <- filter.data[AGEP >= 18 & !is.na(PUMA10), .(sex, PUMA10, AGEP, race, PWGTP, 
+map_data <- filter.data[AGEP >= 18 & AGEP <= 65 & !is.na(PUMA10), .(sex, PUMA10, AGEP, race, PWGTP, 
                             eduStat, year, Occ, PINCP, WKHP)]
 
 map_data[, nage := round_any(AGEP, 5)]

@@ -68,7 +68,7 @@ start with overview looking at how men and women are sorting themselves
 across the state, first on the whole and then by age, (maybe include a map), to set the groundwork -->
 
 ```{r Gender data setup, results="hide"}
-filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
+#filter.data <- fread("C:/Users/Owner/Documents/R/PUMS/filterData.csv")
 
 #only include people with a non-zero income
 gender.data <- filter.data[, .(year, PUMA10, age, citizen, PINCP, PWGTP,
@@ -79,13 +79,12 @@ labels <- c("Under 10", "10-20", "20-30", "30-40", "40-50", "50-60", "60 +")
 
 gender.data[, hours := cut(WKHP, breaks = segments, labels = labels)]
 gender.data[, nage := round_any(AGEP, 5)]
-gender.data[, year := as.Date(year, format = "%Y-%m-%d")]
-
 
 ```
 
 <!-- So for our gender sample we have 1310536 people,
 -->
+We start out analysis with a deeper look at income differentiation by genders within the state of California. 
 
 For our data we have a sample of `r format(nrow(gender.data), big.mark=",")` observations with roughly 130,000 raw observation for each gender for each year, (roughly 2.7 million weighted observations per gender per year). 
 
@@ -111,15 +110,18 @@ salary.mean <- gender.data[empStat != "Unemployed", .(salary = weighted.mean(PIN
                 .(sex, age)][order(age, sex)]
 
 salary.mean <- dcast(salary.mean, age ~ ..., value.var = "salary")
-
+new_kable(salary.mean, col.names = c("Age", "Female", "Male"))
 ```
 
-So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. 
+So at first glance we see that women do seem to substantially make less than men, there were no rows in which women made more than men did, and we see a clear trend seeming to indicate that as people age the gender pay gap increases. However, this could be due to many factors: for example it could be that women are less educated than men, that women work less hours than men, that women work in fields or in jobs that pay everyone less, that women leave the workforce in a much greater percentage than men, or other causes. 
+
 
 ```{r "Density of Income by Gender"}
 bin_inc <- gender.data[empStat != "Unemployed", .(inc = weighted.mean(PINCP, PWGTP)), .(sex)]
 
-gender.data[empStat != "Unemployed", .(PINCP, PWGTP, sex)] %>% 
+gender.data[empStat != "Unemployed" & !is.na(PINCP) & !is.na(PWGTP),
+            .(PINCP, PWGTP, sex)] %>% 
+    na.omit() %>% 
     ggplot(aes(x = PINCP, fill = sex)) +
     geom_density(aes(weight = PWGTP/sum(PWGTP)), alpha = 0.5) +
     scale_x_log10("Income", breaks = 10^c(3, 4, 4.544068,
@@ -136,7 +138,25 @@ gender.data[empStat != "Unemployed", .(PINCP, PWGTP, sex)] %>%
 ```
 
 
-Let's take a look at some of these causes. First we will look at hours worked per week using the WKHP variable.
+Let's take a look at some of these causes. First we will look at education attainment, particularly acquisition of a college degree or higher.
+
+```{r "Percent of Population with college degree"}
+gender.data[AGEP >= 25, 
+            .(pop = sum(PWGTP)), .(age = round_any(AGEP, 5), 
+                                     sex, eduStat)][,
+              .(perc = pop/sum(pop), eduStat), 
+              .(sex, age)][eduStat %in% c("Bachelors", "Post-Graduate"),] %>%
+    ggplot(aes(x = age, y = perc, color = sex, linetype = eduStat)) +
+    geom_line(size = 0.8) +
+    scale_y_continuous(NULL, labels = percent,
+                       breaks = seq(0, 0.3, 0.05)) +
+    scale_x_continuous("Age", breaks = seq(25, 65, 5)) +
+    labs(color = "Gender", linetype = "Highest\nDegree",
+         caption = "Simeon Markind") +
+    ggtitle("Percentage of population with higher education")
+```
+
+So it is unlikely that educational achievement by itself plays a large part in the gender income gap as a larger percentage of women in the state than men hold Bachelors degrees! However, although holding a college degree is by itself highly correlative with higher income, the field of degree does make a difference. It is possible that women concentrate in lower paying degrees than men. This would mean that although a larger percentage of women hold degrees, they would still expect to have lower income as a result of major choice. 
 
 Restricting our sample to those without an NA value for hours worked per week our sample decreases our sample size to `r format(nrow(gender.data[!is.na(WKHP)]), big.mark = ",")`.
 
@@ -170,7 +190,7 @@ share.bars
 
 ```
 
-So we now see that, yes, as the number of hours per week increases men, make up a larger percentage of the total number of employees. Below we see that as the number of hours worked per week increases the average salary also increases, so the number of hours worked per week does help to explain a bit of the gender pay gap we saw above.
+So we now see that, yes, as the number of hours per week increases, men make up a larger percentage of the total number of employees. Below we see that as the number of hours worked per week increases the average salary also increases, so the number of hours worked per week does help to explain a bit of the gender pay gap we saw above.
 
 ```{r "hours per week table"}
 new_kable(hours.data[, .(salary = weighted.mean(PINCP, PWGTP)),
@@ -178,6 +198,28 @@ new_kable(hours.data[, .(salary = weighted.mean(PINCP, PWGTP)),
 ```
 
 Number of hours by itself will not fully explain income differentials, in addition to the number of hours worked, the field in which the person is employed will play a role in total income. One contributing factor to the income gap could be the fields in which each gender tends to work. For example, if women tend to work in lower paying industries and occupations than men, one would expect to see a gap on account of that. Let's now take a look at the fields that each gender tends to work in.
+
+Let's now revisit our line chart above showing holders of college and advanced degrees, this time looking only at observations to work full time, at least 35 hours per week.
+
+```{r "Full Time worker degree differentiation"}
+gender.data[empStat != "Unemployed" & WKHP >= 35 & AGEP >= 25, 
+            .(pop = sum(PWGTP)), .(age = round_any(AGEP, 5), eduStat, 
+                                   sex)][,.(perc = pop/sum(pop),
+                                            eduStat, sex), .(age)][eduStat %in% c("Bachelors", "Post-Graduate"),] %>%
+    ggplot(aes(x = age, y = perc, color = sex, linetype = eduStat)) +
+    geom_line(size = 0.8) +
+    scale_y_continuous(NULL, labels = percent, limits = c(0, 0.15),
+                       breaks = seq(0, 0.15, 0.05)) +
+    scale_x_continuous("Age", breaks = seq(25, 65, 5)) +
+    labs(color = "Gender", linetype = "Highest\nDegree",
+         caption = "Simeon Markind") +
+    ggtitle("Percentage of total full-time working population",
+            "Limited to observations who work at least 35 hours per week")
+```
+
+When looking at full-time workers however, the story from before is largely reversed. Here for almost all ages, men with a Bachelors degree make up a larger segment of the workforce than women with the same level of schooling. The same is true for holders of advanced degrees.
+
+
 
 ```{r "Occupation Share Barchart", fig.width= 8, fig.height=5}
 
